@@ -1,0 +1,6 @@
+[user]
+	email = olixem@gmail.com
+	name = Olgierd \"Allgreed\" Kasprowicz
+[core]
+	editor = vim
+	excludesfile = /home/allgreed/.gitignore_global
