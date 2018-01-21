@@ -176,3 +176,6 @@ for_window [class="^.*"] border pixel 2
 
 #locking works
 bindsym XF86Launch1 exec ~/_scripts/lock.sh
+
+# one-hand terminal
+bindsym $mod+t exec i3-sensible-terminal
