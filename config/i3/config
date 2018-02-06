@@ -179,3 +179,12 @@ bindsym XF86Launch1 exec ~/_scripts/lock.sh
 
 # one-hand terminal
 bindsym $mod+t exec i3-sensible-terminal
+
+########################################
+# Autostart
+#########################################
+
+exec /opt/rambox/rambox
+exec unclutter
+exec workrave
+
