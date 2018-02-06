@@ -8,8 +8,54 @@
   title_transmit_bg_color = "#d30102"
   title_use_system_font = False
 [keybindings]
+  broadcast_all = None
+  broadcast_group = None
+  broadcast_off = None
+  close_term = None
+  close_window = None
+  cycle_next = None
+  cycle_prev = None
+  edit_tab_title = None
+  edit_terminal_title = None
+  edit_window_title = None
+  go_down = None
+  go_left = None
+  go_next = None
+  go_prev = None
+  go_right = None
+  go_up = None
   group_all = None
   group_all_toggle = None
+  group_tab = None
+  help = None
+  hide_window = None
+  layout_launcher = None
+  line_down = Page_Up
+  line_up = Page_Down
+  move_tab_left = None
+  move_tab_right = None
+  new_tab = None
+  new_terminator = None
+  new_window = None
+  next_tab = None
+  prev_tab = None
+  previous_profile = None
+  reset = None
+  reset_clear = None
+  resize_down = None
+  resize_left = None
+  resize_right = None
+  resize_up = None
+  rotate_ccw = None
+  rotate_cw = None
+  scaled_zoom = None
+  search = None
+  split_horiz = None
+  split_vert = None
+  toggle_scrollbar = None
+  toggle_zoom = None
+  ungroup_all = None
+  ungroup_tab = None
 [layouts]
   [[default]]
     [[[child1]]]
