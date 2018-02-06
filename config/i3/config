@@ -187,4 +187,4 @@ bindsym $mod+t exec i3-sensible-terminal
 exec /opt/rambox/rambox
 exec unclutter
 exec workrave
-
+exec firefox
