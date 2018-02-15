@@ -77,6 +77,8 @@ vnoremap <c-f> y<ESC>/<c-r>"<CR>
 
 "let g:airline#extensions#tabline#enabled = 1
 
+set wildmenu
+
 let g:airline_powerline_fonts = 1
 let g:miniBufExplForceSyntaxEnable = 1
 let g:Powerline_symbols='unicode'
