@@ -19,7 +19,7 @@ font pango:monospace 8
 # Names
 #########################################
 
-set $WS1 "1:<s>1dupa</s>"
+set $WS1 "1:1"
 set $WS2 "2:2"
 set $WS3 "3:3"
 set $WS4 "4:4"
