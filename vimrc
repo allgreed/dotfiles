@@ -110,4 +110,5 @@ let g:airline_left_sep = ''
 
 let g:airline_inactive_collapse=1
 
-
+" Disable this shitty bell sound
+set visualbell
