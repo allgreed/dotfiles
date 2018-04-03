@@ -1,6 +1,7 @@
 # vim & Emacs temp files
 *~
 .*.swp
+.*.swo
 
 # Macbook's storage files
 .DS_Store
