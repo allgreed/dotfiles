@@ -211,4 +211,9 @@ exec unclutter
 exec workrave
 exec firefox
 
+########################################
+# Screenshoting
+#########################################
 
+bindsym Print exec scrot "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" -e "mv \$f ~/Shots"
+bindsym --release Shift+Print exec --no-startup-id scrot "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" -s -e "mv \$f ~/Shots"

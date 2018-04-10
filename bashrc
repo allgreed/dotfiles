@@ -131,3 +131,6 @@ alias node="nodejs"
 
 # xd, work this out later
 alias dotfiles="~/.local/bin/dotfiles"
+
+alias pruge_branches="git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches"
+alias scrot='scrot "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" -e "mv \$f ~/Shots"'
