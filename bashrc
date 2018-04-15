@@ -148,4 +148,11 @@ parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-export PS1="λ \[\033[35m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] "
+# Fun bash prompt
+
+reset=$(tput sgr0)
+bold=$(tput bold)
+blue=$(tput setaf 13)
+dim=$(tput dim)
+
+export PS1="\w\[\033[33m\]\$(parse_git_branch)\[$reset\] \[$dim\]\[$bold\]\[$blue\]λ\[$reset\] "
