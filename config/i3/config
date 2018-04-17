@@ -217,3 +217,10 @@ exec firefox
 
 bindsym Print exec scrot "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" -e "mv \$f ~/Shots"
 bindsym --release Shift+Print exec --no-startup-id scrot "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" -s -e "mv \$f ~/Shots"
+
+########################################
+# Init
+#########################################
+
+# this is for my T420 - I have scandinavic keyboard with >< character at the expense of left Shift
+exec xmodmap -e "keycode 94 = Shift_L"
