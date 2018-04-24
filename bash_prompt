@@ -1,20 +1,37 @@
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+# Utility functions
+#########################
+get_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
+
+set_virtualenv() {
+   if test -z "$VIRTUAL_ENV" ; then
+       PYTHON_VIRTUALENV=""
+   else
+       PYTHON_VIRTUALENV="(`basename \"$VIRTUAL_ENV\"`) "
+   fi
+}
+
+# Colors and appearance
+#########################
 
 reset=$(tput sgr0)
 bold=$(tput bold)
-blue=$(tput setaf 13)
+blue=$(tput setaf 33)
+green=$(tput setaf 64);
 dim=$(tput dim)
 
-# Get Virtual Env
-if [[ $VIRTUAL_ENV != "" ]]
-    then
-      # Strip out the path and just leave the env name
-      venv=" (${VIRTUAL_ENV##*/})"
-else
-      # In case you don't have one activated
-      venv=''
-fi
+#########################
 
-export PS1="\[\033[33m\]\${venv}\[$reset\]\w\[\033[33m\]\$(parse_git_branch)\[$reset\] \[$dim\]\[$bold\]\[$blue\]λ\[$reset\] "
+set_bash_prompt() {
+    set_virtualenv
+
+    venv="\[$green\]\$PYTHON_VIRTUALENV\[$reset\]"
+    cwd="\w"
+    current_branch="\[$green\]\$(get_git_branch)\[$reset\]"
+    shell_indicator="\[$dim\]\[$bold\]\[$blue\]λ\[$reset\]"
+
+    PS1="${venv}${cwd}${current_branch} ${shell_indicator} "
+}
+
+PROMPT_COMMAND=set_bash_prompt
