@@ -196,8 +196,10 @@ client.urgent #2f343a #900000 #ffffff #900000
 # removes titlebar, and sets sane borders
 for_window [class="^.*"] border pixel 2 
 
-#locking works
+#locking through the fancy blue button 
 bindsym XF86Launch1 exec ~/_scripts/lock.sh
+# and alwayspresent alias
+bindsym $mod+Control+l exec ~/_scripts/lock.sh
 
 # one-hand terminal
 bindsym $mod+t exec i3-sensible-terminal
