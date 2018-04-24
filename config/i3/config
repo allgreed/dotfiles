@@ -208,9 +208,14 @@ bindsym $mod+t exec i3-sensible-terminal
 # Autostart
 #########################################
 
-exec /opt/rambox/rambox
+# Deamons
 exec unclutter
+exec pulseaudio --start
+
+# Helpers
 exec workrave
+
+exec rambox
 exec firefox
 
 ########################################
