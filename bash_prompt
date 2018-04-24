@@ -1,0 +1,20 @@
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+reset=$(tput sgr0)
+bold=$(tput bold)
+blue=$(tput setaf 13)
+dim=$(tput dim)
+
+# Get Virtual Env
+if [[ $VIRTUAL_ENV != "" ]]
+    then
+      # Strip out the path and just leave the env name
+      venv=" (${VIRTUAL_ENV##*/})"
+else
+      # In case you don't have one activated
+      venv=''
+fi
+
+export PS1="\[\033[33m\]\${venv}\[$reset\]\w\[\033[33m\]\$(parse_git_branch)\[$reset\] \[$dim\]\[$bold\]\[$blue\]λ\[$reset\] "

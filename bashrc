@@ -141,19 +141,12 @@ alias purge_branches="git branch --merged >/tmp/merged-branches && vi /tmp/merge
 alias scrot='scrot "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" -e "mv \$f ~/Shots"'
 
 alias charm="charm . & exit"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-# Fun bash prompt
-
-reset=$(tput sgr0)
-bold=$(tput bold)
-blue=$(tput setaf 13)
-dim=$(tput dim)
-
-export PS1="\w\[\033[33m\]\$(parse_git_branch)\[$reset\] \[$dim\]\[$bold\]\[$blue\]λ\[$reset\] "
+# Importing fancy prompt
+if [ -f ~/.bash_prompt ]; then
+    . ~/.bash_prompt
+fi
