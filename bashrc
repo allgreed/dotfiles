@@ -124,7 +124,7 @@ fi
 alias ..="cd .."
 
 # include local binaries
-export PATH="$PATH:~/.local/bin"
+export PATH="$PATH:/home/$(whoami)/.local/bin"
 
 # old habbits die hard
 alias node="nodejs"
@@ -140,6 +140,7 @@ alias python3="/usr/bin/env python3.6"
 alias purge_branches="git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches"
 alias scrot='scrot "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" -e "mv \$f ~/Shots"'
 
+alias charm="charm . & exit"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
