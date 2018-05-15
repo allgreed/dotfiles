@@ -150,3 +150,6 @@ export NVM_DIR="$HOME/.nvm"
 if [ -f ~/.bash_prompt ]; then
     . ~/.bash_prompt
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
