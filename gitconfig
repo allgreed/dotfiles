@@ -4,3 +4,5 @@
 [core]
 	editor = vim
 	excludesfile = /home/allgreed/.gitignore_global
+[hub]
+	protocol = ssh
