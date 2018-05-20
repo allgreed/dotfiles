@@ -141,6 +141,7 @@ alias purge_branches="git branch --merged >/tmp/merged-branches && vi /tmp/merge
 alias scrot='scrot "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" -e "mv \$f ~/Shots"'
 
 alias charm="charm . & exit"
+alias tf="terraform"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
