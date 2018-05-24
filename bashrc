@@ -126,9 +126,6 @@ alias ..="cd .."
 # include local binaries
 export PATH="$PATH:/home/$(whoami)/.local/bin"
 
-# old habbits die hard
-alias node="nodejs"
-
 # xd, work this out later
 alias dotfiles="~/.local/bin/dotfiles"
 
