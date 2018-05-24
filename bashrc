@@ -149,5 +149,8 @@ if [ -f ~/.bash_prompt ]; then
     . ~/.bash_prompt
 fi
 
+# Nvm utilities
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+alias nodeon="nvm use stable"
