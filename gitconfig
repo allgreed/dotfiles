@@ -43,6 +43,7 @@
     co = checkout
 
     aliases = config --get-regexp alias # list aliases
+    deltag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 }; r" # Remove tag (also on origin)
 
 [color "diff"]
     meta = yellow bold
