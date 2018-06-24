@@ -28,6 +28,22 @@
 [diff "bin"]
     textconv = hexdump -v -C
 
+# UI
+############################
+
+[alias]
+    s = status -s
+    d = diff
+    p = push
+    a = add
+    c = commit -v
+
+    aa = add --all
+    ca = !git add --all && git commit -v
+    co = checkout
+
+    aliases = config --get-regexp alias # list aliases
+
 [color "diff"]
     meta = yellow bold
     frag = magenta bold # line info
