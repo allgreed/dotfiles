@@ -1,9 +1,40 @@
 [user]
 	email = olixem@gmail.com
 	name = Olgierd \"Allgreed\" Kasprowicz
+
 [core]
 	editor = vim
+	pager = less
+
 	excludesfile = /home/allgreed/.gitignore_global
+
 	autocrlf = input
+
+    untrackedCache = true
+
+[fetch]
+	prune = true
+
+[push]
+    default = simple
+    followTags = false
+
 [hub]
 	protocol = ssh
+
+[diff]
+    renames = copies
+
+[diff "bin"]
+    textconv = hexdump -v -C
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold # line info
+    old = red
+    new = green
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = cyan
