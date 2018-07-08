@@ -154,4 +154,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 alias nodeon="nvm use default"
+
+# alias + enable autocomplate for the alias
+alias gs="git s"
 alias g="git"
+[ -f /usr/share/bash-completion/completions/git ] && . /usr/share/bash-completion/completions/git
+__git_complete g __git_main
