@@ -43,7 +43,10 @@
     ca = !git add --all && git commit -v
     co = checkout
 
-    deltag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 }; r" # Remove tag (also on origin)
+[color "status"]
+    added = green 
+    changed = blue
+    untracked = red
 
 [color "diff"]
     meta = yellow bold
@@ -55,3 +58,4 @@
     current = yellow reverse
     local = yellow
     remote = cyan
+
