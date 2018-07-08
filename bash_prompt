@@ -1,8 +1,5 @@
 # Utility functions
 #########################
-get_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
 
 set_virtualenv() {
    if test -z "$VIRTUAL_ENV" ; then
@@ -23,15 +20,17 @@ dim=$(tput dim)
 
 #########################
 
+GIT_PS1_SHOWDIRTYSTATE=1
+
 set_bash_prompt() {
     set_virtualenv
 
+    git_info="\[$green\]\$(__git_ps1)\[$reset\]"
     venv="\[$green\]\$PYTHON_VIRTUALENV\[$reset\]"
     cwd="\w"
-    current_branch="\[$green\]\$(get_git_branch)\[$reset\]"
     shell_indicator="\[$dim\]\[$bold\]\[$blue\]λ\[$reset\]"
 
-    PS1="${venv}${cwd}${current_branch} ${shell_indicator} "
+    PS1="${venv}${cwd}${git_info} ${shell_indicator} "
 }
 
 PROMPT_COMMAND=set_bash_prompt
