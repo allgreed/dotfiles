@@ -24,6 +24,7 @@
 
 [diff]
     renames = copies
+	algorithm = patience
 
 [diff "bin"]
     textconv = hexdump -v -C
