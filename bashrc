@@ -163,3 +163,5 @@ __git_complete g __git_main
 
 export EDITOR=vim
 set -o vi
+
+export PATH=$PATH:/sbin/
