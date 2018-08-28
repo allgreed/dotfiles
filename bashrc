@@ -164,3 +164,8 @@ export EDITOR=vim
 set -o vi
 
 export PATH=$PATH:/sbin/
+
+# autcompletes
+[ ! -z $(which kubectl) ] && source <(kubectl completion bash) # kubectl
+
+alias weather="curl wttr.in/Gdansk -s | sponge | head -n 17"
