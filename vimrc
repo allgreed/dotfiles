@@ -30,6 +30,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
 
+" Syntax highlighters
+Plugin 'leafgarland/typescript-vim'
+Plugin 'posva/vim-vue'
+
 call vundle#end()
 filetype plugin indent on 
 
@@ -118,3 +122,5 @@ let g:airline_inactive_collapse=1
 
 " Disable this shitty bell sound
 set visualbell
+set noerrorbells
+
