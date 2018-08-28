@@ -234,3 +234,7 @@ bindsym --release Shift+Print exec --no-startup-id scrot "%Y-%m-%d-%H-%M-%S_\$wx
 
 # this is for my T420 - I have scandinavic keyboard with >< character at the expense of left Shift
 exec xmodmap -e "keycode 94 = Shift_L"
+
+#############
+bindsym $mod+greater move workspace to output right
+bindsym $mod+less move workspace to output left
