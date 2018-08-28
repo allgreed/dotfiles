@@ -208,6 +208,9 @@ bindsym $mod+t exec i3-sensible-terminal
 # Autostart
 #########################################
 
+# Wallpaper
+exec ~/.fehbg
+
 # Deamons
 exec unclutter
 exec pulseaudio --start
