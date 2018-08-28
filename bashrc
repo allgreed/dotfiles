@@ -134,7 +134,6 @@ alias python2="/usr/bin/env python"
 alias python="/usr/bin/env python3"
 alias python3="/usr/bin/env python3.6"
 
-alias purge_branches="git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches"
 alias scrot='scrot "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" -e "mv \$f ~/Shots"'
 
 alias charm="charm . & exit"
