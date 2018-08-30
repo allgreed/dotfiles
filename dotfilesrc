@@ -1,8 +1,12 @@
 [dotfiles]
 repository = ~/Dotfiles
+packages = ["config", "ptpython"]
 ignore = [
-    '.git',
-    '.gitignore',
-    '*.swp',
-    '.LICENSE.md',
-    '.README.md']
+    ".git",
+    ".gitignore",
+    "*.swp",
+    "LICENSE.md",
+    "README.md",
+    "bash_legacy.sh",
+    "startup.sh"]
+
