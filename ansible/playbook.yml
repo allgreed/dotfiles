@@ -29,4 +29,5 @@
         state: link
 
     - name: Sync my Dotfiles
-      shell: test -z "dotfiles -c" || dotfiles --sync --force
+      shell: test -z "$(dotfiles -c)" || dotfiles --sync --force
+
