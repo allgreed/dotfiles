@@ -1,0 +1,32 @@
+---
+
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Install git - in order to clone Dotfiles repository
+      package: name=git state=latest
+
+    - name: Clone Dotfiles repository
+      git:
+        repo: https://github.com/allgreed/dotfiles.git
+        dest: ~/Dotfiles
+        version: master
+
+    - name: Install python3 and pip3 - as a dependency of dotfiles
+      package: name={{ item }} state=latest
+      with_items:
+        - python3
+        - python3-pip
+
+    - name: Install dotfiles
+      pip: name=dotfiles executable=pip3
+
+    - name: Configure dotfiles
+      file:
+        src: ~/Dotfiles/dotfilesrc
+        dest: ~/.dotfilesrc
+        state: link
+
+    - name: Sync my Dotfiles
+      shell: test -z "dotfiles -c" || dotfiles --sync --force

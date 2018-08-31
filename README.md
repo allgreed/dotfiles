@@ -1,6 +1,30 @@
 # dotfiles
 
-My collection of preferences, configs, /etc. Feel free to share, copy, modify (not on this repo, though ;p)
+My collection of preferences, configs, /etc.
+
+## Prerequisites
+
+- git
+- ansible
+- python (required by ansible)
+
+### Installation (with apt)
+
+```
+test -e /usr/bin/git || (sudo apt-get update && sudo apt install -y git)
+test -e /usr/bin/python || (sudo apt-get update && sudo apt install -y python)
+test -e /usr/bin/ansible || (sudo apt-get update && sudo apt install -y ansible)
+```
+
+## Installation
+
+```sh
+git clone https://github.com/allgreed/dotfiles.git ~/Dotfiles
+~/Dotfiles/ansible/run.sh
+```
+
+
+<!-- DEAL WITH THIS STUFF BELOW -->
 
 ## Requiremenets
 
