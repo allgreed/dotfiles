@@ -1,2 +1,5 @@
-# This config changes extremely often and all I'll ever want is allready setup
+# this config changes extremely often and all I'll ever want is allready setup
 config/htop/htoprc
+
+# ansible retry files
+*.retry
