@@ -29,5 +29,10 @@
         state: link
 
     - name: Sync my Dotfiles
-      shell: test -z "$(dotfiles -c)" || dotfiles --sync --force
+      shell: |
+        TMP_ANSIBLE_DOTFILES_STATUS_CHECK="$(dotfiles -c)"
+        test -z "$TMP_ANSIBLE_DOTFILES_STATUS_CHECK" || dotfiles --sync --force
+        echo $TMP_ANSIBLE_DOTFILES_STATUS_CHECK
+      register: command_result
+      changed_when: command_result.stdout
 
