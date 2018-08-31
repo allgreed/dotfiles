@@ -13,6 +13,13 @@
 - name: Install dotfiles
   pip: name=dotfiles executable=pip3
 
+- name: Clone Dotfiles repository
+  git:
+    repo: https://github.com/allgreed/dotfiles.git
+    dest: ~/Dotfiles
+    version: master
+  ignore_errors: yes # added for local ansible files developement - local changes are present in the repository
+
 - name: Configure dotfiles
   file:
     src: ~/Dotfiles/dotfilesrc
