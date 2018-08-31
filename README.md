@@ -20,7 +20,7 @@ test -e /usr/bin/ansible || (sudo apt-get update && sudo apt install -y ansible)
 
 ```sh
 git clone https://github.com/allgreed/dotfiles.git ~/Dotfiles
-~/Dotfiles/ansible/run.sh
+~/Dotfiles/ansible/run
 ```
 
 
