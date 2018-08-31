@@ -126,9 +126,6 @@ alias ..="cd .."
 # include local binaries
 export PATH="$PATH:/home/$(whoami)/.local/bin"
 
-# xd, work this out later
-alias dotfiles="~/.local/bin/dotfiles"
-
 # better Python names, but respecting virtualenvs
 alias python2="/usr/bin/env python"
 alias python="/usr/bin/env python3"
