@@ -1,2 +1,2 @@
 #!/bin/sh
-feh  --bg-fill '/home/allgreed/Downloads/cluster_scaled.png' 
+feh  --image-bg black --bg-center '/home/allgreed/Pictures/debian-dark-wp.jpg' 
