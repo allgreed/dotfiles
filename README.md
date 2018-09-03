@@ -23,6 +23,10 @@ git clone https://github.com/allgreed/dotfiles.git ~/Dotfiles
 ~/Dotfiles/ansible/run
 ```
 
+## Non-obvious folder structure
+
+`screenlayout` - configuration for xrandr
+
 
 <!-- DEAL WITH THIS STUFF BELOW -->
 
