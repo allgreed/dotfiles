@@ -161,6 +161,7 @@ export EDITOR=vim
 set -o vi
 
 export PATH=$PATH:/sbin/
+export PATH=~/.local/bin:$PATH
 
 # autcompletes
 [ ! -z $(which kubectl) ] && source <(kubectl completion bash) # kubectl
