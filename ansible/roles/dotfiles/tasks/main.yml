@@ -11,7 +11,10 @@
   become: yes
 
 - name: Install dotfiles
-  pip: name=dotfiles executable=pip3
+  pip:
+    name: dotfiles
+    executable: pip3
+    extra_args: --user
 
 - name: Clone Dotfiles repository
   git:
@@ -35,8 +38,9 @@
 
 - name: Sync my Dotfiles
   shell: |
-    TMP_ANSIBLE_DOTFILES_STATUS_CHECK="$(dotfiles -c)"
-    test -z "$TMP_ANSIBLE_DOTFILES_STATUS_CHECK" || dotfiles --sync --force
+    DOTFILES="~/.local/bin/dotfiles"
+    TMP_ANSIBLE_DOTFILES_STATUS_CHECK="$(eval $DOTFILES -c)"
+    test -z "$TMP_ANSIBLE_DOTFILES_STATUS_CHECK" || eval $DOTFILES --sync --force
     echo $TMP_ANSIBLE_DOTFILES_STATUS_CHECK
   register: command_result
   changed_when: command_result.stdout
