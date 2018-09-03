@@ -3,3 +3,9 @@ config/htop/htoprc
 
 # ansible retry files
 *.retry
+
+# d2d work with ansible
+test_inventory
+testbook.yml
+run_test
+run_wip
