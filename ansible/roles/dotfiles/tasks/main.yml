@@ -18,7 +18,7 @@
 
 - name: clone Dotfiles repository
   git:
-    repo: https://github.com/allgreed/dotfiles.git
+    repo: "{{ dotfiles_repo_fetch_url }}"
     dest: ~/Dotfiles
     version: master
   ignore_errors: yes # added for local ansible files developement - local changes are present in the repository
@@ -27,7 +27,7 @@
   git_config:
     name: remote.origin.pushurl
     scope: local
-    value: git@github.com:allgreed/dotfiles.git
+    value: "{{ dotfiles_repo_push_url }}"
     repo: ~/Dotfiles
 
 - name: configure dotfiles
