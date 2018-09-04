@@ -23,7 +23,7 @@
     version: master
   ignore_errors: yes # added for local ansible files developement - local changes are present in the repository
 
-- name: set remote-push over ssh for Dotfiles repo
+- name: set remote-push over SSH for Dotfiles repo
   git_config:
     name: remote.origin.pushurl
     scope: local
