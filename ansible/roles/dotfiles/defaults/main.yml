@@ -1,1 +1,2 @@
 dotfiles_repo_push_url: "{{ dotfiles_repo_fetch_url }}"
+dotfiles_binary: ~/.local/bin/dotfiles

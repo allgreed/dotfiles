@@ -36,12 +36,12 @@
     dest: ~/.dotfilesrc
     state: link
 
+- name: gather dotfiles check information
+  command: "{{ dotfiles_binary }} -c"
+  changed_when: False
+  register: dotfiles_check_result
+
 - name: sync my Dotfiles
-  shell: |
-    DOTFILES="~/.local/bin/dotfiles"
-    TMP_ANSIBLE_DOTFILES_STATUS_CHECK="$(eval $DOTFILES -c)"
-    test -z "$TMP_ANSIBLE_DOTFILES_STATUS_CHECK" || eval $DOTFILES --sync --force
-    echo $TMP_ANSIBLE_DOTFILES_STATUS_CHECK
-  register: command_result
-  changed_when: command_result.stdout
+  command: "{{ dotfiles_binary }} --sync --force"
+  when: dotfiles_check_result.stdout
 
