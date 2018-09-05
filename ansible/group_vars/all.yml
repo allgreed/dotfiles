@@ -1,0 +1,3 @@
+dotfiles_repo_fetch_url: https://github.com/allgreed/dotfiles.git
+dotfiles_repo_push_url: git@github.com:allgreed/dotfiles.git
+
