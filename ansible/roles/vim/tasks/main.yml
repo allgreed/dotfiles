@@ -25,14 +25,15 @@
     dest: ~/.vim/colors/solarized.vim
     src: solarized.vim
 
-- name: install Vundle plugins
-  shell: |
-    INSTALLED_PLUGIN_COUNT="$(ls ~/.vim/bundle | wc -l)"
-    if [ $INSTALLED_PLUGIN_COUNT == "1" ]
-        then
-            vim -i NONE +PluginInstall +qall
-    fi
-  args:
-    executable: /bin/bash
-  register: command_result
-  changed_when: command_result.stdout
+- name: gather installed plugins information
+  shell: ls ~/.vim/bundle -1
+  changed_when: False
+  register: vim_installed_plugins_result
+
+- set_fact:
+    vim_installed_plugins: "{{ vim_installed_plugins_result.stdout_lines }}"
+    #vim_installed_plugins_count: "{{ vim_installed_plugins | length }}"
+
+- name: install plugins
+  command: vim -i NONE +PluginInstall +qall
+  when: vim_installed_plugins == ["Vundle.vim"]
