@@ -4,17 +4,20 @@
   package: name=vim-nox state=latest
   become: yes
 
+- name: ensure .vim directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    recurse: yes
+  with_items:
+    - ~/.vim/colors
+    - ~/.vim/bundle
+
 - name: install Vundle
   git:
     repo: https://github.com/VundleVim/Vundle.vim.git
     dest: ~/.vim/bundle/Vundle.vim
     version: master
-
-- name: ensure "~/.vim/colors" directory
-  file:
-    path: ~/.vim/colors
-    state: directory
-    recurse: yes
 
 - name: install solarized colorscheme
   # since the last commit was in 2011 I've decided to vendor-in this one
