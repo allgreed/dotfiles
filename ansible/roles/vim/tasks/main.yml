@@ -26,7 +26,7 @@
     src: solarized.vim
 
 - name: gather installed plugins information
-  shell: ls ~/.vim/bundle -1
+  command: ls ~/.vim/bundle -1
   changed_when: False
   register: vim_installed_plugins_result
 
