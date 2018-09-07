@@ -9,3 +9,4 @@ test_inventory
 testbook.yml
 run_test
 run_wip
+prepare_wip
