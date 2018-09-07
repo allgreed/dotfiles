@@ -36,9 +36,9 @@
   register: vim_desired_plugins_result
 
 - set_fact:
-    vim_installed_plugins_set: "{{ vim_installed_plugins_result.stdout_lines | sort }}"
-    vim_desired_plugins_set: "{{ vim_desired_plugins_result.stdout_lines | sort }}"
+    vim_installed_plugins: "{{ vim_installed_plugins_result.stdout_lines | sort }}"
+    vim_desired_plugins: "{{ vim_desired_plugins_result.stdout_lines | sort }}"
 
 - name: install plugins
   command: vim -i NONE +PluginInstall +qall
-  when: vim_installed_plugins_set != vim_desired_plugins_set
+  when: vim_installed_plugins != vim_desired_plugins
