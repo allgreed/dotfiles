@@ -5,8 +5,8 @@ My collection of preferences, configs, /etc.
 ## Prerequisites
 
 - git
-- ansible
-- python (required by ansible)
+- ansible >=2.6.3
+- python2 >=2.7.13 (required by ansible)
 
 ### Installation (with apt)
 
