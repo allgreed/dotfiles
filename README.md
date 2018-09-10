@@ -8,7 +8,7 @@ My collection of preferences, configs, /etc.
 - ansible >=2.6.3
 - python2 >=2.7.13 (required by ansible)
 
-### Installation (with apt)
+### Idempotent prerequisites installation (with apt)
 
 ```
 test -e /usr/bin/git || (sudo apt-get update && sudo apt install -y git)
@@ -25,7 +25,7 @@ git clone https://github.com/allgreed/dotfiles.git ~/Dotfiles
 
 ## Non-obvious folder structure
 
-`screenlayout` - configuration for xrandr
+- `screenlayout` - configuration for xrandr
 
 
 <!-- DEAL WITH THIS STUFF BELOW -->
