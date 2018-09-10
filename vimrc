@@ -124,3 +124,5 @@ let g:airline_inactive_collapse=1
 set visualbell
 set noerrorbells
 
+" Testing search highlighting
+set hlsearch
