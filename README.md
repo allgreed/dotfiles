@@ -20,8 +20,9 @@ test -e /usr/bin/ansible || (sudo apt-get update && sudo apt install -y ansible)
 
 ```sh
 git clone https://github.com/allgreed/dotfiles.git ~/Dotfiles
-ansible-galaxy install -r ~/Dotfiles/ansible/requirements.yml
-~/Dotfiles/ansible/run
+cd ~/Dotfiles/ansible
+ansible-galaxy install -r requirements.yml
+./run
 ```
 
 ## Non-obvious folder structure
