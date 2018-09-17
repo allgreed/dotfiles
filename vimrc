@@ -33,6 +33,7 @@ Plugin 'editorconfig/editorconfig-vim'
 " Syntax highlighters
 Plugin 'leafgarland/typescript-vim'
 Plugin 'posva/vim-vue'
+Plugin 'elixir-editors/vim-elixir'
 
 call vundle#end()
 filetype plugin indent on 
