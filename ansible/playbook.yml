@@ -6,6 +6,7 @@
       dotfiles_repo_push_url: git@github.com:allgreed/dotfiles.git
       tags:
         - configuration
+        - dotfiles
 
     - role: geerlingguy.docker
       docker_users:
@@ -14,9 +15,12 @@
       become: yes
       tags:
         - package
+        - docker
     - role: vim
       tags:
         - package
+        - vim
     - role: cli_utilities
       tags:
         - package
+        - cli_utilities
