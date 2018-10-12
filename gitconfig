@@ -33,15 +33,15 @@
 ############################
 
 [alias]
-    s = status -s
+    s = status --short
     d = diff
     p = push
     a = add
-    c = commit -v
+    c = commit --verbose
 
     aa = add --all
-    ca = !git add --all && git commit -v
     cp = commit -vp
+    ca = !git add --all && git commit --verbose
     co = checkout
     purge-branches = !git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches
 
