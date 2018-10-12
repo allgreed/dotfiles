@@ -16,7 +16,7 @@ set $mod Mod4
 font pango:Source Code Pro Medium 10px
 
 # tmux integration
-set $launch_terminal i3-sensible-terminal -e tmux
+set $launch_terminal i3-sensible-terminal
 
 ########################################
 # Names

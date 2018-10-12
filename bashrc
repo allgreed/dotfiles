@@ -164,3 +164,8 @@ export PATH=~/.local/bin:$PATH
 [ ! -z $(which kubectl) ] && source <(kubectl completion bash) # kubectl
 
 alias weather="curl wttr.in/Gdansk -s | sponge | head -n 17"
+
+# tmux integration
+if [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
