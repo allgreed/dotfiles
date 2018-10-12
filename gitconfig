@@ -40,7 +40,6 @@
     c = commit --verbose
 
     aa = add --all
-    cp = commit -vp
     ca = !git add --all && git commit --verbose
     co = checkout
     purge-branches = !git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches
