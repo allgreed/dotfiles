@@ -119,8 +119,14 @@ fi
 #################################################
 #################################################
 
+# poor man's display manager xD
+if [[ "$(tty)" == '/dev/tty1' ]]; then
+	    exec startx
+fi
+
 # read the above carefully
 # move this to aliases, whatever
+
 alias ..="cd .."
 
 # include local binaries
