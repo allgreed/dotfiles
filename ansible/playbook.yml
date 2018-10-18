@@ -8,6 +8,7 @@
         - configuration
         - dotfiles
 
+
     - role: geerlingguy.docker
       docker_users:
         - "{{ ansible_env.USER }}"
@@ -16,11 +17,21 @@
       tags:
         - package
         - docker
+
     - role: vim
       tags:
         - package
         - vim
+
     - role: cli_utilities
       tags:
         - package
         - cli_utilities
+
+    - role: x_utilities
+      tags: 
+        - package
+        - x
+        - x_utilities
+
+

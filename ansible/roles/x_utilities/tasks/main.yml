@@ -1,0 +1,8 @@
+---
+
+- name: install system packages
+  package: name={{ item }} state=latest
+  with_items:
+    - screenkey
+  become: yes
+
