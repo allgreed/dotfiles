@@ -1,0 +1,8 @@
+---
+xkb_includes:
+    # Capslock acts like ESC
+  - capslock(escape)
+
+    # both Shifts pressed together act like CapsLock
+    # pressing either of them alone cancels CapsLock
+  - shift(both_capslock_cancel)

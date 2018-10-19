@@ -29,6 +29,9 @@ ansible-galaxy install -r requirements.yml
 
 - `screenlayout` - configuration for xrandr
 
+## Shoutout
+
+Kudos to @niburu for walking me through xkb config!
 
 <!-- DEAL WITH THIS STUFF BELOW -->
 
@@ -36,15 +39,3 @@ ansible-galaxy install -r requirements.yml
 
 - `startup.sh` requires to be called by a service at startup
 
-## xkb config
-
-Append this to `/usr/share/X11/xkb/symbols/pl` 
-
-```
-    // both Shifts act like Capslock
-    include "shift(both_capslock)"
-    // remaps Capslock to ESC
-    include "capslock(escape)"
-```
-
-Kudos to niburu for walking me through this one!
