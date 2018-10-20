@@ -6,3 +6,5 @@
 # Macbook's storage files
 .DS_Store
 
+# Jet Brains IDE's metadata
+.idea
