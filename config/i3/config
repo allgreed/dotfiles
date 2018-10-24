@@ -15,8 +15,8 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:Source Code Pro Medium 10px
 
-# tmux integration
 set $launch_terminal i3-sensible-terminal
+set $tmux i3-sensible-terminal -e "$HOME/Dotfiles/scripts/run-tmux.sh"
 
 ########################################
 # Names
@@ -241,3 +241,8 @@ exec xmodmap -e "keycode 94 = Shift_L"
 #############
 bindsym $mod+greater move workspace to output right
 bindsym $mod+less move workspace to output left
+
+#######
+# Testing
+
+bindsym $mod+Shift+Return exec $tmux
