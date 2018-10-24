@@ -50,6 +50,7 @@ syntax enable
 
 set background=dark
 colorscheme solarized
+noh " don't show search highlights on vimrc reload
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => OS integration
