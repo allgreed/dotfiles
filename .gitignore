@@ -4,6 +4,9 @@ config/htop/htoprc
 # ansible retry files
 *.retry
 
+# ansible roles
+galaxy_roles
+
 # d2d work with ansible
 test_inventory
 testbook.yml
