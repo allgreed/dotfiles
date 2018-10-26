@@ -1,7 +1,7 @@
 ---
 
-- name: install Vim with scripting languages support
-  package: name=vim-nox state=latest
+- name: install Vim with scripting languages support and X11
+  package: name=vim-gtk state=latest
   become: yes
 
 - name: ensure .vim directories
