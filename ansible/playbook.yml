@@ -4,37 +4,17 @@
     - role: dotfiles
       dotfiles_repo: https://github.com/allgreed/dotfiles.git
       dotfiles_repo_push_url: git@github.com:allgreed/dotfiles.git
-      tags:
-        - configuration
-        - dotfiles
-
 
     - role: geerlingguy.docker
       docker_users:
         - "{{ ansible_env.USER }}"
       docker_package_state: latest
       become: yes
-      tags:
-        - package
-        - docker
 
     - role: vim
-      tags:
-        - package
-        - vim
-
     - role: cli_utilities
-      tags:
-        - package
-        - cli_utilities
 
     - role: x_utilities
-      tags: 
-        - package
-        - x
-        - x_utilities
 
     - role: keyboard
-      tags:
-        - hardware
-        - keyboard
+    - role: chat
