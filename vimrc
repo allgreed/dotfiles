@@ -71,7 +71,7 @@ let @g= 'y:%s/"//OD' " replace globally visually highlighted text
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 augroup vimrc
-    autocmd FileType make setlocal tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab " Use actual tab chars in Makefiles.
+    autocmd FileType make setlocal softtabstop=0 noexpandtab " Use actual tab chars in Makefiles
     autocmd FileType gitcommit setlocal spell " Use spellcheck by default in git commit messages
 augroup END
 
@@ -80,18 +80,17 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""" smart tabs
-
 " For everything else, use a tab width of 4 space chars.
 set tabstop=4       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
                     " Vim will interpret it to be having
                     " a width of 4.
 set shiftwidth=4    " Indents will have a width of 4.
-set softtabstop=4   " Sets the number of columns for a TAB.
+set softtabstop=-1  " Sets the number of columns for a TAB.
 set expandtab       " Expand TABs to spaces.
 
 " TODO:  bind :noh to something
-" TODO: Also display 2 spaces as 4 spaces except for ansible .yml files
+" TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Testin area
