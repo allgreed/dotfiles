@@ -16,12 +16,19 @@ set ff=unix " Only shitfucks use DOS line endings
 set relativenumber
 set number
 
+set hlsearch " Highlight search matches
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Behaviours
+" => Editorial behaviours
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set backspace=indent,eol,start " I will backspace whatever I like!
-set hlsearch " Highlight search matches
+
+" Smart tabs
+set tabstop=4       " The width of a TAB is set to 4
+set shiftwidth=4    " Indents will have a width of 4
+set softtabstop=4   " Treat 4 spaces as single TAB
+set expandtab       " Expand TABs to spaces
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins 
@@ -80,16 +87,6 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => TODO - tidy it up and put inside a section
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""""""" smart tabs
-" For everything else, use a tab width of 4 space chars.
-set tabstop=4       " The width of a TAB is set to 4.
-                    " Still it is a \t. It is just that
-                    " Vim will interpret it to be having
-                    " a width of 4.
-set shiftwidth=4    " Indents will have a width of 4.
-set softtabstop=-1  " Sets the number of columns for a TAB.
-set expandtab       " Expand TABs to spaces.
 
 " TODO:  bind :noh to something
 " TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
