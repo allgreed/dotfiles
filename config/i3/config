@@ -16,7 +16,9 @@ set $mod Mod4
 font pango:Source Code Pro Medium 10px
 
 set $launch_terminal i3-sensible-terminal
+
 set $tmux i3-sensible-terminal -e "$HOME/Dotfiles/scripts/run-tmux.sh"
+set $tmux-tmp i3-sensible-terminal -e "$HOME/Dotfiles/scripts/run-tmux-tmp.sh"
 
 ########################################
 # Names
@@ -48,7 +50,8 @@ set $WS10 "10:10"
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $launch_terminal
+bindsym $mod+Return exec $tmux-tmp
+bindsym $mod+Shift+Return exec $tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -245,4 +248,3 @@ bindsym $mod+less move workspace to output left
 #######
 # Testing
 
-bindsym $mod+Shift+Return exec $tmux
