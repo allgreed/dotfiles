@@ -67,14 +67,19 @@ let @r= 'y:s/"//OD' " replace locally visually highlighted text
 let @g= 'y:%s/"//OD' " replace globally visually highlighted text
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Filetype specific
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+augroup vimrc
+    autocmd FileType make setlocal tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab " Use actual tab chars in Makefiles.
+    autocmd FileType gitcommit setlocal spell " Use spellcheck by default in git commit messages
+augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => TODO - tidy it up and put inside a section
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""" smart tabs
-if has("autocmd")
-    " Use actual tab chars in Makefiles.
-    autocmd FileType make set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
-endif
 
 " For everything else, use a tab width of 4 space chars.
 set tabstop=4       " The width of a TAB is set to 4.
