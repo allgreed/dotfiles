@@ -19,8 +19,17 @@
     default = simple
     followTags = false
 
+[commit]
+    verbose = true # Show diff when preparing commit message
+
+# 3rd party
+############################
+
 [hub]
 	protocol = ssh
+
+# Diffs
+############################
 
 [diff]
     renames = copies
@@ -37,10 +46,10 @@
     d = diff
     p = push
     a = add
-    c = commit --verbose
+    c = commit
 
     aa = add --all
-    ca = !git add --all && git commit --verbose
+    ca = !git add --all && git commit
     co = checkout
     purge-branches = !git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches
 
