@@ -59,6 +59,12 @@ noh " don't show search highlights on vimrc reload
 set clipboard=unnamedplus " Use system clipboard as default buffer
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Preloaded macros
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let @f= 'y/"' " search for visually hightlighted text
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => TODO - tidy it up and put inside a section
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -83,9 +89,6 @@ set expandtab       " Expand TABs to spaces.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" search for visually hightlighted text
-vnoremap <c-f> y<ESC>/<c-r>"<CR>   
 
 " TODO: What exactly does this do ???
 set wildmenu
