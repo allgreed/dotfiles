@@ -79,9 +79,9 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 fi
 
 # colored GCC warnings and errors
@@ -170,3 +170,7 @@ export PATH=~/.local/bin:$PATH
 [ ! -z $(which kubectl) ] && source <(kubectl completion bash) # kubectl
 
 alias weather="curl wttr.in/Gdansk -s | sponge | head -n 17"
+
+# set global editors to vim
+export VISUAL=vim
+export EDITOR="$VISUAL"
