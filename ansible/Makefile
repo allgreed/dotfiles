@@ -3,9 +3,12 @@
 
 main: galaxy_roles
 	./run
+main-test: galaxy_roles
+	ansible-playbook -i inventory testbook.yml
+full-test: prepare-test test
 test: galaxy_roles
 	ansible-playbook -i test_inventory testbook.yml
-prepare_test: galaxy_roles
+prepare-test: galaxy_roles
 	ansible-playbook -i test_inventory playbook.yml
 
 
