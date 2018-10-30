@@ -1,0 +1,9 @@
+---
+
+- name: symlink .vimrc and .ideavimrc (for Jetbrains' software)
+  file:
+    src: ~/.vimrc
+    dest: ~/.ideavimrc
+    state: link
+
+# Install Pycharm, etc.
