@@ -66,13 +66,14 @@ noh " don't show search highlights on vimrc reload
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set clipboard=unnamedplus " Use system clipboard as default buffer
+set visualbell " Disable this shitty bell sound (mostly Jet Brains' IDEs + VIM emulator
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Preloaded macros
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let @f= 'y/"' " search for visually highlighted text
-let @r= 'y:s/"//OD' " replace locally visually highlighted text
+let @r= 'y:s/"/"/OD' " replace locally visually highlighted text
 let @g= 'y:%s/"//OD' " replace globally visually highlighted text
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -89,12 +90,14 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " TODO:  bind :noh to something
-" TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" TODO: Leader?
+" TODO: Ctrl + S?
+" TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
 " TODO: What exactly does this do ???
 set wildmenu
 set laststatus=2
@@ -103,7 +106,3 @@ set ttimeoutlen=10
 "set term=xterm-256color
 autocmd! BufWritePost ~/.vimrc nested :source ~/.vimrc
 set history=100
-
-" Disable this shitty bell sound
-set visualbell
-set noerrorbells
