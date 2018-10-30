@@ -160,6 +160,7 @@ __git_complete g __git_main
 
 export EDITOR=vim
 set -o vi
+stty -ixon # disable ctrl+s - no more accidental weird freezes
 
 export PATH=$PATH:/sbin/
 export PATH=~/.local/bin:$PATH
