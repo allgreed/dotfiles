@@ -250,3 +250,4 @@ bindsym $mod+less move workspace to output left
 #######
 # Testing
 
+exec xcape # Ctrl => ESC | Ctrl (and CapsLock is already set to ESC via xkb)

@@ -1,7 +1,7 @@
 ---
 xkb_includes:
-    # Capslock acts like ESC
-  - capslock(escape)
+    # Capslock acts like left Control
+  - ctrl(nocaps)
 
     # both Shifts pressed together act like CapsLock
     # pressing either of them alone cancels CapsLock
