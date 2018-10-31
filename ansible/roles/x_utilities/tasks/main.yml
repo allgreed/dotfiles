@@ -3,6 +3,7 @@
 - name: install system packages
   package: name={{ item }} state=latest
   with_items:
-    - screenkey
+    - screenkey # Displays pressed keys, cool for presentations
+    - xcape # Ctrl => ESC | Ctrl
   become: yes
 
