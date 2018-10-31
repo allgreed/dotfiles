@@ -4,7 +4,7 @@
 main: galaxy_roles
 	./run
 main-test: galaxy_roles
-	ansible-playbook -i inventory testbook.yml
+	ansible-playbook  -K -l local -i inventory testbook.yml
 full-test: prepare-test test
 test: galaxy_roles
 	ansible-playbook -i test_inventory testbook.yml
