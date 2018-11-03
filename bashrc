@@ -93,29 +93,40 @@ fi
 #################################################
 #################################################
 
-# poor man's display manager xD
+# TODO: read the above carefully
+
+# Poor man's display manager xD
+######################################
+
+# TODO: Extract this to sperate file
 if [[ "$(tty)" == '/dev/tty1' ]]; then
 	    exec startx
 fi
 
-# read the above carefully
+
+# Bashrc extenstions
+######################################
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+    source ~/.bash_aliases #my custom aliases
 fi
 
-# include local binaries
-export PATH="$PATH:/home/$(whoami)/.local/bin"
+if [ -f ~/.bash_prompt ]; then
+    source ~/.bash_prompt # my fancy prompt
+fi
+
+
+# TODO: Read the stuff below
+
+# extend PATH
+PATH_LOCAL_BINARIES=/home/$(whoami)/.local/bin
+PATH_ROOT_BINARIES=/sbin/
+export PATH=$PATH_LOCAL_BINARIES:$PATH:$PATH_ROOT_BINARIES
+
 
 # Nvm utilities
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. $NVM_DIR/nvm.sh --no-use  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. $NVM_DIR/bash_completion  # This loads nvm bash_completion
-
-# Importing fancy prompt
-if [ -f ~/.bash_prompt ]; then
-    . ~/.bash_prompt
-fi
 
 # Vim, vim everywhere!
 export VISUAL=vim
@@ -124,11 +135,9 @@ set -o vi; # vim in bash
 
 stty -ixon # disable ctrl+s - no more accidental weird freezes
 
-export PATH=$PATH:/sbin/
-export PATH=~/.local/bin:$PATH
-
 # autcompletes
+[ -s "$NVM_DIR/bash_completion" ] && \. $NVM_DIR/bash_completion  # This loads nvm bash_completion
 [ ! -z $(which kubectl) ] && source <(kubectl completion bash) # kubectl
-[ -f /usr/share/bash-completion/completions/git ] && . /usr/share/bash-completion/completions/git
+[ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git
 __git_complete g __git_main
 
