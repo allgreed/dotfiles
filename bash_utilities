@@ -1,0 +1,29 @@
+# vim: set filetype=sh :
+
+# Tip: set to true to enable debugging
+DEBUG=''
+
+function load
+{
+    function output_failure 
+    {
+        (>&2 echo "Error: sourcing failed for SOURCABLE=$SOURCABLE")
+    }
+
+    SOURCABLE=$1
+    shift
+
+    if [[ $SOURCABLE == /* ]]; then # SOURCABLE is a file
+        if [ -n "$SOURCABLE" ] && [ -f $SOURCABLE ]; then
+            source $SOURCABLE $@
+        elif [ -n "$DEBUG" ]; then
+            output_failure
+        fi
+    else
+        if [ -n "$(which $SOURCABLE)" ]; then
+            source <($SOURCABLE $@)
+        elif [ -n "$DEBUG" ]; then
+            output_failure
+        fi
+    fi
+}

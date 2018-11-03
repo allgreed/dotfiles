@@ -75,17 +75,6 @@ esac
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
-
 #################################################
 #################################################
 #################################################
@@ -95,52 +84,33 @@ fi
 
 # TODO: read the above carefully
 
-# Poor man's display manager xD #
-# TODO: Extract this to sperate file
-if [[ "$(tty)" == '/dev/tty1' ]]; then
-	    exec startx
-fi
+# load my utility function that simplify the rest of the config
+source ~/.bash_utilities
+load ~/.bash_dm # minimal display manager
 
-# Bashrc extenstions #
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases # my custom aliases
-fi
-
-if [ -f ~/.bash_prompt ]; then
-    source ~/.bash_prompt # my fancy prompt
-fi
-
-# Vim integration #
-export VISUAL=vim
-export EDITOR=vim
-
-# Shell behaviour #
-set -o vi; # vim in bash
-stty -ixon # disable ctrl+s - no more accidental weird freezes
-
-# PATH configuration #
+# Env
 PATH_LOCAL_BINARIES=$HOME/.local/bin
 PATH_ROOT_BINARIES=/sbin/
 export PATH=$PATH_LOCAL_BINARIES:$PATH:$PATH_ROOT_BINARIES
 
-# NVM integration #
+export VISUAL=vim
+export EDITOR=vim
 export NVM_DIR="$HOME/.nvm"
 
-if [ -s "$NVM_DIR"/nvm.sh ]; then
-    source $NVM_DIR/nvm.sh --no-use # Load nvm, but do not init any version
-fi
+# Extensions
+load ~/.bash_aliases # my custom aliases
+load ~/.bash_prompt # my fancy prompt
 
-# Autocompletes #
-if [ -s "$NVM_DIR"/bash_completion ]; then
-    source $NVM_DIR/bash_completion # This loads nvm bash_completion
-fi
+# Autocompletes
+load /usr/share/bash-completion/bash_completion
+load "$NVM_DIR/bash_completion"
+load /usr/share/bash-completion/completions/git
+load kubectl completion bash
+__git_complete g __git_main # apply full git completion to "g" alias
 
-if [ ! -z $(which kubectl) ]; then
-    source <(kubectl completion bash)
-fi
+# Shell integrations
+load "$NVM_DIR/nvm.sh" --no-use
 
-if [ -f /usr/share/bash-completion/completions/git ]; then
-    source /usr/share/bash-completion/completions/git
-    __git_complete g __git_main
-fi
-
+# Shell behaviour
+set -o vi; # vim in bash
+stty -ixon # disable ctrl+s - no more accidental weird freezes

@@ -22,6 +22,8 @@ alias python2="/usr/bin/env python"
 alias python="/usr/bin/env python3"
 alias python3="/usr/bin/env python3.6"
 
+alias nodeon="nvm use default"
+
 # TODO: Dafuq is this?????
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"

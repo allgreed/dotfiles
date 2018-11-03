@@ -1,0 +1,6 @@
+# vim: set filetype=sh :
+
+# Poor man's display manager xD
+if [[ "$(tty)" == '/dev/tty1' ]]; then
+	    exec startx
+fi
