@@ -1,24 +1,26 @@
 # vim: set filetype=sh :
+
+# moving around
 alias ..="cd .."
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
 
 # JetBrains' IDEs
 alias charm="charm . &"
 alias idea="/opt/idea-IC-182.4892.20/bin/idea.sh &"
 
-alias nodeon="nvm use default"
-alias weather='curl wttr.in/Gdansk -s | sponge | head -n 17'
+# Git
 alias gs="git s"
 alias g="git"
+
+# Custom scripts
+alias weather='curl wttr.in/Gdansk -s | sponge | head -n 17'
 
 # better Python names, but respecting virtualenvs
 alias python2="/usr/bin/env python"
 alias python="/usr/bin/env python3"
 alias python3="/usr/bin/env python3.6"
-
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
 
 # TODO: Dafuq is this?????
 if [ -x /usr/bin/dircolors ]; then
