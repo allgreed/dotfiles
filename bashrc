@@ -95,49 +95,52 @@ fi
 
 # TODO: read the above carefully
 
-# Poor man's display manager xD
-######################################
-
+# Poor man's display manager xD #
 # TODO: Extract this to sperate file
 if [[ "$(tty)" == '/dev/tty1' ]]; then
 	    exec startx
 fi
 
-
-# Bashrc extenstions
-######################################
-
+# Bashrc extenstions #
 if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases #my custom aliases
+    source ~/.bash_aliases # my custom aliases
 fi
 
 if [ -f ~/.bash_prompt ]; then
     source ~/.bash_prompt # my fancy prompt
 fi
 
+# Vim integration #
+export VISUAL=vim
+export EDITOR=vim
 
-# TODO: Read the stuff below
+# Shell behaviour #
+set -o vi; # vim in bash
+stty -ixon # disable ctrl+s - no more accidental weird freezes
 
-# extend PATH
-PATH_LOCAL_BINARIES=/home/$(whoami)/.local/bin
+# PATH configuration #
+PATH_LOCAL_BINARIES=$HOME/.local/bin
 PATH_ROOT_BINARIES=/sbin/
 export PATH=$PATH_LOCAL_BINARIES:$PATH:$PATH_ROOT_BINARIES
 
-
-# Nvm utilities
+# NVM integration #
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. $NVM_DIR/nvm.sh --no-use  # This loads nvm
 
-# Vim, vim everywhere!
-export VISUAL=vim
-export EDITOR=vim
-set -o vi; # vim in bash
+if [ -s "$NVM_DIR"/nvm.sh ]; then
+    source $NVM_DIR/nvm.sh --no-use # Load nvm, but do not init any version
+fi
 
-stty -ixon # disable ctrl+s - no more accidental weird freezes
+# Autocompletes #
+if [ -s "$NVM_DIR"/bash_completion ]; then
+    source $NVM_DIR/bash_completion # This loads nvm bash_completion
+fi
 
-# autcompletes
-[ -s "$NVM_DIR/bash_completion" ] && \. $NVM_DIR/bash_completion  # This loads nvm bash_completion
-[ ! -z $(which kubectl) ] && source <(kubectl completion bash) # kubectl
-[ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git
-__git_complete g __git_main
+if [ ! -z $(which kubectl) ]; then
+    source <(kubectl completion bash)
+fi
+
+if [ -f /usr/share/bash-completion/completions/git ]; then
+    source /usr/share/bash-completion/completions/git
+    __git_complete g __git_main
+fi
 
