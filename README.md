@@ -20,9 +20,7 @@ test -e /usr/bin/ansible || (sudo apt-get update && sudo apt install -y ansible)
 
 ```sh
 git clone https://github.com/allgreed/dotfiles.git ~/Dotfiles
-cd ~/Dotfiles/ansible
-ansible-galaxy install -r requirements.yml --roles-path galaxy_roles
-./run
+~/Dotfiles/ansible/run
 ```
 
 ## Non-obvious folder structure

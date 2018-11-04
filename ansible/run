@@ -1,3 +1,7 @@
 #!/bin/bash
-ansible-playbook -K -l local -i inventory playbook.yml 
+ANSIBLE_LOCATION=~/Dotfiles/ansible
 
+echo "You will be prompted for sudo password soon"
+
+ansible-galaxy install -r $ANSIBLE_LOCATION/requirements.yml --roles-path $ANSIBLE_LOCATION/galaxy_roles
+ansible-playbook -K -l local -i $ANSIBLE_LOCATION/inventory $ANSIBLE_LOCATION/playbook.yml 

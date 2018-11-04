@@ -2,7 +2,7 @@
 .PHONY: main test prepare_test
 
 main: galaxy_roles
-	./run
+	ansible-playbook -K -l local -i inventory playbook.yml
 main-test: galaxy_roles
 	ansible-playbook  -K -l local -i inventory testbook.yml
 full-test: prepare-test test
