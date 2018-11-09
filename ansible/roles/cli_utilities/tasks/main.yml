@@ -16,3 +16,8 @@
     extra_args: --user
   with_items:
     - ptpython
+
+- name: install aptitude
+  package: name=aptitude state=latest
+  become: yes
+  when: ansible_os_family == 'Debian'
