@@ -23,6 +23,7 @@ alias python="/usr/bin/env python3"
 alias python3="/usr/bin/env python3.6"
 
 alias nodeon="nvm use default"
+alias tf="terraform"
 
 # TODO: Dafuq is this?????
 if [ -x /usr/bin/dircolors ]; then
