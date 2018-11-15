@@ -5,10 +5,12 @@
       dotfiles_repo: https://github.com/allgreed/dotfiles.git
       dotfiles_repo_push_url: git@github.com:allgreed/dotfiles.git
 
-    - role: docker
-
     - role: vim
     - role: cli_utilities
+
+# split this into 2 different playbooks -> full and cli -> maybe even include cli in full
+    - role: docker
+    - role: linuxbrew
 
     - role: x_utilities
 

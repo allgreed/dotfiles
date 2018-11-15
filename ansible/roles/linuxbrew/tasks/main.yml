@@ -1,0 +1,14 @@
+---
+
+- name: prepare Linuxbrew installation directory
+  file:
+    path: /home/linuxbrew
+    state: directory
+    owner: "{{ ansible_env.USER }}"
+  become: yes
+
+- name: install Linuxbrew from git
+  git:
+    repo: https://github.com/Linuxbrew/brew.git
+    dest: /home/linuxbrew/.linuxbrew
+    version: master
