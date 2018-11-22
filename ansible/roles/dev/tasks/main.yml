@@ -1,0 +1,23 @@
+---
+
+- name: install python devtools
+  pip:
+    name: "{{ item }}"
+    executable: pip3
+    extra_args: --user
+  with_items:
+    - ptpython # improved Python shell
+
+- name: install system packages
+  package: name={{ item }} state=latest
+  with_items:
+    - graphviz # graph visualization
+  become: yes
+
+- name: symlink .vimrc and .ideavimrc (for Jetbrains' software)
+  file:
+    src: ~/.vimrc
+    dest: ~/.ideavimrc
+    state: link
+
+# Install Pycharm, etc.
