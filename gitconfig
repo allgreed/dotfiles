@@ -49,7 +49,7 @@
     c = commit
 
     aa = add --all
-    ca = !git add --all && git commit
+    call = !git add --all && git commit
     co = checkout
     purge-branches = !git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches
 
