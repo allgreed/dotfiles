@@ -3,21 +3,13 @@
 - name: install system packages
   package: name={{ item }} state=latest
   with_items:
-    - tmux
-    - make
-    - htop
-    - ranger
+    - tmux # terminal multiplexer
+    - htop # process diagnostics
+    - ranger # file exploler
+    - make # build / script automation
   become: yes
 
-- name: install pip packages
-  pip:
-    name: "{{ item }}"
-    executable: pip3
-    extra_args: --user
-  with_items:
-    - ptpython
-
-- name: install aptitude
+- name: install aptitude on Debian-based systems
   package: name=aptitude state=latest
   become: yes
   when: ansible_os_family == 'Debian'

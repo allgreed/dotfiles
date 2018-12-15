@@ -1,5 +1,11 @@
 ---
 
+- name: install system packages
+  package: name={{ item }} state=latest
+  with_items:
+    - graphviz # graph visualization
+  become: yes
+
 - name: install python devtools
   pip:
     name: "{{ item }}"
@@ -7,12 +13,7 @@
     extra_args: --user
   with_items:
     - ptpython # improved Python shell
-
-- name: install system packages
-  package: name={{ item }} state=latest
-  with_items:
-    - graphviz # graph visualization
-  become: yes
+    - BlastRadius # Terraform graphs exploration tool
 
 - name: symlink .vimrc and .ideavimrc (for Jetbrains' software)
   file:
