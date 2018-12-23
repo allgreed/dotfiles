@@ -1,4 +1,5 @@
 [global_config]
+  dbus = False
   extra_styling = False
   focus = system
   homogeneous_tabbar = False
