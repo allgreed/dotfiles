@@ -7,6 +7,10 @@
     - htop # process diagnostics
     - ranger # file exploler
     - make # build / script automation
+    - net-tools
+    - network-manager
+
+    - ncftp # improved FTP client
   become: yes
 
 - name: install aptitude on Debian-based systems
