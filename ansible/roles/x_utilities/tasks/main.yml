@@ -3,11 +3,12 @@
 - name: install system packages
   package: name={{ item }} state=latest
   with_items:
+    - xorg
     - i3 # Window manager
     - i3blocks
+    - xcape # Ctrl => ESC | Ctrl
     - terminator # Terminal emulator
     - screenkey # Displays pressed keys, cool for presentations
-    - xcape # Ctrl => ESC | Ctrl
   become: yes
 
 - name: install Source Code Pro font
