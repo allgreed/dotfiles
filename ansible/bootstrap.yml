@@ -8,4 +8,3 @@
     - name: install latest ansible
       pip:
         name: ansible
-      become: yes 
