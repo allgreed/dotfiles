@@ -1,0 +1,3 @@
+---
+- name: reload font cache for Source Code Pro
+  command: fc-cache -f -v ~/.local/share/fonts/source-code-pro

@@ -10,3 +10,13 @@
     - xcape # Ctrl => ESC | Ctrl
   become: yes
 
+- name: install Source Code Pro font
+  git:
+    repo: https://github.com/adobe-fonts/source-code-pro.git
+    dest: ~/.local/share/fonts/source-code-pro
+    depth: 1
+    version: release
+    force: true
+  notify:
+    - reload font cache for Source Code Pro
+  # TODO: https://github.com/adobe-fonts/source-code-pro/issues/17#issuecomment-332018295 <- do this in a better way
