@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+    - name: install pip
+      package: name=python-pip state=latest
+      become: yes 
+
+    - name: install latest ansible
+      pip:
+        name: ansible
+      become: yes 
