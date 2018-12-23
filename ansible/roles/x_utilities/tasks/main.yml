@@ -3,6 +3,8 @@
 - name: install system packages
   package: name={{ item }} state=latest
   with_items:
+    - i3 # Window manager
+    - i3blocks
     - terminator # Terminal emulator
     - screenkey # Displays pressed keys, cool for presentations
     - xcape # Ctrl => ESC | Ctrl
