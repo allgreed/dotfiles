@@ -45,7 +45,3 @@
   command: "{{ dotfiles_binary }} --sync --force"
   when: dotfiles_check_result.stdout
 
-- name: install terminator
-  package: name=terminator state=latest
-  become: yes
-
