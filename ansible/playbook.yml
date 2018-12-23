@@ -9,7 +9,11 @@
     - role: cli_utilities
 
 # split this into 2 different playbooks -> full and cli -> maybe even include cli in full
-    - role: docker
+    - role: geerlingguy.docker
+      docker_users:
+        - "{{ ansible_env.USER }}"
+      docker_package_state: latest
+      become: yes
     - role: linuxbrew
 
     - role: x_utilities
