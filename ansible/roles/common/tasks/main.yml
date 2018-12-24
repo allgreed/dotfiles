@@ -11,6 +11,7 @@
     - htop # process diagnostics
     - ranger # file exploler
     - make # build / script automation
+    - curl 
     - net-tools
     - network-manager
 
