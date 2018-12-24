@@ -1,8 +1,12 @@
 ---
-
 - name: install system packages
   package: name={{ item }} state=latest
   with_items:
+    - git
+    - python3
+    - python3-pip
+
+    - vim-gtk # vim with scripting languages and X11 integration
     - tmux # terminal multiplexer
     - htop # process diagnostics
     - ranger # file exploler
@@ -13,7 +17,9 @@
     - ncftp # improved FTP client
   become: yes
 
-- name: install aptitude on Debian-based systems
-  package: name=aptitude state=latest
-  become: yes
-  when: ansible_os_family == 'Debian'
+- include_tasks: dotfiles.yml
+
+- include_tasks: system/main.yml
+- include_tasks: linuxbrew.yml
+
+- include_tasks: vim.yml

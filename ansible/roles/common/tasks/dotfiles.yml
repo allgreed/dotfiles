@@ -1,15 +1,4 @@
 ---
-- name: install git - in order to clone Dotfiles repository
-  package: name=git state=latest
-  become: yes
-
-- name: install python3 and pip3 - as a dependency of dotfiles
-  package: name={{ item }} state=latest
-  with_items:
-    - python3
-    - python3-pip
-  become: yes
-
 - name: install dotfiles
   pip:
     name: dotfiles
@@ -44,4 +33,3 @@
 - name: sync my Dotfiles
   command: "{{ dotfiles_binary }} --sync --force"
   when: dotfiles_check_result.stdout
-

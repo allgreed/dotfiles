@@ -1,9 +1,4 @@
 ---
-
-- name: install Vim with scripting languages support and X11
-  package: name=vim-gtk state=latest
-  become: yes
-
 - name: ensure .vim directories
   file:
     path: "{{ item }}"
@@ -23,7 +18,7 @@
   # since the last commit was in 2011 I've decided to vendor-in this one
   copy:
     dest: ~/.vim/colors/solarized.vim
-    src: solarized.vim
+    src: vim/solarized.vim
 
 - name: gather installed plugins information
   command: ls ~/.vim/bundle -1

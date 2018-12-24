@@ -1,0 +1,5 @@
+- name: install system packages
+  package: name={{ item }} state=latest
+  with_items:
+    - aptitude # improved apt :D
+  become: yes
