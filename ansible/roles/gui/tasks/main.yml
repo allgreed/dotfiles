@@ -19,6 +19,14 @@
 
   become: yes
 
+- name: install contrib i3blocks scripts
+  git:
+    repo: https://github.com/vivien/i3blocks-contrib
+    dest: /opt/i3blocks
+    depth: 1
+    version: master
+  become: yes
+
 - name: install Source Code Pro font
   git:
     repo: https://github.com/adobe-fonts/source-code-pro.git
