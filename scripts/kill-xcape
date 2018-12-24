@@ -1,0 +1,2 @@
+#!/bin/sh
+ps ax | grep [x]cape | cut -d' ' -f 2 | xargs kill
