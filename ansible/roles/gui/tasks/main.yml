@@ -6,6 +6,7 @@
     - xorg
     - i3 # Window manager
     - i3blocks
+    - fonts-font-awesome # Icons for i3bar
     - xcape # Ctrl => ESC | Ctrl
     - terminator # Terminal emulator
 
@@ -13,6 +14,9 @@
     - feh # Vim-like picture viewer
     - arandr # GUI for xrandr
     - scrot # Screenshot utility
+
+    - weechat # IRC
+
   become: yes
 
 - name: install Source Code Pro font

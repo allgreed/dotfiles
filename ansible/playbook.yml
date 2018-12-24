@@ -15,6 +15,7 @@
     - role: bare_metal
 
 
-    - role: x_utilities
-    - role: chat
+    - role: gui
+
+
     - role: dev
