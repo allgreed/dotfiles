@@ -1,0 +1,89 @@
+MUST:
+- vim : toml syntax plugin
+
+- deprecation warning -> pip
+- fix inputing password twice
+ 
+- remove iceweasell, install firefox
+ 
+- https://wiki.debian.org/DebianUnstable#What_are_some_best_practices_for_testing.2Fsid_users.3F
+- https://journalxtra.com/linux/desktop-recovery/the-definitive-guide-to-getting-your-linux-desktop-back/
+    - put it on terminator and Trello
+ 
+- what to do about differnt interface names? wls1 vs wlp3s0
+ 
+- fix Super + Enter
+ 
+- ansible for upgrade to debian testing?
+    - change /etc/list.soures from stretch to testing
+    - remove security and updates
+    - apt update
+    - apt upgrade
+    - test !!!
+ 
+ 
+- tag everything (maybe use ansible blocks) ? :d
+ 
+FUTURE:
+- fix pango markup on i3bar / i3blocks!!!
+---
+
+sudo
+add allgreed to sudoers
+    vi /etc/sudoers
+    add: allgreed   ALL = (ALL)    ALL
+
+---
+- tinyurl na mojej domenie do instalowania rzeczy -> coby nie trzeba było przepisywać url, etc.
+---
+
+---
+
+- ncftp
+
+
+---
+
+https://docs.ansible.com/ansible/latest/modules/homebrew_module.html
+
+- make => cli utils vs. dev ?
+
+- resolvconf - package + DNS configs - prefer openNIC
+- tldr (via linuxbrew)
+
+- whois package
+
+- ramdisc !
+
+- linuxbrew => installing packages
+
+- elixir, nvm (with aliases), shellcheck, gdb
+- live-server, yarn, livedown
+
+// how to test this ???
+- GUI == workrave
+
+- PyCharm (community / professional) + InteliJ (community)
+
+- Firefox & Rambox: (+ Thunderbird ???)
+    - how to store my configs?
+
+- https://github.com/wee-slack/wee-slack
+[after figuring this out]
+
+SHOULD:
+- better terminal emulator
+- disable instalation of Docker-compose by the docker role, instead install gofish and install docker-compose with it // use pip
+- zgrepować i rozwiązać TODOsy
+
+COULD:
+- add playbooks to bootstrap ansible targets
+- incorporate ansible testing stuff ? == makefile?
+- vim update: count entries in (:PluginList - 1) and check if that matches directory count in ~/.vim/bundle
+- {{ ansible_env.HOME }} vs ~
+- add sensible cache renewall policy (like 1h) to speed up execution - is speed an issue?
+
+WOULD:
+- przejrzeć butlowe programy
+- https://github.com/chusiang/vim-and-vi-mode.ansible.role/blob/master/tasks/main.yml
+- https://github.com/chusiang/vim-and-vi-mode.ansible.role/blob/master/tasks/use-apt.yml
