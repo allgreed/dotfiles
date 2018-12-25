@@ -4,6 +4,9 @@ MUST:
 - deprecation warning -> pip
 - fix inputing password twice
  
+SECURITY:
+https://events.ccc.de/congress/2018/wiki/index.php/Static:Information_Security#Introduction
+
 - remove iceweasell, install firefox
  
 - https://wiki.debian.org/DebianUnstable#What_are_some_best_practices_for_testing.2Fsid_users.3F
