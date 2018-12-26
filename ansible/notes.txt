@@ -1,8 +1,4 @@
 MUST:
- 
-
-SECURITY:
-https://events.ccc.de/congress/2018/wiki/index.php/Static:Information_Security#Introduction
 
 - importing openvpn configuration into network manager
 
@@ -14,39 +10,10 @@ https://events.ccc.de/congress/2018/wiki/index.php/Static:Information_Security#I
 - https://journalxtra.com/linux/desktop-recovery/the-definitive-guide-to-getting-your-linux-desktop-back/
     - put it on terminator and Trello
  
-- ansible for upgrade to debian testing?
-    - change /etc/list.soures from stretch to testing
-    - remove security and updates
-    - apt update
-    - apt upgrade
-    - test !!!
- 
- 
-- tag everything (maybe use ansible blocks) ? :d
- 
 FUTURE:
 - fix pango markup on i3bar / i3blocks!!!
----
-
-sudo
-add allgreed to sudoers
-    vi /etc/sudoers
-    add: allgreed   ALL = (ALL)    ALL
-
----
-- tinyurl na mojej domenie do instalowania rzeczy -> coby nie trzeba było przepisywać url, etc.
----
-
----
-
-- ncftp
-
-
----
 
 https://docs.ansible.com/ansible/latest/modules/homebrew_module.html
-
-- make => cli utils vs. dev ?
 
 - resolvconf - package + DNS configs - prefer openNIC
 - tldr (via linuxbrew)
@@ -71,7 +38,26 @@ https://docs.ansible.com/ansible/latest/modules/homebrew_module.html
 - https://github.com/wee-slack/wee-slack
 [after figuring this out]
 
+SECURITY:
+https://events.ccc.de/congress/2018/wiki/index.php/Static:Information_Security#Introduction
+
+- ansible for upgrade to debian testing?
+    - change /etc/list.soures from stretch to testing
+    - remove security and updates
+    - apt update
+    - apt upgrade
+    - test !!!
+ 
+- tag everything (maybe use ansible blocks) ? :d
+ 
 SHOULD:
+- sudo
+- add allgreed to sudoers (allgreed == ideally current user -> to the bootstrap)
+    vi /etc/sudoers
+    add: allgreed   ALL = (ALL)    ALL
+
+- tinyurl na mojej domenie do instalowania rzeczy -> coby nie trzeba było przepisywać url, etc.
+
 - better terminal emulator
 - disable instalation of Docker-compose by the docker role, instead install gofish and install docker-compose with it // use pip
 - zgrepować i rozwiązać TODOsy

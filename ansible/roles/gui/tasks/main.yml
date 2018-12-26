@@ -10,6 +10,7 @@
     - xcape # Ctrl => ESC | Ctrl
     - terminator # Terminal emulator
 
+    - imagemagick # contains `convert` package, a dependency of my fancy lock script
     - screenkey # Displays pressed keys, cool for presentations
     - feh # Vim-like picture viewer
     - arandr # GUI for xrandr
@@ -17,6 +18,13 @@
 
     - weechat # IRC
 
+  become: yes
+
+- name: ensure tmp storage for `lock.sh`
+  file:
+    path: /mnt/ramdisk
+    state: directory
+    recurse: yes
   become: yes
 
 # TODO: Plan on which browser package is avaible and then simply execute the plan
