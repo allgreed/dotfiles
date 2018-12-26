@@ -1,0 +1,8 @@
+---
+- name: download configs for Nordvpn
+  unarchive:
+    src: https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
+    dest: /etc/openvpn
+    remote_src: yes
+    creates: /etc/openvpn/ovpn_tcp
+  become: yes

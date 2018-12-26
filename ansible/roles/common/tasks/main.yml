@@ -13,8 +13,11 @@
     - make # build / script automation
     - curl 
     - net-tools
+    - unzip
+
     - network-manager
 
+    - openvpn
     - ncftp # improved FTP client
   become: yes
 
@@ -22,5 +25,6 @@
 
 - include_tasks: system/main.yml
 - include_tasks: linuxbrew.yml
+- include_tasks: vpn.yml
 
 - include_tasks: vim.yml
