@@ -4,7 +4,7 @@
 #~/aliases/volume mstat > /tmp/muted 
 
 # in mem path
-screen_path="/mnt/ramdisk/screen.png"
+screen_path="/media/ramdisk/screen-dump.png"
 
 # does a screenshot
 scrot -z $screen_path

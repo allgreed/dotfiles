@@ -20,13 +20,6 @@
 
   become: yes
 
-- name: ensure tmp storage for `lock.sh`
-  file:
-    path: /mnt/ramdisk
-    state: directory
-    recurse: yes
-  become: yes
-
 # TODO: Plan on which browser package is avaible and then simply execute the plan
 
 - name: install sensible browser

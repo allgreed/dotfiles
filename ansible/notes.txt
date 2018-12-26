@@ -1,5 +1,4 @@
 MUST:
-
 - importing openvpn configuration into network manager
 
 - fix Super + Enter
@@ -19,8 +18,6 @@ https://docs.ansible.com/ansible/latest/modules/homebrew_module.html
 - tldr (via linuxbrew)
 
 - whois package
-
-- ramdisc !
 
 - linuxbrew => installing packages
 
