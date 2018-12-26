@@ -19,6 +19,20 @@
 
   become: yes
 
+# TODO: Plan on which browser package is avaible and then simply execute the plan
+
+- name: install sensible browser
+  block:
+    - name: install firefox
+      package: name=firefox-esr state=latest
+
+    - name: remove iceweasel
+      package: name=iceweasel state=absent
+  rescue:
+    - name: ensure iceweasel is installed
+      package: name=iceweasel state=present
+  become: yes
+
 - name: install contrib i3blocks scripts
   git:
     repo: https://github.com/vivien/i3blocks-contrib
