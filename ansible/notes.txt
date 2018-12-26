@@ -2,6 +2,8 @@ MUST:
 - importing openvpn configuration into network manager
 
 - fix Super + Enter
+    - something to do with newer tmux and the commands not working as expected -> this needs some time.
+    - nuke this commit afterwards
 
 - vim : toml syntax plugin
 

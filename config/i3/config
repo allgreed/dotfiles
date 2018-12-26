@@ -18,7 +18,7 @@ font pango:Source Code Pro Medium 10px
 set $launch_terminal i3-sensible-terminal
 
 set $tmux i3-sensible-terminal -e "$HOME/Dotfiles/scripts/run-tmux.sh"
-set $tmux-tmp i3-sensible-terminal -e "$HOME/Dotfiles/scripts/run-tmux-tmp.sh"
+set $tmux-tmp i3-sensible-terminal
 
 ########################################
 # Names
