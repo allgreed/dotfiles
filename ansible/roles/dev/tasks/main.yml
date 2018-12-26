@@ -8,12 +8,11 @@
 
 - name: install python devtools
   pip:
-    name: "{{ item }}"
+    name:
+      - ptpython # improved Python shell
+      - BlastRadius # Terraform graphs exploration tool
     executable: pip3
     extra_args: --user
-  with_items:
-    - ptpython # improved Python shell
-    - BlastRadius # Terraform graphs exploration tool
 
 - name: symlink .vimrc and .ideavimrc (for Jetbrains' software)
   file:
