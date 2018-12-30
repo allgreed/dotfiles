@@ -7,6 +7,12 @@ MUST:
 
 - vim : toml syntax plugin
 
+vpn autoconnect
+https://sourceforge.net/projects/vpnautoconnect/
+
+[device]
+wifi.scan-rand-mac-address=no
+
 - https://wiki.debian.org/DebianUnstable#What_are_some_best_practices_for_testing.2Fsid_users.3F
 - https://journalxtra.com/linux/desktop-recovery/the-definitive-guide-to-getting-your-linux-desktop-back/
     - put it on terminator and Trello
