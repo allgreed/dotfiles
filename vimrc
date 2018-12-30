@@ -47,6 +47,7 @@ Plugin 'posva/vim-vue'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'hashivim/vim-terraform'
+Plugin 'cespare/vim-toml'
 
 call vundle#end()
 filetype plugin indent on 

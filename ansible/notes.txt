@@ -5,8 +5,6 @@ MUST:
     - something to do with newer tmux and the commands not working as expected -> this needs some time.
     - nuke this commit afterwards 551d11068a0fa66b007783038e0ba6011373aa2a
 
-- vim : toml syntax plugin
-
 vpn autoconnect
 https://sourceforge.net/projects/vpnautoconnect/
 
