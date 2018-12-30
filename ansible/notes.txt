@@ -3,7 +3,7 @@ MUST:
 
 - fix Super + Enter
     - something to do with newer tmux and the commands not working as expected -> this needs some time.
-    - nuke this commit afterwards
+    - nuke this commit afterwards 551d11068a0fa66b007783038e0ba6011373aa2a
 
 - vim : toml syntax plugin
 
@@ -18,7 +18,6 @@ wifi.scan-rand-mac-address=no
     - put it on terminator and Trello
  
 FUTURE:
-- fix pango markup on i3bar / i3blocks!!!
 
 https://docs.ansible.com/ansible/latest/modules/homebrew_module.html
 
@@ -43,19 +42,10 @@ https://docs.ansible.com/ansible/latest/modules/homebrew_module.html
 - https://github.com/wee-slack/wee-slack
 [after figuring this out]
 
-SECURITY:
-https://events.ccc.de/congress/2018/wiki/index.php/Static:Information_Security#Introduction
-
-- ansible for upgrade to debian testing?
-    - change /etc/list.soures from stretch to testing
-    - remove security and updates
-    - apt update
-    - apt upgrade
-    - test !!!
- 
 - tag everything (maybe use ansible blocks) ? :d
  
 SHOULD:
+[ initial setup ]
 - sudo
 - add allgreed to sudoers (allgreed == ideally current user -> to the bootstrap)
     vi /etc/sudoers
@@ -63,10 +53,19 @@ SHOULD:
 
 - tinyurl na mojej domenie do instalowania rzeczy -> coby nie trzeba było przepisywać url, etc.
 
+- ansible for upgrade to debian testing?
+    - change /etc/list.soures from stretch to testing
+    - remove security and updates
+    - apt update
+    - apt upgrade
+    - test !!!
+
+- fix pango markup on i3bar / i3blocks!!!
 - better terminal emulator
 - disable instalation of Docker-compose by the docker role, instead install gofish and install docker-compose with it // use pip
 - zgrepować i rozwiązać TODOsy
 - fix inputing password twice - na bootstrapie i na playbooku
+- https://events.ccc.de/congress/2018/wiki/index.php/Static:Information_Security#Introduction
 
 COULD:
 - add playbooks to bootstrap ansible targets

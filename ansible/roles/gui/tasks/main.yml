@@ -9,14 +9,19 @@
     - fonts-font-awesome # Icons for i3bar
     - xcape # Ctrl => ESC | Ctrl
     - terminator # Terminal emulator
+    - pulseaudio # I know it's technically not related to x ;)
 
     - imagemagick # contains `convert` package, a dependency of my fancy lock script
     - screenkey # Displays pressed keys, cool for presentations
     - feh # Vim-like picture viewer
     - arandr # GUI for xrandr
     - scrot # Screenshot utility
+    - pavucontrol # Volume control - TODO: Consider dropping in favour of alsamixer
+    - alsa-utils # Volume control
 
     - weechat # IRC
+    - vlc # media player
+    - evince # PDF reader
 
   become: yes
 
