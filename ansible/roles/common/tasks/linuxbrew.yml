@@ -12,3 +12,4 @@
     repo: https://github.com/Linuxbrew/brew.git
     dest: /home/linuxbrew/.linuxbrew
     version: master
+  ignore_errors: yes # TODO: fix this idempotence issue - the task fails if linuxbrew is allready installed
