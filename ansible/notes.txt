@@ -17,6 +17,9 @@ wifi.scan-rand-mac-address=no
  
 FUTURE:
 
+Swap left and right mouse button:
+    xmodmap -e "pointer = 3 2 1"
+
 https://docs.ansible.com/ansible/latest/modules/homebrew_module.html
 
 - resolvconf - package + DNS configs - prefer openNIC
