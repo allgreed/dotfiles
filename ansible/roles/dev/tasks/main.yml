@@ -6,7 +6,7 @@
     - graphviz # graph visualization
     - gdb # C / C++ debugger
     - python3-venv
-    - python-venv
+    - python-virtualenv
   become: yes
 
 - name: install python devtools
