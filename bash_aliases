@@ -36,3 +36,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
+transfer()
+{
+    curl --upload-file $1 https://transfer.sh/$(basename $1); printf "\n"
+}
