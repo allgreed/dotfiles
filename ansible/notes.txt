@@ -1,4 +1,6 @@
 MUST:
+- separate hack-ish stuff from common (libre DNS, etc.)
+
 - importing openvpn configuration into network manager
 
 - fix Super + Enter
