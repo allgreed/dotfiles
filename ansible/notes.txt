@@ -29,14 +29,10 @@ https://docs.ansible.com/ansible/latest/modules/homebrew_module.html
 
 - whois package
 
-- linuxbrew => installing packages
-
 - elixir, nvm (with aliases), shellcheck, gdb
 - live-server, yarn, livedown
 
 // how to test this ???
-- GUI == workrave
-
 - PyCharm (community / professional) + InteliJ (community)
 
 - Firefox & Rambox: (+ Thunderbird ???)
