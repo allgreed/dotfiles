@@ -42,6 +42,8 @@ https://docs.ansible.com/ansible/latest/modules/homebrew_module.html
 - Firefox & Rambox: (+ Thunderbird ???)
     - how to store my configs?
 
+- mopidy + mopidy-spotify + vitunes ???
+
 - https://github.com/wee-slack/wee-slack
 [after figuring this out]
 

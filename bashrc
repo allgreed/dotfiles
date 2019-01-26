@@ -89,20 +89,14 @@ source ~/.bash_utilities
 load ~/.bash_dm # minimal display manager
 
 # Env
-LINUXBREW_PREFIX=/home/linuxbrew/.linuxbrew
 export NVM_DIR="$HOME/.nvm"
 
 PATH_LOCAL_BINARIES=$HOME/.local/bin
 PATH_ROOT_BINARIES=/sbin/
-PATH_LINUXBREW=$LINUXBREW_PREFIX/bin
-export PATH=$PATH_LINUXBREW:$PATH_LOCAL_BINARIES:$PATH:$PATH_ROOT_BINARIES
-
+export PATH=$PATH_LOCAL_BINARIES:$PATH:$PATH_ROOT_BINARIES
 
 export VISUAL=vim
 export EDITOR=vim
-export MANPATH="$LINUXBREW_PREFIX/share/man:$MANPATH"
-export INFOPATH="$$LINUXBREW_PREFIX/share/info:$INFOPATH"
-
 
 # Extensions
 load ~/.bash_aliases # my custom aliases
