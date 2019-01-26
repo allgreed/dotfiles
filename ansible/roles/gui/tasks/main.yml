@@ -29,7 +29,12 @@
 - name: install sensible browser
   block:
     - name: install firefox
-      package: name=firefox state=latest
+      block:
+        - name: install latest firefox
+          package: name=firefox state=latest
+      rescue:
+        - name: install some firefox
+          package: name=firefox state=present
 
     - name: remove firefox-esr
       package: name=firefox-esr state=absent
