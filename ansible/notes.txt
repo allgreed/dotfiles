@@ -29,11 +29,11 @@ https://docs.ansible.com/ansible/latest/modules/homebrew_module.html
 
 - whois package
 
-- elixir, nvm (with aliases), shellcheck, gdb
+- nvm (with aliases)
 - live-server, yarn, livedown
 
 // how to test this ???
-- PyCharm (community / professional) + InteliJ (community)
+- PyCharm (community / professional)
 
 - Firefox & Rambox: (+ Thunderbird ???)
     - how to store my configs?
