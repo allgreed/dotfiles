@@ -25,12 +25,14 @@ Swap left and right mouse button:
 https://docs.ansible.com/ansible/latest/modules/homebrew_module.html
 
 - resolvconf - package + DNS configs - prefer openNIC
-- tldr (via linuxbrew)
 
 - whois package
 
+npm-ish:
+- latest npm globally
 - nvm (with aliases)
 - live-server, yarn, livedown
+- tldr
 
 // how to test this ???
 - PyCharm (community / professional)
@@ -62,7 +64,8 @@ SHOULD:
     - test !!!
 
 - fix pango markup on i3bar / i3blocks!!!
-- better terminal emulator
+- better terminal emulator - uxrvt ? st ? ???
+    - I need: terminal, solarized dark, my font + link highlighting
 - disable instalation of Docker-compose by the docker role, instead install gofish and install docker-compose with it // use pip
 - zgrepować i rozwiązać TODOsy
 - fix inputing password twice - na bootstrapie i na playbooku
