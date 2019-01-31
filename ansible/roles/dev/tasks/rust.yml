@@ -1,0 +1,32 @@
+- name: Stat rustup binary
+  stat:
+    path: ~/.cargo/bin/rustup
+  register: rustup
+
+- set_fact:
+    rustup_is_installed: "{{ rustup.stat.exists }}"
+    random_string: "{{ (999999999999999999999 | random | string + (lookup('pipe', 'date +%s%N'))) | to_uuid() }}"
+
+- name: install Rust (+toolchain)
+  block:
+    - name: Download rustup installation script
+      get_url:
+        url: https://sh.rustup.rs 
+        checksum: sha512:a7cf4cf78295a6dcc9bf229527c744250e850690a91c31e2a8efc7f698e50e9b318ae6f6ed46d06d95ff0e259f4878b8c0245961a16131cf7cc11db90ce5a94e
+        dest: "/tmp/{{ random_string }}"
+        mode: u+x
+      register: rustup_installation_script
+
+    - name: Execute the installation script
+      command: 
+      args:
+        argv:
+          - "{{ rustup_installation_script.dest | quote }}"
+          - "-y"
+          - "--no-modify-path"
+  when: not rustup_is_installed
+
+- name: Attempt rust update
+  command: ~/.cargo/bin/rustup update
+  register: rustup_update_attempt
+  changed_when: "'unchanged' not in rustup_update_attempt.stdout"

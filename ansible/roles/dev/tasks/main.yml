@@ -38,3 +38,5 @@
     state: link
 
 # Install Pycharm, etc.
+
+# - include_tasks: rust.yml
