@@ -220,6 +220,7 @@ exec ~/.fehbg
 # Deamons
 exec unclutter
 exec pulseaudio --start
+exec conky
 
 # Helpers
 exec workrave
