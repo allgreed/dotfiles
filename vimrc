@@ -30,6 +30,8 @@ set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Treat 4 spaces as single TAB
 set expandtab       " Expand TABs to spaces
 
+set nrformats-=octal " I don't work with octal literals really
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
