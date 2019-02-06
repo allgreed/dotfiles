@@ -39,4 +39,4 @@
 
 # Install Pycharm, etc.
 
-# - include_tasks: rust.yml
+- include_tasks: rust.yml
