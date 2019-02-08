@@ -25,6 +25,9 @@ alias python3="/usr/bin/env python3.6"
 alias nodeon="nvm use default"
 alias tf="terraform"
 
+# temporary thing I have to run on every startup on 2 of my machines, will automate it soon!
+alias start="cat ~/Dotfiles/ansible/notes.txt | grep xmod | bash; ~/.scripts/kill-xcape; xcape"
+
 # TODO: Dafuq is this?????
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
