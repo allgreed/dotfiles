@@ -71,7 +71,7 @@ noh " don't show search highlights on vimrc reload
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set clipboard=unnamedplus " Use system clipboard as default buffer
-set visualbell " Disable this shitty bell sound (mostly Jet Brains' IDEs + VIM emulator
+set novisualbell " Disable this shitty bell sound (mostly Jet Brains' IDEs + VIM emulator)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Preloaded macros
