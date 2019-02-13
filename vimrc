@@ -42,6 +42,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'Yggdroot/indentLine'
 
 " Syntax highlighters
 Plugin 'leafgarland/typescript-vim'
@@ -110,3 +111,7 @@ set ttimeoutlen=10
 "set term=xterm-256color
 autocmd! BufWritePost ~/.vimrc nested :source ~/.vimrc
 set history=100
+
+let g:indentLine_char = '¦'
+let g:indentline_setcolors = 0
+let g:indentLine_color_term = 240
