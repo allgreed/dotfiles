@@ -11,6 +11,7 @@
     - terminator # Terminal emulator
     - pulseaudio # I know it's technically not related to x ;)
     - conky-all # Fancy stuff on desktop
+    - redshift-gtk # Reduce red light
 
     - imagemagick # contains `convert` package, a dependency of my fancy lock script
     - screenkey # Displays pressed keys, cool for presentations

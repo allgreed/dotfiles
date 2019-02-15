@@ -224,6 +224,7 @@ exec conky
 
 # Helpers
 exec workrave
+exec redshift-gtk -c ~/.redshift.conf
 
 exec rambox
 exec firefox
