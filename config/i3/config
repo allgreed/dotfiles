@@ -229,6 +229,13 @@ exec rambox
 exec firefox
 
 ########################################
+# Misc / EE
+#########################################
+# this is additional security layer if I accidentally leave my computer unlocked
+# someone unfamiliar with i3 might press Ctrl+Alt+t in order to start terminal and do something
+bindsym Mod1+Control+t exec ~/.scripts/lock.sh
+
+########################################
 # Screenshoting
 #########################################
 
@@ -250,5 +257,6 @@ bindsym $mod+less move workspace to output left
 
 #######
 # Testing
+#######
 
 exec xcape # Ctrl => ESC | Ctrl (and CapsLock is already set to ESC via xkb)
