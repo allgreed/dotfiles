@@ -1,20 +1,16 @@
 -- vim: ts=4 sw=4 noet ai cindent syntax=lua
 conky.config = {
+	-- placement
     alignment = 'top_right',
-
     gap_x = 20,
     gap_y = 20,
 
-    own_window = true,
-    own_window_class = 'Conky',
-    own_window_type = 'override',
     double_buffer = true,
 
-    own_window_argb_visual = true,
-    own_window_argb_value = 125,
-
-    draw_borders = true,
-    border_width = 1,
+    own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 
     -- tu skończyłem
     background = false,
@@ -26,12 +22,11 @@ conky.config = {
     font = 'DejaVu Sans Mono:size=12',
     minimum_height = 5,
 	minimum_width = 5,
-    --maximum_height = 10,
     net_avg_samples = 2,
     update_interval = 1.0,
     use_spacer = 'none',
 }
 
 conky.text = [[
-${exec ls ~/Desktop}
+${exec ls ~/Desktop | head -n 35; echo "…"}
 ]]
