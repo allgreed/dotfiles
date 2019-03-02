@@ -56,6 +56,13 @@
     version: master
   become: yes
 
+- name: install helpers for GUI scripts
+  pip:
+    name:
+      - click # Python command line framework
+    executable: pip3
+    extra_args: --user
+
 - name: install Source Code Pro font
   git:
     repo: https://github.com/adobe-fonts/source-code-pro.git

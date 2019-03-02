@@ -243,7 +243,7 @@ bindsym Mod1+Control+t exec ~/.scripts/lock.sh
 set $screenshot scrot "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" --exec "mv \$f ~/Shots"
 
 bindsym Print exec $screenshot
-bindsym --release Shift+Print exec exec $screenshot --select
+bindsym --release Shift+Print exec $screenshot --select
 
 ########################################
 # Init
@@ -252,7 +252,15 @@ bindsym --release Shift+Print exec exec $screenshot --select
 # this is for my T420 - I have scandinavic keyboard with >< character at the expense of left Shift
 exec xmodmap -e "keycode 94 = Shift_L"
 
-#############
+########################################
+# Sound
+#########################################
+
+bindsym XF86AudioMicMute exec "~/.scripts/mic.py toggle"
+
+########################################
+# ???
+#########################################
 bindsym $mod+greater move workspace to output right
 bindsym $mod+less move workspace to output left
 
