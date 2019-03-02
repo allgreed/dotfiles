@@ -92,7 +92,7 @@ load ~/.bash_dm # minimal display manager
 export NVM_DIR="$HOME/.nvm"
 
 PATH_LOCAL_BINARIES=$HOME/.local/bin
-PATH_ROOT_BINARIES=/sbin/
+PATH_ROOT_BINARIES=/sbin/:/usr/sbin
 PATH_RUST_BINARIES=$HOME/.cargo/bin
 export PATH=$PATH_LOCAL_BINARIES:$PATH:$PATH_ROOT_BINARIES:$PATH_RUST_BINARIES
 
