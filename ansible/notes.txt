@@ -19,6 +19,8 @@ wifi.scan-rand-mac-address=no
  
 FUTURE:
 
+apt - etherwake
+
 Swap left and right mouse button:
     xmodmap -e "pointer = 3 2 1"
 

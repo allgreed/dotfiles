@@ -7,8 +7,6 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # JetBrains' IDEs
-alias charm="charm . &"
-alias idea="/opt/idea-IC-182.4892.20/bin/idea.sh &"
 
 # Git
 alias gs="git s"
@@ -22,11 +20,26 @@ alias python2="/usr/bin/env python"
 alias python="/usr/bin/env python3"
 alias python3="/usr/bin/env python3.6"
 
-alias nodeon="nvm use default"
 alias tf="terraform"
+
+transfer()
+{
+    curl --upload-file $1 https://transfer.sh/$(basename $1); printf "\n"
+}
+
+##############
+# WIP
+##############
 
 # temporary thing I have to run on every startup on 2 of my machines, will automate it soon!
 alias start="cat ~/Dotfiles/ansible/notes.txt | grep xmod | bash; ~/.scripts/kill-xcape; xcape"
+
+# this should be standardized once my PyCharm installations are automated
+alias charm="charm . &"
+alias idea="/opt/idea-IC-182.4892.20/bin/idea.sh &"
+
+# node should be loaded by default to every shell, but without startup time overhead
+alias nodeon="nvm use default"
 
 # TODO: Dafuq is this?????
 if [ -x /usr/bin/dircolors ]; then
@@ -40,7 +53,5 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-transfer()
-{
-    curl --upload-file $1 https://transfer.sh/$(basename $1); printf "\n"
-}
+# containerized :D
+alias go='docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.11 go'
