@@ -20,7 +20,7 @@ def cli():
 def make_simple_command(action):
     @click.command()
     def command():
-        subprocess.run(action, shell=True, check=True)
+        subprocess.run(action, shell=True, check=True, stdout=subprocess.PIPE)
 
     return command
 
