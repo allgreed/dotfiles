@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+# depends on pactl package
+"""Control speakers volume"""
+
+import subprocess
+from functools import partial
+
+import click
+
+
+spawn = partial(subprocess.run, shell=True, check=True, stdout=subprocess.PIPE)
+
+simple_commands = {
+    "mute": "pactl set-sink-mute 0 1",
+    "unmute": "pactl set-sink-mute 0 0",
+}
+
+complex_commands = {
+    "set_volume": "pactl set-sink-volume 0 {volume}%",
+    "is_muted": "pactl list sinks | grep -q Mute:.no"
+}
+
+
+def main():
+    @click.group()
+    def cli():
+        pass
+
+    for name, action in simple_commands.items():
+        cli.add_command(make_simple_command(action), name)
+
+    cli.add_command(toggle);
+    #cli.add_command(set_volume, "set");
+    #cli.add_command(set_volume, "inc");
+    #cli.add_command(set_volume, "dec");
+
+    cli()
+
+
+@click.command()
+def toggle():
+    cmd = "unmute" if is_muted() else "mute"
+    spawn(simple_commands[cmd])
+
+
+def make_simple_command(action):
+    @click.command()
+    def command():
+        spawn(action)
+
+    return command
+
+
+def is_muted() -> bool:
+    return spawn(complex_commands["is_muted"], check=False).returncode
+
+
+if __name__ == "__main__":
+    main()

@@ -259,6 +259,7 @@ exec xmodmap -e "keycode 94 = Shift_L"
 #########################################
 
 bindsym XF86AudioMicMute exec $scripts/mic toggle
+bindsym XF86AudioMute exec $scripts/volume toggle
 
 ########################################
 # ???
