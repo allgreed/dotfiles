@@ -20,6 +20,7 @@
 
     - openvpn
     - ncftp # improved FTP client
+    - wireshark # packet sniffing / analyzing
   become: yes
 
 - include_tasks: dotfiles.yml
