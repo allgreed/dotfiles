@@ -22,6 +22,12 @@
     - python-virtualenv
   become: yes
 
+- name: remove system packages
+  package: name={{ item }} state=absent
+  with_items:
+    - nano
+  become: yes
+
 - name: install python devtools
   pip:
     name:

@@ -21,6 +21,7 @@
     - openvpn
     - ncftp # improved FTP client
     - wireshark # packet sniffing / analyzing
+    - wakeonlan
   become: yes
 
 - include_tasks: dotfiles.yml
