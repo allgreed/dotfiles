@@ -31,6 +31,8 @@ transfer()
 # WIP
 ##############
 
+alias volume="~/.scripts/volume --signal 10"
+
 # temporary thing I have to run on every startup on 2 of my machines, will automate it soon!
 alias start="cat ~/Dotfiles/ansible/notes.txt | grep xmod | bash; ~/.scripts/kill-xcape; xcape"
 

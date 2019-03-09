@@ -3,12 +3,14 @@
 """Control speakers volume"""
 
 import subprocess
+import os
+import signal
 from functools import partial
 
 import click
 
 
-spawn = partial(subprocess.run, shell=True, check=True, stdout=subprocess.PIPE)
+VOLUME_MAX = 100
 
 simple_commands = {
     "mute": "pactl set-sink-mute 0 1",
@@ -17,22 +19,29 @@ simple_commands = {
 
 complex_commands = {
     "set_volume": "pactl set-sink-volume 0 {volume}%",
-    "is_muted": "pactl list sinks | grep -q Mute:.no"
+    "is_muted": "pactl list sinks | grep -q Mute:.no",
 }
+
+spawn = partial(subprocess.run, shell=True, check=True, stdout=subprocess.PIPE)
 
 
 def main():
     @click.group()
-    def cli():
+    @click.option("--signal", type=int, help="User signal # to emmit after running the command")
+    def cli(signal):
         pass
 
     for name, action in simple_commands.items():
         cli.add_command(make_simple_command(action), name)
 
     cli.add_command(toggle);
-    #cli.add_command(set_volume, "set");
-    #cli.add_command(set_volume, "inc");
-    #cli.add_command(set_volume, "dec");
+    cli.add_command(set_volume, "set");
+    cli.add_command(inc_volume, "inc");
+    cli.add_command(dec_volume, "dec");
+
+    @cli.resultcallback()
+    def _(_, signal=None, **kwargs):
+        emmit_signal_to_i3blocks(signal)
 
     cli()
 
@@ -41,6 +50,34 @@ def main():
 def toggle():
     cmd = "unmute" if is_muted() else "mute"
     spawn(simple_commands[cmd])
+
+
+@click.command()
+@click.argument('value', type=int)
+def set_volume(value):
+    spawn(complex_commands['set_volume'].format(volume=value))
+
+
+@click.command()
+@click.argument('value', type=int)
+def dec_volume(value):
+    # TODO: Implement complex formula from old script
+    # TODO: Unmute if muted instead of inc
+    # TODO: Max volume == MAX_VOLUME
+    decrement = -value
+    print(decrement)
+
+    spawn(complex_commands['set_volume'].format(volume=decrement))
+
+
+@click.command()
+@click.argument('value', type=int)
+def inc_volume(value):
+    # TODO: Implement complex formula from old script
+    # TODO: if vol > VOLUME_MAX, set volume max
+    increment = '+%d' % value
+
+    spawn(complex_commands['set_volume'].format(volume=increment))
 
 
 def make_simple_command(action):
@@ -53,6 +90,23 @@ def make_simple_command(action):
 
 def is_muted() -> bool:
     return spawn(complex_commands["is_muted"], check=False).returncode
+
+
+def emmit_signal_to_i3blocks(signal_no: int) -> None:
+    def get_i3blocks_pid():
+        pids = [pid for pid in os.listdir('/proc') if pid.isdigit()]
+
+        for pid in pids:
+            try:
+                with open(os.path.join('/proc', pid, 'cmdline'), 'r') as f:
+                    p_name = f.read().rstrip('\0')
+
+                    if p_name == "i3blocks":
+                        return int(pid)
+            except IOError: # proc has already terminated
+                continue
+
+    os.kill(get_i3blocks_pid(), signal.SIGRTMIN + signal_no)
 
 
 if __name__ == "__main__":
