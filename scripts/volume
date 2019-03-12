@@ -4,6 +4,7 @@
 
 import subprocess
 import os
+import re
 import signal
 from functools import partial
 
@@ -15,6 +16,7 @@ VOLUME_MAX = 100
 simple_commands = {
     "mute": "pactl set-sink-mute 0 1",
     "unmute": "pactl set-sink-mute 0 0",
+    "get_volume": "pactl list sinks",
 }
 
 complex_commands = {
@@ -59,26 +61,47 @@ def set_volume(value):
 
 
 @click.command()
-@click.argument('value', type=int)
-def dec_volume(value):
-    # TODO: Implement complex formula from old script
-    # TODO: Unmute if muted instead of inc
-    # TODO: Max volume == MAX_VOLUME
-    decrement = -value
-    print(decrement)
+@click.argument('step', type=int)
+def dec_volume(step):
+    current_volume = get_volume()
+    
+    if current_volume > VOLUME_MAX:
+        spawn(complex_commands['set_volume'].format(volume=VOLUME_MAX))
+        return
+
+    # rounds up to the nearest lower multiple of VOLUME_STEP
+    decrement = -(((current_volume - 1) % step) + 1) 
 
     spawn(complex_commands['set_volume'].format(volume=decrement))
 
 
 @click.command()
-@click.argument('value', type=int)
-def inc_volume(value):
-    # TODO: Implement complex formula from old script
-    # TODO: if vol > VOLUME_MAX, set volume max
-    increment = '+%d' % value
+@click.argument('step', type=int)
+def inc_volume(step):
+    if is_muted():
+        spawn(simple_commands["unmute"])
+        return
+
+    current_volume = get_volume()
+
+    if current_volume >= VOLUME_MAX:
+        return
+
+    # rounds down to nearest higher multiple of step
+    increment = '+%d' % min((step - (current_volume % step)), VOLUME_MAX)
 
     spawn(complex_commands['set_volume'].format(volume=increment))
 
+def get_volume() -> int:
+    volume_command = spawn(simple_commands["get_volume"])
+    volume_command_output = volume_command.stdout.decode('utf-8')
+
+    output_lines = volume_command_output.split('\n')
+    line_with_volume = next(filter(lambda x: "Volume:" in x, output_lines))
+    volume = re.search(r'\/\s+(\d+)%\s+\/', line_with_volume).group(1)
+    volume = int(volume)
+
+    return volume
 
 def make_simple_command(action):
     @click.command()
