@@ -2,11 +2,13 @@
 - name: install Docker
   include_role:
     name: geerlingguy.docker
+    apply:
+      become:
+        yes
   vars:
-      docker_users:
-        - "{{ ansible_env.USER }}"
-      docker_package_state: latest
-  become: yes
+    docker_users:
+      - "{{ ansible_env.USER }}"
+    docker_package_state: latest
 
 - name: install system packages
   package: name={{ item }} state=latest
