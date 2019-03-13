@@ -2,9 +2,6 @@
 - hosts: all
   roles:
     - role: common
-      dotfiles_repo: https://github.com/allgreed/dotfiles.git
-      dotfiles_repo_push_url: git@github.com:allgreed/dotfiles.git
-
 
     - role: bare_metal
 
