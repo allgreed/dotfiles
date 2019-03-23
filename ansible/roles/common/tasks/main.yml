@@ -28,6 +28,7 @@
   pip:
     name:
       - ptpython # improved Python shell
+      - pygments-style-solarized # colorscheme
       - httpie # curl on drugs
     state: latest
     executable: pip3

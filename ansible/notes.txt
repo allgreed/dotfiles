@@ -1,11 +1,15 @@
 MUST:
-- separate hack-ish stuff from common (libre DNS, etc.)
 
-- importing openvpn configuration into network manager
+- apt - etherwake / wakeonlan
+- whois package
+
+- separate hack-ish stuff from common (libre DNS, etc.)
 
 - fix Super + Enter
     - something to do with newer tmux and the commands not working as expected -> this needs some time.
     - nuke this commit afterwards 551d11068a0fa66b007783038e0ba6011373aa2a
+
+- importing openvpn configuration into network manager
 
 vpn autoconnect
 https://sourceforge.net/projects/vpnautoconnect/
@@ -25,16 +29,10 @@ wifi.scan-rand-mac-address=no
  
 FUTURE:
 
-apt - etherwake
-
 Swap left and right mouse button:
     xmodmap -e "pointer = 3 2 1"
 
-https://docs.ansible.com/ansible/latest/modules/homebrew_module.html
-
 - resolvconf - package + DNS configs - prefer openNIC
-
-- whois package
 
 npm-ish:
 - latest npm globally
