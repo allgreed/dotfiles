@@ -24,6 +24,15 @@
     - wakeonlan
   become: yes
 
+- name: install python packages
+  pip:
+    name:
+      - ptpython # improved Python shell
+      - httpie # curl on drugs
+    state: latest
+    executable: pip3
+    extra_args: --user
+
 - include_tasks: dotfiles.yml
 
 - include_tasks: system/main.yml

@@ -33,10 +33,10 @@
 - name: install python devtools
   pip:
     name:
-      - ptpython # improved Python shell
       - BlastRadius # Terraform graphs exploration tool
-      - httpie # curl on drugs
+      - pytest
     executable: pip3
+    state: latest
     extra_args: --user
 
 - name: symlink .vimrc and .ideavimrc (for Jetbrains' software)
