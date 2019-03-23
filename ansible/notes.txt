@@ -10,6 +10,12 @@ MUST:
 vpn autoconnect
 https://sourceforge.net/projects/vpnautoconnect/
 
+
+    download rambox to /opt/rambox
+    ln -s /opt/rambox/ ~/.local/bin/rambox
+
+    where are my configs stored? o.0
+
 [device]
 wifi.scan-rand-mac-address=no
 
