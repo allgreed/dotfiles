@@ -19,6 +19,7 @@
     - shellcheck # sh linter
 
     - gcc
+    - gcc-multilib # cross-compilation tools
     - g++
     - python3-venv
     - python-virtualenv
