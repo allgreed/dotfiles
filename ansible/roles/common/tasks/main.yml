@@ -30,6 +30,7 @@
       - ptpython # improved Python shell
       - pygments-style-solarized # colorscheme
       - httpie # curl on drugs
+      - pirate-get # command line for the pirate bay
     state: latest
     executable: pip3
     extra_args: --user
