@@ -47,10 +47,18 @@ Plugin 'Yggdroot/indentLine'
 " Syntax highlighters
 Plugin 'leafgarland/typescript-vim'
 Plugin 'posva/vim-vue'
-Plugin 'elixir-editors/vim-elixir'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'hashivim/vim-terraform'
+Plugin 'hashivim/vim-nomadproject'
 Plugin 'cespare/vim-toml'
+
+"Plugin 'elixir-editors/vim-elixir'
+"Plugin 'hashivim/vim-consul'
+"Plugin 'hashivim/vim-packer'
+"Plugin 'hashivim/vim-vagrant'
+"Plugin 'hashivim/vim-vaultproject'
+
+" ???
 Plugin 'isRuslan/vim-es6'
 
 call vundle#end()
