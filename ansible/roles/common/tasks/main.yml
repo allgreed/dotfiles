@@ -23,6 +23,7 @@
     - ncftp # improved FTP client
     - wireshark # packet sniffing / analyzing
     - wakeonlan
+    - arp-scan # arp discovery
   become: yes
 
 - name: install python packages

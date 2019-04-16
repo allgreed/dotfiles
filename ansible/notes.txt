@@ -1,4 +1,10 @@
 MUST:
+- python3-tk
+
+- install nomad
+    - with autocomplete
+
+- nmap
 
 - apt - etherwake / wakeonlan
 - whois package
