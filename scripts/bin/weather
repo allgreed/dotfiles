@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+# vim: set syntax=python:
+from enum import Enum
+
+import requests
+import click
+
+
+# TODO: add CLI support
+# TODO: add -t, --tomorrow
+
+def main():
+    a = get_weather()
+    b = a.split("\n")
+    c = b[WeatherTime.Today.value]
+    d = "\n".join(c)
+    print(d)
+
+
+class WeatherTime(Enum):
+    Today = slice(7, 17)
+    Tommorow = slice(17, 27)
+
+
+def get_weather(location="gdańsk", http=requests):
+    url_template = "https://wttr.in/{location}"
+
+    response = http.get(url_template.format(location=location))
+
+    return response.text
+
+if __name__ == "__main__":
+    main()

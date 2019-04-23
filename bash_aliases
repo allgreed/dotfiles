@@ -13,8 +13,6 @@ alias gs="git s"
 alias g="git"
 
 # Custom scripts
-alias weather='curl wttr.in/Gdansk -s | head -n 17'
-
 # better Python names, but respecting virtualenvs
 alias python2="/usr/bin/env python"
 alias python="/usr/bin/env python3"
