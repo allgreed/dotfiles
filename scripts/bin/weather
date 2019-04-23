@@ -6,20 +6,24 @@ import requests
 import click
 
 
-# TODO: add CLI support
-# TODO: add -t, --tomorrow
-
-def main():
-    a = get_weather()
-    b = a.split("\n")
-    c = b[WeatherTime.Today.value]
-    d = "\n".join(c)
-    print(d)
+@click.command()
+@click.option("-t", "--tomorrow", is_flag=True, help="Print weather for tommorow instead")
+def cli(tomorrow):
+    """Print weather information for today"""
+    when = WeatherTime.Tommorow if tomorrow else WeatherTime.Today
+    main(when=when)
 
 
 class WeatherTime(Enum):
     Today = slice(7, 17)
     Tommorow = slice(17, 27)
+
+
+def main(when):
+    all_weather = get_weather()
+    requested_weather = "\n".join(all_weather.split("\n")[when.value])
+
+    print(requested_weather)
 
 
 def get_weather(location="gdańsk", http=requests):
@@ -30,4 +34,4 @@ def get_weather(location="gdańsk", http=requests):
     return response.text
 
 if __name__ == "__main__":
-    main()
+    cli()
