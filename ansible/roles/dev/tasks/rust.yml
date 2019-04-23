@@ -12,7 +12,7 @@
     - name: Download rustup installation script
       get_url:
         url: https://sh.rustup.rs 
-        checksum: sha512:a7cf4cf78295a6dcc9bf229527c744250e850690a91c31e2a8efc7f698e50e9b318ae6f6ed46d06d95ff0e259f4878b8c0245961a16131cf7cc11db90ce5a94e
+        checksum: sha512:2e8eba09edf5e78bf2fadd9997affb228feb22c7b5f39f20f2edefba1b65e492fd1429056647cd8f2aaed204eb7662f9fd8d84852dc86aea00b285f5735ebd1d
         dest: "/tmp/{{ random_string }}"
         mode: u+x
       register: rustup_installation_script
