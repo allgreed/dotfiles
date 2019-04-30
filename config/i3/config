@@ -274,4 +274,5 @@ bindsym $mod+less move workspace to output left
 # Testing
 #######
 
+bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
 exec xcape # Ctrl => ESC | Ctrl (and CapsLock is already set to ESC via xkb)
