@@ -4,6 +4,12 @@ MUST:
 - install nomad
     - with autocomplete
 
+sudo apt install ncmpc
+sudo apt install mpd
+configure mpd xD
+
+ansible - pip install + upgrade
+
 - nmap
 
 - apt - etherwake / wakeonlan
