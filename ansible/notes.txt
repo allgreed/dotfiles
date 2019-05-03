@@ -27,8 +27,11 @@ vpn autoconnect
 https://sourceforge.net/projects/vpnautoconnect/
 
 
-    download rambox to /opt/rambox
-    ln -s /opt/rambox/ ~/.local/bin/rambox
+    if rambox not installed:
+        ln -s /opt/rambox/ ~/.local/bin/rambox
+    if version != latest
+        download rambox to /opt/rambox
+        chmod +x /opt/rambox
 
     where are my configs stored? o.0
 
