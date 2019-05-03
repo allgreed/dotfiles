@@ -9,6 +9,7 @@
     - fonts-font-awesome # Icons for i3bar
     - xcape # Ctrl => ESC | Ctrl
     - terminator # Terminal emulator
+    - rxvt-unicode-256color # Terminal emulator
     - pulseaudio # I know it's technically not related to x ;)
     - conky-all # Fancy stuff on desktop
     - redshift-gtk # Reduce red light
