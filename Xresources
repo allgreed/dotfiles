@@ -60,11 +60,18 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 URxvt*scrollBar: false
-URxvt*perl-ext-common: clipboard-osc,selection-to-clipboard
+URxvt*perl-ext-common: default,clipboard-osc,selection-to-clipboard,matcher
+
+URxvt.urlLauncher: xdg-open
+URxvt.matcher.button: 1 
+
+! ???
+!URxvt*cursorUnderline: true
 
 ! Keybindings
-URxvt*keysym.Shift-Control-C: perl:clipboard:copy 
-URxvt*keysym.Shift-Control-V: perl:clipboard:paste 
+! TODO: Make it work
+!URxvt*keysym.Shift-Control-C: perl:clipboard:copy 
+!URxvt*keysym.Shift-Control-V: perl:clipboard:paste 
 
 ! Font configuration
 URxvt*font: xft:Source Code Pro:style=Medium:size=11:antialias=true:hinting=true
