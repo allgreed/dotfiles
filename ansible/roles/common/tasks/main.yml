@@ -23,6 +23,8 @@
     - ncftp # improved FTP client
     - wireshark # packet sniffing / analyzing
     - wakeonlan
+    - nmap
+    - whois
     - arp-scan # arp discovery
   become: yes
 

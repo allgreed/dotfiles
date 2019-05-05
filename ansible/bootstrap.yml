@@ -2,8 +2,13 @@
 - hosts: all
   tasks:
     - name: install pip
-      package: name=python-pip state=latest
+      package:
+        name: "{{ item }}"
+        state: latest
       become: yes 
+      loop:
+        - sudo
+        - python-pip
 
     - name: install latest ansible
       pip:

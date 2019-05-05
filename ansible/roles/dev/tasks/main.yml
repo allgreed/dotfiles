@@ -22,6 +22,7 @@
     - gcc-multilib # cross-compilation tools
     - g++
     - python3-venv
+    - python3-tk
     - python-virtualenv
   become: yes
 
