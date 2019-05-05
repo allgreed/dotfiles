@@ -42,7 +42,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'Yggdroot/indentLine'
+Plugin 'nathanaelkane/vim-indent-guides' " under test
 
 " Syntax highlighters
 Plugin 'leafgarland/typescript-vim'
