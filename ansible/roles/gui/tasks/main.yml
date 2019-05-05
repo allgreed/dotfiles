@@ -74,3 +74,10 @@
   notify:
     - reload font cache for Source Code Pro
   # TODO: https://github.com/adobe-fonts/source-code-pro/issues/17#issuecomment-332018295 <- do this in a better way
+
+- name: install resize-font plugin for urxvt
+  # since the last commit was in 2013 I've decided to vendor-in this one
+  copy:
+    src: resize-font
+    dest: /usr/lib/urxvt/perl/resize-font
+  become: yes

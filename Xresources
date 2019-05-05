@@ -58,17 +58,22 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! Urxvt
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+URxvt*perl-ext-common: default,matcher,resize-font
 
 URxvt*scrollBar: false
 URxvt*cursorBlink: true
-
-URxvt*perl-ext-common: default,matcher
 
 URxvt*urlLauncher: sensible-browser
 URxvt*matcher.button: 1
 
 ! ???
 !URxvt*cursorUnderline: true
+
+! Font resizing - for presentation, etc.
+URxvt.keysym.Control-plus: perl:resize-font:bigger
+URxvt.keysym.Control-minus: perl:resize-font:smaller
+URxvt.keysym.Control-0: perl:resize-font:reset
+URxvt.keysym.Control-question: perl:resize-font:show
 
 ! Standard clipboard behaviour
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
