@@ -43,6 +43,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'nathanaelkane/vim-indent-guides' " under test
+Plugin 'luochen1990/rainbow' " under test
 
 " Syntax highlighters
 Plugin 'leafgarland/typescript-vim'
@@ -117,3 +118,4 @@ set history=100
 let g:indentLine_char = '¦'
 let g:indentline_setcolors = 0
 let g:indentLine_color_term = 240
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
