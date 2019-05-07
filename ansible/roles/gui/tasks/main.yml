@@ -42,7 +42,7 @@
       package: name=firefox-esr state=absent
   rescue:
     - name: install firefox-esr
-      package: name=firefox-esr state=present
+      package: name=firefox-esr state=latest
   always:
     - name: remove iceweasel
       package: name=iceweasel  state=absent
