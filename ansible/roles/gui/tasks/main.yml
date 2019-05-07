@@ -1,4 +1,8 @@
 ---
+- name: install urxvt - terminal emulator
+  package: name=rxvt-unicode-256color state=latest
+  notify:
+    - reload XRDB
 
 - name: install system packages
   package: name={{ item }} state=latest
@@ -8,7 +12,6 @@
     - i3blocks
     - fonts-font-awesome # Icons for i3bar
     - xcape # Ctrl => ESC | Ctrl
-    - rxvt-unicode-256color # Terminal emulator
     - pulseaudio # I know it's technically not related to x ;)
     - conky-all # Fancy stuff on desktop
     - redshift-gtk # Reduce red light
