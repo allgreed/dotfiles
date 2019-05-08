@@ -1,0 +1,2 @@
+# disable bell on tab completion and when pressing backspace on an empty shell
+set bell-style none
