@@ -31,6 +31,8 @@ NON-TRIVIAL:
 - resolvconf - package + DNS configs - prefer openNIC
 - disable instalation of Docker-compose by the docker role, instead install gofish and install docker-compose with it // use pip ???
 - zgrepować i rozwiązać TODOsy
+- wyłączenie bipania przez ff:
+    accessibility.typeaheadfind.enablesound -> false
 
 NICE:
 - fix firefox installation mechanism
