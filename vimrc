@@ -18,6 +18,8 @@ set number
 
 set hlsearch " Highlight search matches
 
+set visualbell " Disable emmiting bell
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editorial behaviours
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -74,7 +76,6 @@ noh " don't show search highlights on vimrc reload
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set clipboard=unnamedplus " Use system clipboard as default buffer
-set novisualbell " Disable this shitty bell sound (mostly Jet Brains' IDEs + VIM emulator)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Preloaded macros
