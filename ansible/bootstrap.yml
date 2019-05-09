@@ -12,4 +12,5 @@
 
     - name: install latest ansible
       pip:
+        state: latest
         name: ansible

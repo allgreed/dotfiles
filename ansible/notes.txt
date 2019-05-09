@@ -1,15 +1,24 @@
 TRIVIAL:
 
 NON-TRIVIAL:
-bootstrap:
-- add allgreed to sudoers (allgreed == ideally current user -> to the bootstrap)
-    vi /etc/sudoers
-    add: allgreed   ALL = (ALL)    ALL
+- resolvconf - package + DNS configs - prefer openNIC
 
-- ranger config files
-- ansible - pip install + upgrade ???
-- my current sudoers setup / startup script
-- separate hack-ish stuff from common (libre DNS, etc.) into foliarz
+- Swap left and right mouse button:
+    xmodmap -e "pointer = 3 2 1"
+- remove the need to type start
+
+bootstrap:
+    - add allgreed to sudoers (allgreed == ideally current user -> to the bootstrap)
+        vi /etc/sudoers
+        add: allgreed   ALL = (ALL)    ALL
+    - my current sudoers setup / startup script
+
+- npm-ish:
+    - latest npm globally
+    - nvm (with aliases)
+    - live-server, yarn, livedown
+    - tldr
+
 - rambox:
     if rambox not installed:
         ln -s /opt/rambox/ ~/.local/bin/rambox
@@ -18,27 +27,23 @@ bootstrap:
         chmod +x /opt/rambox
 
     where are my configs stored? o.0
-- Swap left and right mouse button:
-    xmodmap -e "pointer = 3 2 1"
-- npm-ish:
-    - latest npm globally
-    - nvm (with aliases)
-    - live-server, yarn, livedown
-    - tldr
-// how to test this ???
+
 - PyCharm (community / professional)
+
 - Firefox (+ Thunderbird ???) // maybe mutt instead
     - how to store my configs?
-- resolvconf - package + DNS configs - prefer openNIC
-- disable instalation of Docker-compose by the docker role, instead install gofish and install docker-compose with it // use pip ???
-- zgrepować i rozwiązać TODOsy
 - wyłączenie bipania przez ff:
     accessibility.typeaheadfind.enablesound -> false
 
+- separate hack-ish stuff from common (libre DNS, etc.) into foliarz
+- zgrepować i rozwiązać TODOsy
+- disable instalation of Docker-compose by the docker role, instead install gofish and install docker-compose with it // use pip ???
+
 NICE:
-- fix firefox installation mechanism
-- remove the need to type start
+- remove iceweasel only on Debian
+- [firefox installation] instead of block ... rescue => choose package to install
 - https://events.ccc.de/congress/2018/wiki/index.php/Static:Information_Security#Introduction
+- ranger config files (if it works with urxvt image preview, without drawing borders - or maybe I can set borders to 0px? o.0 ;d)
 
 - fix inputing password twice - na bootstrapie i na playbooku
 - fix pango markup on i3bar / i3blocks!!!

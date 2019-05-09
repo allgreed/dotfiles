@@ -33,22 +33,18 @@
 
 - name: install sensible browser
   block:
-    - name: install firefox
-      block:
-        - name: install latest firefox
-          package: name=firefox state=latest
-      rescue:
-        - name: install some firefox
-          package: name=firefox state=present
+    - name: install latest firefox
+      package: name=firefox state=latest
 
     - name: remove firefox-esr
       package: name=firefox-esr state=absent
   rescue:
     - name: install firefox-esr
       package: name=firefox-esr state=latest
-  always:
-    - name: remove iceweasel
-      package: name=iceweasel  state=absent
+  become: yes
+
+- name: remove iceweasel
+  package: name=iceweasel  state=absent
   become: yes
 
 - name: install contrib i3blocks scripts
