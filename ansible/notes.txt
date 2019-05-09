@@ -1,11 +1,12 @@
 TRIVIAL:
 
 NON-TRIVIAL:
-- ranger config files
+bootstrap:
 - add allgreed to sudoers (allgreed == ideally current user -> to the bootstrap)
     vi /etc/sudoers
     add: allgreed   ALL = (ALL)    ALL
-- tinyurl na mojej domenie do instalowania rzeczy -> coby nie trzeba było przepisywać url, etc.
+
+- ranger config files
 - ansible - pip install + upgrade ???
 - my current sudoers setup / startup script
 - separate hack-ish stuff from common (libre DNS, etc.) into foliarz

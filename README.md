@@ -8,12 +8,11 @@ My collection of preferences, configs, /etc.
 - ansible >=2.6.3
 - python2 >=2.7.13 (required by ansible)
 
-### Idempotent prerequisites installation (with apt)
+### Prerequisites installation (with apt)
 
 ```
-test -e /usr/bin/git || (sudo apt-get update && sudo apt install -y git)
-test -e /usr/bin/python || (sudo apt-get update && sudo apt install -y python)
-test -e /usr/bin/ansible || (sudo apt-get update && sudo apt install -y ansible)
+sudo apt-get update
+sudo apt install -y git python ansible sudo
 ```
 
 ## Installation
