@@ -1,0 +1,32 @@
+---
+- name: install Source Code Pro font
+  git:
+    repo: https://github.com/adobe-fonts/source-code-pro.git
+    dest: ~/.local/share/fonts/source-code-pro
+    depth: 1
+    version: release
+    force: true
+  notify:
+    - reload font cache for Source Code Pro
+  # TODO: https://github.com/adobe-fonts/source-code-pro/issues/17#issuecomment-332018295 <- do this in a better way
+
+- name: install urxvt - terminal emulator
+  package: name=rxvt-unicode-256color state=latest
+  notify:
+    - reload XRDB
+  become: yes
+
+- name: install resize-font plugin for urxvt
+  # since the last commit was in 2013 I've decided to vendor-in this one
+  copy:
+    src: resize-font
+    dest: /usr/lib/urxvt/perl/resize-font
+  become: yes
+
+- name: install contrib i3blocks scripts
+  git:
+    repo: https://github.com/vivien/i3blocks-contrib
+    dest: /opt/i3blocks
+    depth: 1
+    version: master
+  become: yes

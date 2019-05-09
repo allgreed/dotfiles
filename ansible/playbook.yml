@@ -3,6 +3,5 @@
   roles:
     - role: common
     - role: metal
-    - role: gui
-    - role: dev
+    - role: moar
     - role: foliarz

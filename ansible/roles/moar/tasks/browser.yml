@@ -1,0 +1,16 @@
+---
+- name: install sensible browser
+  block:
+    - name: install latest firefox
+      package: name=firefox state=latest
+
+    - name: remove firefox-esr
+      package: name=firefox-esr state=absent
+  rescue:
+    - name: install firefox-esr
+      package: name=firefox-esr state=latest
+  become: yes
+
+- name: remove iceweasel
+  package: name=iceweasel  state=absent
+  become: yes

@@ -41,6 +41,7 @@ bootstrap:
 - disable instalation of Docker-compose by the docker role, instead install gofish and install docker-compose with it // use pip ???
 
 NICE:
+- tag package installation (this is the slowest and least likely to fail)
 - remove iceweasel only on Debian
 - [firefox installation] instead of block ... rescue => choose package to install
 - https://events.ccc.de/congress/2018/wiki/index.php/Static:Information_Security#Introduction
