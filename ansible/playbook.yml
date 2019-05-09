@@ -3,10 +3,8 @@
   roles:
     - role: common
 
-    - role: bare_metal
-
+    - role: metal
 
     - role: gui
-
 
     - role: dev

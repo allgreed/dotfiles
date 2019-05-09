@@ -1,17 +1,13 @@
 TRIVIAL:
 
 NON-TRIVIAL:
+- separate hack-ish stuff from common (libre DNS, etc.) into foliarz
+
 - resolvconf - package + DNS configs - prefer openNIC
 
 - Swap left and right mouse button:
     xmodmap -e "pointer = 3 2 1"
 - remove the need to type start
-
-bootstrap:
-    - add allgreed to sudoers (allgreed == ideally current user -> to the bootstrap)
-        vi /etc/sudoers
-        add: allgreed   ALL = (ALL)    ALL
-    - my current sudoers setup / startup script
 
 - npm-ish:
     - latest npm globally
@@ -35,7 +31,12 @@ bootstrap:
 - wyłączenie bipania przez ff:
     accessibility.typeaheadfind.enablesound -> false
 
-- separate hack-ish stuff from common (libre DNS, etc.) into foliarz
+bootstrap:
+    - add allgreed to sudoers (allgreed == ideally current user -> to the bootstrap)
+        vi /etc/sudoers
+        add: allgreed   ALL = (ALL)    ALL
+    - my current sudoers setup / startup script
+
 - zgrepować i rozwiązać TODOsy
 - disable instalation of Docker-compose by the docker role, instead install gofish and install docker-compose with it // use pip ???
 
