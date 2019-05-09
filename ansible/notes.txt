@@ -1,12 +1,11 @@
 TRIVIAL:
 
 NON-TRIVIAL:
-- separate hack-ish stuff from common (libre DNS, etc.) into foliarz
+- resolvconf - package + DNS configs - prefer openNIC -> foliarz
 
-- resolvconf - package + DNS configs - prefer openNIC
-
-- Swap left and right mouse button:
+- Swap left and right mouse button: -> bare metal
     xmodmap -e "pointer = 3 2 1"
+
 - remove the need to type start
 
 - npm-ish:
@@ -14,6 +13,8 @@ NON-TRIVIAL:
     - nvm (with aliases)
     - live-server, yarn, livedown
     - tldr
+
+- PyCharm (community / professional -> role variable)
 
 - rambox:
     if rambox not installed:
@@ -23,8 +24,6 @@ NON-TRIVIAL:
         chmod +x /opt/rambox
 
     where are my configs stored? o.0
-
-- PyCharm (community / professional)
 
 - Firefox (+ Thunderbird ???) // maybe mutt instead
     - how to store my configs?

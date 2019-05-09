@@ -42,9 +42,6 @@
 
 - include_tasks: dotfiles.yml
 
-- include_tasks: system/main.yml
-- include_tasks: vpn.yml
-
 - include_tasks: vim.yml
 
 - name: remove crappy system packages
@@ -52,3 +49,5 @@
   with_items:
     - nano
   become: yes
+
+- include_tasks: system/main.yml
