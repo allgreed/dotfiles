@@ -46,3 +46,9 @@
 - include_tasks: vpn.yml
 
 - include_tasks: vim.yml
+
+- name: remove crappy system packages
+  package: name={{ item }} state=absent
+  with_items:
+    - nano
+  become: yes
