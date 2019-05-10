@@ -29,6 +29,10 @@ transfer()
 # Typos
 ##############
 alias dokcer=docker
+alias xit="exit"
+alias exi="exit"
+alias cd..="cd .."
+alias :q=exit
 
 ##############
 # WIP
