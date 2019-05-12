@@ -86,7 +86,6 @@ esac
 
 # load my utility function that simplify the rest of the config
 source ~/.bash_utilities
-load ~/.bash_dm # minimal display manager
 
 # Env
 export NVM_DIR="$HOME/.nvm"
@@ -96,9 +95,6 @@ PATH_ROOT_BINARIES=/sbin/:/usr/sbin
 PATH_RUST_BINARIES=$HOME/.cargo/bin
 PATH_SCRIPT_BINARIES=$HOME/.scripts/bin
 export PATH=$PATH_LOCAL_BINARIES:$PATH:$PATH_ROOT_BINARIES:$PATH_RUST_BINARIES:$PATH_SCRIPT_BINARIES
-
-export VISUAL=vim
-export EDITOR=vim
 
 # Extensions
 load ~/.bash_aliases # my custom aliases
