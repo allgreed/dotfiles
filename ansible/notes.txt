@@ -1,12 +1,12 @@
 TRIVIAL:
+- Swap left and right mouse button: -> bare metal
+    xmodmap -e "pointer = 3 2 1"
+
 
 NON-TRIVIAL:
 - resolvconf - package + DNS configs - prefer openNIC -> foliarz
 
-- Swap left and right mouse button: -> bare metal
-    xmodmap -e "pointer = 3 2 1"
-
-- remove the need to type start
+- remove the need to type start ==> move to .xinitrc / do something so it works propperly with i3?
 
 - npm-ish:
     - latest npm globally
@@ -23,7 +23,7 @@ NON-TRIVIAL:
         download rambox to /opt/rambox
         chmod +x /opt/rambox
 
-    where are my configs stored? o.0
+    !!! where are my configs stored? o.0
 
 - Firefox (+ Thunderbird ???) // maybe mutt instead
     - how to store my configs?

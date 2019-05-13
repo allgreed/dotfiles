@@ -49,5 +49,6 @@
     state: latest
     extra_args: --user
 
-- include_tasks: dev.yml
 - include_tasks: browser.yml
+
+- include_tasks: dev.yml
