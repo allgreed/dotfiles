@@ -86,6 +86,7 @@ esac
 
 # load my utility function that simplify the rest of the config
 source ~/.bash_utilities
+# TODO: Move this to scripts unser load.sh
 
 # Env
 export NVM_DIR="$HOME/.nvm"
@@ -113,3 +114,7 @@ load "$NVM_DIR/nvm.sh" --no-use
 # Shell behaviour
 set -o vi; # vim in bash
 stty -ixon # disable ctrl+s - no more accidental weird freezes
+
+# Testing - Nix
+if [ -e /home/allgreed/.nix-profile/etc/profile.d/nix.sh ]; then . /home/allgreed/.nix-profile/etc/profile.d/nix.sh; fi
+# TODO: Change to load
