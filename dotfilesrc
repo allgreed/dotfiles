@@ -8,6 +8,7 @@ ignore = [
     "LICENSE.md",
     "README.md",
     "ansible",
+    "nix",
     "bash_legacy.sh",
     "startup.sh"]
 
