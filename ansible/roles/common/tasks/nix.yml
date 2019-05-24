@@ -1,0 +1,41 @@
+---
+- name: Stat nix binary in local user dir
+  stat:
+    path: "{{ ansible_user_dir }}/.nix-profile/etc/profile.d/nix.sh"
+  register: nix_bin
+  
+- name: install Nix
+  block:
+    - name: create /nix directory owned by current user
+      file:
+        state: directory
+        path: /nix
+        owner: "{{ ansible_effective_user_id }}"
+        group: "{{ ansible_effective_group_id }}"
+        mode: u=rwx,g=rx,o=rx
+      become: yes
+
+    - name: set kernel parameters for Nix installation
+      copy:
+        content: kernel.unprivileged_userns_clone=1  
+        dest: /etc/sysctl.d/nix.conf
+      become: yes
+
+    - name: reload kernel paramters preferences
+      command: /sbin/sysctl --system
+      become: yes
+
+    - name: create temporary directory for Nix installator
+      command: mktemp --suffix -nix-installator
+      register: tmpfile
+
+    - name: download Nix installation script
+      get_url:
+        url: https://nixos.org/nix/install 
+        checksum: sha512:f6bd178c35d13cd8ad664450d6bfdaa054cd0abe1a094912ac6a1eced6d41f5ff7052041b25406df4b301e802c131970905ebe790566a7f89efcf231b14b80bf
+        dest: "{{ tmpfile.stdout }}"
+        mode: u+x
+
+    - name: execute Nix installation script
+      shell: NIX_INSTALLER_NO_MODIFY_PROFILE='1' {{ tmpfile.stdout | quote }} --no-daemon
+  when: not nix_bin.stat.exists

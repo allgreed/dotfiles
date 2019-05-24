@@ -51,3 +51,5 @@
   become: yes
 
 - include_tasks: system/main.yml
+
+- include_tasks: nix.yml
