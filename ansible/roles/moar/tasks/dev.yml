@@ -15,5 +15,3 @@
     src: ~/.vimrc
     dest: ~/.ideavimrc
     state: link
-
-- include_tasks: dev-rust.yml

@@ -39,3 +39,7 @@
     - name: execute Nix installation script
       shell: NIX_INSTALLER_NO_MODIFY_PROFILE='1' {{ tmpfile.stdout | quote }} --no-daemon
   when: not nix_bin.stat.exists
+
+- name: install nix packages
+  shell: . {{ ansible_user_dir }}/.nix-profile/etc/profile.d/nix.sh && nix-env -if {{ ansible_user_dir }}/Dotfiles/nix/manifest.nix
+  changed_when: no
