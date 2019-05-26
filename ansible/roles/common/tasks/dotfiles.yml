@@ -33,3 +33,10 @@
 - name: sync my Dotfiles
   command: "{{ dotfiles_binary }} --sync --force"
   when: dotfiles_check_result.stdout
+
+- name: link main git identity
+  file:
+    state: link
+    src: ~/Keys/git-main-id
+    dest: "{{ ansible_user_dir }}/.gitid"
+  when: link_main_git_id | bool
