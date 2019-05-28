@@ -110,11 +110,8 @@ __git_complete g __git_main # apply full git completion to "g" alias
 
 # Shell integrations
 load "$NVM_DIR/nvm.sh" --no-use
+load ~/.nix-profile/etc/profile.d/nix.sh
 
 # Shell behaviour
 set -o vi; # vim in bash
 stty -ixon # disable ctrl+s - no more accidental weird freezes
-
-# Testing - Nix
-if [ -e /home/allgreed/.nix-profile/etc/profile.d/nix.sh ]; then . /home/allgreed/.nix-profile/etc/profile.d/nix.sh; fi
-# TODO: Change to load
