@@ -44,8 +44,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'nathanaelkane/vim-indent-guides' " under test
-Plugin 'luochen1990/rainbow' " under test
 
 " Syntax highlighters
 Plugin 'leafgarland/typescript-vim'
@@ -54,6 +52,7 @@ Plugin 'pearofducks/ansible-vim'
 Plugin 'hashivim/vim-terraform'
 Plugin 'cespare/vim-toml'
 Plugin 'jvirtanen/vim-hcl'
+Plugin 'rust-lang/rust.vim'
 
 " ???
 Plugin 'isRuslan/vim-es6'
