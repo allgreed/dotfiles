@@ -44,6 +44,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'ciaranm/securemodelines' "TODO: set nomodelineexpr after 8.1.1366
 
 " Syntax highlighters
 Plugin 'leafgarland/typescript-vim'
@@ -59,6 +60,14 @@ Plugin 'isRuslan/vim-es6'
 
 call vundle#end()
 filetype plugin indent on 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" securemodelines
+let g:secure_modelines_verbose = 1
+set nomodeline " prevent forcfull disable warning
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
