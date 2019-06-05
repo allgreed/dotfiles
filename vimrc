@@ -11,10 +11,8 @@ set ff=unix " Only shitfucks use DOS line endings
 " => HUD
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Hybrid line numbering
-" current line is absolute, rest is relative
-set relativenumber
-set number
+" Hybrid line numbering - current line is absolute, rest is relative
+set relativenumber number
 
 set hlsearch " Highlight search matches
 
