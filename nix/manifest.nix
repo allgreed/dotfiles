@@ -64,6 +64,62 @@
   system = "x86_64-linux";
   type = "derivation";
 } {
+  meta = {
+    available = true;
+    description = "Event-driven I/O framework for the V8 JavaScript engine";
+    homepage = "https://nodejs.org";
+    license = {
+      fullName = "MIT License";
+      shortName = "mit";
+      spdxId = "MIT";
+      url = "http://spdx.org/licenses/MIT.html";
+    };
+    maintainers = [ {
+      email = "cillian.deroiste@gmail.com";
+      github = "cillianderoiste";
+      name = "Cillian de Róiste";
+    } {
+      email = "tobias.pflug@gmail.com";
+      github = "gilligan";
+      name = "Tobias Pflug";
+    } {
+      email = "christine.koppelt@gmail.com";
+      github = "cko";
+      name = "Christine Koppelt";
+    } ];
+    name = "nodejs-12.2.0";
+    outputsToInstall = [ "out" ];
+    platforms = [ {
+      kernel = {
+        _type = "kernel";
+        execFormat = {
+          _type = "exec-format";
+          name = "elf";
+        };
+        families = {};
+        name = "linux";
+      };
+    } {
+      kernel = {
+        families = {
+          darwin = {
+            _type = "exec-format";
+            name = "darwin";
+          };
+        };
+      };
+    } ];
+    position = "/nix/store/7zb574bzv3n17h4pp8vilad7mm6cfjqr-nixpkgs-19.09pre180124.920d066ded1/nixpkgs/pkgs/development/web/nodejs/v12.nix:8";
+  };
+  name = "nodejs-12.2.0";
+  out = {
+    outPath = "/nix/store/vf9wmbffxisl1v26c90z9aj9hrrg5mig-nodejs-12.2.0";
+  };
+  outPath = "/nix/store/vf9wmbffxisl1v26c90z9aj9hrrg5mig-nodejs-12.2.0";
+  outputs = [ "out" ];
+  system = "x86_64-linux";
+  type = "derivation";
+} {
   meta = {};
   name = "git-2.21.0";
   out = {
