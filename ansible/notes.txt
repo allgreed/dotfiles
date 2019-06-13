@@ -1,10 +1,12 @@
 TRIVIAL:
 - Swap left and right mouse button: -> bare metal
     xmodmap -e "pointer = 3 2 1"
+- install vrms
 
 
 NON-TRIVIAL:
 - resolvconf - package + DNS configs - prefer openNIC -> foliarz
+- sudo mv /etc/dnsmasq.conf /etc/NetworkManager/dnsmasq.d/
 
 - remove the need to type start ==> move to .xinitrc / do something so it works propperly with i3?
 
@@ -85,3 +87,5 @@ NICE:
 - https://github.com/chusiang/vim-and-vi-mode.ansible.role/blob/master/tasks/main.yml
 - https://github.com/chusiang/vim-and-vi-mode.ansible.role/blob/master/tasks/use-apt.yml
 - custom fontconfig ??? ;)
+
+alias shred=shred -n 7 + confirmation + remove
