@@ -58,13 +58,21 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! Urxvt
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 URxvt*perl-ext-common: default,matcher,resize-font
 
-URxvt*scrollBar: false
 URxvt*cursorBlink: true
 
 URxvt*urlLauncher: sensible-browser
 URxvt*matcher.button: 1
+
+! Scrolling
+URxvt*scrollBar: false
+
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+
+URxvt*saveLines: 10000
 
 ! Font resizing - for presentation, etc.
 URxvt.keysym.Control-plus: perl:resize-font:bigger
