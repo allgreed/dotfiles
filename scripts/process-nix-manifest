@@ -1,8 +1,2 @@
 # vim: ft=sh
-tmpdest=$(mktemp --suffix -nix-manifest)
-
-cp ~/.nix-profile/manifest.nix $tmpdest
-chmod +w $tmpdest
-. $NVM_DIR/nvm.sh && format-nix $tmpdest
-sed -i '/^[[:space:]]*$/d' $tmpdest
-mv $tmpdest ~/Dotfiles/nix/manifest.nix
+cargo run --manifest-path ~/Desktop/nix-manifest-format/Cargo.toml > ~/Dotfiles/nix/manifest.nix
