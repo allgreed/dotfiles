@@ -3,9 +3,17 @@
 
 set_virtualenv() {
    if test -z "$VIRTUAL_ENV" ; then
-       PYTHON_VIRTUALENV=""
+       PYTHON_VIRTUALENV=''
    else
        PYTHON_VIRTUALENV="(`basename \"$VIRTUAL_ENV\"`) "
+   fi
+}
+
+set_nix_shell() {
+   if test -z "$IN_NIX_SHELL" ; then
+       NIX_SHELL=''
+   else
+       NIX_SHELL='[nix-shell] '
    fi
 }
 
@@ -24,13 +32,15 @@ GIT_PS1_SHOWDIRTYSTATE=1
 
 set_bash_prompt() {
     set_virtualenv
+    set_nix_shell
 
     git_info="\[$green\]\$(__git_ps1)\[$reset\]"
     venv="\[$green\]\$PYTHON_VIRTUALENV\[$reset\]"
     cwd="\w"
     shell_indicator="\[$dim\]\[$bold\]\[$blue\]λ\[$reset\]"
+    nix="\[$green\]\$NIX_SHELL\[$reset\]"
 
-    PS1="${venv}${cwd}${git_info} ${shell_indicator} "
+    PS1="${venv}${nix}${cwd}${git_info} ${shell_indicator} "
 }
 
 PROMPT_COMMAND=set_bash_prompt

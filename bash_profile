@@ -1,6 +1,7 @@
 export VISUAL=vim
 export EDITOR=vim
 export TERMINAL='urxvt'
+export TERM='xterm-256color'
 
 source ~/.bash_utilities
 
