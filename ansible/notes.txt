@@ -1,8 +1,8 @@
 TRIVIAL:
 - Swap left and right mouse button: -> bare metal
     xmodmap -e "pointer = 3 2 1"
-- install vrms
 
+- install vrms
 
 NON-TRIVIAL:
 - resolvconf - package + DNS configs - prefer openNIC -> foliarz
@@ -37,7 +37,6 @@ bootstrap:
     - my current sudoers setup / startup script
 
 - zgrepować i rozwiązać TODOsy
-- disable instalation of Docker-compose by the docker role, use nix instead
 
 NICE:
 - tag package installation (this is the slowest and least likely to fail)

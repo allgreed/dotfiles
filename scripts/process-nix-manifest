@@ -1,2 +1,0 @@
-# vim: ft=sh
-cargo run --manifest-path ~/Desktop/nix-manifest-format/Cargo.toml > ~/Dotfiles/nix/manifest.nix

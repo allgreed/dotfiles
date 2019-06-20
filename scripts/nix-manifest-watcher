@@ -1,0 +1,3 @@
+# vim: ft=sh
+cargo run --manifest-path ~/Desktop/inotifywait-symlink-target/Cargo.toml; cargo run --manifest-path ~/Desktop/nix-manifest-format/Cargo.toml > ~/Dotfiles/nix/manifest.nix
+

@@ -1,6 +1,15 @@
 [
   {
     meta = {};
+    name = "docker-compose-1.23.2";
+    out = { outPath = "/nix/store/myf0dg1hm6fsy94fi10inld5m5d0qb66-docker-compose-1.23.2"; };
+    outPath = "/nix/store/myf0dg1hm6fsy94fi10inld5m5d0qb66-docker-compose-1.23.2";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    meta = {};
     name = "go-1.12.1";
     out = { outPath = "/nix/store/749qksf79hvn0aprcznd9bwfv550qwh3-go-1.12.1"; };
     outPath = "/nix/store/749qksf79hvn0aprcznd9bwfv550qwh3-go-1.12.1";

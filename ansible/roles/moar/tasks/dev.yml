@@ -9,6 +9,7 @@
     docker_users:
       - "{{ ansible_env.USER }}"
     docker_package_state: latest
+    docker_install_compose: false
 
 - name: symlink .vimrc and .ideavimrc (for Jetbrains' software)
   file:
