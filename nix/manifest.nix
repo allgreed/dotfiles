@@ -10,6 +10,15 @@
   }
   {
     meta = {};
+    name = "esptool-2.6";
+    out = { outPath = "/nix/store/4mgi6ai69qvyr67d2y8h0jz4zqw121r7-esptool-2.6"; };
+    outPath = "/nix/store/4mgi6ai69qvyr67d2y8h0jz4zqw121r7-esptool-2.6";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    meta = {};
     name = "git-2.21.0";
     out = { outPath = "/nix/store/czm6spl5g0ig57alx06apjjg9lrc657k-git-2.21.0"; };
     outPath = "/nix/store/czm6spl5g0ig57alx06apjjg9lrc657k-git-2.21.0";
