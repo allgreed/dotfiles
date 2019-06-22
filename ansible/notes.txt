@@ -2,6 +2,17 @@ TRIVIAL:
 - Swap left and right mouse button: -> bare metal
     xmodmap -e "pointer = 3 2 1"
 
+- userstartup.service <- put under Ansible + clear README
+    - add service file
+    - does it need enabling?
+
+- nix-manifest-tracker service + git repos in known location
+    - test it <- maybe another nix package? :D
+
+    - clone dependant repositories
+    - add service file
+    - enable it!
+
 - install vrms
 
 NON-TRIVIAL:
@@ -40,8 +51,6 @@ bootstrap:
 
 NICE:
 - tag package installation (this is the slowest and least likely to fail)
-
-- git-credentials == chmod -r
 
 - remove iceweasel only on Debian
 - [firefox installation] instead of block ... rescue => choose package to install

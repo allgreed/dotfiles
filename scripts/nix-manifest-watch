@@ -1,4 +1,6 @@
 # vim: ft=sh
+. ~/.nix-profile/etc/profile.d/nix.sh
+
 cargo run --manifest-path ~/Desktop/inotifywait-symlink-target/Cargo.toml
 cargo run --manifest-path ~/Desktop/nix-manifest-format/Cargo.toml > ~/Dotfiles/nix/manifest.nix
 
