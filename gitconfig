@@ -20,7 +20,7 @@
     followTags = false
 
 [commit]
-    verbose = true # Show diff when preparing commit message
+    verbose = true # -v
 
 # 3rd party
 ############################
@@ -42,15 +42,16 @@
 ############################
 
 [alias]
-    s = status --short
-    d = diff
-    p = push
     a = add
     c = commit
+    d = diff
+    p = push
+    s = status --short
 
     aa = add --all
     call = !git add --all && git commit
     co = checkout
+    dc = diff --cached
     purge-branches = !git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches
 
 [color "status"]
