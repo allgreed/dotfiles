@@ -36,6 +36,15 @@
     type = "derivation";
   }
   {
+    bin = { outPath = "/nix/store/k634xja288rv4cgl2l28bifzd5ph35di-hub-2.11.2-bin"; };
+    meta = {};
+    name = "hub-2.11.2";
+    outPath = "/nix/store/k634xja288rv4cgl2l28bifzd5ph35di-hub-2.11.2-bin";
+    outputs = [ "bin" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
     meta = {};
     name = "nix-2.2.2";
     out = { outPath = "/nix/store/hbhdjn5ik3byg642d1m11k3k3s0kn3py-nix-2.2.2"; };

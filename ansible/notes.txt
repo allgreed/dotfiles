@@ -7,8 +7,6 @@ TRIVIAL:
     - does it need enabling?
 
 - nix-manifest-tracker service + git repos in known location
-    - test it <- maybe another nix package? :D
-
     - clone dependant repositories
     - add service file
     - enable it!
