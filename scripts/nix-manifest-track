@@ -1,7 +1,5 @@
 #!/bin/sh
 # vim: ft=sh
-. ~/.nix-profile/etc/profile.d/nix.sh
-
-cargo run --manifest-path ~/Desktop/inotifywait-symlink-target/Cargo.toml
-cargo run --manifest-path ~/Desktop/nix-manifest-format/Cargo.toml > ~/Dotfiles/nix/manifest.nix
+~/Desktop/inotifywait-symlink-target/target/release/inotifywait-symlink-target
+~/Desktop/nix-manifest-format/target/release/nix-manifest-format > ~/Dotfiles/nix/manifest.nix
 
