@@ -6,7 +6,7 @@ After=multi-user.target
 [Service]
 Type=idle
 User={{ ansible_env.USER }}
-ExecStart=/bin/bash {{ ansible_user_dir }}/.scripts/nix-manifest-watch
+ExecStart={{ ansible_user_dir }}/.scripts/nix-manifest-track
 Restart=always
 RestartSec=1s
 TimeoutStopSec=5s
