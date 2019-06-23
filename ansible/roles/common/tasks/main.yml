@@ -52,4 +52,10 @@
 
 - include_tasks: system/main.yml
 
-- include_tasks: nix.yml
+- include_tasks:
+    file: nix.yml
+    apply:
+      tags:
+        - nix
+  tags:
+    - nix

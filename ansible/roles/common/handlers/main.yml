@@ -1,0 +1,7 @@
+---
+- name: reload nix-manifest-tracker
+  service:
+    name: nix-manifest-tracker
+    state: restarted
+  become: yes
+

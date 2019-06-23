@@ -6,16 +6,14 @@ TRIVIAL:
     - add service file
     - does it need enabling?
 
-- nix-manifest-tracker service + git repos in known location
-    - clone dependant repositories
-    - add service file
-    - enable it!
-
 - install vrms
 
 NON-TRIVIAL:
 - resolvconf - package + DNS configs - prefer openNIC -> foliarz
 - sudo mv /etc/dnsmasq.conf /etc/NetworkManager/dnsmasq.d/
+
+- nix-manifest-tracker -- remove dependant repositories in favour of nix packages
+    - maybe even package the whole service and simply start + enable it in Ansible :D
 
 - remove the need to type start ==> move to .xinitrc / do something so it works propperly with i3?
 

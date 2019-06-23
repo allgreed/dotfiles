@@ -1,0 +1,16 @@
+[Unit]
+Description=Nix-manifest-tracker
+Documentation=????
+After=multi-user.target
+
+[Service]
+Type=idle
+User={{ ansible_env.USER }}
+ExecStart=/bin/bash {{ ansible_user_dir }}/.scripts/nix-manifest-watch
+Restart=always
+RestartSec=1s
+TimeoutStopSec=5s
+
+[Install]
+WantedBy=multi-user.target
+
