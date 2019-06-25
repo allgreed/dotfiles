@@ -90,3 +90,4 @@
     name: nix-manifest-tracker
     enabled: true
     state: started
+  become: yes
