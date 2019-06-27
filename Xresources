@@ -86,9 +86,9 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 ! Font configuration
 URxvt*font: xft:Source Code Pro:style=Medium:size=11:antialias=true:hinting=true
-URxvt*boldFont: xft:Source Code Pro:style=Bold:size=11:antialias=true:hinting=true
-URxvt*italicFont: xft:Source Code Pro:style=Oblique:size=11:antialias=true:hinting=true
-URxvt*boldItalicFont: xft:Source Code Pro:style=Bold Oblique:size=11:antialias=true:hinting=true
+URxvt*boldFont: xft:Source Code Pro:style=Bold:antialias=true:hinting=true
+URxvt*italicFont: xft:Source Code Pro:style=Oblique:antialias=true:hinting=true
+URxvt*boldItalicFont: xft:Source Code Pro:style=Bold Oblique:antialias=true:hinting=true
 URxvt*letterSpace: -1
 
 ! Disable weird stuff on Ctrl + Shift
