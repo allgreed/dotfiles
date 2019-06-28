@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# vim: set syntax=python:
+# vim: ft=python
 from enum import Enum
 
 import requests
@@ -23,13 +23,21 @@ def main(when):
     all_weather = get_weather()
     requested_weather = "\n".join(all_weather.split("\n")[when.value])
 
+    # TODO: Add fallback providers
+
     print(requested_weather)
 
 
-def get_weather(location="gdańsk", http=requests):
-    url_template = "https://wttr.in/{location}"
+def get_weather(location="gdańsk", provider="wttr.in", http=requests):
+    url_template = "https://{provider}/{location}"
 
-    response = http.get(url_template.format(location=location))
+    response = http.get(url_template.format(location=location, provider=provider))
+    response.raise_for_status()
+
+    text = response.text
+
+    if any(m in text.lower() for m in ("sorry", "possible", "soon")):
+        raise ValueError("The provider {} is down".format(provider)) # TODO: Better execption type
 
     return response.text
 
