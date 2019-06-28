@@ -19,6 +19,8 @@
     - arandr # GUI for xrandr
     - scrot # Screenshot utility
 
+    - vrms # Virtual Richard M. Stallman <- the best package ever!
+
     - pavucontrol # Volume control - TODO: Consider dropping in favour of alsamixer
     - alsa-utils # Volume control
 
