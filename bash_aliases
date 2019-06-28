@@ -1,7 +1,6 @@
 # vim: set filetype=sh :
 
 # moving around
-alias ..="cd .."
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
@@ -39,11 +38,16 @@ scratch() {
 ##############
 # Typos
 ##############
-alias dokcer=docker
-alias xit="exit"
-alias exi="exit"
 alias cd..="cd .."
+alias ..="cd .."
+
+alias dokcer=docker
+
+alias xit=exit
+alias exi=exit
 alias :q=exit
+alias :wq=exit
+alias :x=exit
 
 ##############
 # WIP
@@ -61,6 +65,10 @@ alias idea="/opt/idea-IC-182.4892.20/bin/idea.sh &"
 # node should be loaded by default to every shell, but without startup time overhead
 alias nodeon="nvm use default"
 
+alias e="vim" # is this used?
+alias v="vim"
+alias vtmp="vim ~/tmp"
+
 # TODO: Dafuq is this?????
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -72,8 +80,5 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
-# containerized :D
-alias go='docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.11 go'
 
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
