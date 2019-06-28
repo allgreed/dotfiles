@@ -3,7 +3,7 @@
 INVENTORY := inventory
 TAGS := ''
 
-.PHONY: main test
+.PHONY: all some test
 all: galaxy_roles ## full run, with all the bells and whistles
 	ansible-playbook -K -l local --inventory=$(INVENTORY) playbook.yml
 some: galaxy_roles ## run main playbook with only the stuff specified in TAGS (default: run nothing)
