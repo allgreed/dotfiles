@@ -1,9 +1,0 @@
----
-- name: create ramdisk
-  mount:
-    path: /media/ramdisk
-    src: ramdisk
-    fstype: tmpfs
-    opts: nodev,nosuid,noexec,nodiratime,size={{ ramdisk_size }}
-    state: mounted
-  become: yes

@@ -1,0 +1,6 @@
+#!/bin/bash
+# vim: ft=sh
+# sutff in this file will happen on startup
+
+rfkill block `rfkill list | grep -i blue | head -c 1` # stop bluetooth
+./.scripts/mic mute

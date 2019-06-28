@@ -2,10 +2,6 @@ TRIVIAL:
 - Swap left and right mouse button: -> bare metal
     xmodmap -e "pointer = 3 2 1"
 
-- userstartup.service <- put under Ansible + clear README
-    - add service file
-    - does it need enabling?
-
 - install vrms
 
 NON-TRIVIAL:
@@ -28,6 +24,7 @@ NON-TRIVIAL:
         ln -s /opt/rambox/ ~/.local/bin/rambox
     if version != latest
         download rambox to /opt/rambox
+        make the switch an atomic operation
         chmod +x /opt/rambox
 
     !!! where are my configs stored? o.0

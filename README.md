@@ -29,10 +29,4 @@ git clone https://github.com/allgreed/dotfiles.git ~/Dotfiles
 ## Shoutout
 
 Kudos to @niburu for walking me through xkb config!
-
-<!-- DEAL WITH THIS STUFF BELOW -->
-
-## Requiremenets
-
-- `startup.sh` requires to be called by a service at startup
-
+<-- Add some moar kudos, inf, olo, ??? -->
