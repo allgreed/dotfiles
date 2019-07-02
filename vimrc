@@ -52,6 +52,7 @@ Plugin 'hashivim/vim-terraform'
 Plugin 'cespare/vim-toml'
 Plugin 'jvirtanen/vim-hcl'
 Plugin 'rust-lang/rust.vim'
+Plugin 'LnL7/vim-nix'
 
 " ???
 Plugin 'isRuslan/vim-es6'
