@@ -60,7 +60,6 @@ alias start="cat ~/Dotfiles/ansible/notes.txt | grep xmod | bash; pkill xcape; x
 
 # this should be standardized once my PyCharm installations are automated
 alias charm="charm . &"
-alias idea="/opt/idea-IC-182.4892.20/bin/idea.sh &"
 
 # node should be loaded by default to every shell, but without startup time overhead
 alias nodeon="nvm use default"
