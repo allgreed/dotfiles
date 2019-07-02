@@ -27,6 +27,7 @@
     - vlc # media player
     - evince # PDF reader
     - workrave # forces me to take breaks
+    - baobab # graphical disk usage explorer
 
     - graphviz # graph visualization
 
