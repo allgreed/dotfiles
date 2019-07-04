@@ -3,9 +3,11 @@
   become: yes
   blockinfile:
     path: /usr/share/X11/xkb/symbols/pl
-    block: "{{ lookup('template', 'templates/xkb_includes.j2') }}" 
+    block: |2
+          include "ctrl(nocaps)" // Capslock acts like left Control
+          include "shift(both_capslock_cancel)" // both Shifts pressed == CapsLock, press one Shift to cancel
     insertafter: 'xkb_symbols \"basic\" \{'
-    marker: "// {mark} ANSIBLE MANAGED BLOCK"
+    marker: "\n// {mark} ANSIBLE MANAGED BLOCK\n"
     regexp: both_capslock_cancel
   notify:
     - reload keyboard layout

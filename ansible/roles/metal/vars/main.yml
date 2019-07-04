@@ -1,10 +1,2 @@
 ---
-xkb_includes:
-    # Capslock acts like left Control
-  - ctrl(nocaps)
-
-    # both Shifts pressed together act like CapsLock
-    # pressing either of them alone cancels CapsLock
-  - shift(both_capslock_cancel)
-
 ramdisk_size: 5M # human readable size string
