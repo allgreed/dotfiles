@@ -10,6 +10,11 @@
   notify:
     - reload keyboard layout
 
+- name: swap mouse buttons
+  template:
+    src: Xmodmap.j2
+    dest: "{{ ansible_user_dir }}/.Xmodmap"
+
 - name: create ramdisk
   mount:
     path: /media/ramdisk

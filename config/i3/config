@@ -204,18 +204,15 @@ bindsym $mod+t exec $launch_terminal
 ########################################
 # Autostart
 #########################################
+exec ~/.fehbg # Wallpaper
+exec xmodmap ~/.Xmodmap
 
-# Wallpaper
-exec ~/.fehbg
-
-# Deamons
 exec unclutter
 exec pulseaudio --start
 exec conky
-
-# Helpers
-exec workrave
 exec redshift-gtk -c ~/.redshift.conf
+
+exec workrave
 
 exec rambox
 exec firefox

@@ -1,6 +1,4 @@
 TRIVIAL:
-- Swap left and right mouse button: -> bare metal
-    xmodmap -e "pointer = 3 2 1"
 
 NON-TRIVIAL:
 - resolvconf - package + DNS configs - prefer openNIC -> foliarz
@@ -9,7 +7,6 @@ NON-TRIVIAL:
 - nix-manifest-tracker -- remove dependant repositories in favour of nix packages
 
 - remove the need to type start ==> move to .xinitrc / do something so it works propperly with i3?
-    - fix mounse buttons
     - fix xcape
     - remove alias
 
@@ -45,6 +42,8 @@ bootstrap:
 
 NICE:
 - tag package installation (this is the slowest and least likely to fail)
+
+- move ramdisk creation from metal into moar (since it'd like to do that on a VM as well)
 
 - remove iceweasel only on Debian
 - [firefox installation] instead of block ... rescue => choose package to install
