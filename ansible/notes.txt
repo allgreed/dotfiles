@@ -7,15 +7,18 @@ NON-TRIVIAL:
 - sudo mv /etc/dnsmasq.conf /etc/NetworkManager/dnsmasq.d/
 
 - nix-manifest-tracker -- remove dependant repositories in favour of nix packages
-    - maybe even package the whole service and simply start + enable it in Ansible :D
 
 - remove the need to type start ==> move to .xinitrc / do something so it works propperly with i3?
+    - fix mounse buttons
+    - fix xcape
+    - remove alias
 
 - npm-ish / node-ish:
     - live-server, tldr, livedown <- global node packages
     - yarn
 
 - PyCharm (community / professional -> role variable)
+    - configs ???
 
 - rambox:
     if rambox not installed:

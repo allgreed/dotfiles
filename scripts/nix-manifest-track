@@ -3,13 +3,13 @@
 INOTIFYWAIT_SYMLINK_TARGET="$HOME/Desktop/inotifywait-symlink-target/target/release/inotifywait-symlink-target"
 NIX_MANIFEST_FORMAT="$HOME/Desktop/nix-manifest-format/target/release/nix-manifest-format"
 
+. ~/.nix-profile/etc/profile.d/nix.sh  # apply nix environment
+
 if [ -f "$INOTIFYWAIT_SYMLINK_TARGET" ]; then 
-    . ~/.nix-profile/etc/profile.d/nix.sh
     cargo build --release --manifest-path ~/Desktop/inotifywait-symlink-target/Cargo.toml
 fi
 
 if [ -f "$NIX_MANIFEST_FORMAT" ]; then
-    . ~/.nix-profile/etc/profile.d/nix.sh
     cargo build --release --manifest-path ~/Desktop/inotifywait-symlink-target/Cargo.toml
 fi
 
