@@ -6,7 +6,7 @@ NON-TRIVIAL:
 
 - nix-manifest-tracker -- remove dependant repositories in favour of nix packages
 
-- remove the need to type start ==> move to .xinitrc / do something so it works propperly with i3?
+- remove the need to type xcape on startup
     - fix xcape
     - remove alias
 
@@ -41,6 +41,8 @@ bootstrap:
 - zgrepować i rozwiązać TODOsy
 
 NICE:
+- fix lvm metad connection error at startup
+- https://medium.com/@sidneyliebrand/how-fzf-and-ripgrep-improved-my-workflow-61c7ca212861
 - tag package installation (this is the slowest and least likely to fail)
 
 - move ramdisk creation from metal into moar (since it'd like to do that on a VM as well)
