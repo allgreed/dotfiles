@@ -1,22 +1,6 @@
 TRIVIAL:
 
 NON-TRIVIAL:
-- resolvconf - package + DNS configs - prefer openNIC -> foliarz
-- sudo mv /etc/dnsmasq.conf /etc/NetworkManager/dnsmasq.d/
-
-- nix-manifest-tracker -- remove dependant repositories in favour of nix packages
-
-- remove the need to type xcape on startup
-    - fix xcape
-    - remove alias
-
-- npm-ish / node-ish:
-    - live-server, tldr, livedown <- global node packages
-    - yarn
-
-- PyCharm (community / professional -> role variable)
-    - configs ???
-
 - rambox:
     if rambox not installed:
         ln -s /opt/rambox/ ~/.local/bin/rambox
@@ -26,6 +10,19 @@ NON-TRIVIAL:
         chmod +x /opt/rambox
 
     !!! where are my configs stored? o.0
+
+- resolvconf - package + DNS configs - prefer openNIC -> foliarz
+    - see direct output from DHCP in resolv.conf
+    - sudo mv /etc/dnsmasq.conf /etc/NetworkManager/dnsmasq.d/
+
+- nix-manifest-tracker -- remove dependant repositories in favour of nix packages
+
+- npm-ish / node-ish:
+    - live-server, tldr, livedown <- global node packages
+    - yarn
+
+- PyCharm (community / professional -> role variable)
+    - configs ???
 
 - Firefox (+ Thunderbird ???) // maybe mutt instead
     - how to store my configs?

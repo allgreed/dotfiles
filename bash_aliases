@@ -55,9 +55,6 @@ alias :x=exit
 
 alias volume="~/.scripts/volume --signal 10"
 
-# temporary thing I have to run on every startup on 2 of my machines, will automate it soon!
-alias xcape="pkill xcape; xcape"
-
 # this should be standardized once my PyCharm installations are automated
 alias charm="charm . &"
 

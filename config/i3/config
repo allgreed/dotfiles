@@ -204,15 +204,17 @@ bindsym $mod+t exec $launch_terminal
 ########################################
 # Autostart
 #########################################
-exec ~/.fehbg # Wallpaper
 exec xmodmap ~/.Xmodmap
+exec_always --no-startup-id pkill xcape; xcape
+
+exec_always --no-startup-id ~/.fehbg # Wallpaper
+exec conky
 
 exec unclutter
-exec pulseaudio --start
-exec conky
 exec redshift-gtk -c ~/.redshift.conf
-
 exec workrave
+
+exec pulseaudio --start
 
 exec rambox
 exec firefox
@@ -265,4 +267,3 @@ bindsym $mod+less move workspace to output left
 #######
 
 bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
-exec xcape # Ctrl => ESC | Ctrl (and CapsLock is already set to ESC via xkb)
