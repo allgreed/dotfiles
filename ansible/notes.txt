@@ -1,19 +1,11 @@
 TRIVIAL:
 
 NON-TRIVIAL:
-- rambox:
-    if rambox not installed:
-        ln -s /opt/rambox/ ~/.local/bin/rambox
-    if version != latest
-        download rambox to /opt/rambox
-        make the switch an atomic operation
-        chmod +x /opt/rambox
-
-    !!! where are my configs stored? o.0
-
 - resolvconf - package + DNS configs - prefer openNIC -> foliarz
     - see direct output from DHCP in resolv.conf
     - sudo mv /etc/dnsmasq.conf /etc/NetworkManager/dnsmasq.d/
+
+- allow rambox updates with just chanigng the variable and reruning the playbook
 
 - nix-manifest-tracker -- remove dependant repositories in favour of nix packages
 
@@ -46,6 +38,12 @@ NICE:
 
 - remove iceweasel only on Debian
 - [firefox installation] instead of block ... rescue => choose package to install
+
+Rambox configs under:
+    - ~/.config/Rambox
+    - but have no idea what is what xD
+    - and the entire folder is ~1gb xD
+    - backup until different messager
 
 - https://events.ccc.de/congress/2018/wiki/index.php/Static:Information_Security#Introduction
 - ranger config files (if it works with urxvt image preview, without drawing borders - or maybe I can set borders to 0px? o.0 ;d)

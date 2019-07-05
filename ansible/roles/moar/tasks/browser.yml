@@ -14,3 +14,24 @@
 - name: remove iceweasel
   package: name=iceweasel  state=absent
   become: yes
+
+- name: download Rambox
+  get_url:
+    url: https://github.com/ramboxapp/community-edition/releases/download/{{ rambox_version }}/Rambox-{{ rambox_version }}-linux-x86_64.AppImage
+    dest: /opt/rambox/rambox
+    mode: u=rwx,g=rx,o=rx
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+  become: yes
+  tags:
+    - rambox
+
+- name: symlink Rambox binary to PATH
+  file:
+    state: link
+    src: /opt/rambox/rambox
+    dest: /usr/bin/rambox
+  become: yes
+  tags:
+    - rambox
+

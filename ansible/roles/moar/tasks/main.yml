@@ -55,5 +55,7 @@
     extra_args: --user
 
 - include_tasks: browser.yml
+  tags:
+    - rambox
 
 - include_tasks: dev.yml
