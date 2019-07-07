@@ -1,0 +1,6 @@
+
+# Mainstream backup DNS
+nameserver 1.1.1.1 # Cloudflare
+nameserver 8.8.8.8 # Google
+nameserver 8.8.8.4
+

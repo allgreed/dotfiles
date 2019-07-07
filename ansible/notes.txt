@@ -1,11 +1,8 @@
 TRIVIAL:
 
 NON-TRIVIAL:
-- resolvconf - package + DNS configs - prefer openNIC -> foliarz
-    - see direct output from DHCP in resolv.conf
-    - sudo mv /etc/dnsmasq.conf /etc/NetworkManager/dnsmasq.d/
-
 - allow rambox updates with just chanigng the variable and reruning the playbook
+    - hash ?
 
 - nix-manifest-tracker -- remove dependant repositories in favour of nix packages
 
@@ -31,6 +28,7 @@ bootstrap:
 
 NICE:
 - fix lvm metad connection error at startup
+- xcape doesn't properly recognize Caps mapped to Control until Control is pressed
 - https://medium.com/@sidneyliebrand/how-fzf-and-ripgrep-improved-my-workflow-61c7ca212861
 - tag package installation (this is the slowest and least likely to fail)
 

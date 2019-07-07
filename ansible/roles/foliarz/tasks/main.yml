@@ -1,3 +1,7 @@
 ---
 - include_tasks: vpn.yml
 
+- include_tasks: dns.yml
+  tags:
+    - dns
+
