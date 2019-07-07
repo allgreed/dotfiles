@@ -7,7 +7,9 @@ NON-TRIVIAL:
 - nix-manifest-tracker -- remove dependant repositories in favour of nix packages
 
 - npm-ish / node-ish:
-    - live-server, tldr, livedown <- global node packages
+    - @vue/cli-service-global
+    - live-server
+    - livedown
     - yarn
 
 - PyCharm (community / professional -> role variable)

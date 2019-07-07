@@ -71,4 +71,13 @@
     system = "x86_64-linux";
     type = "derivation";
   }
+  {
+    meta = {};
+    name = "tldr-1.3.0";
+    out = { outPath = "/nix/store/7yamyy8ypjlsn7aa8mzjq2m86h2y23nl-tldr-1.3.0"; };
+    outPath = "/nix/store/7yamyy8ypjlsn7aa8mzjq2m86h2y23nl-tldr-1.3.0";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
 ]
