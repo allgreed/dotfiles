@@ -80,4 +80,13 @@
     system = "x86_64-linux";
     type = "derivation";
   }
+  {
+    meta = {};
+    name = "yarn-1.16.0";
+    out = { outPath = "/nix/store/0vzng2cjgbbb61p7888spyiiz3l8s3dc-yarn-1.16.0"; };
+    outPath = "/nix/store/0vzng2cjgbbb61p7888spyiiz3l8s3dc-yarn-1.16.0";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
 ]

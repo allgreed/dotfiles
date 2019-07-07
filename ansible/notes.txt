@@ -10,7 +10,6 @@ NON-TRIVIAL:
     - @vue/cli-service-global
     - live-server
     - livedown
-    - yarn
 
 - PyCharm (community / professional -> role variable)
     - configs ???
