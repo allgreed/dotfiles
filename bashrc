@@ -57,6 +57,7 @@ PATH=$PATH_LOCAL_BINARIES:$PATH_SCRIPT_BINARIES:$PATH:$PATH_ROOT_BINARIES
 
 export PATH
 
+# fixes nix-shell and sometimes ssh
 if [ "$TERM" = 'rxvt-unicode-256color' ]; then
     export TERM='xterm-256color'
 fi
@@ -83,4 +84,4 @@ __git_complete g __git_main # apply full git completion to "g" alias
 #########################
 load "$NVM_DIR/nvm.sh" --no-use
 load ~/.nix-profile/etc/profile.d/nix.sh
-
+eval "$(direnv hook bash)"

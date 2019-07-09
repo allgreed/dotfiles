@@ -1,5 +1,14 @@
 [
   {
+    bin = { outPath = "/nix/store/0cca8apj95xsw52yx2sswc0hfybfcclj-direnv-2.20.0-bin"; };
+    meta = {};
+    name = "direnv-2.20.0";
+    outPath = "/nix/store/0cca8apj95xsw52yx2sswc0hfybfcclj-direnv-2.20.0-bin";
+    outputs = [ "bin" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
     meta = {};
     name = "docker-compose-1.23.2";
     out = { outPath = "/nix/store/myf0dg1hm6fsy94fi10inld5m5d0qb66-docker-compose-1.23.2"; };

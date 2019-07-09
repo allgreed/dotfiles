@@ -98,7 +98,10 @@ let @g= 'y:%s/"//OD' " replace globally visually highlighted text
 
 augroup vimrc
     autocmd FileType make setlocal softtabstop=0 noexpandtab " Use actual tab chars in Makefiles
+
     autocmd FileType gitcommit setlocal spell " Use spellcheck by default in git commit messages
+
+    autocmd BufNewFile,BufRead .envrc set syntax=sh
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
