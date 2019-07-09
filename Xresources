@@ -69,6 +69,7 @@ URxvt*matcher.button: 1
 ! Scrolling
 URxvt*scrollBar: false
 
+! Don't scroll inside vim / less / ...
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 

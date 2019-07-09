@@ -62,6 +62,8 @@ if [ "$TERM" = 'rxvt-unicode-256color' ]; then
     export TERM='xterm-256color'
 fi
 
+export PIPENV_VENV_IN_PROJECT="1"
+
 # Shell behaviour
 #########################
 set -o vi; # vim in bash
