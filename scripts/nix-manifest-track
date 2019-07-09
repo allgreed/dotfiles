@@ -5,11 +5,11 @@ NIX_MANIFEST_FORMAT="$HOME/Desktop/nix-manifest-format/target/release/nix-manife
 
 . ~/.nix-profile/etc/profile.d/nix.sh  # apply nix environment
 
-if [ -f "$INOTIFYWAIT_SYMLINK_TARGET" ]; then 
+if [ ! -f "$INOTIFYWAIT_SYMLINK_TARGET" ]; then 
     cargo build --release --manifest-path ~/Desktop/inotifywait-symlink-target/Cargo.toml
 fi
 
-if [ -f "$NIX_MANIFEST_FORMAT" ]; then
+if [ ! -f "$NIX_MANIFEST_FORMAT" ]; then
     cargo build --release --manifest-path ~/Desktop/inotifywait-symlink-target/Cargo.toml
 fi
 
