@@ -79,7 +79,6 @@ load ~/.bash_prompt # my fancy prompt
 load /usr/share/bash-completion/bash_completion
 load "$NVM_DIR/bash_completion"
 load /usr/share/bash-completion/completions/git
-load kubectl completion bash
 __git_complete g __git_main # apply full git completion to "g" alias
 
 # Shell integrations
