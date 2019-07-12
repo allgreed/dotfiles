@@ -17,6 +17,14 @@ set_nix_shell() {
    fi
 }
 
+set_shell_indicator() {
+   if test `id -u` -eq 0 ; then
+       SHELL_SIGN="\[$red\]\$\[$reset\]"
+   else
+       SHELL_SIGN="\[$dim\]\[$bold\]\[$blue\]λ\[$reset\]"
+   fi
+}
+
 # Colors and appearance
 #########################
 
@@ -24,6 +32,7 @@ reset=$(tput sgr0)
 bold=$(tput bold)
 blue=$(tput setaf 33)
 green=$(tput setaf 64);
+red=$(tput setaf 153);
 dim=$(tput dim)
 
 #########################
@@ -33,14 +42,14 @@ GIT_PS1_SHOWDIRTYSTATE=1
 set_bash_prompt() {
     set_virtualenv
     set_nix_shell
+    set_shell_indicator
 
     git_info="\[$green\]\$(__git_ps1)\[$reset\]"
     venv="\[$green\]\$PYTHON_VIRTUALENV\[$reset\]"
     cwd="\w"
-    shell_indicator="\[$dim\]\[$bold\]\[$blue\]λ\[$reset\]"
     nix="\[$green\]\$NIX_SHELL\[$reset\]"
 
-    PS1="${venv}${nix}${cwd}${git_info} ${shell_indicator} "
+    PS1="${venv}${nix}${cwd}${git_info} ${SHELL_SIGN} "
 }
 
 PROMPT_COMMAND=set_bash_prompt
