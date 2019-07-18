@@ -102,6 +102,7 @@ augroup vimrc
     autocmd FileType gitcommit setlocal spell " Use spellcheck by default in git commit messages
 
     autocmd BufNewFile,BufRead .envrc set syntax=sh
+    autocmd BufNewFile,BufRead .gitignore set syntax=conf
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
