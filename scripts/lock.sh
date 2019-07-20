@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # saves the state of mute
 #~/aliases/volume mstat > /tmp/muted 
