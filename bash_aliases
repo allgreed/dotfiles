@@ -55,6 +55,8 @@ alias :x=exit
 
 alias volume="~/.scripts/volume --signal 10"
 
+alias dhcprc="sudo dhclient -r; sudo dhclient -v; ping wp.pl -c 2"
+
 # this should be standardized once my PyCharm installations are automated
 alias charm="charm . &"
 
