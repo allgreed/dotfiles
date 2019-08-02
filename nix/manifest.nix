@@ -81,6 +81,15 @@
     type = "derivation";
   }
   {
+    bin = { outPath = "/nix/store/55w3rrwqz7lqppjpsr5j84ddamrbqhmh-terraform-0.11.14-bin"; };
+    meta = {};
+    name = "terraform-0.11.14";
+    outPath = "/nix/store/55w3rrwqz7lqppjpsr5j84ddamrbqhmh-terraform-0.11.14-bin";
+    outputs = [ "bin" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
     meta = {};
     name = "tldr-1.3.0";
     out = { outPath = "/nix/store/7yamyy8ypjlsn7aa8mzjq2m86h2y23nl-tldr-1.3.0"; };
