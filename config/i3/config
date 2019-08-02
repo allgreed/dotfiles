@@ -261,9 +261,9 @@ bindsym XF86AudioLowerVolume exec $scripts/volume --signal 10 dec 5
 #########################################
 bindsym $mod+greater move workspace to output right
 bindsym $mod+less move workspace to output left
+bindsym XF86Display exec ~/.screenlayout/singlemon.sh # very usefull when detaching from dock station
 
 #######
 # Testing
 #######
-
 bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
