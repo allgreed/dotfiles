@@ -88,7 +88,6 @@ set clipboard=unnamedplus " Use system clipboard as default buffer
 " => Preloaded macros
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let @f= 'y/"' " search for visually highlighted text
 let @r= 'y:%s/"/"/OD' " replace locally visually highlighted text
 let @g= 'y:%s/"//OD' " replace globally visually highlighted text
 
