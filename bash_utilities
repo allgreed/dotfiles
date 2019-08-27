@@ -1,8 +1,5 @@
 # vim: set filetype=sh :
 
-# Tip: set to true to enable debugging
-DEBUG=''
-
 function load
 {
     function output_failure 
@@ -16,13 +13,13 @@ function load
     if [[ $SOURCABLE == /* ]]; then # SOURCABLE is a file
         if [ -n "$SOURCABLE" ] && [ -f $SOURCABLE ]; then
             source $SOURCABLE $@
-        elif [ -n "$DEBUG" ]; then
+        else 
             output_failure
         fi
     else
         if [ -n "$(which $SOURCABLE)" ]; then
             source <($SOURCABLE $@)
-        elif [ -n "$DEBUG" ]; then
+        else 
             output_failure
         fi
     fi
