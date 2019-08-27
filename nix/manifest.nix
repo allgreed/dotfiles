@@ -28,6 +28,15 @@
   }
   {
     meta = {};
+    name = "ghc-8.6.5";
+    out = { outPath = "/nix/store/44zyylbbhabj2d62f7lbb6wmjlllcv10-ghc-8.6.5"; };
+    outPath = "/nix/store/44zyylbbhabj2d62f7lbb6wmjlllcv10-ghc-8.6.5";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    meta = {};
     name = "git-2.21.0";
     out = { outPath = "/nix/store/czm6spl5g0ig57alx06apjjg9lrc657k-git-2.21.0"; };
     outPath = "/nix/store/czm6spl5g0ig57alx06apjjg9lrc657k-git-2.21.0";
@@ -64,10 +73,28 @@
   }
   {
     meta = {};
+    name = "nixops-1.7";
+    out = { outPath = "/nix/store/gc2l5q4vgc9x56sc939i3bc9hf9r88hs-nixops-1.7"; };
+    outPath = "/nix/store/gc2l5q4vgc9x56sc939i3bc9hf9r88hs-nixops-1.7";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    meta = {};
     name = "nodejs-12.2.0";
     out = { outPath = "/nix/store/vf9wmbffxisl1v26c90z9aj9hrrg5mig-nodejs-12.2.0"; };
     outPath = "/nix/store/vf9wmbffxisl1v26c90z9aj9hrrg5mig-nodejs-12.2.0";
     outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    bin = { outPath = "/nix/store/31paaim7w60gh2ia3f70r2hfylfi2c1h-nomad-0.9.3-bin"; };
+    meta = {};
+    name = "nomad-0.9.3";
+    outPath = "/nix/store/31paaim7w60gh2ia3f70r2hfylfi2c1h-nomad-0.9.3-bin";
+    outputs = [ "bin" ];
     system = "x86_64-linux";
     type = "derivation";
   }
@@ -90,6 +117,15 @@
     type = "derivation";
   }
   {
+    bin = { outPath = "/nix/store/vrki5yg1idpqz5m5lglf4mfrl9nz6m4v-terraform-provider-nixos-0.0.1-bin"; };
+    meta = {};
+    name = "terraform-provider-nixos-0.0.1";
+    outPath = "/nix/store/vrki5yg1idpqz5m5lglf4mfrl9nz6m4v-terraform-provider-nixos-0.0.1-bin";
+    outputs = [ "bin" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
     meta = {};
     name = "tldr-1.3.0";
     out = { outPath = "/nix/store/7yamyy8ypjlsn7aa8mzjq2m86h2y23nl-tldr-1.3.0"; };
@@ -103,6 +139,15 @@
     name = "yarn-1.16.0";
     out = { outPath = "/nix/store/0vzng2cjgbbb61p7888spyiiz3l8s3dc-yarn-1.16.0"; };
     outPath = "/nix/store/0vzng2cjgbbb61p7888spyiiz3l8s3dc-yarn-1.16.0";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    meta = {};
+    name = "youtube-dl-2019.07.16";
+    out = { outPath = "/nix/store/vrb5c5zq7ylrzkcii2x36agwrx786sf4-python3.7-youtube-dl-2019.07.16"; };
+    outPath = "/nix/store/vrb5c5zq7ylrzkcii2x36agwrx786sf4-python3.7-youtube-dl-2019.07.16";
     outputs = [ "out" ];
     system = "x86_64-linux";
     type = "derivation";
