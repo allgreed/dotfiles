@@ -1,4 +1,6 @@
 TRIVIAL:
+- obs-studio
+- Humor Sans
 
 NON-TRIVIAL:
 - allow rambox updates with just chanigng the variable and reruning the playbook

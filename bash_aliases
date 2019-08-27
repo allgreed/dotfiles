@@ -17,8 +17,11 @@ alias python2="/usr/bin/env python"
 alias python="/usr/bin/env python3"
 alias python3="/usr/bin/env python3.6"
 
+
 alias tf="terraform"
 alias py="ptpython" # better Python shell for quick experiments
+
+alias m="make"
 
 transfer()
 {
@@ -34,6 +37,8 @@ scratch() {
     cd $cur_dir
     echo "New scratch dir ready for grinding ;>"
 }
+
+alias vtmp="vim ~/tmp"
 
 ##############
 # Typos
@@ -65,7 +70,6 @@ alias nodeon="nvm use default"
 
 alias e="vim" # is this used?
 alias v="vim"
-alias vtmp="vim ~/tmp"
 
 # TODO: Dafuq is this?????
 if [ -x /usr/bin/dircolors ]; then
