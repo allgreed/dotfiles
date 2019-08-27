@@ -44,6 +44,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ciaranm/securemodelines' "TODO: set nomodelineexpr after 8.1.1366
 
+" Testing
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+
 " Syntax highlighters
 Plugin 'leafgarland/typescript-vim'
 Plugin 'posva/vim-vue'
@@ -108,14 +112,18 @@ augroup END
 " => TODO - tidy it up and put inside a section
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" TODO:  bind :noh to something
+:map <Leader>h :noh<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set undofile
 
-" TODO: Leader?
+let mapleader=" "
+
+:map <Leader>s  i<!--s--><Esc>
+:map <Leader>v  i<!--v--><Esc>
+
 " TODO: Ctrl + S?
 " TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
 " TODO: What exactly does this do ???
