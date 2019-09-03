@@ -131,10 +131,7 @@ set laststatus=2
 set t_Co=256
 set ttimeoutlen=10
 "set term=xterm-256color
-autocmd! BufWritePost ~/.vimrc nested :source ~/.vimrc
-set history=100
 
-let g:indentLine_char = '¦'
-let g:indentline_setcolors = 0
-let g:indentLine_color_term = 240
-let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+autocmd! BufWritePost ~/.vimrc nested :source ~/.vimrc
+
+set history=100
