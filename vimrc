@@ -112,17 +112,16 @@ augroup END
 " => TODO - tidy it up and put inside a section
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let mapleader=" "
 :map <Leader>h :noh<CR>
+:map <Leader>s  i<!--s--><Esc>
+:map <Leader>v  i<!--v--><Esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set undofile
 
-let mapleader=" "
-
-:map <Leader>s  i<!--s--><Esc>
-:map <Leader>v  i<!--v--><Esc>
 
 " TODO: Ctrl + S?
 " TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
