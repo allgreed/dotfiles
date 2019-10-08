@@ -60,6 +60,7 @@ Plugin 'LnL7/vim-nix'
 
 " ???
 Plugin 'isRuslan/vim-es6'
+Plugin 'digitaltoad/vim-pug'
 
 call vundle#end()
 filetype plugin indent on 
