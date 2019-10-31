@@ -47,6 +47,7 @@ Plugin 'ciaranm/securemodelines' "TODO: set nomodelineexpr after 8.1.1366
 " Testing
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'Yggdroot/indentLine'
 
 " Syntax highlighters
 Plugin 'leafgarland/typescript-vim'
@@ -57,10 +58,9 @@ Plugin 'cespare/vim-toml'
 Plugin 'jvirtanen/vim-hcl'
 Plugin 'rust-lang/rust.vim'
 Plugin 'LnL7/vim-nix'
-
-" ???
-Plugin 'isRuslan/vim-es6'
 Plugin 'digitaltoad/vim-pug'
+Plugin 'idris-hackers/idris-vim'
+Plugin 'isRuslan/vim-es6'
 
 call vundle#end()
 filetype plugin indent on 
@@ -102,7 +102,8 @@ let @g= 'y:%s/"//OD' " replace globally visually highlighted text
 
 augroup vimrc
     autocmd FileType make setlocal softtabstop=0 noexpandtab " Use actual tab chars in Makefiles
-
+    autocmd FileType markdown let g:indentLine_enabled = 0 " Disable identLine for .md
+    autocmd FileType json let g:indentLine_enabled = 0
     autocmd FileType gitcommit setlocal spell " Use spellcheck by default in git commit messages
 
     autocmd BufNewFile,BufRead .envrc set syntax=sh
@@ -122,7 +123,6 @@ let mapleader=" "
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set undofile
-
 
 " TODO: Ctrl + S?
 " TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
