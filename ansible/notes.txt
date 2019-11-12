@@ -1,10 +1,12 @@
 TRIVIAL:
 - obs-studio
 - Humor Sans
+- vim toml-syntax-plugin
 
 NON-TRIVIAL:
 - allow rambox updates with just chanigng the variable and reruning the playbook
     - hash ?
+- fix Super + Enter
 
 - nix-manifest-tracker -- remove dependant repositories in favour of nix packages
 
