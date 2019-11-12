@@ -27,6 +27,16 @@
     type = "derivation";
   }
   {
+    man = { outPath = "/nix/store/n9gp6v586g8y53wwhnqvlna7mwq7jnmh-fzf-0.18.0-man"; };
+    meta = {};
+    name = "fzf-0.18.0";
+    out = { outPath = "/nix/store/0d4dk7i4c1dsrkbkprj7a79p22hf143f-fzf-0.18.0"; };
+    outPath = "/nix/store/0d4dk7i4c1dsrkbkprj7a79p22hf143f-fzf-0.18.0";
+    outputs = [ "man" "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
     meta = {};
     name = "ghc-8.6.5";
     out = { outPath = "/nix/store/44zyylbbhabj2d62f7lbb6wmjlllcv10-ghc-8.6.5"; };
