@@ -4,3 +4,4 @@ $(
             ls ~/.screenlayout | dmenu
         )
 )
+~/.fehbg # set the wallpaper
