@@ -1,18 +1,15 @@
 set nocompatible " Welcome to the 21st
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set encoding=utf-8
-set ff=unix " Only shitfucks use DOS line endings
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => HUD
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Hybrid line numbering - current line is absolute, rest is relative
-set relativenumber number
+syntax enable
+
+colorscheme solarized
+set background=dark
+
+set relativenumber number "hybrid line numbering
 
 set hlsearch " Highlight search matches
 
@@ -43,11 +40,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ciaranm/securemodelines' "TODO: set nomodelineexpr after 8.1.1366
+Plugin 'Yggdroot/indentLine'
 
 " Testing
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'Yggdroot/indentLine'
 
 " Syntax highlighters
 Plugin 'leafgarland/typescript-vim'
@@ -65,23 +62,14 @@ Plugin 'isRuslan/vim-es6'
 call vundle#end()
 filetype plugin indent on 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugin settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " securemodelines
 let g:secure_modelines_verbose = 1
-set nomodeline " prevent forcfull disable warning
+set nomodeline " prevent forcefull disable warning
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-syntax enable
-
-set background=dark
-colorscheme solarized
-noh " don't show search highlights on vimrc reload
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => OS integration
@@ -90,15 +78,10 @@ noh " don't show search highlights on vimrc reload
 set clipboard=unnamedplus " Use system clipboard as default buffer
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Preloaded macros
+" => Files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let @r= 'y:%s/"/"/OD' " replace locally visually highlighted text
-let @g= 'y:%s/"//OD' " replace globally visually highlighted text
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Filetype specific
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set encoding=utf-8
+set ff=unix
 
 augroup vimrc
     autocmd FileType make setlocal softtabstop=0 noexpandtab " Use actual tab chars in Makefiles
@@ -110,14 +93,22 @@ augroup vimrc
     autocmd BufNewFile,BufRead .gitignore set syntax=conf
 augroup END
 
+autocmd! BufWritePost ~/.vimrc nested :source ~/.vimrc
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => TODO - tidy it up and put inside a section
+" => Custom
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" preloaded macros
+let @r= 'y:%s/"/"/OD' " replace locally visually highlighted text
+let @g= 'y:%s/"//OD' " replace globally visually highlighted text
 
 let mapleader=" "
 :map <Leader>h :noh<CR>
 :map <Leader>s  i<!--s--><Esc>
 :map <Leader>v  i<!--v--><Esc>
+
+noh " don't show search highlights on vimrc reload
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Testin area
@@ -131,8 +122,5 @@ set wildmenu
 set laststatus=2
 set t_Co=256
 set ttimeoutlen=10
-"set term=xterm-256color
-
-autocmd! BufWritePost ~/.vimrc nested :source ~/.vimrc
 
 set history=100
