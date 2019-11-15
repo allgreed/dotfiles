@@ -1,2 +1,9 @@
 # disable bell on tab completion and when pressing backspace on an empty shell
 set bell-style none
+
+# partial search when pressing up arrow
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+set show-all-if-ambiguous on
+set completion-ignore-case on
