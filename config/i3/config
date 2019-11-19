@@ -173,12 +173,12 @@ bar {
     strip_workspace_numbers yes
 
     colors {
-    separator #777777
+    separator $term_color11
     background $term_background
-    statusline $term_color7
-    focused_workspace $term_color6 $term_color13 $term_color7
+    statusline $term_color14
+    focused_workspace $term_color14 $term_color14 $term_color0
     active_workspace #333333 #ff0000 $term_color7
-    inactive_workspace $term_color13 $term_background $term_color7
+    inactive_workspace $term_color11 $term_color11 $term_color0
     urgent_workspace #2f343a #ff0000 $term_color7
     }
 }

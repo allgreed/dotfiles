@@ -4,7 +4,8 @@ result=$(nmcli -t -f type,state,connection d | egrep "^(tun|tap):connected" | aw
 if [[ -z $result ]]; then
     echo 'down'
     echo 'down'
-    echo \#FF0000
+    echo `xrdb -query | grep "*color14" | cut -f 2`
+    
 else
     echo " $result"
     echo " $result"
