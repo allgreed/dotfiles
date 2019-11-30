@@ -15,8 +15,8 @@ conky.config = {
     -- tu skończyłem
     background = false,
 	default_color = 'white',
-    default_outline_color = 'white',
-    default_shade_color = 'white',
+    default_outline_color = 'black',
+    default_shade_color = 'black',
     draw_graph_borders = true,
     use_xft = true,
     font = 'DejaVu Sans Mono:size=12',
