@@ -8,3 +8,6 @@
 
 # Jet Brains IDE's metadata
 .idea
+
+# Vim sessions
+session.vim
