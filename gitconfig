@@ -53,7 +53,10 @@
     call = !git add --all && git commit
     co = checkout
     dc = diff --cached
+
     pforce = push --force-with-lease
+	cof = !git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout
+
     purge-branches = !git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches
 
 [color "status"]
