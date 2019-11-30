@@ -45,6 +45,7 @@ Plugin 'Yggdroot/indentLine'
 " Testing
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'scrooloose/nerdcommenter'
 
 " Syntax highlighters
 Plugin 'leafgarland/typescript-vim'
@@ -111,6 +112,10 @@ let mapleader=" "
 :map <Leader>h :noh<CR>
 :map <Leader>s  i<!--s--><Esc>
 :map <Leader>v  i<!--v--><Esc>
+
+"testing
+:nnoremap \ :call NERDComment('n', 'Toggle')<CR>
+:vnoremap \ :call NERDComment('x', 'Toggle')<CR>
 
 noh " don't show search highlights on vimrc reload
 
