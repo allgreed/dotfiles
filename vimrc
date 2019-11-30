@@ -108,7 +108,7 @@ autocmd! BufWritePost ~/.vimrc nested :source ~/.vimrc
 let @r= 'y:%s/"/"/OD' " replace locally visually highlighted text
 let @g= 'y:%s/"//OD' " replace globally visually highlighted text
 
-let mapleader="<Space>"
+let mapleader=" "
 :map <Leader>h :noh<CR>
 :map <Leader>s  i<!--s--><Esc>
 :map <Leader>v  i<!--v--><Esc>
