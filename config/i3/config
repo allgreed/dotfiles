@@ -177,9 +177,9 @@ bar {
     background $term_background
     statusline $term_color14
     focused_workspace $term_color14 $term_color14 $term_color0
-    active_workspace #333333 #ff0000 $term_color7
+    active_workspace $term_color12 $term_color12 $term_color0
     inactive_workspace $term_color11 $term_color11 $term_color0
-    urgent_workspace #2f343a #ff0000 $term_color7
+    urgent_workspace $term_color5 $term_color5 $term_color0
     }
 }
 
