@@ -86,8 +86,11 @@ set ff=unix
 
 augroup vimrc
     autocmd FileType make setlocal softtabstop=0 noexpandtab " Use actual tab chars in Makefiles
+
     autocmd FileType markdown let g:indentLine_enabled = 0 " Disable identLine for .md
     autocmd FileType json let g:indentLine_enabled = 0
+    autocmd FileType gitcommit let g:indentLine_enabled = 0
+
     autocmd FileType gitcommit setlocal spell " Use spellcheck by default in git commit messages
 
     autocmd BufNewFile,BufRead .envrc set syntax=sh
