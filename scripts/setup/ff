@@ -1,0 +1,4 @@
+# disables ctrl + q accidental browser quit
+browser.sessionstore.warnOnQuit true
+browser.showQuitWarning true
+browser.warnOnQuit true
