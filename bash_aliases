@@ -1,9 +1,9 @@
 # vim: set filetype=sh :
 
 # moving around
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='ls -lh'
+alias la='ls -Ah'
+alias l='ls -Ah'
 
 # JetBrains' IDEs
 
@@ -74,7 +74,7 @@ alias v="vim"
 # TODO: Dafuq is this?????
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls --color=auto -Ah'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
