@@ -1,5 +1,14 @@
 [
   {
+    meta = {};
+    name = "coq-8.9.1";
+    out = { outPath = "/nix/store/zaz1h2hj79bhpg75s0vq24x089jz3d5f-coq-8.9.1"; };
+    outPath = "/nix/store/zaz1h2hj79bhpg75s0vq24x089jz3d5f-coq-8.9.1";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
     bin = { outPath = "/nix/store/0cca8apj95xsw52yx2sswc0hfybfcclj-direnv-2.20.0-bin"; };
     meta = {};
     name = "direnv-2.20.0";
