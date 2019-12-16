@@ -43,8 +43,7 @@ Plugin 'ciaranm/securemodelines' "TODO: set nomodelineexpr after 8.1.1366
 Plugin 'Yggdroot/indentLine'
 
 " Testing
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
+" TODO: talk to wiklas about parantheis manipulation in vim
 Plugin 'scrooloose/nerdcommenter'
 
 " Syntax highlighters
@@ -123,6 +122,7 @@ noh " don't show search highlights on vimrc reload
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set undofile
+set undodir=$HOME/.vim/undo
 
 " TODO: Ctrl + S?
 " TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
