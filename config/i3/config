@@ -268,6 +268,7 @@ bindsym XF86Display exec ~/.screenlayout/singlemon.sh # very usefull when detach
 #######
 bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
 bindsym F1 exec echo "" > /dev/null # disable F1 ffs
+bindsym $mod+n exec networkmanager_dmenu
 
 # get colours from ~/.Xresources file
 set_from_resource $term_background background
