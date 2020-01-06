@@ -133,3 +133,4 @@ set t_Co=256
 set ttimeoutlen=10
 
 set history=100
+set ruler
