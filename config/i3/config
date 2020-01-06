@@ -289,3 +289,12 @@ set_from_resource $term_color12    color12
 set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15 color15
+
+mode "launch" {
+        bindsym f exec firefox
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym Ctrl+Shift+l mode "launch"
