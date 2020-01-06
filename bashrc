@@ -76,16 +76,16 @@ load ~/.bash_prompt # my fancy prompt
 
 # Autocompletes
 #########################
-load /usr/share/bash-completion/bash_completion
-load "$NVM_DIR/bash_completion"
-load /usr/share/bash-completion/completions/git
+#load /usr/share/bash-completion/bash_completion
+#load "$NVM_DIR/bash_completion"
+#load /usr/share/bash-completion/completions/git
 
 __git_complete g __git_main # apply full git completion to "g" alias
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" m # apply Make completion to 'm' alias
 
 # Shell integrations
 #########################
-load "$NVM_DIR/nvm.sh" --no-use
+#load "$NVM_DIR/nvm.sh" --no-use
 load ~/.nix-profile/etc/profile.d/nix.sh
 eval "$(direnv hook bash)"
 

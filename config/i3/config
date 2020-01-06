@@ -214,7 +214,7 @@ exec unclutter
 exec redshift-gtk -c ~/.redshift.conf
 exec workrave
 
-exec pulseaudio --start
+#exec pulseaudio --start <- is this causing pulseaudio failure on Nixos?
 
 exec rambox
 exec firefox
