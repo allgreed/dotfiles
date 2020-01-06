@@ -29,12 +29,25 @@ set $WS8 "8:8"
 set $WS9 "9:9"
 set $WS10 "10:10: "
 
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
+# get colours from ~/.Xresources file
+set_from_resource $term_background background
+set_from_resource $term_foreground foreground
+set_from_resource $term_color0     color0
+set_from_resource $term_color1     color1
+set_from_resource $term_color2     color2
+set_from_resource $term_color3     color3
+set_from_resource $term_color4     color4
+set_from_resource $term_color5     color5
+set_from_resource $term_color6     color6
+set_from_resource $term_color7     color7
+set_from_resource $term_color8     color8
+set_from_resource $term_color9     color9
+set_from_resource $term_color10    color10
+set_from_resource $term_color11    color11
+set_from_resource $term_color12    color12
+set_from_resource $term_color13    color13
+set_from_resource $term_color14    color14
+set_from_resource $term_color15 color15
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -183,13 +196,6 @@ bar {
     }
 }
 
-# deep_pruple color scheme
-# client.focused is modified to easily see which workspace is active and what splitmode is set
-#client.focused #3b1261 #79162d #ffffff #c51b2c
-#client.focused_inactive #333333 #5f676a #ffffff #484e50
-#client.unfocused #222222 #222222 #888888 #292d2e
-#client.urgent #2f343a #900000 #ffffff #900000
-
 # removes titlebar, and sets sane borders
 for_window [class="^.*"] border pixel 2 
 
@@ -230,6 +236,7 @@ assign [class="Rambox"] $WS10
 # this is additional security layer if I accidentally leave my computer unlocked
 # someone unfamiliar with i3 might press Ctrl+Alt+t in order to start terminal and do something
 bindsym Mod1+Control+t exec ~/.scripts/lock.sh
+bindsym F1 exec echo "" > /dev/null # disable F1 ffs
 
 ########################################
 # Screenshoting
@@ -262,39 +269,9 @@ bindsym XF86AudioLowerVolume exec $scripts/volume --signal 10 dec 5
 bindsym $mod+greater move workspace to output right
 bindsym $mod+less move workspace to output left
 bindsym XF86Display exec ~/.screenlayout/singlemon.sh # very usefull when detaching from dock station
+bindsym $mod+n exec networkmanager_dmenu
 
 #######
 # Testing
 #######
 bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
-bindsym F1 exec echo "" > /dev/null # disable F1 ffs
-bindsym $mod+n exec networkmanager_dmenu
-
-# get colours from ~/.Xresources file
-set_from_resource $term_background background
-set_from_resource $term_foreground foreground
-set_from_resource $term_color0     color0
-set_from_resource $term_color1     color1
-set_from_resource $term_color2     color2
-set_from_resource $term_color3     color3
-set_from_resource $term_color4     color4
-set_from_resource $term_color5     color5
-set_from_resource $term_color6     color6
-set_from_resource $term_color7     color7
-set_from_resource $term_color8     color8
-set_from_resource $term_color9     color9
-set_from_resource $term_color10    color10
-set_from_resource $term_color11    color11
-set_from_resource $term_color12    color12
-set_from_resource $term_color13    color13
-set_from_resource $term_color14    color14
-set_from_resource $term_color15 color15
-
-mode "launch" {
-        bindsym f exec firefox
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-bindsym Ctrl+Shift+l mode "launch"
