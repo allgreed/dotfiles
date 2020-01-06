@@ -92,6 +92,15 @@
   }
   {
     meta = {};
+    name = "networkmanager_dmenu-1.1";
+    out = { outPath = "/nix/store/z010ppapb2l5fh0w1cndiq9hlq9pkg8z-networkmanager_dmenu-1.1"; };
+    outPath = "/nix/store/z010ppapb2l5fh0w1cndiq9hlq9pkg8z-networkmanager_dmenu-1.1";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    meta = {};
     name = "nix-2.2.2";
     out = { outPath = "/nix/store/hbhdjn5ik3byg642d1m11k3k3s0kn3py-nix-2.2.2"; };
     outPath = "/nix/store/hbhdjn5ik3byg642d1m11k3k3s0kn3py-nix-2.2.2";
