@@ -10,6 +10,9 @@ colorscheme solarized
 set background=dark
 
 set relativenumber number "hybrid line numbering
+set ruler
+
+set wildmenu
 
 set hlsearch " Highlight search matches
 
@@ -63,20 +66,17 @@ Plugin 'isRuslan/vim-es6'
 call vundle#end()
 filetype plugin indent on 
 
-" securemodelines
-let g:secure_modelines_verbose = 1
-set nomodeline " prevent forcefull disable warning
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => OS integration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 set clipboard=unnamedplus " Use system clipboard as default buffer
+
+set undofile
+set undodir=$HOME/.vim/undo
+
+" securemodelines
+let g:secure_modelines_verbose = 1
+set nomodeline " prevent forcefull disable warning
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files
@@ -121,16 +121,12 @@ noh " don't show search highlights on vimrc reload
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set undofile
-set undodir=$HOME/.vim/undo
-
 " TODO: Ctrl + S?
 " TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
-" TODO: What exactly does this do ???
-set wildmenu
-set laststatus=2
-set t_Co=256
-set ttimeoutlen=10
 
-set history=100
-set ruler
+" TODO: What exactly does this do ???
+set laststatus=2 "what?
+set t_Co=256 "does ?
+set ttimeoutlen=10 " it do?
+
+set history=100 "is this enough"
