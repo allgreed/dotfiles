@@ -12,7 +12,7 @@ set $launch_terminal i3-sensible-terminal
 set $tmux i3-sensible-terminal -e "$HOME/Dotfiles/scripts/run-tmux.sh"
 set $tmux-tmp i3-sensible-terminal
 
-set $scripts/ ~/.scripts/
+set $screen_preset ~/.scripts/bin/screen-preset
 
 ########################################
 # Names
@@ -275,3 +275,4 @@ bindsym $mod+n exec networkmanager_dmenu
 # Testing
 #######
 bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
+bindsym $mod+Shift+m exec $screen_preset
