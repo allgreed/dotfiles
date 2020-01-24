@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Utility functions
 #########################
 
@@ -25,6 +26,19 @@ set_shell_indicator() {
    fi
 }
 
+set_remote_indicator()
+{
+    REMOTE=''
+
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+      REMOTE='\u@\h '
+    else
+      case $(ps -o comm= -p $PPID) in
+        sshd|*/sshd) REMOTE='\u@\h ';;
+      esac
+    fi
+}
+
 # Colors and appearance
 #########################
 
@@ -34,6 +48,7 @@ blue=$(tput setaf 33)
 green=$(tput setaf 64);
 red=$(tput setaf 153);
 dim=$(tput dim)
+grey=$(tput setaf 10);
 
 #########################
 
@@ -43,13 +58,15 @@ set_bash_prompt() {
     set_virtualenv
     set_nix_shell
     set_shell_indicator
+    set_remote_indicator
 
+    remote="\[$grey\]$REMOTE\[$reset\]"
     git_info="\[$green\]\$(__git_ps1)\[$reset\]"
     venv="\[$green\]\$PYTHON_VIRTUALENV\[$reset\]"
     cwd="\w"
     nix="\[$green\]\$NIX_SHELL\[$reset\]"
 
-    PS1="${venv}${nix}${cwd}${git_info} ${SHELL_SIGN} "
+    PS1="${remote}${venv}${nix}${cwd}${git_info} ${SHELL_SIGN} "
 }
 
 PROMPT_COMMAND=set_bash_prompt
