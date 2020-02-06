@@ -49,6 +49,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Syntax highlighters
 Plugin 'leafgarland/typescript-vim'
