@@ -48,6 +48,7 @@ Plugin 'Yggdroot/indentLine'
 " Testing
 " TODO: talk to wiklas about parantheis manipulation in vim
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Syntax highlighters
 Plugin 'leafgarland/typescript-vim'
