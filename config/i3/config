@@ -270,7 +270,8 @@ bindsym XF86AudioLowerVolume exec ~/.scripts/volume --signal 10 dec 5
 bindsym $mod+greater move workspace to output right
 bindsym $mod+less move workspace to output left
 bindsym XF86Display exec ~/.screenlayout/singlemon.sh # very usefull when detaching from dock station
-bindsym $mod+n exec networkmanager_dmenu
+bindsym $mod+n exec /home/allgreed/.nix-profile/bin/networkmanager_dmenu
+
 
 #######
 # Testing
