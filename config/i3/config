@@ -211,7 +211,8 @@ bindsym $mod+t exec $launch_terminal
 # Autostart
 #########################################
 exec xmodmap ~/.Xmodmap
-exec_always --no-startup-id pkill xcape; xcape
+# TODO: is the pkill needed?
+exec_always --no-startup-id pkill xcape; xcape -e 'Caps_Lock=Escape;Control_L=Escape'
 
 exec_always --no-startup-id ~/.fehbg # Wallpaper
 exec conky
