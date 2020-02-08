@@ -49,16 +49,13 @@
     p = push
     s = status --short
 
-    aa = add --all
-    call = !git add --all && git commit
+    aa = a --all
+    call = !git aa && git c
     co = checkout
-    dc = diff --cached
+    dc = d --cached
 
     pforce = push --force-with-lease
-	cof = !git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout
-
-    purge-branches = !git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches
-
+	cof = !git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git co
 [color "status"]
     added = green 
     changed = blue
