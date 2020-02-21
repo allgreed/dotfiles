@@ -11,9 +11,9 @@ refernce = datetime(now_date.year, now_date.month, now_date.day + mod, 9)
 diff = refernce - now
 
 # TODO: use xresources
-if diff > timedelta(hours=8):
+if diff > timedelta(hours=9):
     color = "#93a1a1" # 14
-elif diff > timedelta(hours=6):
+elif diff > timedelta(hours=7):
     color = "#b58900" # 3
 else:
     color = "#dc322f" # 1
