@@ -3,10 +3,10 @@ from datetime import datetime, timedelta
 
 now = datetime.now()
 
-mod = 1 if now.hour >= 9 else 0
-
+next_day_hours = 24 if now.hour >= 9 else 0
 now_date = now.date()
-refernce = datetime(now_date.year, now_date.month, now_date.day + mod, 9) 
+
+refernce = datetime(now_date.year, now_date.month, now_date.day, 9) + timedelta(hours=next_day_hours)
 
 diff = refernce - now
 
