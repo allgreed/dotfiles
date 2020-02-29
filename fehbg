@@ -1,2 +1,2 @@
 #!/bin/sh
-/run/current-system/sw/bin/feh --bg-center --image-bg 'black' '/home/allgreed/.wallpaper/wp.jpg'
+/run/current-system/sw/bin/feh --bg-center --image-bg 'black' '/home/allgreed/.wallpaper/wp.jpg' 
