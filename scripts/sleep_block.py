@@ -25,9 +25,9 @@ def main():
 
     diff = refernce - now
 
-    if diff > timedelta(hours=8):
+    if diff > timedelta(hours=9):
         color = py_xgetres(".color14")
-    elif diff > timedelta(hours=6):
+    elif diff > timedelta(hours=7):
         color = py_xgetres(".color13")
     else:
         color = py_xgetres(".color1")
