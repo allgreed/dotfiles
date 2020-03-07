@@ -27,7 +27,7 @@ def main():
 
     if diff > timedelta(hours=9):
         color = py_xgetres(".color14")
-    elif diff > timedelta(hours=7):
+    elif diff > timedelta(hours=8):
         color = py_xgetres(".color13")
     else:
         color = py_xgetres(".color1")
@@ -35,6 +35,9 @@ def main():
     formatted_diff = str(timedelta(seconds=diff.seconds))
 
     print("{0}\n{0}\n{1}".format(formatted_diff, color))
+
+    if diff < timedelta(hours=7):
+        exit(33)  # sets urgent flag on i3blocks
 
 if __name__ == "__main__":
     main()
