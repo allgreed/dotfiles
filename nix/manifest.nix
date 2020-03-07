@@ -1,6 +1,24 @@
 [
   {
     meta = {};
+    name = "arduino-1.8.9";
+    out = { outPath = "/nix/store/2jcnfnv7f4g5xydf3fiyvp0xmhcmw5k7-arduino-1.8.9"; };
+    outPath = "/nix/store/2jcnfnv7f4g5xydf3fiyvp0xmhcmw5k7-arduino-1.8.9";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    meta = {};
+    name = "borgbackup-1.1.10";
+    out = { outPath = "/nix/store/jpfz897rx9v8s350xvbism1d6w98y0by-borgbackup-1.1.10"; };
+    outPath = "/nix/store/jpfz897rx9v8s350xvbism1d6w98y0by-borgbackup-1.1.10";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    meta = {};
     name = "coq-8.9.1";
     out = { outPath = "/nix/store/zaz1h2hj79bhpg75s0vq24x089jz3d5f-coq-8.9.1"; };
     outPath = "/nix/store/zaz1h2hj79bhpg75s0vq24x089jz3d5f-coq-8.9.1";
