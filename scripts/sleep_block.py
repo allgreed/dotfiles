@@ -7,8 +7,8 @@ def py_xgetres(res: str):
     
     Feel free to replce it with a legit exec once someone ports xgetres from aur(tm) to nix
     """
-    p = subprocess.run(["xrdb", "-query"], capture_output=True)
-    entry_tokens = p.stdout.decode("utf-8").split("\n")
+    p = subprocess.check_output(["xrdb", "-query"])  # py35 compatibility
+    entry_tokens = p.decode("utf-8").split("\n")
     fuj_entries = map(lambda s: s.split(":"), entry_tokens)
     entries = filter(lambda l: len(l) == 2, fuj_entries)
     resource_map = { k.lstrip("*"): v.lstrip() for k, v in entries }
