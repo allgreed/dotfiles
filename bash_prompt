@@ -20,8 +20,10 @@ set_nix_shell() {
 
 set_shell_indicator() {
    if test `id -u` -eq 0 ; then
+       # DON'T TOUCH THE ESCAPING!!!
        SHELL_SIGN="\[$red\]\$\[$reset\]"
    else
+       # DON'T TOUCH THE ESCAPING!!!
        SHELL_SIGN="\[$dim\]\[$bold\]\[$blue\]λ\[$reset\]"
    fi
 }
@@ -74,13 +76,13 @@ set_bash_prompt() {
     set_shell_indicator
     set_remote_indicator
 
-    # TODO: clear the escaping
-    remote="${grey}$REMOTE${reset}"
-    git_info="${green}$(__git_ps1)${reset}"
-    venv="${green}$PYTHON_VIRTUALENV${reset}"
+    # DON'T TOUCH THE ESCAPING!!!
+    remote="\[$grey\]$REMOTE\[$reset\]"
+    git_info="\[$green\]\$(__git_ps1)\[$reset\]"
+    venv="\[$green\]\$PYTHON_VIRTUALENV\[$reset\]"
     cwd="\w"
-    dolar_question="${red}$LAST_CMD_ERRORED${reset}"
-    nix="${green}$NIX_SHELL${reset}"
+    nix="\[$green\]\$NIX_SHELL\[$reset\]"
+    dolar_question="\[$red\]\$LAST_CMD_ERRORED\[$reset\]"
 
     PS1="${remote}${venv}${nix}${cwd}${git_info}${dolar_question} ${SHELL_SIGN} "
 }
