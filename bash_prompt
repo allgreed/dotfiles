@@ -39,34 +39,50 @@ set_remote_indicator()
     fi
 }
 
+handle_exit_code()
+{
+    cmd_exit_code=$?
+
+    if [ ! $cmd_exit_code -eq 0 ]; then
+        LAST_CMD_ERRORED=" $cmd_exit_code"
+    else
+        LAST_CMD_ERRORED=''
+    fi
+}
+
 # Colors and appearance
 #########################
 
 reset=$(tput sgr0)
+
 bold=$(tput bold)
-blue=$(tput setaf 33)
-green=$(tput setaf 64);
-red=$(tput setaf 153);
 dim=$(tput dim)
-grey=$(tput setaf 10);
+
+blue=$(tput setaf 33)
+green=$(tput setaf 64)
+red=$(tput setaf 1)
+grey=$(tput setaf 10)
 
 #########################
 
 GIT_PS1_SHOWDIRTYSTATE=1
 
 set_bash_prompt() {
+    handle_exit_code
     set_virtualenv
     set_nix_shell
     set_shell_indicator
     set_remote_indicator
 
-    remote="\[$grey\]$REMOTE\[$reset\]"
-    git_info="\[$green\]\$(__git_ps1)\[$reset\]"
-    venv="\[$green\]\$PYTHON_VIRTUALENV\[$reset\]"
+    # TODO: clear the escaping
+    remote="${grey}$REMOTE${reset}"
+    git_info="${green}$(__git_ps1)${reset}"
+    venv="${green}$PYTHON_VIRTUALENV${reset}"
     cwd="\w"
-    nix="\[$green\]\$NIX_SHELL\[$reset\]"
+    dolar_question="${red}$LAST_CMD_ERRORED${reset}"
+    nix="${green}$NIX_SHELL${reset}"
 
-    PS1="${remote}${venv}${nix}${cwd}${git_info} ${SHELL_SIGN} "
+    PS1="${remote}${venv}${nix}${cwd}${git_info}${dolar_question} ${SHELL_SIGN} "
 }
 
 PROMPT_COMMAND=set_bash_prompt
