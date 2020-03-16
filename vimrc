@@ -22,7 +22,6 @@ set visualbell " Disable emmiting bell
 " => Editorial behaviours
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set backspace=indent,eol,start " I will backspace whatever I like!
 
 " Smart tabs
 set tabstop=4       " The width of a TAB is set to 4
@@ -124,6 +123,8 @@ noh " don't show search highlights on vimrc reload
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TODO: Ctrl + S?
 " TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
+
+set backspace=" vim knows how to handle backspace got it right since vi
 
 " TODO: What exactly does this do ???
 set laststatus=2 "what?
