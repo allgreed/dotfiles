@@ -45,6 +45,16 @@
     type = "derivation";
   }
   {
+    man = { outPath = "/nix/store/h9p06wc7qa7zxppgqj39g5mim0a7snmf-escrotum-2019-06-10-man"; };
+    meta = {};
+    name = "escrotum-2019-06-10";
+    out = { outPath = "/nix/store/idiaj3dzg39ld3811s6n4pn6bs60lsx7-escrotum-2019-06-10"; };
+    outPath = "/nix/store/idiaj3dzg39ld3811s6n4pn6bs60lsx7-escrotum-2019-06-10";
+    outputs = [ "man" "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
     meta = {};
     name = "esptool-2.6";
     out = { outPath = "/nix/store/4mgi6ai69qvyr67d2y8h0jz4zqw121r7-esptool-2.6"; };
