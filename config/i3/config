@@ -271,10 +271,11 @@ bindsym $mod+greater move workspace to output right
 bindsym $mod+less move workspace to output left
 bindsym XF86Display exec ~/.screenlayout/singlemon.sh # very usefull when detaching from dock station
 bindsym $mod+n exec /home/allgreed/.nix-profile/bin/networkmanager_dmenu
-
+bindsym $mod+Shift+m exec $screen_preset
 
 #######
 # Testing
 #######
 bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
-bindsym $mod+Shift+m exec $screen_preset
+
+bindsym $mod+F1 exec sensible-browser
