@@ -44,7 +44,6 @@ alias vtmp="vim ~/tmp"
 # Typos
 ##############
 alias cd..="cd .."
-alias ..="cd .."
 
 alias dokcer=docker
 
@@ -65,11 +64,8 @@ alias dhcprc="sudo dhclient -r; sudo dhclient -v; ping wp.pl -c 2"
 # this should be standardized once my PyCharm installations are automated
 alias charm="charm . &"
 
-# node should be loaded by default to every shell, but without startup time overhead
-alias nodeon="nvm use default"
-
-alias e="vim" # is this used?
-alias v="vim"
+alias ..="cd .."
+alias ...="..; .."
 
 # TODO: Dafuq is this?????
 if [ -x /usr/bin/dircolors ]; then
