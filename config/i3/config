@@ -245,7 +245,8 @@ bindsym F1 exec echo "" > /dev/null # disable F1 ffs
 
 set $screenshot escrotum "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" --exec "mv \$f ~/Shots"
 
-bindsym Print exec "$screenshot && echo -ne '\007'"
+# TODO: fix belling!
+bindsym Print exec $screenshot
 bindsym --release Shift+Print exec $screenshot --select
 
 ########################################
