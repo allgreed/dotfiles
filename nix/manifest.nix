@@ -19,6 +19,15 @@
   }
   {
     meta = {};
+    name = "chromium-79.0.3945.88";
+    out = { outPath = "/nix/store/z72rqi630kybvyad2a1z2w2di3v4h9ms-chromium-79.0.3945.88"; };
+    outPath = "/nix/store/z72rqi630kybvyad2a1z2w2di3v4h9ms-chromium-79.0.3945.88";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    meta = {};
     name = "coq-8.9.1";
     out = { outPath = "/nix/store/zaz1h2hj79bhpg75s0vq24x089jz3d5f-coq-8.9.1"; };
     outPath = "/nix/store/zaz1h2hj79bhpg75s0vq24x089jz3d5f-coq-8.9.1";
