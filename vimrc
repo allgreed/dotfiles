@@ -132,3 +132,5 @@ set t_Co=256 "does ?
 set ttimeoutlen=10 " it do?
 
 set history=100 "is this enough"
+
+:command Wsudo w ! sudo tee %
