@@ -182,6 +182,15 @@
     type = "derivation";
   }
   {
+    meta = {};
+    name = "spotify-1.1.10.546.ge08ef575-19";
+    out = { outPath = "/nix/store/1p92qgprlk6d2bz0ry837vxd4h8i7v87-spotify-1.1.10.546.ge08ef575-19"; };
+    outPath = "/nix/store/1p92qgprlk6d2bz0ry837vxd4h8i7v87-spotify-1.1.10.546.ge08ef575-19";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
     bin = { outPath = "/nix/store/55w3rrwqz7lqppjpsr5j84ddamrbqhmh-terraform-0.11.14-bin"; };
     meta = {};
     name = "terraform-0.11.14";
