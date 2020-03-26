@@ -54,6 +54,15 @@
     type = "derivation";
   }
   {
+    meta = {};
+    name = "drone-cli-1.2.0";
+    out = { outPath = "/nix/store/4bxrjiircqgi6kdmrigfp7j6rqm2yvh8-drone-cli-1.2.0"; };
+    outPath = "/nix/store/4bxrjiircqgi6kdmrigfp7j6rqm2yvh8-drone-cli-1.2.0";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
     man = { outPath = "/nix/store/h9p06wc7qa7zxppgqj39g5mim0a7snmf-escrotum-2019-06-10-man"; };
     meta = {};
     name = "escrotum-2019-06-10";
