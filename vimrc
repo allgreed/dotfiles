@@ -63,6 +63,7 @@ Plugin 'kongo2002/fsharp-vim'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'idris-hackers/idris-vim'
 Plugin 'isRuslan/vim-es6'
+Plugin 'google/vim-jsonnet'
 
 call vundle#end()
 filetype plugin indent on 
@@ -134,4 +135,4 @@ set ttimeoutlen=10 " it do?
 
 set history=100 "is this enough"
 
-:command Wsudo w ! sudo tee %
+:command! Wsudo w ! sudo tee %
