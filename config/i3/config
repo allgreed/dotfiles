@@ -243,9 +243,9 @@ bindsym F1 exec echo "" > /dev/null # disable F1 ffs
 # Screenshoting
 #########################################
 
-set $screenshot escrotum "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" --exec "mv \$f ~/Shots"
+set $screenshot /home/allgreed/.nix-profile/bin/escrotum "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" --exec="mv \$f ~/Shots"
 
-bindsym Print exec "$screenshot && echo -ne '\007'"
+bindsym Print exec $screenshot && echo -e "\a"
 bindsym --release Shift+Print exec $screenshot --select
 
 ########################################
