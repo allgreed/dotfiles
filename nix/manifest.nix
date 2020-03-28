@@ -183,6 +183,15 @@
   }
   {
     meta = {};
+    name = "numlockx-1.2";
+    out = { outPath = "/nix/store/3lkzzl2cwfj0wmg0cszjnc28jl7wv5k6-numlockx-1.2"; };
+    outPath = "/nix/store/3lkzzl2cwfj0wmg0cszjnc28jl7wv5k6-numlockx-1.2";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    meta = {};
     name = "rustup-1.18.2";
     out = { outPath = "/nix/store/gigvcns8v68vizfwh4y7x1c2xrw8ag4h-rustup-1.18.2"; };
     outPath = "/nix/store/gigvcns8v68vizfwh4y7x1c2xrw8ag4h-rustup-1.18.2";
