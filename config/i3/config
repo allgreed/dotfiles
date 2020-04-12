@@ -25,7 +25,7 @@ set $WS4 "4:4"
 set $WS5 "5:5"
 set $WS6 "6:6"
 set $WS7 "7:7"
-set $WS8 "8:8"
+set $WS8 "8:8 "
 set $WS9 "9:9"
 set $WS10 "10:10: "
 
@@ -278,4 +278,7 @@ bindsym $mod+Shift+m exec $screen_preset
 #######
 bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
 
-bindsym $mod+F1 exec sensible-browser
+bindsym $mod+F1 exec sensible-browser # too awkward to reach, totally forgot about this one, yet sensible binding
+
+exec /home/allgreed/.nix-profile/bin/spotify
+assign [class="Spotify"] $WS8
