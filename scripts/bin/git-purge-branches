@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+set -Eeuo pipefail
+
+# exclude 'master' and current branch
+git branch |\
+    grep -v master |\
+    grep -v '*' >/tmp/branches-to-be-deleted
+
+$EDITOR /tmp/branches-to-be-deleted
+xargs git branch -D </tmp/branches-to-be-deleted
