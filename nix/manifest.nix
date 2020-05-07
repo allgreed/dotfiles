@@ -218,6 +218,15 @@
     type = "derivation";
   }
   {
+    meta = {};
+    name = "tcptraceroute-1.5beta7";
+    out = { outPath = "/nix/store/lfl3y4fz0hplaqjm723rnnzqawma192s-tcptraceroute-1.5beta7"; };
+    outPath = "/nix/store/lfl3y4fz0hplaqjm723rnnzqawma192s-tcptraceroute-1.5beta7";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
     bin = { outPath = "/nix/store/55w3rrwqz7lqppjpsr5j84ddamrbqhmh-terraform-0.11.14-bin"; };
     meta = {};
     name = "terraform-0.11.14";
