@@ -63,6 +63,15 @@
     type = "derivation";
   }
   {
+    meta = {};
+    name = "entr-4.4";
+    out = { outPath = "/nix/store/ls95ipg07k4xsgx29c7cm5wl75f0g830-entr-4.4"; };
+    outPath = "/nix/store/ls95ipg07k4xsgx29c7cm5wl75f0g830-entr-4.4";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
     man = { outPath = "/nix/store/h9p06wc7qa7zxppgqj39g5mim0a7snmf-escrotum-2019-06-10-man"; };
     meta = {};
     name = "escrotum-2019-06-10";
