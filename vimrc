@@ -137,3 +137,4 @@ set history=100 "is this enough"
 :command! Wsudo w ! sudo tee %
 " typos
 :command! Q q
+:command! W w
