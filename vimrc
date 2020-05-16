@@ -7,7 +7,7 @@ set nocompatible " Welcome to the 21st
 syntax enable
 
 colorscheme solarized
-set background=dark
+set background=light
 
 set relativenumber number "hybrid line numbering
 set ruler
