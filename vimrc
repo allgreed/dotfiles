@@ -107,6 +107,7 @@ autocmd! BufWritePost ~/.vimrc nested :source ~/.vimrc
 " preloaded macros
 let @r= 'y:%s/"/"/OD' " replace locally visually highlighted text
 let @g= 'y:%s/"//OD' " replace globally visually highlighted text
+let @c= 'A,j' " add comma at the end of the line
 
 let mapleader=" "
 :map <Leader>h :noh<CR>
