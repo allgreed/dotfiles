@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 set -Eeuo pipefail
 
 # exclude 'master' and current branch
