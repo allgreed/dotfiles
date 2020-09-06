@@ -96,3 +96,5 @@ function cd {
 }
 alias lcd="cd $(cat ~/.lastcd)"
 
+# Disable bell for less
+export PAGER='less -q'

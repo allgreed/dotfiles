@@ -14,6 +14,7 @@ alias ...="..; .."
 
 alias mv='mv -i'
 alias shred='shred -uvzn1'
+alias less='less -q'
 
 alias ll='ls -lh'
 alias la='ls -Ah'
