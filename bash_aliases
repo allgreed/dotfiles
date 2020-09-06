@@ -1,34 +1,46 @@
 # vim: set filetype=sh :
 
-# moving around
+
+alias gs="git s"
+alias gp="git p"
+alias g="git"
+alias m="make"
+
+alias tf="terraform"
+alias py="ptpython" # better Python shell for quick experiments
+
+alias ..="cd .."
+alias ...="..; .."
+
+alias mv='mv -i'
+alias shred='shred -uvzn1'
+
 alias ll='ls -lh'
 alias la='ls -Ah'
 alias l='ls -Ah'
 
-# JetBrains' IDEs
+alias volume="~/.scripts/volume --signal 10"
 
-# Git
-alias gs="git s"
-alias g="git"
-
-# Custom scripts
 # better Python names, but respecting virtualenvs
 alias python2="/usr/bin/env python"
 alias python="/usr/bin/env python3"
 alias python3="/usr/bin/env python3.6"
 
+# magnetic trace still can be recovered from hdd after ~7 rewrites
+alias shred-hdd='shred -uvzn9'
 
-alias tf="terraform"
-alias py="ptpython" # better Python shell for quick experiments
+alias dhcprc="sudo dhclient -r; sudo dhclient -v; ping wp.pl -c 2"
 
-alias m="make"
+alias vtmp="vim ~/tmp"
+
 
 transfer()
 {
     curl --upload-file $1 https://transfer.sh/$(basename $1); printf "\n"
 }
 
-scratch() {
+
+tmp() {
     pushd .
     cur_dir="$HOME/scratch"
     new_dir="/tmp/scratch-`date +'%s'`"
@@ -38,7 +50,6 @@ scratch() {
     echo "New scratch dir ready for grinding ;>"
 }
 
-alias vtmp="vim ~/tmp"
 
 ##############
 # Typos
@@ -49,28 +60,22 @@ alias dokcer=docker
 
 alias xit=exit
 alias exi=exit
-alias :q=exit
-alias :wq=exit
-alias :x=exit
+
 
 ##############
 # WIP
 ##############
 
-alias volume="~/.scripts/volume --signal 10"
-
-alias dhcprc="sudo dhclient -r; sudo dhclient -v; ping wp.pl -c 2"
+alias :q=exit
+alias :wq=exit
 
 # this should be standardized once my PyCharm installations are automated
 alias charm="charm . &"
 
-alias ..="cd .."
-alias ...="..; .."
-
 # TODO: Dafuq is this?????
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto -Ah'
+    alias ls='ls --color=auto -Ah' # <- this isn't the default!
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -80,4 +85,3 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-alias mv='mv -i'

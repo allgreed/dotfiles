@@ -77,7 +77,6 @@ load ~/.bash_prompt # my fancy prompt
 # Autocompletes
 #########################
 load /usr/share/bash-completion/bash_completion
-load "$NVM_DIR/bash_completion"
 load /usr/share/bash-completion/completions/git
 
 __git_complete g __git_main # apply full git completion to "g" alias
