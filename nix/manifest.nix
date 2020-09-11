@@ -165,15 +165,6 @@
   }
   {
     meta = {};
-    name = "nixops-1.7";
-    out = { outPath = "/nix/store/gc2l5q4vgc9x56sc939i3bc9hf9r88hs-nixops-1.7"; };
-    outPath = "/nix/store/gc2l5q4vgc9x56sc939i3bc9hf9r88hs-nixops-1.7";
-    outputs = [ "out" ];
-    system = "x86_64-linux";
-    type = "derivation";
-  }
-  {
-    meta = {};
     name = "nodejs-12.2.0";
     out = { outPath = "/nix/store/vf9wmbffxisl1v26c90z9aj9hrrg5mig-nodejs-12.2.0"; };
     outPath = "/nix/store/vf9wmbffxisl1v26c90z9aj9hrrg5mig-nodejs-12.2.0";
