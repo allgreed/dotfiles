@@ -28,9 +28,15 @@ def main():
         exit(2)
 
     song = songs[0]
+
+    if song == "Spotify Premium":
+        print("nothing is playing")
+        print("pause")
+        exit(0)
+
     artist, *_ = song.split("-")        
     print(song)
-    print(artist)
+    print(artist.strip())
 
 if __name__ == "__main__":
     main()
