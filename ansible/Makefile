@@ -16,9 +16,7 @@ galaxy_roles: requirements.yml
 	ansible-galaxy install -r requirements.yml --roles-path galaxy_roles
 
 just-dotfiles:
-	sudo ln -s `which python3` /usr/bin/python
-	-ansible-playbook -l local --inventory=$(INVENTORY) just_dotfiles.yml --skip-tags='pkg,nix,hax' --extra-vars "dotfiles_binary=`which dotfiles`"
-	sudo rm -f /usr/bin/python
+	ansible-playbook -l local --inventory=$(INVENTORY) just_dotfiles.yml --skip-tags='pkg,nix' --extra-vars "dotfiles_binary=`which dotfiles` ansible_python_interpreter=`which python`"
 
 .PHONY: help
 help: ## print this message
