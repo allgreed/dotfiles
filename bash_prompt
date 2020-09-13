@@ -14,7 +14,7 @@ set_nix_shell() {
    if test -z "$IN_NIX_SHELL" ; then
        NIX_SHELL=''
    else
-       NIX_SHELL='[nix-shell] '
+       NIX_SHELL='[λ] '
    fi
 }
 
@@ -24,7 +24,7 @@ set_shell_indicator() {
        SHELL_SIGN="\[$red\]\$\[$reset\]"
    else
        # DON'T TOUCH THE ESCAPING!!!
-       SHELL_SIGN="\[$dim\]\[$bold\]\[$blue\]λ\[$reset\]"
+       SHELL_SIGN="\[$dim\]\[$bold\]\[$blue\]>_\[$reset\]"
    fi
 }
 
