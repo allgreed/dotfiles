@@ -1,5 +1,4 @@
 ---
 - hosts: all
-  ignore_errors: yes
   roles:
     - role: common

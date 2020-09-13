@@ -4,6 +4,8 @@
     name: dotfiles
     executable: pip3
     extra_args: --user
+  tags:
+    - pkg
 
 - name: clone Dotfiles repository
   git:
@@ -18,6 +20,8 @@
     scope: local
     value: "{{ dotfiles_repo_push_url }}"
     repo: ~/Dotfiles
+  tags:
+    - hax
 
 - name: configure dotfiles
   file:

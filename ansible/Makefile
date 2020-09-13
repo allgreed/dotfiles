@@ -3,7 +3,7 @@
 INVENTORY := inventory
 TAGS := ''
 
-.PHONY: all some test
+.PHONY: all some test just-dotfiles
 all: galaxy_roles ## full run, with all the bells and whistles
 	ansible-playbook -K -l local --inventory=$(INVENTORY) playbook.yml
 some: galaxy_roles ## run main playbook with only the stuff specified in TAGS (default: run nothing)
@@ -14,6 +14,11 @@ test: galaxy_roles ## legacy
 
 galaxy_roles: requirements.yml
 	ansible-galaxy install -r requirements.yml --roles-path galaxy_roles
+
+just-dotfiles:
+	sudo ln -s `which python3` /usr/bin/python
+	-ansible-playbook -l local --inventory=$(INVENTORY) just_dotfiles.yml --skip-tags='pkg,nix,hax' --extra-vars "dotfiles_binary=`which dotfiles`"
+	sudo rm -f /usr/bin/python
 
 .PHONY: help
 help: ## print this message
