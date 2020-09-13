@@ -44,3 +44,4 @@
     src: ~/Keys/git-main-id
     dest: "{{ ansible_user_dir }}/.gitid"
   when: link_main_git_id | bool
+  ignore_errors: yes # TODO: make this emmit warning but don't stop the whole playbook
