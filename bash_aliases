@@ -61,14 +61,15 @@ alias dokcer=docker
 
 alias xit=exit
 alias exi=exit
+alias :q=exit
+alias :wq=exit
 
+alias kubect=kubectl
 
 ##############
 # WIP
 ##############
 
-alias :q=exit
-alias :wq=exit
 
 # this should be standardized once my PyCharm installations are automated
 alias charm="charm . &"
@@ -86,3 +87,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias yyy="g call -m \"$(date)\"; gp"
+alias ka="kubectl apply -f ."
+alias k="kubectl"
