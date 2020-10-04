@@ -48,21 +48,16 @@ source ~/.bash_utilities
 
 # Env
 #########################
-export NVM_DIR="$HOME/.nvm"
-
 PATH_LOCAL_BINARIES=$HOME/.local/bin
 PATH_ROOT_BINARIES=/sbin/:/usr/sbin
 PATH_SCRIPT_BINARIES=$HOME/.scripts/bin
 PATH=$PATH_LOCAL_BINARIES:$PATH_SCRIPT_BINARIES:$PATH:$PATH_ROOT_BINARIES
-
 export PATH
 
 # fixes nix-shell and sometimes ssh
 if [ "$TERM" = 'rxvt-unicode-256color' ]; then
     export TERM='xterm-256color'
 fi
-
-export PIPENV_VENV_IN_PROJECT="1"
 
 # Shell behaviour
 #########################
@@ -84,7 +79,6 @@ complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-
 
 # Shell integrations
 #########################
-load "$NVM_DIR/nvm.sh" --no-use
 load ~/.nix-profile/etc/profile.d/nix.sh
 eval "$(direnv hook bash)"
 
