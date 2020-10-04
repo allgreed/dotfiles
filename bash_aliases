@@ -91,3 +91,4 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias yyy="g call -m \"$(date)\"; gp"
 alias ka="kubectl apply -f ."
 alias k="kubectl"
+alias pr="hub pull-request"
