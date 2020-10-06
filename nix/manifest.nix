@@ -64,6 +64,15 @@
   }
   {
     meta = {};
+    name = "elvish-0.14.1";
+    out = { outPath = "/nix/store/22r765yyn3rw7waaphm2l98amgv3svs3-elvish-0.14.1"; };
+    outPath = "/nix/store/22r765yyn3rw7waaphm2l98amgv3svs3-elvish-0.14.1";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    meta = {};
     name = "entr-4.4";
     out = { outPath = "/nix/store/ls95ipg07k4xsgx29c7cm5wl75f0g830-entr-4.4"; };
     outPath = "/nix/store/ls95ipg07k4xsgx29c7cm5wl75f0g830-entr-4.4";
