@@ -36,11 +36,11 @@
     type = "derivation";
   }
   {
-    bin = { outPath = "/nix/store/0cca8apj95xsw52yx2sswc0hfybfcclj-direnv-2.20.0-bin"; };
     meta = {};
-    name = "direnv-2.20.0";
-    outPath = "/nix/store/0cca8apj95xsw52yx2sswc0hfybfcclj-direnv-2.20.0-bin";
-    outputs = [ "bin" ];
+    name = "direnv-2.22.0";
+    out = { outPath = "/nix/store/2gf2ssw6cqsprs16qcvd1sckkbgdn615-direnv-2.22.0"; };
+    outPath = "/nix/store/2gf2ssw6cqsprs16qcvd1sckkbgdn615-direnv-2.22.0";
+    outputs = [ "out" ];
     system = "x86_64-linux";
     type = "derivation";
   }
@@ -124,6 +124,16 @@
     out = { outPath = "/nix/store/czm6spl5g0ig57alx06apjjg9lrc657k-git-2.21.0"; };
     outPath = "/nix/store/czm6spl5g0ig57alx06apjjg9lrc657k-git-2.21.0";
     outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    man = { outPath = "/nix/store/rq4cghhwvyc1b4jhd7cr2c8j6xlrfswi-gnumake-4.3-man"; };
+    meta = {};
+    name = "gnumake-4.3";
+    out = { outPath = "/nix/store/0w3zmx6kh2gazvzcvxrryk3if0sbbc4a-gnumake-4.3"; };
+    outPath = "/nix/store/0w3zmx6kh2gazvzcvxrryk3if0sbbc4a-gnumake-4.3";
+    outputs = [ "man" "out" ];
     system = "x86_64-linux";
     type = "derivation";
   }
@@ -222,6 +232,15 @@
     name = "tcptraceroute-1.5beta7";
     out = { outPath = "/nix/store/lfl3y4fz0hplaqjm723rnnzqawma192s-tcptraceroute-1.5beta7"; };
     outPath = "/nix/store/lfl3y4fz0hplaqjm723rnnzqawma192s-tcptraceroute-1.5beta7";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    meta = {};
+    name = "teams-1.3.00.16851";
+    out = { outPath = "/nix/store/gb4ns6ra4jkhy4kcl34xcgzyw4d35pqw-teams-1.3.00.16851"; };
+    outPath = "/nix/store/gb4ns6ra4jkhy4kcl34xcgzyw4d35pqw-teams-1.3.00.16851";
     outputs = [ "out" ];
     system = "x86_64-linux";
     type = "derivation";
