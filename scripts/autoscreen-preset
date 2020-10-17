@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+import subprocess
+
+
+def acquired_connected_displays():
+    p = subprocess.run(["xrandr", "-q"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
+    output_lines = p.stdout.split("\n")
+    return { l.split("connected")[0].rstrip() for l in output_lines if "connected" in l}
+
+# TODO: fill out presets
+# TODO: change to frozenset and yolo!!!
+DISPLAYS_TO_PRESET = {
+    {"VGA-1", "LVDS-1"}: "",
+    {"LVDS-1"}: "",
+    "default": "",
+}
+
+DEVICES_TO_PRESET.get(displays, "default")
+print(acquired_connected_displays())
