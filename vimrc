@@ -7,7 +7,7 @@ set nocompatible " Welcome to the 21st
 syntax enable
 
 colorscheme solarized
-set background=dark
+set background=light
 
 set relativenumber number "hybrid line numbering
 set ruler
@@ -45,8 +45,6 @@ Plugin 'ciaranm/securemodelines' "TODO: set nomodelineexpr after 8.1.1366
 Plugin 'Yggdroot/indentLine'
 
 " Testing
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ctrlpvim/ctrlp.vim'
 
@@ -56,7 +54,7 @@ Plugin 'posva/vim-vue'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'hashivim/vim-terraform'
 Plugin 'cespare/vim-toml'
-Plugin 'jvirtanen/vim-hcl'
+"Plugin 'jvirtanen/vim-hcl'
 Plugin 'rust-lang/rust.vim'
 Plugin 'LnL7/vim-nix'
 Plugin 'kongo2002/fsharp-vim'
@@ -108,6 +106,7 @@ autocmd! BufWritePost ~/.vimrc nested :source ~/.vimrc
 " preloaded macros
 let @r= 'y:%s/"/"/OD' " replace locally visually highlighted text
 let @g= 'y:%s/"//OD' " replace globally visually highlighted text
+let @c= 'A,j' " add comma at the end of the line
 
 let mapleader=" "
 :map <Leader>h :noh<CR>
@@ -138,3 +137,4 @@ set history=100 "is this enough"
 :command! Wsudo w ! sudo tee %
 " typos
 :command! Q q
+:command! W w

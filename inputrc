@@ -1,3 +1,5 @@
+set editing-mode vi
+
 # disable bell on tab completion and when pressing backspace on an empty shell
 set bell-style none
 
@@ -7,3 +9,5 @@ set bell-style none
 
 set show-all-if-ambiguous on
 set completion-ignore-case on
+
+"\e\C-l": alias-expand-line

@@ -19,6 +19,9 @@
 [push]
     default = simple
     followTags = false
+[pull]
+    # this is meant as a test, see if it works for me
+    ff = only
 
 [commit]
     verbose = true # -v
@@ -56,6 +59,9 @@
 
     pforce = push --force-with-lease
 	cof = !git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git co
+    purge-branches = !git-purge-branches
+
+    crypt = !git-crypt
 [color "status"]
     added = green 
     changed = blue

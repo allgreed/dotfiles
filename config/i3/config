@@ -1,22 +1,18 @@
-# Should you change your keyboard layout some time, delete
-# this file and re-run i3-config-wizard(1).
-
-set $mod Mod4
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Source Code Pro Medium 11px
+
+########################################
+# Names
+#########################################
+
+# using Super as mod
+set $mod Mod4
 
 set $launch_terminal i3-sensible-terminal
 
 set $tmux i3-sensible-terminal -e "$HOME/Dotfiles/scripts/run-tmux.sh"
 set $tmux-tmp i3-sensible-terminal
-
-set $screen_preset ~/.scripts/bin/screen-preset
-
-########################################
-# Names
-#########################################
 
 set $WS1 "1:1"
 set $WS2 "2:2"
@@ -29,25 +25,27 @@ set $WS8 "8:8 ♪"
 set $WS9 "9:9"
 set $WS10 "10:10: "
 
-# get colours from ~/.Xresources file
-set_from_resource $term_background background
-set_from_resource $term_foreground foreground
-set_from_resource $term_color0     color0
-set_from_resource $term_color1     color1
-set_from_resource $term_color2     color2
-set_from_resource $term_color3     color3
-set_from_resource $term_color4     color4
-set_from_resource $term_color5     color5
-set_from_resource $term_color6     color6
-set_from_resource $term_color7     color7
-set_from_resource $term_color8     color8
-set_from_resource $term_color9     color9
-set_from_resource $term_color10    color10
-set_from_resource $term_color11    color11
-set_from_resource $term_color12    color12
-set_from_resource $term_color13    color13
-set_from_resource $term_color14    color14
-set_from_resource $term_color15 color15
+set_from_resource $X_bg         background
+set_from_resource $X_fg         foreground
+set_from_resource $X_cur        cursorColor
+set_from_resource $X_ptrg       pointerColorBackground
+set_from_resource $X_fgnd       secondaryForeground
+set_from_resource $X_C_0        color0
+set_from_resource $X_C_1        color1
+set_from_resource $X_C_2        color2
+set_from_resource $X_C_3        color3
+set_from_resource $X_C_4        color4
+set_from_resource $X_C_5        color5
+set_from_resource $X_C_6        color6
+set_from_resource $X_C_7        color7
+set_from_resource $X_C_8        color8
+set_from_resource $X_C_9        color9
+set_from_resource $X_C_10       color10
+set_from_resource $X_C_11       color11
+set_from_resource $X_C_12       color12
+set_from_resource $X_C_13       color13
+set_from_resource $X_C_14       color14
+set_from_resource $X_C_15       color15
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -174,8 +172,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
     status_command i3blocks
 
@@ -185,16 +181,31 @@ bar {
 
     strip_workspace_numbers yes
 
+########################################
+# Colors
+#########################################
+
     colors {
-        separator $term_color11
-        background $term_background
-        statusline $term_color14
-        focused_workspace $term_color14 $term_color14 $term_color0
-        active_workspace $term_color12 $term_color12 $term_color0
-        inactive_workspace $term_color11 $term_color11 $term_color0
-        urgent_workspace $term_color5 $term_color5 $term_color0
+        separator $X_C_11
+        background $X_bg
+        statusline $X_cur
+    
+        # TODO: add description on what's what and align it
+        focused_workspace $X_cur $X_cur $X_bg
+        active_workspace $X_fg $X_fg $X_bg
+        inactive_workspace $X_fgnd $X_fgnd $X_bg
+        urgent_workspace $X_C_5 $eerm_color5 $X_bg
     }
 }
+
+# class                 border   backgr. text    indicator  child_border
+client.focused          $X_fgnd  $X_bg   $X_C_fg  $X_C_4     $X_fgnd
+client.focused_inactive $X_fgnd  $X_bg   $X_C_fg  $X_C_4     $X_fgnd
+client.unfocused        $X_fgnd  $X_bg   $X_C_fg  $X_C_4     $X_fgnd
+client.urgent           $X_fgnd  $X_bg   $X_C_fg  $X_C_4     $X_fgnd
+client.placeholder      $X_fgnd  $X_bg   $X_C_fg  $X_C_4     $X_fgnd
+client.background       $X_bg
+
 
 # removes titlebar, and sets sane borders
 for_window [class="^.*"] border pixel 2 
@@ -244,8 +255,7 @@ bindsym F1 exec echo "" > /dev/null # disable F1 ffs
 
 set $screenshot escrotum "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" --exec "mv \$f ~/Shots"
 
-# TODO: fix belling!
-bindsym Print exec $screenshot
+bindsym Print exec $screenshot && echo -e "\a"
 bindsym --release Shift+Print exec $screenshot --select
 
 ########################################
@@ -271,7 +281,7 @@ bindsym $mod+greater move workspace to output right
 bindsym $mod+less move workspace to output left
 bindsym XF86Display exec ~/.screenlayout/singlemon.sh # very usefull when detaching from dock station
 bindsym $mod+n exec networkmanager_dmenu
-bindsym $mod+Shift+m exec $screen_preset
+bindsym $mod+p exec ~/.scripts/bin/screen-preset
 
 #######
 # Testing

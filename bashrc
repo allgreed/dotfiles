@@ -8,17 +8,6 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -48,13 +37,10 @@ source ~/.bash_utilities
 
 # Env
 #########################
-export NVM_DIR="$HOME/.nvm"
-
 PATH_LOCAL_BINARIES=$HOME/.local/bin
 PATH_ROOT_BINARIES=/sbin/:/usr/sbin
 PATH_SCRIPT_BINARIES=$HOME/.scripts/bin
 PATH=$PATH_LOCAL_BINARIES:$PATH_SCRIPT_BINARIES:$PATH:$PATH_ROOT_BINARIES
-
 export PATH
 
 # fixes nix-shell and sometimes ssh
@@ -62,10 +48,13 @@ if [ "$TERM" = 'rxvt-unicode-256color' ]; then
     export TERM='xterm-256color'
 fi
 
-export PIPENV_VENV_IN_PROJECT="1"
-
 # Shell behaviour
 #########################
+HISTSIZE=1000000
+HISTFILESIZE=4000000
+shopt -s histappend
+HISTCONTROL=ignoreboth # don't put duplicate lines or lines starting with space in the history.
+
 set -o vi; # vim in bash
 stty -ixon # disable ctrl+s - no more accidental weird freezes
 
@@ -76,16 +65,14 @@ load ~/.bash_prompt # my fancy prompt
 
 # Autocompletes
 #########################
-#load /usr/share/bash-completion/bash_completion
-#load "$NVM_DIR/bash_completion"
-#load /usr/share/bash-completion/completions/git
+load /usr/share/bash-completion/bash_completion
+load /usr/share/bash-completion/completions/git
 
 __git_complete g __git_main # apply full git completion to "g" alias
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" m # apply Make completion to 'm' alias
 
 # Shell integrations
 #########################
-#load "$NVM_DIR/nvm.sh" --no-use
 load ~/.nix-profile/etc/profile.d/nix.sh
 eval "$(direnv hook bash)"
 
@@ -97,3 +84,5 @@ function cd {
 }
 alias lcd="cd $(cat ~/.lastcd)"
 
+# Disable bell for less
+export PAGER='less -q'
