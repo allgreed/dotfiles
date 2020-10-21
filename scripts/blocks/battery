@@ -31,6 +31,7 @@ def main():
     status = enrich_status() if status == "Unknown" else status
 
     STATUS_TABLE = {
+        "Full": "CHR",
         "Discharging": "DIS",
         "Charging": "CHR",
         "off-line": "DIS",
