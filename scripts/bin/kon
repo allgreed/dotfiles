@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+echo 'ja pierdole jak ja kocham zycie wlasnie pije sobie drinka w domu, PLACEHOLDER, najedzony pitcom z dagrasso. Nic mi wiecej nie potrzeba ogladam sobie rzeczy o silowni na youtube, kotek siedzi mi na kolanach. Przypominam PLACEHOLDER wiec zero potrzeb zero testosteronu nie musze z nikim walczyc bo nie mam o co. Mam hajsy mam jedzenie i bezpieczenstwo i PLACEHOLDER. Pozdrawiam' | sed -e "s/PLACEHOLDER/$1/g"
