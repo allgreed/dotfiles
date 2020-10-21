@@ -2,6 +2,7 @@
 from datetime import datetime, timedelta
 import subprocess
 
+
 def py_xgetres(res: str):
     """A really shitty ad hoc implementation of xgetres, totally non-portable and probably will fail for your .Xresources
     
@@ -38,6 +39,7 @@ def main():
 
     if diff < timedelta(hours=7):
         exit(33)  # sets urgent flag on i3blocks
+
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,46 @@
+#! /usr/bin/env nix-shell
+#! nix-shell -i python3 -p python3 python37Packages.i3ipc
+
+# TODO: heh - unfuck the slowness
+#!/usr/bin/env python3
+try:
+    import i3ipc
+except ImportError:
+    print("Err: run pip3 install --user i3ipc")
+    print("Err")
+    print("#FF0000")
+    exit(1)
+# TODO: port to nix properly
+# TODO: extract xgetrespy to a propper package and port it to nix
+# TODO: than adjust the colors
+# TODO: use actual player API or something instead of window title xD
+
+
+def main():
+    i3 = i3ipc.Connection()
+    root = i3.get_tree()
+    songs = [con.name for con in root if con.window_class == 'Spotify']
+
+    if len(songs) > 1:
+        print("Multiple Spotifies running")
+        print("WTF")
+        exit(2)
+
+    if len(songs) == 0:
+        print("No Spotify running")
+        print("Off")
+        exit(2)
+
+    song = songs[0]
+
+    if song == "Spotify Premium":
+        print("nothing is playing")
+        print("pause")
+        exit(0)
+
+    artist, *_ = song.split("-")        
+    print(song)
+    print(artist.strip())
+
+if __name__ == "__main__":
+    main()
