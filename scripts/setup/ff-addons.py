@@ -7,6 +7,7 @@ plugins = [
     "lastpass-password-manager",
     "https-everywhere",
     "news-feed-eradicator",
+    "polish-spellchecker-dictionary",
 ]
 
 
