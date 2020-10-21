@@ -221,8 +221,12 @@ bindsym $mod+t exec $launch_terminal
 ########################################
 # Autostart
 #########################################
-exec xmodmap ~/.Xmodmap
+# TODO: shouldn't this be in xinitrc?
+#exec pulseaudio --start <- is this causing pulseaudio failure on Nixos?
 exec --no-startup-id xcape -e 'Caps_Lock=Escape;Control_L=Escape'
+exec xmodmap ~/.Xmodmap
+# this is for my T420 - I have scandinavic keyboard with >< character at the expense of left Shift
+exec xmodmap -e "keycode 94 = Shift_L"
 
 exec_always --no-startup-id ~/.fehbg # Wallpaper
 exec conky
@@ -231,10 +235,9 @@ exec unclutter
 exec redshift-gtk -c ~/.redshift.conf
 exec workrave
 
-#exec pulseaudio --start <- is this causing pulseaudio failure on Nixos?
-
 exec rambox
 exec firefox
+exec spotify
 
 ########################################
 # Window assignments
@@ -259,11 +262,10 @@ bindsym Print exec $screenshot && echo -e "\a"
 bindsym --release Shift+Print exec $screenshot --select
 
 ########################################
-# Init
+# Placement
 #########################################
-
-# this is for my T420 - I have scandinavic keyboard with >< character at the expense of left Shift
-exec xmodmap -e "keycode 94 = Shift_L"
+for_window [class="Spotify"] move to workspace $WS8
+for_window [class="rambox"] move to workspace $WS10
 
 ########################################
 # Sound
@@ -287,8 +289,5 @@ bindsym $mod+p exec ~/.scripts/bin/screen-preset
 # Testing
 #######
 bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
-
 bindsym $mod+F1 exec sensible-browser # too awkward to reach, totally forgot about this one, yet sensible binding
 
-for_window [class="Spotify"] move to workspace $WS8
-exec spotify
