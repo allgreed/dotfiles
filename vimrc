@@ -134,7 +134,7 @@ set ttimeoutlen=10 " it do?
 
 set history=100 "is this enough"
 
-:command! Wsudo w ! sudo tee %
+:command! Wsudo w ! doas tee %
 " typos
 :command! Q q
 :command! W w
