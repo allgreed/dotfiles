@@ -31,9 +31,20 @@ shopt -s checkwinsize
 
 # TODO: read the above carefully
 
-# load my utility function that simplify the rest of the config
-source ~/.bash_utilities
-# TODO: Move this to scripts unser load.sh
+# Bootstrap
+#########################
+function load
+{
+    name="$1"; shift
+
+    for path in "$1 $2 $3"; do
+        if [ -n "$path" ]; then
+            2> /dev/null source $path && return 
+        fi 
+    done
+
+    echo "Loading failed for $name, cannot source any of the: $@"
+}
 
 # Env
 #########################
@@ -60,22 +71,18 @@ stty -ixon # disable ctrl+s - no more accidental weird freezes
 
 # Extensions
 #########################
-load ~/.bash_aliases # my custom aliases
-load ~/.bash_prompt # my fancy prompt
+load 'aliases' ~/.bash_aliases
+load 'prompt' ~/.bash_prompt
+load 'nix integration' ~/.nix-profile/etc/profile.d/nix.sh
+eval "$(direnv hook bash)"
 
 # Autocompletes
 #########################
-load /usr/share/bash-completion/bash_completion
-load /usr/share/bash-completion/completions/git
-
+load 'bash autocomplete' /usr/share/bash-completion/bash_completion
+load 'git autocomplete' /usr/share/bash-completion/completions/git
 __git_complete g __git_main # apply full git completion to "g" alias
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" m # apply Make completion to 'm' alias
 complete -cf doas
-
-# Shell integrations
-#########################
-load ~/.nix-profile/etc/profile.d/nix.sh
-eval "$(direnv hook bash)"
 
 # Testing area
 #########################
