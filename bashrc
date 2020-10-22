@@ -59,6 +59,9 @@ if [ "$TERM" = 'rxvt-unicode-256color' ]; then
     export TERM='xterm-256color'
 fi
 
+PAGER='less -q' # disable bell for less
+export PAGER
+
 # Shell behaviour
 #########################
 HISTSIZE=1000000
@@ -91,6 +94,3 @@ function cd {
     pwd > ~/.lastcd
 }
 alias lcd="cd $(cat ~/.lastcd)"
-
-# Disable bell for less
-export PAGER='less -q'
