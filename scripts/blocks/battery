@@ -52,8 +52,8 @@ def main():
         elif percentage < 60:
             color = py_xgetres(".color13")
 
-    print(short_text)
     print(full_text)
+    print(short_text)
     print(color)
 
     if percentage < 5:

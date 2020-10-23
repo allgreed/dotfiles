@@ -39,8 +39,11 @@ def main():
         exit(0)
 
     artist, *_ = song.split("-")        
-    print(song)
-    print(artist.strip())
+    full_text = song
+    short_text = artist.strip()
+
+    print(full_text)
+    print(short_text)
 
 if __name__ == "__main__":
     main()

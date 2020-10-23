@@ -177,6 +177,8 @@ bar {
     bindsym button4 exec echo "" > /dev/null
     bindsym button5 exec echo "" > /dev/null
 
+    tray_output primary
+
     strip_workspace_numbers yes
 
 ########################################
