@@ -1,4 +1,2 @@
 #!/bin/sh
-# aaaaaaaaaa
 /run/current-system/sw/bin/feh --no-fehbg --bg-center --image-bg 'black' '/home/allgreed/.wallpaper/wp.jpg' 
-# aaaaaaaaaa
