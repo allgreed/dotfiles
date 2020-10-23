@@ -1,0 +1,92 @@
+#!/usr/bin/env python3
+import os
+import subprocess
+import re
+from typing import Dict
+
+
+def py_xgetres(res: str):
+    """A really shitty ad hoc implementation of xgetres, totally non-portable and probably will fail for your .Xresources
+    
+    Feel free to replce it with a legit exec once someone ports xgetres from aur(tm) to nix
+    """
+    p = subprocess.check_output(["xrdb", "-query"])  # py35 compatibility
+    entry_tokens = p.decode("utf-8").split("\n")
+    fuj_entries = map(lambda s: s.split(":"), entry_tokens)
+    entries = filter(lambda l: len(l) == 2, fuj_entries)
+    resource_map = { k.lstrip("*"): v.lstrip() for k, v in entries }
+    return resource_map[res.lstrip(".")]
+
+# TODO: refresh on click - see how contrib-temperature does it
+
+def main():
+    with open("/proc/meminfo") as f:
+        lines = f.readlines()
+        content = map(parse_memproc_line, lines)
+        parsed = { i["name"]: {"value": i["value"], "unit": i["unit"]} for i in content }
+
+    # TODO: refactor, rename
+    def ble(s: str) -> float:
+        entry = parsed[s]
+        raw_value = entry["value"]
+        assert entry["unit"] == "kB" or raw_value == 0
+        return raw_value
+
+    free_mem = sum(map(ble, ["MemFree", "Buffers", "Cached"]))
+    total_mem = sum(map(ble, ["MemTotal"]))
+    total_swap = sum(map(ble, ["SwapTotal"]))
+    free_swap= sum(map(ble, ["SwapFree"]))
+
+    kind = os.getenv("BLOCK_INSTANCE", "mem")
+    if kind == "mem":
+        total = total_mem
+        free = free_mem
+    elif kind == "swap":
+        total = total_swap
+        free = free_swap
+    else:
+        print("unsupported instance")
+        exit(1)
+
+    if total == 0 and kind == "swap":
+        exit(2)
+
+    used = (total - free) / 1024 / 1024
+    total = total / 1024 / 1024
+    free = free / 1024 / 1024
+
+    try:
+        percentage = used / total * 100
+    except ZeroDivisionError:
+        percentage = 0
+
+    # TODO: make this more readable -> use newer python fromatting
+    full_text = "%.1fG/%.1fG (%.f%%)" % (used, total, percentage)
+    short_text = "%.f%%" % (percentage)
+
+    color = py_xgetres(".color14")
+
+    # TODO: extract threshold to env var
+    if percentage > 80:
+        color = py_xgetres(".color1")
+    elif percentage > 70:
+        color = py_xgetres(".color13")
+
+    print(short_text)
+    print(full_text)
+    print(color)
+
+    if percentage > 90:
+        exit(33)  # sets urgent flag on i3blocks
+
+def parse_memproc_line(l: str) -> Dict:
+    r = re.match(r"([\w\(\)]+):\s*(\d+)\s?(\w+)?", l)
+
+    return {
+        "name": r.group(1),
+        "value": int(r.group(2)),
+        "unit": r.group(3),
+    }
+
+if __name__ == "__main__":
+    main()
