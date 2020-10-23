@@ -2,5 +2,6 @@
 # vim: ft=sh
 # stuff in this file will happen on startup
 
+# TODO: make it work
 rfkill block `rfkill list | grep -i blue | head -c 1` # stop bluetooth
 ./.scripts/mic mute

@@ -1,35 +1,14 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
-# If not running interactively, don't do anything
+# Guards
+#########################
 case $- in
     *i*) ;;
       *) return;;
 esac
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
-#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-#################################################
-#################################################
-#################################################
-#################################################
-#################################################
-#################################################
-
-# TODO: read the above carefully
+# poor man's display manager xD
+if [[ "$(tty)" == '/dev/tty1' ]]; then
+    TERMINAL='urxvt' exec startx
+fi
 
 # Bootstrap
 #########################
@@ -52,6 +31,40 @@ function load
     echo "Loading failed for $name, cannot source any of the: $@"
 }
 
+#################################################
+#################################################
+#################################################
+#################################################
+#################################################
+#################################################
+
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+# TODO: see some of those examples and remove this comment
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+#################################################
+#################################################
+#################################################
+#################################################
+#################################################
+#################################################
+# TODO: read the above carefully
+
 # Env
 #########################
 # TODO: since it's not needed on nixos -> move this to a helper utility and load
@@ -66,8 +79,9 @@ if [ "$TERM" = 'rxvt-unicode-256color' ]; then
     export TERM='xterm-256color'
 fi
 
-PAGER='less -q' # disable bell for less
-export PAGER
+export VISUAL=vim
+export EDITOR=vim
+export PAGER='less -q' # disable bell for less
 
 # Shell behaviour
 #########################

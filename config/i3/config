@@ -1,5 +1,3 @@
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
 font pango:Source Code Pro Medium 11px
 
 ########################################
@@ -221,18 +219,11 @@ bindsym $mod+t exec $launch_terminal
 ########################################
 # Autostart
 #########################################
-# TODO: shouldn't this be in xinitrc?
-#exec pulseaudio --start <- is this causing pulseaudio failure on Nixos?
-exec --no-startup-id xcape -e 'Caps_Lock=Escape;Control_L=Escape'
-exec xmodmap ~/.Xmodmap
-# this is for my T420 - I have scandinavic keyboard with >< character at the expense of left Shift
-exec xmodmap -e "keycode 94 = Shift_L"
-
-exec_always --no-startup-id ~/.fehbg # Wallpaper
+exec_always --no-startup-id ~/.fehbg # setting wallpaper
 exec conky
-
-exec unclutter
+# TODO: try moving this to xinitrc
 exec redshift-gtk -c ~/.redshift.conf
+
 exec workrave
 
 exec rambox
