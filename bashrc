@@ -37,7 +37,13 @@ function load
 {
     name="$1"; shift
 
-    for path in "$1 $2 $3"; do
+    for path in $@; do
+        # @nixos means that the utility is already provided by Nixos and
+        # doesn't require additional loading
+        if [[ "$path" == '@nixos' && -n __NIXOS_SET_ENVIRONMENT_DONE ]]; then
+            return 
+        fi 
+
         if [ -n "$path" ]; then
             2> /dev/null source $path && return 
         fi 
@@ -48,6 +54,7 @@ function load
 
 # Env
 #########################
+# TODO: since it's not needed on nixos -> move this to a helper utility and load
 PATH_LOCAL_BINARIES=$HOME/.local/bin
 PATH_ROOT_BINARIES=/sbin/:/usr/sbin
 PATH_SCRIPT_BINARIES=$HOME/.scripts/bin
@@ -76,13 +83,13 @@ stty -ixon # disable ctrl+s - no more accidental weird freezes
 #########################
 load 'aliases' ~/.bash_aliases
 load 'prompt' ~/.bash_prompt
-load 'nix integration' ~/.nix-profile/etc/profile.d/nix.sh
+load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
+load 'bash autocomplete' @nixos /usr/share/bash-completion/bash_completion
+load 'git autocomplete + helpers' $(dirname $(readlink -f $(which git)))/../share/bash-completion/completions/git /usr/share/bash-completion/completions/git
 eval "$(direnv hook bash)"
 
 # Autocompletes
 #########################
-load 'bash autocomplete' /usr/share/bash-completion/bash_completion
-load 'git autocomplete' /usr/share/bash-completion/completions/git
 __git_complete g __git_main # apply full git completion to "g" alias
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" m # apply Make completion to 'm' alias
 complete -cf doas
