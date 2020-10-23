@@ -91,7 +91,7 @@ eval "$(direnv hook bash)"
 # Autocompletes
 #########################
 __git_complete g __git_main # apply full git completion to "g" alias
-complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" m # apply Make completion to 'm' alias
+complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" m #" 
 complete -cf doas
 
 # Testing area
