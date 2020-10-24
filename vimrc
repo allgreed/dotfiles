@@ -35,14 +35,12 @@ set nrformats-=octal " I don't work with octal literals really
 " => Plugins 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"TODO: set nomodelineexpr after 8.1.1366
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'ciaranm/securemodelines'
 Plugin 'Yggdroot/indentLine'
 
 " Testing
@@ -74,9 +72,13 @@ set clipboard=unnamedplus " Use system clipboard as default buffer
 set undofile
 set undodir=$HOME/.vim/undo
 
-" securemodelines
-let g:secure_modelines_verbose = 1
-set nomodeline " prevent forcefull disable warning
+" prevent exploiting modeline vulnerability
+if has('patch-8.1.1366')
+    set nomodelineexpr
+    set modeline
+else
+    set nomodeline
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files
