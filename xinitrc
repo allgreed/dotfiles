@@ -8,4 +8,5 @@ xmodmap ~/.Xmodmap
 xmodmap -e "keycode 94 = Shift_L"
 unclutter &
 #pulseaudio --start <- is this causing pulseaudio failure on Nixos?
+redshift-gtk -c ~/.redshift.conf
 exec i3
