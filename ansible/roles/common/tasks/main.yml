@@ -56,8 +56,6 @@
   tags:
     - pkg
 
-- include_tasks: system/main.yml
-
 - include_tasks:
     file: nix.yml
     apply:
