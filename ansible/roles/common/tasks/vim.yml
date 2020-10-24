@@ -19,6 +19,7 @@
   copy:
     dest: ~/.vim/colors/solarized.vim
     src: vim/solarized.vim
+    mode: '600'
 
 - name: gather installed plugins information
   command: ls ~/.vim/bundle -1

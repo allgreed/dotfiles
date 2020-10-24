@@ -1,4 +1,9 @@
 ---
+- name: install system packages
+  package: name={{ item }} state=latest
+  with_items:
+    - physlock
+
 - include_tasks: vpn.yml
 
 - include_tasks: dns.yml

@@ -27,6 +27,8 @@
     - whois
     - arp-scan # arp discovery
   become: yes
+  tags:
+    - pkg
 
 - name: install python packages
   pip:
@@ -39,6 +41,8 @@
     state: latest
     executable: pip3
     extra_args: --user
+  tags:
+    - pkg
 
 - include_tasks: dotfiles.yml
 
@@ -49,6 +53,8 @@
   with_items:
     - nano
   become: yes
+  tags:
+    - pkg
 
 - include_tasks: system/main.yml
 

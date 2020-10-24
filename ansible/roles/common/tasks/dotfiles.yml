@@ -4,6 +4,8 @@
     name: dotfiles
     executable: pip3
     extra_args: --user
+  tags:
+    - pkg
 
 - name: clone Dotfiles repository
   git:
@@ -11,13 +13,6 @@
     dest: ~/Dotfiles
     version: master
   ignore_errors: yes # added for local ansible files developement - local changes are present in the repository
-
-- name: set remote-push over SSH for Dotfiles repo
-  git_config:
-    name: remote.origin.pushurl
-    scope: local
-    value: "{{ dotfiles_repo_push_url }}"
-    repo: ~/Dotfiles
 
 - name: configure dotfiles
   file:
@@ -40,3 +35,4 @@
     src: ~/Keys/git-main-id
     dest: "{{ ansible_user_dir }}/.gitid"
   when: link_main_git_id | bool
+  ignore_errors: yes # TODO: make this emmit warning but don't stop the whole playbook
