@@ -1,8 +1,0 @@
-#!/bin/bash
-ANSIBLE_LOCATION=~/Dotfiles/ansible
-
-echo "You will be prompted for sudo password twice"
-ansible-playbook -K -l local -i $ANSIBLE_LOCATION/inventory $ANSIBLE_LOCATION/bootstrap.yml 
-
-ansible-galaxy install -r $ANSIBLE_LOCATION/requirements.yml --roles-path $ANSIBLE_LOCATION/galaxy_roles
-ansible-playbook -K -l local -i $ANSIBLE_LOCATION/inventory $ANSIBLE_LOCATION/playbook.yml 

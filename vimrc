@@ -35,13 +35,14 @@ set nrformats-=octal " I don't work with octal literals really
 " => Plugins 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"TODO: set nomodelineexpr after 8.1.1366
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'ciaranm/securemodelines' "TODO: set nomodelineexpr after 8.1.1366
+Plugin 'ciaranm/securemodelines'
 Plugin 'Yggdroot/indentLine'
 
 " Testing
@@ -54,7 +55,6 @@ Plugin 'posva/vim-vue'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'hashivim/vim-terraform'
 Plugin 'cespare/vim-toml'
-"Plugin 'jvirtanen/vim-hcl'
 Plugin 'rust-lang/rust.vim'
 Plugin 'LnL7/vim-nix'
 Plugin 'kongo2002/fsharp-vim'

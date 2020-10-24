@@ -1,6 +1,0 @@
----
-- name: reload font cache for Source Code Pro
-  command: fc-cache -f -v ~/.local/share/fonts/source-code-pro
-
-- name: reload XRDB
-  command: xrdb ~/.Xresources

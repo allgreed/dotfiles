@@ -34,7 +34,6 @@ bootstrap:
 
 NICE:
 - fix lvm metad connection error at startup
-- xcape doesn't properly recognize Caps mapped to Control until Control is pressed
 - https://medium.com/@sidneyliebrand/how-fzf-and-ripgrep-improved-my-workflow-61c7ca212861
 - tag package installation (this is the slowest and least likely to fail)
 

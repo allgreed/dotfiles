@@ -1,4 +1,0 @@
----
-- name: reload keyboard layout
-  command: setxkbmap -layout pl
-  become: yes
