@@ -284,3 +284,5 @@ bindsym $mod+p exec ~/.scripts/bin/screen-preset
 bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
 bindsym $mod+F1 exec sensible-browser # too awkward to reach, totally forgot about this one, yet sensible binding
 
+# unfuck Teams notifications
+for_window [title="Microsoft Teams Notification"] floating enable
