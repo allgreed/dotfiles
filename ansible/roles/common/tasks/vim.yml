@@ -38,3 +38,8 @@
 - name: install plugins
   command: vim -i NONE +PluginInstall +qall
   when: vim_installed_plugins != vim_desired_plugins
+
+- name: ensure undodir
+  file:
+    path: ~/.vim/undo
+    state: directory
