@@ -1,0 +1,12 @@
+    mkdir -p ~/Keys
+
+    machine key generation into /Keys
+    ln -s ~/Keys/machine-eliptic-ssh id_ed25519
+    ln -s ~/Keys/machine-eliptic-ssh.pub id_ed25519.pub
+
+    ln -s  ~/Keys/hub ~/.config/hub
+    touch ~/.config/hub
+    hub login or wtf
+    chmod 400 ~/.config/hub
+
+    download git-identity from lastpass?

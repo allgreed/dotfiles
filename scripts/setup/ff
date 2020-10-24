@@ -2,3 +2,8 @@
 browser.sessionstore.warnOnQuit true
 browser.showQuitWarning true
 browser.warnOnQuit true
+
+# how to set this via options?
+- https://support.mozilla.org/en-US/questions/1241201
+
+- kindly stop asking to remember password
