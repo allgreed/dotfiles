@@ -64,13 +64,11 @@ def main():
     full_text = "%.1fG/%.1fG (%.f%%)" % (used, total, percentage)
     short_text = "%.f%%" % (percentage)
 
-    color = py_xgetres(".color14")
+    color = py_xgetres(".color13")
 
     # TODO: extract threshold to env var
     if percentage > 80:
         color = py_xgetres(".color1")
-    elif percentage > 70:
-        color = py_xgetres(".color13")
 
     print(full_text)
     print(short_text)
