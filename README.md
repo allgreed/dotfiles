@@ -38,5 +38,4 @@ This config is intended for NixOs, however should be fairly usable on Debian-bas
 - paths on i3 config <- mainly autostart stuff, installed with Nix on Ubuntu
 - paths on xinitrc <- same as above
 - paths contrib blocks path of i3blocks
-- scripts utilitsing `nix-shell -p` might not work, will test that soon
 - there is something funky going on about starting pulseaudio
