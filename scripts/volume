@@ -15,7 +15,6 @@ VOLUME_MAX = 100
 simple_commands = {
     "mute": "pactl set-sink-mute 0 1",
     "unmute": "pactl set-sink-mute 0 0",
-    "get_volume": "pactl list sinks",
 }
 
 complex_commands = {
@@ -92,7 +91,7 @@ def inc_volume(step):
     spawn(complex_commands['set_volume'].format(volume=increment))
 
 def get_volume() -> int:
-    volume_command = spawn(simple_commands["get_volume"])
+    volume_command = spawn("pactl list sinks")
     volume_command_output = volume_command.stdout.decode('utf-8')
 
     output_lines = volume_command_output.split('\n')
