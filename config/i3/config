@@ -223,14 +223,13 @@ bindsym $mod+t exec $launch_terminal
 #########################################
 exec_always --no-startup-id ~/.fehbg # setting wallpaper
 exec conky
-# TODO: try moving this to xinitrc
-#exec redshift-gtk -c ~/.redshift.conf
-
-exec workrave
 
 exec rambox
 exec firefox
 exec spotify
+
+exec redshift-gtk -c ~/.redshift.conf
+exec workrave
 
 ########################################
 # Window assignments
