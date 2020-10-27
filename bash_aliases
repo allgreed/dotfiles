@@ -94,3 +94,4 @@ alias k="kubectl"
 alias pr="hub pull-request"
 alias sudo="doas"
 alias cdd="cd ~/Desktop"
+alias ls='ls -Ah'
