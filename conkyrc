@@ -27,6 +27,5 @@ conky.config = {
     use_spacer = 'none',
 }
 
-conky.text = [[
-${exec ls ~/Desktop | head -n 35; echo "…"}
-]]
+conky.text = [[${exec ls ~/Desktop | head -n 34}
+${exec c=$(ls ~/Desktop | wc -l); test $c -ge 35 && echo "… $(expr $c - 34) more"}]]
