@@ -9,14 +9,16 @@ syntax enable
 colorscheme solarized
 set background=light
 
-set relativenumber number "hybrid line numbering
+set relativenumber number " hybrid line numbering
 set ruler
 
 set wildmenu
 
-set hlsearch " Highlight search matches
+set hlsearch " highlight search matches
 
-set visualbell " Disable emmiting bell
+set visualbell " disable emmiting bell
+
+set laststatus=2 " always show statusline
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editorial behaviours
@@ -129,11 +131,8 @@ noh " don't show search highlights on vimrc reload
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TODO: Ctrl + S?
-
-" one of this is important! xD
-set laststatus=2 "what?
-set t_Co=256 "does ?
-set ttimeoutlen=10 " it do?
+" this might be important - I've set it for a reason
+set ttimeoutlen=10 " but what does it do exactly? o.0
 
 " TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
 
