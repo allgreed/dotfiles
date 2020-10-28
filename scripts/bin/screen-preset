@@ -5,3 +5,4 @@ $(
         )
 )
 ~/.fehbg # set the wallpaper
+pkill conky; conky & # restart conky
