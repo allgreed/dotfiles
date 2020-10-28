@@ -16,16 +16,23 @@ function load
 {
     name="$1"; shift
 
-    for path in $@; do
+    while [ -n "$1" ]; do
         # @nixos means that the utility is already provided by Nixos and
         # doesn't require additional loading
-        if [[ "$path" == '@nixos' && -n __NIXOS_SET_ENVIRONMENT_DONE ]]; then
+        if [[ "$1" == '@nixos' && -n __NIXOS_SET_ENVIRONMENT_DONE ]]; then
             return 
         fi 
 
-        if [ -n "$path" ]; then
-            2> /dev/null source $path && return 
+        if [[ "$1" == @eval ]]; then
+            code=$(eval $2)
+            eval "$code" && return
+        fi
+
+        if [ -n "$1" ]; then
+            2> /dev/null source "$1" && return 
         fi 
+
+        shift
     done
 
     echo "Loading failed for $name, cannot source any of the: $@"
@@ -105,8 +112,7 @@ load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
 load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
 load 'bash autocomplete' @nixos /usr/share/bash-completion/bash_completion
 load 'git autocomplete + helpers' $(dirname $(readlink -f $(which git)))/../share/bash-completion/completions/git /usr/share/bash-completion/completions/git
-# TODO: make this eval work with load as well? o.0
-eval "$(direnv hook bash)"
+load 'direnv integration' @eval "direnv hook bash"
 
 # Autocompletes
 #########################
