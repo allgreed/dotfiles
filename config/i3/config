@@ -1,11 +1,11 @@
-font pango:Source Code Pro Medium 11px
-
 ########################################
 # Names
 #########################################
 
 # using Super as mod
 set $mod Mod4
+
+set $font_kind pango:Source Code Pro Medium
 
 set $launch_terminal i3-sensible-terminal
 
@@ -44,6 +44,8 @@ set_from_resource $X_C_12       color12
 set_from_resource $X_C_13       color13
 set_from_resource $X_C_14       color14
 set_from_resource $X_C_15       color15
+
+font $font_kind 11px
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -172,6 +174,8 @@ bindsym $mod+r mode "resize"
 
 bar {
     status_command i3blocks
+
+    font $font_kind 12px
 
     # disables this shitty behaviour when scrolling over the bar
     bindsym button4 exec echo "" > /dev/null
