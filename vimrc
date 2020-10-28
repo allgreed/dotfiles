@@ -21,8 +21,6 @@ set visualbell " Disable emmiting bell
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editorial behaviours
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
 " Smart tabs
 set tabstop=4       " The width of a TAB is set to 4
 set shiftwidth=4    " Indents will have a width of 4
@@ -42,9 +40,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'scrooloose/nerdcommenter'
 
 " Testing
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " Syntax highlighters
@@ -100,7 +98,6 @@ augroup vimrc
 augroup END
 
 autocmd! BufWritePost ~/.vimrc nested :source ~/.vimrc
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -115,7 +112,14 @@ let mapleader=" "
 :map <Leader>s  i<!--s--><Esc>
 :map <Leader>v  i<!--v--><Esc>
 
-"testing
+"usefull alisaes
+:command! Wsudo w ! doas tee %
+
+" typos
+:command! Q q
+:command! W w
+
+"NERDComment integration
 :nnoremap \ :call NERDComment('n', 'Toggle')<CR>
 :vnoremap \ :call NERDComment('x', 'Toggle')<CR>
 
@@ -125,18 +129,18 @@ noh " don't show search highlights on vimrc reload
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TODO: Ctrl + S?
-" TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
 
-set backspace=" vim knows how to handle backspace got it right since vi
-
-" TODO: What exactly does this do ???
+" one of this is important! xD
 set laststatus=2 "what?
 set t_Co=256 "does ?
 set ttimeoutlen=10 " it do?
 
+" TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
+
+:command! Pl :set spelllang=pl spell
+set nospell " fixes interpreting the above, but possible messes with spellcheck on gitcommit
+
 set history=100 "is this enough"
 
-:command! Wsudo w ! doas tee %
-" typos
-:command! Q q
-:command! W w
+:command! Plm :normal! ggO # vim: set spelllang=pl spell:<ESC>^x
+set nospell " fixes interpreting the above, but possible messes with spellcheck on gitcommit
