@@ -5,7 +5,7 @@ INVENTORY ?= inventory
 # Porcelain
 # ###############
 .PHONY: just-dotfiles
-just-dotfiles:
+just-dotfiles:  ## install the dotfiles
 	ansible-playbook -l local --inventory=$(INVENTORY) just_dotfiles.yml --skip-tags='pkg,nix' --extra-vars "dotfiles_binary=`which dotfiles` ansible_python_interpreter=`which python`"
 
 # Utilities

@@ -7,6 +7,8 @@
   with_items:
     - ~/.vim/colors
     - ~/.vim/bundle
+    - ~/.vim/undo
+    - ~/.vim/spell
 
 - name: install Vundle
   git:
@@ -39,7 +41,10 @@
   command: vim -i NONE +PluginInstall +qall
   when: vim_installed_plugins != vim_desired_plugins
 
-- name: ensure undodir
-  file:
-    path: ~/.vim/undo
-    state: directory
+- name: download non-English dictionaries
+  get_url:
+    url: "http://ftp.vim.org/pub/vim/runtime/spell/{{item}}.utf-8.spl"
+    dest: "~/.vim/spell/{{item}}.utf-8.spl"
+    mode: '600'
+  with_items:
+    - pl
