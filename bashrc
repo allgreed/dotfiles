@@ -102,8 +102,10 @@ stty -ixon # disable ctrl+s - no more accidental weird freezes
 load 'aliases' ~/.bash_aliases
 load 'prompt' ~/.bash_prompt
 load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
+load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
 load 'bash autocomplete' @nixos /usr/share/bash-completion/bash_completion
 load 'git autocomplete + helpers' $(dirname $(readlink -f $(which git)))/../share/bash-completion/completions/git /usr/share/bash-completion/completions/git
+# TODO: make this eval work with load as well? o.0
 eval "$(direnv hook bash)"
 
 # Autocompletes
