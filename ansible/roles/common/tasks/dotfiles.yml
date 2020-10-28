@@ -1,19 +1,4 @@
 ---
-- name: install dotfiles
-  pip:
-    name: dotfiles
-    executable: pip3
-    extra_args: --user
-  tags:
-    - pkg
-
-- name: clone Dotfiles repository
-  git:
-    repo: "{{ dotfiles_repo_fetch_url }}"
-    dest: ~/Dotfiles
-    version: master
-  ignore_errors: yes # added for local ansible files developement - local changes are present in the repository
-
 - name: configure dotfiles
   file:
     src: ~/Dotfiles/dotfilesrc

@@ -1,6 +1,7 @@
 # dotfiles
 
 My collection of preferences, configs, /etc.
+They work in tandem with [my Nixos configuration](https://github.com/allgreed/nixos-config), but for reasons™ I'm keeping them separate 
 
 ## Prerequisites
 

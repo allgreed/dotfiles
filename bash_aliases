@@ -63,6 +63,7 @@ alias xit=exit
 alias exi=exit
 alias :q=exit
 alias :wq=exit
+alias sl='ls'
 
 alias kubect=kubectl
 
