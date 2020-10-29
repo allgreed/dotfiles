@@ -91,7 +91,10 @@ alias yyy="g call -m \"$(date)\"; gp"
 alias ka="kubectl apply -f ."
 alias k="kubectl"
 alias pr="hub pull-request"
-sudo() { &>/dev/null which 'doas' && doas $@ || /run/wrappers/bin/sudo $@ }
+sudo()
+{ 
+    &>/dev/null which 'doas' && doas $@ || /run/wrappers/bin/sudo $@ 
+}
 alias cdd="cd ~/Desktop"
 alias ls='ls -Ah'
 alias which='which --all'
