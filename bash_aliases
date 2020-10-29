@@ -71,7 +71,6 @@ alias kubect=kubectl
 # WIP
 ##############
 
-
 # this should be standardized once my PyCharm installations are automated
 alias charm="charm . &"
 
@@ -86,13 +85,13 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias yyy="g call -m \"$(date)\"; gp"
 alias ka="kubectl apply -f ."
 alias k="kubectl"
 alias pr="hub pull-request"
-alias sudo="doas"
+sudo() { &>/dev/null which 'doas' && doas $@ || /run/wrappers/bin/sudo $@ }
 alias cdd="cd ~/Desktop"
 alias ls='ls -Ah'
+alias which='which --all'
