@@ -9,7 +9,7 @@ in
     enable = true;
     extensions = with nur.repos.rycee.firefox-addons; [
       https-everywhere
-      lastpass-password-manager  # non-free
+      lastpass-password-manager
       vimium
       ublock-origin
       # TODO: build them manually

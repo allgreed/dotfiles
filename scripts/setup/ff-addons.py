@@ -16,7 +16,7 @@ def main():
             if user_input == "n":
                 break
 
-    print("Done, now turn them on! :D")
+    print("Done, now turn them on and configure them all! :D")
 
 
 if __name__ == "__main__":
