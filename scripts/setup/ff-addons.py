@@ -2,10 +2,6 @@
 
 
 plugins = [
-    "vimium-ff",
-    "ublock-origin",
-    "lastpass-password-manager",
-    "https-everywhere",
     "news-feed-eradicator",
     "polish-spellchecker-dictionary",
 ]
@@ -20,7 +16,7 @@ def main():
             if user_input == "n":
                 break
 
-    print("FIN :D")
+    print("Done, now turn them on! :D")
 
 
 if __name__ == "__main__":

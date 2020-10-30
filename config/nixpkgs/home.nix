@@ -1,8 +1,22 @@
 { config, pkgs, ... }:
-
+let
+  nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+    inherit pkgs;
+  };
+in
 {
   programs.firefox = {
     enable = true;
+    extensions = with nur.repos.rycee.firefox-addons; [
+      https-everywhere
+      lastpass-password-manager  # non-free
+      vimium
+      ublock-origin
+      # TODO: build them manually
+      # TODO: remove ff-addons.py from setup
+      #news-feed-eradicator
+      #polish-spellchecker-dictionary
+    ];
     profiles = {
       myprofile = {
         settings = {
@@ -18,6 +32,10 @@
   };
 
   manual.html.enable = true;
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+    "lastpass-password-manager"
+  ];
 
   programs.home-manager.enable = true;
   home.username = "allgreed";
