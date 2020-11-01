@@ -1,3 +1,4 @@
+# vim: set syntax=gitconfig:
 [include]
     # user configuration
     path = ~/.gitid
@@ -28,13 +29,13 @@
 
 # 3rd party
 ############################
-
 [hub]
 	protocol = ssh
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/
 
 # Diffs
 ############################
-
 [diff]
     renames = copies
 	algorithm = patience
@@ -44,7 +45,6 @@
 
 # UI
 ############################
-
 [alias]
     a = add
     c = commit
@@ -80,7 +80,6 @@
 
 # Filters
 ############################
-
 [filter "kicad_project"]
 	clean = sed -E 's/^update=.*$/update=Date/'
 	smudge = cat
