@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# TODO: add support for --tld option to run makefile from git root
+# TODO: check if there is -C in args if not:
+if [ ! -f ./Makefile ]; then
+    GIT_TLD=$(git rev-parse --show-toplevel 2> /dev/null)
+    if [ -n "$GIT_TLD" ]; then
+        if [ ! "$PWD" = "$GIT_TLD" ]; then
+            cd .. 
+            exec $0 "$@"
+        fi
+    fi
+fi
+
+# TODO: make display only when running in different than... heh.. PWD
+echo "using $PWD/Makefile"
+
+exec make $DASH_C "$@"

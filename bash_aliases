@@ -4,6 +4,7 @@
 alias gs="git s"
 alias gp="git p"
 alias g="git"
+alias make="make-git-aware"
 alias m="make"
 
 alias tf="terraform"
