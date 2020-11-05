@@ -7,6 +7,13 @@ They work in tandem with [my Nixos configuration](https://github.com/allgreed/ni
 
 This config is intended for NixOs, however should be fairly usable on Debian-based systems. For work purposes I'm targeting Ubuntu. Your milage may vary.
 
+## Local overrides
+
+In rare cases I'd like to make changes to the dotfiles that would only have effect on the current machine. This should be avoided when it reasonably can. Each local override has to be treated like a specail case and supported explicitly in relevant place.
+
+### Currently supported overrides:
+- .Xresources.local
+
 ### What's definitely not portable yet
 - paths on i3 config <- mainly autostart stuff, installed with Nix on Ubuntu
 - paths on xinitrc <- same as above

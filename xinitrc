@@ -6,7 +6,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-xrdb ~/.Xresources
+xrdb '~/.Xresources'
+xrdb -merge '~/.Xresources.local'
 
 xcape -e 'Caps_Lock=Escape;Control_L=Escape'
 xmodmap ~/.Xmodmap
