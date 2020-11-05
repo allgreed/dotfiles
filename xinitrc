@@ -1,4 +1,11 @@
 #!/bin/bash
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for f in /etc/X11/xinit/xinitrc.d/*; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
+
 xrdb ~/.Xresources
 
 xcape -e 'Caps_Lock=Escape;Control_L=Escape'
@@ -10,4 +17,4 @@ xmodmap -e "keycode 94 = Shift_L"
 numlockx on
 unclutter &
 
-exec i3
+TERMINAL='urxvt' exec i3

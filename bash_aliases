@@ -98,4 +98,4 @@ sudo()
 }
 alias cdd="cd ~/Desktop"
 alias ls='ls -Ah'
-alias which='which --all'
+alias which='which -a'

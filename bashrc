@@ -19,7 +19,7 @@ function load
     while [ -n "$1" ]; do
         # @nixos means that the utility is already provided by Nixos and
         # doesn't require additional loading
-        if [[ "$1" == '@nixos' && -n __NIXOS_SET_ENVIRONMENT_DONE ]]; then
+        if [[ "$1" == '@nixos' && -n "$__NIXOS_SET_ENVIRONMENT_DONE" ]]; then
             return 
         fi 
 

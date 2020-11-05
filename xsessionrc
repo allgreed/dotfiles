@@ -1,0 +1,3 @@
+#!/bin/sh
+# dear Debian, why complicate things? ;)
+exec ~/.xinitrc
