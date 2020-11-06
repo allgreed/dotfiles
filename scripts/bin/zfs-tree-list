@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+read -r -d '' ENRICH_PY << '--END'
+import sys
+input = sys.stdin.readlines()
+
+entry_count = int(input[0])
+print(input[1].rstrip())
+
+tree = [l.rstrip() for l in input[3:entry_count + 3]]
+
+data = input[entry_count + 3:]
+for line, enrichment in zip(tree, data):
+    print(f"{line}|{enrichment.rstrip()}")
+--END
+
+read -r -d '' PROCESOPTS_PY << '--END'
+import sys
+args = sys.argv[1:] # ommiting "-c"
+
+for i, arg in enumerate(args):
+    if arg == "-o":
+        raw_zfs_o = args[i + 1]
+        zfs_o = raw_zfs_o.split(",")
+
+        if "space" in zfs_o:
+            zfs_o[zfs_o.index('space')] = 'avail,used,usedsnap,usedds,usedrefreserv,usedchild'
+
+        if "name" in zfs_o:
+            zfs_o.remove("name")
+
+        args[i + 1] = ",".join(zfs_o)
+
+    if arg == "-H":
+        args[i] = ""
+    
+print(" ".join(args))
+--END
+
+opts=$(python3 -c "$PROCESOPTS_PY" $@)
+{ 
+    zfs list -o name -H | wc -l;
+    echo 'NAME'$(echo ' '$(zfs list $opts | head -n 1) | sed -n 's/ \+/|/gp')
+    zfs list -o name -H | tree --fromfile . --noreport;
+    zfs list $opts -H | tr \\t '|'; 
+} |\
+    python3 -c "$ENRICH_PY" |\
+    column -t -s '|'
