@@ -32,6 +32,9 @@ for i, arg in enumerate(args):
 
     if arg == "-H":
         args[i] = ""
+
+if "-o" not in args:
+    args += ["-o", "used,avail,refer,mountpoint"]
     
 print(" ".join(args))
 --END
@@ -43,5 +46,4 @@ opts=$(python3 -c "$PROCESOPTS_PY" $@)
     zfs list -o name -H | tree --fromfile . --noreport;
     zfs list $opts -H | tr \\t '|'; 
 } |\
-    python3 -c "$ENRICH_PY" |\
-    column -t -s '|'
+    python3 -c "$ENRICH_PY" | column -t -s '|'
