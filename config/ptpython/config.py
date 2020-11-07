@@ -1,7 +1,3 @@
-"""
-My configuration of Ptpython
-"""
-
 from prompt_toolkit.keys import Keys
 from ptpython.layout import CompletionVisualisation
 
@@ -11,7 +7,6 @@ __all__ = (
 
 
 def configure(repl):
-
     # Enable vi mode by default
     repl.vi_mode = True
 
@@ -129,4 +124,3 @@ def configure(repl):
     #            b.insert_text(corrections[w])
     #    b.insert_text(' ')
     #"""
-

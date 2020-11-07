@@ -1,6 +1,6 @@
 [dotfiles]
 repository = ~/Dotfiles
-packages = ["config", "ptpython", "urxvt"]
+packages = ["config", "urxvt"]
 ignore = [
     ".git",
     ".gitignore",
