@@ -94,7 +94,13 @@ alias k="kubectl"
 alias pr="hub pull-request"
 sudo()
 { 
-    &>/dev/null which 'doas' && doas $@ || /run/wrappers/bin/sudo $@ 
+    if &>/dev/null which 'doas'; then
+        doas $@
+    else
+        echo a
+        unset sudo
+        sudo $@ 
+    fi
 }
 alias cdd="cd ~/Desktop"
 alias ls='ls -Ah'
