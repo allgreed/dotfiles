@@ -99,3 +99,4 @@ sudo()
 alias cdd="cd ~/Desktop"
 alias ls='ls -Ah'
 alias which='which -a'
+alias jozef="vlc ~/Music/Only_Lover_Left_Alive_Full_OST.opus"
