@@ -130,7 +130,7 @@ noh " don't show search highlights on vimrc reload
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" TODO: Ctrl + S?
+" TODO: Ctrl + S? <- unbound
 " this might be important - I've set it for a reason
 set ttimeoutlen=10 " but what does it do exactly? o.0
 
@@ -145,3 +145,4 @@ set history=100 "is this enough"
 set nospell " fixes interpreting the above, but possible messes with spellcheck on gitcommit
 
 " TODO: find commands for faster movement between windows, maybe alt + hjkl?
+" TODO: integrate
