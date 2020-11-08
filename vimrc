@@ -91,12 +91,12 @@ augroup vimrc
 
     autocmd FileType markdown let g:indentLine_enabled = 0 " Disable identLine for .md
     autocmd FileType json let g:indentLine_enabled = 0
+
     autocmd FileType gitcommit let g:indentLine_enabled = 0
+    autocmd FileType gitcommit setlocal spell colorcolumn=80
 
-    autocmd FileType gitcommit setlocal spell " Use spellcheck by default in git commit messages
-
-    autocmd BufNewFile,BufRead .envrc set syntax=sh
-    autocmd BufNewFile,BufRead .gitignore set syntax=conf
+    autocmd BufNewFile,BufRead .envrc setlocal syntax=sh
+    autocmd BufNewFile,BufRead .gitignore setlocal syntax=conf
 augroup END
 
 autocmd! BufWritePost ~/.vimrc nested :source ~/.vimrc
