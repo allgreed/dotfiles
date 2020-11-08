@@ -6,9 +6,6 @@ except ImportError:
     print("Err")
     print("#FF0000")
     exit(1)
-# TODO: port to nix properly
-# TODO: extract xgetrespy to a propper package and port it to nix
-# TODO: than adjust the colors
 # TODO: use actual player API or something instead of window title xD
 
 
@@ -30,16 +27,42 @@ def main():
     song = songs[0]
 
     if song == "Spotify Premium":
-        print("nothing is playing")
-        print("pause")
+        # TODO: make it go through common pipeline
+        print("enjoy the silence")
+        print("silence")
         exit(0)
 
-    artist, *_ = song.split("-")        
-    full_text = song
-    short_text = artist.strip()
+    artist, *title = song.split("-")
+    title = "-".join(title)
+
+    artist = artist_heuristic_trimm(artist.strip())
+    artist = artist.strip()
+    title = title.strip()
+    artist, title = smart_trimm_both(artist, title)
+
+    full_text = f"{artist} - {title}"
+    short_text = dot_trimm(artist)
 
     print(full_text)
     print(short_text)
+
+
+def artist_heuristic_trimm(artist) -> str:
+    table = {
+        "Scott Bradlee's Postmodern Jukebox": "Postmodern Jukebox",
+    }
+
+    return table.get(artist, artist)
+
+
+def dot_trimm(s: str, length: int = 20) -> str:
+    return s[:(length if len(s) <= length else length - 3)] + ("..." if len(s) > length else "")
+
+
+def smart_trimm_both(artist, title):
+    # TODO: distribute the trimming space between both artist and title
+    return dot_trimm(artist, 20), dot_trimm(title, 20)
+
 
 if __name__ == "__main__":
     main()
