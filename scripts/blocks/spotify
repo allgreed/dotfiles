@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 try:
     import i3ipc
 except ImportError:
@@ -11,6 +12,9 @@ except ImportError:
 
 def main():
     i3 = i3ipc.Connection()
+
+    handle_button(os.getenv("button"), i3=i3)
+
     root = i3.get_tree()
     songs = [con.name for con in root if con.window_class == 'Spotify']
 
@@ -62,6 +66,15 @@ def dot_trimm(s: str, length: int = 20) -> str:
 def smart_trimm_both(artist, title):
     # TODO: distribute the trimming space between both artist and title
     return dot_trimm(artist, 20), dot_trimm(title, 20)
+
+def handle_button(button, i3: i3ipc.Connection):
+    if button == "1":
+        i3.command("workspace 8:8 ♪")
+    elif button == "3":
+        # TODO: spotify mute
+        ...
+    else:
+        pass
 
 
 if __name__ == "__main__":
