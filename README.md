@@ -9,14 +9,14 @@ This config is intended for NixOs, however should be fairly usable on Debian-bas
 
 ## Local overrides
 
-In rare cases I'd like to make changes to the dotfiles that would only have effect on the current machine. This should be avoided when it reasonably can. Each local override has to be treated like a specail case and supported explicitly in relevant place.
+In rare cases I'd like to make changes to the dotfiles that would only have effect on the current machine. This should be avoided when it reasonably can be. Each local override has to be treated like a special case and supported explicitly in relevant place.
 
 ### Currently supported overrides:
 - .Xresources.local
+- .autostart.local <- a shell script
 
 ### What's definitely not portable yet
 - paths on i3 config <- mainly autostart stuff, installed with Nix on Ubuntu
-- paths on xinitrc <- same as above
 - paths contrib blocks path of i3blocks
 - there is something funky going on about starting pulseaudio
 
