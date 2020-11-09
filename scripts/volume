@@ -1,29 +1,46 @@
 #! /usr/bin/env python3
 """Control speakers volume"""
-
 import subprocess
 import os
 import re
 import signal
-from functools import partial
+from typing import Sequence
 
 import click
 
 
 VOLUME_MAX = 100
 
+
+def spawn(command, remove_empty_lines=True) -> Sequence[str]:
+    p = subprocess.run(command, shell=True, stdout=subprocess.PIPE, check=True)
+
+    raw_lines = p.stdout.decode("utf-8").split("\n")
+
+    if not remove_empty_lines:
+        return raw_lines
+
+    return list(filter(bool, raw_lines))
+
+
+# TODO: put this it it's own fuction, move spawn to bottom
+sinks_indexes = spawn("pacmd list-sinks | grep index | cut -d' ' -f 5")
+
+if len(sinks_indexes) == 1:
+    the_sink_idx = sinks_indexes[0]
+else:
+    print(f"ERR: expecting a single sink, found {len(sinks_indexes)}")
+# TODO: ------------
+
+
 simple_commands = {
-    "mute": "pactl set-sink-mute 0 1",
-    "unmute": "pactl set-sink-mute 0 0",
+    "mute": f"pactl set-sink-mute {the_sink_idx} 1",
+    "unmute": f"pactl set-sink-mute {the_sink_idx} 0",
 }
 
 complex_commands = {
-    "set_volume": "pactl set-sink-volume 0 {volume}%",
-    "is_muted": "pactl list sinks | grep -q Mute:.no",
+    "set_volume": f"pactl set-sink-volume {the_sink_idx} {{volume}}%",
 }
-
-spawn = partial(subprocess.run, shell=True, check=True, stdout=subprocess.PIPE)
-
 
 def main():
     @click.group()
@@ -90,16 +107,15 @@ def inc_volume(step):
 
     spawn(complex_commands['set_volume'].format(volume=increment))
 
-def get_volume() -> int:
-    volume_command = spawn("pactl list sinks")
-    volume_command_output = volume_command.stdout.decode('utf-8')
 
-    output_lines = volume_command_output.split('\n')
+def get_volume() -> int:
+    output_lines = spawn("pactl list sinks", remove_empty_lines=False)
     line_with_volume = next(filter(lambda x: "Volume:" in x, output_lines))
     volume = re.search(r'\/\s+(\d+)%\s+\/', line_with_volume).group(1)
     volume = int(volume)
 
     return volume
+
 
 def make_simple_command(action):
     @click.command()
@@ -110,24 +126,17 @@ def make_simple_command(action):
 
 
 def is_muted() -> bool:
-    return spawn(complex_commands["is_muted"], check=False).returncode
+    try:
+        return spawn("pactl list sinks | grep -q Mute:.no")
+    except subprocess.CalledProcessError:
+        return True
+    else:
+        return False
 
 
 def emmit_signal_to_i3blocks(signal_no: int) -> None:
-    def get_i3blocks_pid():
-        pids = [pid for pid in os.listdir('/proc') if pid.isdigit()]
-
-        for pid in pids:
-            try:
-                with open(os.path.join('/proc', pid, 'cmdline'), 'r') as f:
-                    p_name = f.read().rstrip('\0')
-
-                    if p_name == "i3blocks":
-                        return int(pid)
-            except IOError: # proc has already terminated
-                continue
-
-    os.kill(get_i3blocks_pid(), signal.SIGRTMIN + signal_no)
+    for pid in spawn("pgrep i3blocks"):
+        os.kill(int(pid), signal.SIGRTMIN + signal_no)
 
 
 if __name__ == "__main__":
