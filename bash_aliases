@@ -26,7 +26,6 @@ alias volume="~/.scripts/volume --signal 10"
 # better Python names, but respecting virtualenvs
 alias python2="/usr/bin/env python"
 alias python="/usr/bin/env python3"
-alias python3="/usr/bin/env python3.6"
 
 # magnetic trace still can be recovered from hdd after ~7 rewrites
 alias shred-hdd='shred -uvzn9'
