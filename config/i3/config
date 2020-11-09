@@ -231,6 +231,7 @@ exec workrave
 # Window assignments
 #########################################
 assign [class="Rambox"] $WS10
+assign [class="Slack"] $WS10
 
 ########################################
 # Misc / EE
