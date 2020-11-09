@@ -223,6 +223,7 @@ exec conky
 exec rambox
 exec firefox
 exec spotify
+exec ~/.autostart.local
 
 exec redshift-gtk -c ~/.redshift.conf
 exec workrave
