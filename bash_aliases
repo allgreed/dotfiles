@@ -97,7 +97,6 @@ sudo()
     if &>/dev/null which 'doas'; then
         doas $@
     else
-        echo a
         unset sudo
         sudo $@ 
     fi
