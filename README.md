@@ -16,9 +16,7 @@ In rare cases I'd like to make changes to the dotfiles that would only have effe
 - .autostart.local <- a shell script
 
 ### What's definitely not portable yet
-- paths on i3 config <- mainly autostart stuff, installed with Nix on Ubuntu
 - paths contrib blocks path of i3blocks
-- there is something funky going on about starting pulseaudio
 
 ## Shoutout
 

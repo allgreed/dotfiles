@@ -6,8 +6,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-xrdb '~/.Xresources'
-xrdb -merge '~/.Xresources.local'
+xrdb ~/.Xresources
+xrdb -merge ~/.Xresources.local
 
 xcape -e 'Caps_Lock=Escape;Control_L=Escape'
 xmodmap ~/.Xmodmap
@@ -18,4 +18,4 @@ xmodmap -e "keycode 94 = Shift_L"
 numlockx on
 unclutter &
 
-TERMINAL='urxvt' exec i3
+PATH=/home/$(whoami)/.nix-profile/bin:$PATH TERMINAL='urxvt' exec i3
