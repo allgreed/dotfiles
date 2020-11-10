@@ -3,7 +3,7 @@ scenery=~/.wallpaper/wp.jpg
 overlay=~/.wp-overlay.local
 generated_wallpaper_path=/tmp/_wallpaper.jpg
 
-if [ -f ~/.wp-overlay.local ] then;
+if [ -f ~/.wp-overlay.local ]; then
     convert $scenery $overlay -gravity center -define compose:args=80 -compose blend \
         -composite $generated_wallpaper_path
 else
