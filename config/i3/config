@@ -195,11 +195,11 @@ bar {
 }
 
 # class                 border   backgr. text    indicator  child_border
-client.focused          $X_fgnd  $X_bg   $X_C_fg  $X_C_4     $X_fgnd
-client.focused_inactive $X_fgnd  $X_bg   $X_C_fg  $X_C_4     $X_fgnd
-client.unfocused        $X_fgnd  $X_bg   $X_C_fg  $X_C_4     $X_fgnd
-client.urgent           $X_fgnd  $X_bg   $X_C_fg  $X_C_4     $X_fgnd
-client.placeholder      $X_fgnd  $X_bg   $X_C_fg  $X_C_4     $X_fgnd
+client.focused          $X_fgnd  $X_bg   $X_fg   $X_C_4     $X_fgnd
+client.focused_inactive $X_fgnd  $X_bg   $X_fg   $X_C_4     $X_fgnd
+client.unfocused        $X_fgnd  $X_bg   $X_fg   $X_C_4     $X_fgnd
+client.urgent           $X_fgnd  $X_bg   $X_fg   $X_C_4     $X_fgnd
+client.placeholder      $X_fgnd  $X_bg   $X_fg   $X_C_4     $X_fgnd
 client.background       $X_bg
 
 
