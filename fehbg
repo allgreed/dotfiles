@@ -1,2 +1,13 @@
 #!/bin/sh
-feh --no-fehbg --bg-center --image-bg 'black' ~/.wallpaper/wp.jpg
+scenery=~/.wallpaper/wp.jpg
+overlay=~/.wp-overlay.local
+generated_wallpaper_path=/tmp/_wallpaper.jpg
+
+if [ -f ~/.wp-overlay.local ] then;
+    convert $scenery $overlay -gravity center -define compose:args=80 -compose blend \
+        -composite $generated_wallpaper_path
+else
+    cp $scenery $generated_wallpaper_path
+fi
+
+feh --no-fehbg --bg-center --image-bg 'black' $generated_wallpaper_path

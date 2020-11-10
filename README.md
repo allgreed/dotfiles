@@ -14,6 +14,7 @@ In rare cases I'd like to make changes to the dotfiles that would only have effe
 ### Currently supported overrides:
 - .Xresources.local
 - .autostart.local <- a shell script
+- .wp-overlay.local <- .png image that will be composed into the wallpaper, usefull to quickly differenciate machines
 
 ### What's definitely not portable yet
 - paths contrib blocks path of i3blocks
