@@ -10,6 +10,7 @@ colorscheme solarized
 set background=light
 
 set relativenumber number " hybrid line numbering
+set numberwidth=5
 set ruler
 
 set wildmenu
@@ -30,6 +31,8 @@ set softtabstop=4   " Treat 4 spaces as single TAB
 set expandtab       " Expand TABs to spaces
 
 set nrformats-=octal " I don't work with octal literals really
+
+set nojoinspaces
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins 
@@ -93,7 +96,7 @@ augroup vimrc
     autocmd FileType json let g:indentLine_enabled = 0
 
     autocmd FileType gitcommit let g:indentLine_enabled = 0
-    autocmd FileType gitcommit setlocal spell colorcolumn=80
+    autocmd FileType gitcommit setlocal spell colorcolumn=72
 
     autocmd BufNewFile,BufRead .envrc setlocal syntax=sh
     autocmd BufNewFile,BufRead .gitignore setlocal syntax=conf
@@ -134,7 +137,16 @@ noh " don't show search highlights on vimrc reload
 " this might be important - I've set it for a reason
 set ttimeoutlen=10 " but what does it do exactly? o.0
 
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
 " TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
+
+set complete+=kspell
+
+nnoremap <Leader><Leader> <C-^>
 
 :command! Pl :set spelllang=pl spell
 set nospell " fixes interpreting the above, but possible messes with spellcheck on gitcommit
