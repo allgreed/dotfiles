@@ -21,7 +21,7 @@ set_nix_shell() {
 set_shell_indicator() {
    if test `id -u` -eq 0 ; then
        # DON'T TOUCH THE ESCAPING!!!
-       SHELL_SIGN="\[$red\]\$\[$reset\]"
+       SHELL_SIGN="\[$red\]root \$\[$reset\]"
    else
        # DON'T TOUCH THE ESCAPING!!!
        SHELL_SIGN="\[$dim\]\[$bold\]\[$blue\]>_\[$reset\]"
