@@ -25,8 +25,8 @@ def main():
     battery_info = batteries_info[0]
 
     # TODO: if the battery output doesn't match regexp
-    r = re.search(r"([\w\s]+), (\d+)%", battery_info)
-    status, percentage = r.group(1).strip(), int(r.group(2))
+    r = re.search(r"([\w\s]+), (\d+)%, ((\d{2}:\d{2}))", battery_info)
+    status, percentage, time = r.group(1).strip(), int(r.group(2)), r.group(3)
 
     status = enrich_status() if status == "Unknown" else status
 
@@ -41,7 +41,7 @@ def main():
     # TODO: handle unsupported status
     status_indicator = STATUS_TABLE[status]
 
-    full_text = "{}% {}".format(percentage, status_indicator)
+    full_text = "{}% {} ({})".format(percentage, status_indicator, time)
     short_text = full_text
 
     color = py_xgetres(".color14")
