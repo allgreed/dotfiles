@@ -25,8 +25,9 @@ def main():
     battery_info = batteries_info[0]
 
     # TODO: if the battery output doesn't match regexp
-    r = re.search(r"([\w\s]+), (\d+)%, ((\d{2}:\d{2}))", battery_info)
+    r = re.search(r"([\w\s]+), (\d+)%? ?((\d{2}:\d{2}))?", battery_info)
     status, percentage, time = r.group(1).strip(), int(r.group(2)), r.group(3)
+    time = time or "?:??"
 
     status = enrich_status() if status == "Unknown" else status
 
