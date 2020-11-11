@@ -75,16 +75,16 @@ alias kubect=kubectl
 alias charm="charm . &"
 
 # TODO: Dafuq is this?????
-if [ -x /usr/bin/dircolors ]; then
+#if [ -x /usr/bin/dircolors ]; then
+    echo ble
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto -Ah' # <- this isn't the default!
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias ls='ls --color=auto' # <- this isn't the default!
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
-fi
+#else
+#fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias yyy="g call -m \"$(date)\"; gp"
@@ -101,6 +101,6 @@ sudo()
     fi
 }
 alias cdd="cd ~/Desktop"
-alias ls='ls -Ah'
+alias ls='ls -Ah --color=auto'
 alias which='which -a'
 alias jozef="vlc ~/Music/Only_Lover_Left_Alive_Full_OST.opus"
