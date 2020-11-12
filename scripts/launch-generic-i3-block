@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+BLOCK_NAME="$1"
+
+
+# TODO: if Nixos - use the nix path + only one block name, else
+    # TODO: fix this, so that it survives garbage collect
+    #command=/nix/store/mj5cizh56qwvny9np4778xzdk2xzb8al-i3blocks-contrib-1.4/libexec/i3blocks/$BLOCK_NAME
+
+    target="/opt/i3blocks/$BLOCK_NAME/$BLOCK_NAME"
+
+exec $target
