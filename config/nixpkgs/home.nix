@@ -31,6 +31,14 @@ in
     };
   };
 
+  programs.htop = {
+    enable = true;
+    cpuCountFromZero = true;
+    colorScheme = 6;
+    highlightBaseName = true;
+    vimMode = true;
+  };
+
   systemd.user.services = {
     lmap-forever = {
       Unit = {
