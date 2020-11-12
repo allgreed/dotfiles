@@ -10,9 +10,8 @@ if [ ! -f "$INOTIFYWAIT_SYMLINK_TARGET" ]; then
 fi
 
 if [ ! -f "$NIX_MANIFEST_FORMAT" ]; then
-    cargo build --release --manifest-path ~/Desktop/inotifywait-symlink-target/Cargo.toml
+    cargo build --release --manifest-path ~/Desktop/nix-manifest-format/Cargo.toml
 fi
 
 $INOTIFYWAIT_SYMLINK_TARGET
 $NIX_MANIFEST_FORMAT > ~/Dotfiles/nix/manifest.nix
-
