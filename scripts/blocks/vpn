@@ -7,6 +7,6 @@ if [[ -z $result ]]; then
     echo `xrdb -query | grep "*color14" | cut -f 2`
     
 else
-    echo " $result"
-    echo " $result"
+    echo ""
+    echo ""
 fi
