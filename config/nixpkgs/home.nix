@@ -34,6 +34,7 @@ in
   programs.htop = {
     enable = true;
     cpuCountFromZero = true;
+    showCpuUsage = true;
     colorScheme = 6;
     highlightBaseName = true;
     vimMode = true;
