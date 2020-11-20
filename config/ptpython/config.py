@@ -14,7 +14,8 @@ def configure(repl):
     repl.confirm_exit = False
 
     # Propper colorscheme
-    repl.use_code_colorscheme("solarizeddark")
+    # TODO: use Xresource to determine which one
+    repl.use_code_colorscheme("solarized-light")
 
     # Testing area
 
