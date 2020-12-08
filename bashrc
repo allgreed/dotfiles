@@ -94,6 +94,9 @@ export VISUAL=vim
 export EDITOR=vim
 export PAGER='less -q' # disable bell for less
 
+PYTHONSTARTUP=~/.config/ptpython/config.py
+export PYTHONSTARTUP
+
 # Shell behaviour
 #########################
 HISTSIZE=1000000

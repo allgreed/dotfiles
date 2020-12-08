@@ -125,3 +125,11 @@ def configure(repl):
     #            b.insert_text(corrections[w])
     #    b.insert_text(' ')
     #"""
+
+import sys
+try:
+    from ptpython.repl import embed
+except ImportError:
+    print("ptpython is not available: falling back to standard prompt")
+else:
+    sys.exit(embed(globals(), locals(), configure=configure))
