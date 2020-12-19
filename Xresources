@@ -67,8 +67,10 @@ URxvt*perl-ext-common: default,matcher,resize-font
 
 URxvt*cursorBlink: true
 
-! TODO: how to sensible-browser on NixOS?
+URxvt*url-launcher: firefox
+! Ubuntu has an older version where it's camelCase or something like that
 URxvt*urlLauncher: firefox
+
 URxvt*matcher.button: 1
 
 ! Scrolling
