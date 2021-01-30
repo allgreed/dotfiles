@@ -86,6 +86,14 @@ alias charm="charm . &"
 #fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+dirupshift()
+{
+    arg=${1%/}
+    # TODO: this returns 1, but works o.0 - fix it
+    mv "$arg/*" "$arg/.[^.]*" . 2>/dev/null
+    rmdir "$arg/"
+}
+
 alias yyy="g call -m \"$(date)\"; gp"
 alias ka="kubectl apply -f ."
 alias k="kubectl"
