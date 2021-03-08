@@ -111,3 +111,6 @@ alias cdd="cd ~/Desktop"
 alias ls='ls -Ah --color=auto'
 alias which='which -a'
 alias jozef="vlc ~/Music/Only_Lover_Left_Alive_Full_OST.opus"
+
+alias adtransaction="hledger-iadd --date-format='%d[.[%m[.[%Y]]]]'"
+alias hledger-iadd="hledger-iadd --date-format='%d[.[%m[.[%Y]]]]'"
