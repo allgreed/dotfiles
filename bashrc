@@ -97,6 +97,9 @@ export PAGER='less -q' # disable bell for less
 PYTHONSTARTUP=~/.config/ptpython/config.py
 export PYTHONSTARTUP
 
+# can symlink to ~/.hledger.journal instead
+export LEDGER_FILE="/home/allgreed/Documents/finance/2021.journal"
+
 # Shell behaviour
 #########################
 HISTSIZE=1000000
