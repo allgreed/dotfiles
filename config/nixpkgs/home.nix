@@ -3,7 +3,7 @@ let
   # TODO: pin it better
   nur = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    sha256 = "032wpsh2k587187azsqakkxx169gaqqy0sw5i5hxam73pcg0kvjl";
+    sha256 = "01k2i1wmwv800j0v533p9rclv3cgnjqm2pb18h61s0cjkc271yy6";
     }){
     inherit pkgs;
   };
@@ -16,10 +16,9 @@ in
       lastpass-password-manager
       vimium
       ublock-origin
-      # TODO: build them manually
-      # TODO: remove ff-addons.py from setup
-      #news-feed-eradicator
-      #polish-spellchecker-dictionary
+      videospeed
+      polish-dictionary
+      news-feed-eradicator
     ];
     profiles = {
       myprofile = {
