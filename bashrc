@@ -102,10 +102,13 @@ export LEDGER_FILE="/home/allgreed/Documents/finance/2021.journal"
 
 # Shell behaviour
 #########################
-HISTSIZE=1000000
-HISTFILESIZE=4000000
+export HISTFILESIZE=
+export HISTSIZE=
+export HISTTIMEFORMAT="[%F %T] "
 shopt -s histappend
 HISTCONTROL=ignoreboth # don't put duplicate lines or lines starting with space in the history.
+# Change the file location because certain bash sessions truncate .bash_history file upon close.
+export HISTFILE=~/.bash_eternal_history
 
 set -o vi; # vim in bash
 stty -ixon # disable ctrl+s - no more accidental weird freezes
