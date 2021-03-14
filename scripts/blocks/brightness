@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+BRIGHTNESS=$(xbacklight -get)
+echo "$BRIGHTNESS"%
+echo "$BRIGHTNESS"%

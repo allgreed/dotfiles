@@ -261,11 +261,16 @@ for_window [class="rambox"] move to workspace $WS10
 ########################################
 # Sound
 #########################################
-
 bindsym XF86AudioMicMute exec ~/.scripts/mic toggle
 bindsym XF86AudioMute exec ~/.scripts/volume --signal 10 toggle
 bindsym XF86AudioRaiseVolume exec ~/.scripts/volume --signal 10 inc 5
 bindsym XF86AudioLowerVolume exec ~/.scripts/volume --signal 10 dec 5
+
+########################################
+# Brightness
+#########################################
+bindsym XF86MonBrightnessDown exec ~/.scripts/bin/brightness -5
+bindsym XF86MonBrightnessUp exec ~/.scripts/bin/brightness +5
 
 ########################################
 # ???
