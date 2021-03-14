@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# TODO: add device selection
+xinput set-button-map $(xinput list --id-only "DaKai 2.4G RX Mouse") 3 2 1
