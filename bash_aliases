@@ -119,3 +119,8 @@ countdown()
 {
     et $1 $2 && kogut
 }
+
+# TODO: fix this
+jf() {
+  xclip -selection clipboard | jq '.' | tee /dev/fd/2 | xclip -selection clipboard -o
+}
