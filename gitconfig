@@ -59,11 +59,13 @@
     co = checkout
     dc = d --cached
 
+
     pforce = push --force-with-lease
 	cof = !git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git co
     purge-branches = !git-purge-branches
 
     crypt = !git-crypt
+    serve = daemon --reuseaddr --base-path=. --export-all --verbose
 [color "status"]
     added = green 
     changed = blue
