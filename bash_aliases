@@ -114,3 +114,8 @@ alias jozef="vlc ~/Music/Only_Lover_Left_Alive_Full_OST.opus"
 
 alias adtransaction="\hledger-iadd --date-format='%d[.[%m[.[%Y]]]]'"
 alias hledger-iadd="hledger-iadd --date-format='%d[.[%m[.[%Y]]]]'"
+alias kogut="play ~/Music/sounds/kogut.mp3"
+countdown()
+{
+    et $1 $2 && kogut
+}
