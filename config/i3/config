@@ -240,7 +240,7 @@ assign [class="Slack"] $WS10
 #########################################
 # this is additional security layer if I accidentally leave my computer unlocked
 # someone unfamiliar with i3 might press Ctrl+Alt+t in order to start terminal and do something
-bindsym Mod1+Control+t exec ~/.scripts/lock.sh
+bindsym Mod1+Control+t exec ~/.scripts/lock
 bindsym F1 exec echo "" > /dev/null # disable F1 ffs
 
 ########################################
