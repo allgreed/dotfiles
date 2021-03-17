@@ -61,7 +61,7 @@ def main():
         percentage = 0
 
     # TODO: make this more readable -> use newer python fromatting
-    full_text = "%.1fG/%.1fG (%.f%%)" % (used, total, percentage)
+    full_text = "%.1fG (%.f%%)" % (used, percentage)
     short_text = "%.f%%" % (percentage)
 
     color = py_xgetres(".color14")
