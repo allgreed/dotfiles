@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-xbacklight $1 && pkill -RTMIN+11 i3blocks
+brightnessctl s  $(sed -E --expression='s/(\+|-)?([[:digit:]]+)%?/\2%\1/g' <<< $1) && pkill -RTMIN+11 i3blocks
