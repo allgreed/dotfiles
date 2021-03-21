@@ -7,9 +7,11 @@ import subprocess
 import click
 
 
+IDX = 4
+
 commands = {
-    "mute": "amixer set Capture nocap",
-    "toggle": "amixer set Capture toggle",
+    "mute": f"pactl set-source-mute {IDX} 1",
+    "toggle": f"pactl set-source-mute {IDX} toggle",
 }
 
 
