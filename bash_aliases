@@ -124,3 +124,5 @@ countdown()
 jf() {
   xclip -selection clipboard | jq '.' | tee /dev/fd/2 | xclip -selection clipboard -o
 }
+
+alias update-timezone="systemctl start tzupdate.service"
