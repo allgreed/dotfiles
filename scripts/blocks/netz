@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+import socket
+import fcntl
+import struct
+import os
+import pathlib
+from typing import Optional
+
+
+def main():
+    data = get_interfaces_info()
+
+    wired_interfaces = [(t[0], "") for t in data if t[1] and not t[2]]
+    wireless_interfaces = [(t[0], "") for t in data if t[1] and t[2]]
+
+    ifaces = wired_interfaces + wireless_interfaces
+    ifaces_with_status = [(i[0], i[1], get_ip_address(i[0]) or "down") for i in ifaces]
+
+    # TODO: color less intrusively the down icon
+    # TODO: color the icons green if connected
+    # TODO: color everything red if nothing is connected
+    print(" ".join([f"{i[1]} {i[2]}" for i in ifaces_with_status]))
+
+
+def get_interfaces_info():
+    p = pathlib.Path("/sys/class/net/")
+    result = [] 
+    for p_i in p.iterdir():
+        iface = str(p_i).replace(str(p), "").lstrip("/")
+        link_str = os.readlink(p_i)
+        physical = not ("virtual" in link_str)
+        wireless = (p / link_str / "wireless").exists()
+        result.append((iface, physical, wireless))
+
+    return result
+
+
+def get_ip_address(ifname) -> Optional[str]:
+    """https://stackoverflow.com/a/24196955"""
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        return socket.inet_ntoa(fcntl.ioctl(
+            s.fileno(),
+            0x8915,  # SIOCGIFADDR
+            struct.pack('256s', bytes(ifname[:15], 'utf-8'))
+        )[20:24])
+    except OSError as e:
+        if e.errno == 99:
+            return None
+        else:
+            raise
+
+
+def py_xgetres(res: str):
+    """A really shitty ad hoc implementation of xgetres, totally non-portable and probably will fail for your .Xresources
+    
+    Feel free to replce it with a legit exec once someone ports xgetres from aur(tm) to nix
+    """
+    p = subprocess.check_output(["xrdb", "-query"])  # py35 compatibility
+    entry_tokens = p.decode("utf-8").split("\n")
+    fuj_entries = map(lambda s: s.split(":"), entry_tokens)
+    entries = filter(lambda l: len(l) == 2, fuj_entries)
+    resource_map = { k.lstrip("*"): v.lstrip() for k, v in entries }
+    return resource_map[res.lstrip(".")]
+
+
+if __name__ == "__main__":
+    main()
