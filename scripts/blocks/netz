@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import subprocess
 import socket
 import fcntl
 import struct
@@ -16,10 +17,25 @@ def main():
     ifaces = wired_interfaces + wireless_interfaces
     ifaces_with_status = [(i[0], i[1], get_ip_address(i[0]) or "down") for i in ifaces]
 
-    # TODO: color less intrusively the down icon
-    # TODO: color the icons green if connected
-    # TODO: color everything red if nothing is connected
-    print(" ".join([f"{i[1]} {i[2]}" for i in ifaces_with_status]))
+    main_color = py_xgetres(".color14")
+    happy_color = py_xgetres(".color2")
+    unhappy_color = py_xgetres(".color1")
+
+    RED_OVERIDE = not sum(map(lambda i: 0 if i[2] == "down" else 1, ifaces_with_status))
+
+    def process_iface(iface_tuple):
+        name, icon, ip = iface_tuple
+
+        if RED_OVERIDE:
+            if_color = unhappy_color
+            color = unhappy_color
+        else:
+            if_color = happy_color if ip != "down" else main_color
+            color = main_color
+
+        return f"<span color='{if_color}'>{icon}</span> <span color='{color}'>{ip}</span>"
+
+    print(" ".join(map(process_iface, ifaces_with_status)))
 
 
 def get_interfaces_info():
