@@ -32,8 +32,8 @@ def main():
     temperature = get_first_input_for(1)
     temperature_critical = get_first_input_for(1, "crit")
 
-    full_text = "{}°C".format(temperature)
-    short_text = "{}°C".format(temperature)
+    full_text = "{:.0f}°C".format(temperature)
+    short_text = "{:.0f}°C".format(temperature)
 
     color = py_xgetres(".color14")
 
