@@ -115,6 +115,7 @@ alias jozef="vlc ~/Music/Only_Lover_Left_Alive_Full_OST.opus"
 alias adtransaction="\hledger-iadd --date-format='%d[.[%m[.[%Y]]]]'"
 alias hledger-iadd="hledger-iadd --date-format='%d[.[%m[.[%Y]]]]'"
 alias kogut="play ~/Music/sounds/kogut.mp3"
+alias success="play ~/Music/sounds/gta_miszyn_aczomplit.mp3"
 countdown()
 {
     et $1 $2 && kogut
@@ -126,3 +127,13 @@ jf() {
 }
 
 alias update-timezone="systemctl start tzupdate.service"
+alias monthly-report="hledger is -M -p thismonth --effective -X=EUR --flat -2"
+alias mon="monthly-report"
+#sleep_until()
+#{
+    ## TODO: parametrize and make it work
+    #sleep $(bc <<<s$(date -f - +'t=%s.%N;' <<<$'21:34\nnow')'st-t')
+#}
+latest_shot() {
+    find ~/Shots | sort | tail -n 1
+}
