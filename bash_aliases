@@ -66,6 +66,7 @@ alias :wq=exit
 alias sl='ls'
 
 alias kubect=kubectl
+alias kubeclt=kubectl
 
 ##############
 # WIP
@@ -118,8 +119,9 @@ alias kogut="play ~/Music/sounds/kogut.mp3"
 alias success="play ~/Music/sounds/gta_miszyn_aczomplit.mp3"
 countdown()
 {
-    et $1 $2 && kogut
+    \et $1 $2 && kogut
 }
+alias et="countdown"
 
 # TODO: fix this
 jf() {
