@@ -97,6 +97,10 @@ export PAGER='less -q' # disable bell for less
 PYTHONSTARTUP=~/.config/ptpython/config.py
 export PYTHONSTARTUP
 
+# cargo needs some special incentive in order to behave
+CARGO_HOME=~/.cache/cargo
+export CARGO_HOME
+
 # can symlink to ~/.hledger.journal instead
 export LEDGER_FILE="/home/allgreed/Documents/finance/2021.journal"
 
