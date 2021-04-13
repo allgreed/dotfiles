@@ -46,6 +46,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'fidian/hexmode'
 
 " Testing
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -67,6 +68,8 @@ Plugin 'google/vim-jsonnet'
 call vundle#end()
 filetype plugin indent on 
 
+let g:hexmode_patterns = '*.bin,*.exe,*.dat,*.o'
+"let g:hexmode_xxd_options = '-g 1'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => OS integration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
