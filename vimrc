@@ -159,5 +159,6 @@ set history=100 "is this enough"
 :command! Plm :normal! ggO # vim: set spelllang=pl spell:<ESC>^x
 set nospell " fixes interpreting the above, but possible messes with spellcheck on gitcommit
 
+set rulerformat=%19(%l,%c%V%7(<0x%B>%)%=%P%)
 " TODO: find commands for faster movement between windows, maybe alt + hjkl?
 " TODO: integrate
