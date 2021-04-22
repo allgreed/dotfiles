@@ -64,6 +64,7 @@ Plugin 'digitaltoad/vim-pug'
 Plugin 'idris-hackers/idris-vim'
 Plugin 'isRuslan/vim-es6'
 Plugin 'google/vim-jsonnet'
+Plugin 'allgreed/vim-java-bytecode'
 
 call vundle#end()
 filetype plugin indent on 
@@ -103,6 +104,8 @@ augroup vimrc
 
     autocmd BufNewFile,BufRead .envrc setlocal syntax=sh
     autocmd BufNewFile,BufRead .gitignore setlocal syntax=conf
+
+    autocmd BufNewFile,BufRead *.j setlocal ft=java-bytecode
 augroup END
 
 autocmd! BufWritePost ~/.vimrc nested :source ~/.vimrc
