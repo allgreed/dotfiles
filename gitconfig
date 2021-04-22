@@ -29,6 +29,10 @@
 [commit]
     verbose = true # -v
 
+# yes, it's a statement
+[init]
+	defaultBranch = master
+
 # 3rd party
 ############################
 [hub]
