@@ -116,6 +116,7 @@ export HISTFILE=~/.bash_eternal_history
 
 set -o vi; # vim in bash
 stty -ixon # disable ctrl+s - no more accidental weird freezes
+shopt -s cdspell # resolve simple typos in `cd`
 
 # Extensions
 #########################
@@ -140,3 +141,5 @@ function cd {
     pwd > ~/.lastcd
 }
 alias lcd="cd $(cat ~/.lastcd)"
+export CDPATH=.:~/Desktop
+
