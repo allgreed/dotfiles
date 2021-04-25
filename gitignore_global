@@ -11,3 +11,6 @@
 
 # Vim sessions
 session.vim
+
+# direnvs
+.direnv
