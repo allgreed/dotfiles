@@ -139,3 +139,6 @@ alias mon="monthly-report"
 latest_shot() {
     find ~/Shots | sort | tail -n 1
 }
+ns() {
+    kubectl config set-context --current --namespace=$1
+}
