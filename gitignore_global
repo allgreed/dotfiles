@@ -2,6 +2,7 @@
 *~
 .*.swp
 .*.swo
+.swp
 
 # Macbook's storage files
 .DS_Store
