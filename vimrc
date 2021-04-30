@@ -122,7 +122,7 @@ let mapleader=" "
 :map <Leader>h :noh<CR>
 :map <Leader>s  i<!--s--><Esc>
 :map <Leader>v  i<!--v--><Esc>
-:map <Leader>/  /\<>\ODOD
+:map <Leader>/  /\<\>ODOD
 
 "usefull alisaes
 :command! Wsudo w ! doas tee %
