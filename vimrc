@@ -166,3 +166,4 @@ set nospell " fixes interpreting the above, but possible messes with spellcheck 
 set rulerformat=%19(%l,%c%V%7(<0x%B>%)%=%P%)
 " TODO: find commands for faster movement between windows, maybe alt + hjkl?
 " TODO: integrate
+set pastetoggle=<f5>

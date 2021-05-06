@@ -70,8 +70,8 @@ grey=$(tput setaf 10)
 GIT_PS1_SHOWDIRTYSTATE=1
 
 set_bash_prompt() {
-    history -a # write history
     handle_exit_code
+    history -a # write history
     set_virtualenv
     set_nix_shell
     set_shell_indicator

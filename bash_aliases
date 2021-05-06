@@ -128,7 +128,7 @@ jf() {
   xclip -selection clipboard | jq '.' | tee /dev/fd/2 | xclip -selection clipboard -o
 }
 
-alias update-timezone="systemctl start tzupdate.service"
+alias update-timezone="systemctl start tzupdate.service; curl ipinfo.io"
 alias monthly-report="hledger is -M -p thismonth --effective -X=EUR --flat -2"
 alias mon="monthly-report"
 #sleep_until()
