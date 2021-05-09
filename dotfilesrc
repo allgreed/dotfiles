@@ -1,6 +1,6 @@
 [dotfiles]
 repository = ~/Dotfiles
-packages = ["config", "urxvt"]
+packages = ["config", "urxvt", "workrave"]
 ignore = [
     ".git",
     ".gitignore",
