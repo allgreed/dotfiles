@@ -164,6 +164,8 @@ set history=100 "is this enough"
 set nospell " fixes interpreting the above, but possible messes with spellcheck on gitcommit
 
 set rulerformat=%19(%l,%c%V%7(<0x%B>%)%=%P%)
-" TODO: find commands for faster movement between windows, maybe alt + hjkl?
-" TODO: integrate
 set pastetoggle=<f5>
+
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>v
+inoremap <silent> <C-S>         <C-O>:update<CR>
