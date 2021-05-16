@@ -115,6 +115,7 @@ HISTCONTROL=ignoreboth # don't put duplicate lines or lines starting with space 
 export HISTFILE=~/.bash_eternal_history
 
 set -o vi; # vim in bash
+bind -r '\C-s'
 stty -ixon # disable ctrl+s - no more accidental weird freezes
 shopt -s cdspell # resolve simple typos in `cd`
 
