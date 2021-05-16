@@ -7,7 +7,6 @@ alias g="git"
 alias make="make-git-aware"
 alias m="make"
 
-alias tf="terraform"
 alias py="ptpython" # better Python shell for quick experiments
 
 alias ..="cd .."
@@ -108,7 +107,6 @@ sudo()
         sudo $@ 
     fi
 }
-alias cdd="cd ~/Desktop"
 alias ls='ls -Ah --color=auto'
 alias which='which -a'
 alias jozef="vlc ~/Music/Only_Lover_Left_Alive_Full_OST.opus"
@@ -142,3 +140,9 @@ latest_shot() {
 ns() {
     kubectl config set-context --current --namespace=$1
 }
+
+# is this needed anymore?
+alias tf="terraform"
+
+alias vim="nvim"
+alias scratch="tmp"
