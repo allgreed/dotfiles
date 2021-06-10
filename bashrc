@@ -103,6 +103,7 @@ export CARGO_HOME
 
 # can symlink to ~/.hledger.journal instead
 export LEDGER_FILE="/home/allgreed/Documents/finance/2021.journal"
+export BAT_THEME='Solarized (light)'
 
 # Shell behaviour
 #########################
