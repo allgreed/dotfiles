@@ -2,10 +2,12 @@
 import os
 import subprocess
 import re
+import math
 from typing import Dict
 
 
 def py_xgetres(res: str):
+    # TODO: extract as allgreed_i3block along some other things
     """A really shitty ad hoc implementation of xgetres, totally non-portable and probably will fail for your .Xresources
     
     Feel free to replce it with a legit exec once someone ports xgetres from aur(tm) to nix
@@ -24,13 +26,12 @@ def main():
     p = subprocess.check_output(["sensors", "-u"] + ([chip] if chip else []))  # py35 compatibility
     sensor_lines = map(lambda l: l.strip(), p.decode("utf-8").strip().split("\n"))
 
-    def get_first_input_for(index: int, suffix="input"):
-        # TODO: rename
-        ble = "temp{}_{}".format(index, suffix)
-        return float(next(l.lstrip(ble + " :") for l in sensor_lines if ble in l))
+    def get_first_input_for(index: int, suffix="input", sensor_lines=sensor_lines):
+        entry = "temp{}_{}".format(index, suffix)
+        return float(next(line.lstrip(entry + " :") for line in sensor_lines if entry in line))
 
-    temperature = get_first_input_for(1)
-    temperature_critical = get_first_input_for(1, "crit")
+    temperature = math.ceil(get_first_input_for(1))
+    temperature_critical = math.ceil(get_first_input_for(1, "crit"))
 
     full_text = "{:.0f}°C".format(temperature)
     short_text = "{:.0f}°C".format(temperature)
