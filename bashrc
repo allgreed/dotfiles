@@ -102,6 +102,7 @@ export CARGO_HOME=~/.cache/cargo
 # can symlink to ~/.hledger.journal instead
 export LEDGER_FILE="/home/allgreed/Documents/finance/2021.journal"
 export BAT_THEME='Solarized (light)'
+export DO_NOT_TRACK=1 # because why not :D
 
 # Shell behaviour
 #########################
