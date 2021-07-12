@@ -20,6 +20,7 @@ set hlsearch " highlight search matches
 set visualbell " disable emmiting bell
 
 set laststatus=2 " always show statusline
+set rulerformat=%19(%l,%c%V%7(<0x%B>%)%=%P%)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editorial behaviours
@@ -135,22 +136,25 @@ let mapleader=" "
 :nnoremap \ :call NERDComment('n', 'Toggle')<CR>
 :vnoremap \ :call NERDComment('x', 'Toggle')<CR>
 
+set pastetoggle=<f5>
+
 noh " don't show search highlights on vimrc reload
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" TODO: Ctrl + S? <- unbound
 " this might be important - I've set it for a reason
 set ttimeoutlen=10 " but what does it do exactly? o.0
 
 nnoremap <C-j> <C-w>j
+" TODO: why Ctrl+k doesn't work? o.0
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
 
+" what the shit is this?
 set complete+=kspell
 
 nnoremap <Leader><Leader> <C-^>
@@ -162,9 +166,6 @@ set history=100 "is this enough"
 
 :command! Plm :normal! ggO # vim: set spelllang=pl spell:<ESC>^x
 set nospell " fixes interpreting the above, but possible messes with spellcheck on gitcommit
-
-set rulerformat=%19(%l,%c%V%7(<0x%B>%)%=%P%)
-set pastetoggle=<f5>
 
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>v
