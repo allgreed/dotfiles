@@ -98,15 +98,6 @@ alias yyy="g call -m \"$(date)\"; gp"
 alias ka="kubectl apply -f ."
 alias k="kubectl"
 alias pr="hub pull-request"
-sudo()
-{ 
-    if &>/dev/null which 'doas'; then
-        doas $@
-    else
-        unset sudo
-        sudo $@ 
-    fi
-}
 alias ls='ls -Ah --color=auto'
 alias which='which -a'
 alias jozef="vlc ~/Music/Only_Lover_Left_Alive_Full_OST.opus"

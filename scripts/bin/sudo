@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+sudo()
+{ 
+    if &>/dev/null which 'doas'; then
+        doas $@
+    else
+        unset sudo
+        sudo $@ 
+    fi
+}
+sudo $@
