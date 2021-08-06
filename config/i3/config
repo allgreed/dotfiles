@@ -267,6 +267,8 @@ bindsym XF86AudioRaiseVolume exec ~/.scripts/volume --signal 10 inc 5
 bindsym Shift+XF86AudioRaiseVolume exec ~/.scripts/volume --signal 10 set 100
 bindsym XF86AudioLowerVolume exec ~/.scripts/volume --signal 10 dec 5
 bindsym Shift+XF86AudioLowerVolume exec ~/.scripts/volume --signal 10 set 0
+bindsym Ctrl+XF86AudioLowerVolume exec ~/.scripts/volume --signal 10 set 50
+bindsym Ctrl+XF86AudioRaiseVolume exec ~/.scripts/volume --signal 10 set 50
 
 ########################################
 # Brightness
