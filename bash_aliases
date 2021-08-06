@@ -132,6 +132,11 @@ ns() {
     kubectl config set-context --current --namespace=$1
 }
 
+flash_ergdox() {
+    file=$(ls ~/Downloads/ergodox_ez_shine_allgreed_* | dmenu)
+    sudo wally $file && rm $file
+}
+
 # is this needed anymore?
 alias tf="terraform"
 
