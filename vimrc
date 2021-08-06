@@ -136,6 +136,13 @@ let mapleader=" "
 :nnoremap \ :call NERDComment('n', 'Toggle')<CR>
 :vnoremap \ :call NERDComment('x', 'Toggle')<CR>
 
+" faster window navigation
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" that's just nicer than typing :set paste ;)
 set pastetoggle=<f5>
 
 noh " don't show search highlights on vimrc reload
@@ -145,12 +152,6 @@ noh " don't show search highlights on vimrc reload
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " this might be important - I've set it for a reason
 set ttimeoutlen=10 " but what does it do exactly? o.0
-
-nnoremap <C-j> <C-w>j
-" TODO: why Ctrl+k doesn't work? o.0
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
 
 " TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
 
