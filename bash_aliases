@@ -42,7 +42,7 @@ transfer()
 
 tmp() {
     pushd .
-    cur_dir="$HOME/scratch"
+    cur_dir="/tmp/scratch"
     new_dir="/tmp/scratch-`date +'%s'`"
     mkdir -p $new_dir
     ln -nfs $new_dir $cur_dir
