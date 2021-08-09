@@ -281,16 +281,20 @@ bindsym XF86MonBrightnessUp exec ~/.scripts/bin/brightness +5
 #########################################
 bindsym $mod+greater move workspace to output right
 bindsym $mod+less move workspace to output left
-bindsym XF86Display exec ~/.screenlayout/singlemon.sh # very usefull when detaching from dock station
+
+# very usefull when detaching from dock station
+bindsym XF86Display exec ~/.screenlayout/singlemon.sh
+bindsym Shift+F9 exec ~/.screenlayout/singlemon.sh
+
 bindsym $mod+n exec networkmanager_dmenu
 bindsym $mod+p exec ~/.scripts/bin/screen-preset
+
+# unfuck Teams notifications
+for_window [title="Microsoft Teams Notification"] floating enable
 
 #######
 # Testing
 #######
 bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
-
-# unfuck Teams notifications
-for_window [title="Microsoft Teams Notification"] floating enable
 
 bindsym $mod+F1 exec $launch_terminal -e play ~/Music/sounds/fanfary.mp3
