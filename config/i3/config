@@ -264,11 +264,11 @@ for_window [class="rambox"] move to workspace $WS10
 bindsym XF86AudioMicMute exec ~/.scripts/mic toggle
 bindsym XF86AudioMute exec ~/.scripts/volume --signal 10 toggle
 bindsym XF86AudioRaiseVolume exec ~/.scripts/volume --signal 10 inc 5
-bindsym Shift+XF86AudioRaiseVolume exec ~/.scripts/volume --signal 10 set 100
+bindsym Shift+XF86AudioRaiseVolume exec ~/.scripts/volume --signal 10 inc 20
 bindsym XF86AudioLowerVolume exec ~/.scripts/volume --signal 10 dec 5
-bindsym Shift+XF86AudioLowerVolume exec ~/.scripts/volume --signal 10 set 0
-bindsym Ctrl+XF86AudioLowerVolume exec ~/.scripts/volume --signal 10 set 50
-bindsym Ctrl+XF86AudioRaiseVolume exec ~/.scripts/volume --signal 10 set 50
+bindsym Shift+XF86AudioLowerVolume exec ~/.scripts/volume --signal 10 dec 20
+bindsym Ctrl+XF86AudioLowerVolume exec ~/.scripts/volume --signal 10 set 0
+bindsym Ctrl+XF86AudioRaiseVolume exec ~/.scripts/volume --signal 10 set 100
 
 ########################################
 # Brightness
