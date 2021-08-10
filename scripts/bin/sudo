@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
-sudo()
-{ 
-    if &>/dev/null which 'doas'; then
-        doas $@
-    else
-        # TODO: this is probably redundant -> it can be a proxy to doas and systems with sudo will put sudo in the PATH soon than bashrc
-        unset sudo
-        sudo $@ 
-    fi
-}
-sudo $@
+# TODO: maitain the environment with -m
+if &>/dev/null which 'doas'; then
+    doas $@
+else
+    /bin/sudo $@ 
+fi
