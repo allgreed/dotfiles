@@ -1,17 +1,24 @@
 #!/usr/bin/env bash
 set -o xtrace
 
+screen_path="/tmp/screen-dump.png"
+
+# fastlock
+# TODO: replace it with faster method of locking - maybe put the convert effect directly into i3lock-color? o.0
+i3lock-color -n -B sigma &
+fastlock_pid=$!
+
 # pre-lock
-physlock -lds &
-ssh-add -D &
+physlock -lds & wait_pids+=($!)
+ssh-add -D & wait_pids+=($!)
 
 # prepare
-screen_path="/tmp/screen-dump.png"
 escrotum $screen_path && convert $screen_path -filter point -resize 10% -resize 1000% -paint 3 $screen_path
 
-wait $(jobs -rp)
+wait "${wait_pids[@]}"
 
 # actual lock
+kill $fastlock_pid
 i3lock-color -n -i $screen_path --ignore-empty-password --pass-volume-keys
 
 # unlock
