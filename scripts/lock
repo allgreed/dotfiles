@@ -15,13 +15,10 @@ fastlock_pid=$!
 # pre-lock
 physlock -lds & wait_pids+=($!)
 ssh-add -D & wait_pids+=($!)
-
-# prepare
-convert $screen_path -filter point -resize 10% -resize 1000% -paint 3 $lock_img_path
-
-wait "${wait_pids[@]}"
+convert $lock_img_path -paint 3 $lock_img_path & wait_pids+=($!)
 
 # actual lock
+wait "${wait_pids[@]}" # ensure all pre-lock stuff is done
 kill $fastlock_pid
 i3lock-color -n -i $lock_img_path --ignore-empty-password --pass-volume-keys
 
