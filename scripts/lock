@@ -5,7 +5,7 @@ lock_img_path="/tmp/lock-img.jpg"
 screen_path="/tmp/screen-dump.jpg"
 
 # pre-fastlock
-scrot $screen_path
+scrot -o $screen_path
 convert $screen_path -filter point -resize 10% -resize 1000% $lock_img_path
 
 # fastlock
@@ -16,6 +16,7 @@ fastlock_pid=$!
 physlock -lds & wait_pids+=($!)
 ssh-add -D & wait_pids+=($!)
 convert $lock_img_path -paint 3 $lock_img_path & wait_pids+=($!)
+#convert $screen_path -filter point -resize 10% -resize 1000% -paint 3 $lock_img_path & wait_pids+=($!)
 
 # actual lock
 wait "${wait_pids[@]}" # ensure all pre-lock stuff is done
