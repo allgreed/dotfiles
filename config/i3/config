@@ -184,6 +184,7 @@ bar {
         statusline $X_cur
     
         # TODO: add description on what's what and align it
+        # ????            m
         focused_workspace $X_cur $X_cur $X_bg
         active_workspace $X_fg $X_fg $X_bg
         inactive_workspace $X_fgnd $X_fgnd $X_bg
