@@ -118,7 +118,9 @@ jf() {
 }
 
 alias update-timezone="systemctl start tzupdate.service; curl ipinfo.io"
+# TODO: dedup this
 alias monthly-report="hledger is -M -p thismonth --effective -X=PLN --flat -2"
+alias yearly-report="hledger is -M --effective -X=PLN --flat -2"
 alias mon="monthly-report"
 #sleep_until()
 #{
