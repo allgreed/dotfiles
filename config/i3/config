@@ -57,8 +57,7 @@ bindsym $mod+Shift+Return exec $tmux
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# TODO: patch it with custom dmenu to have solarized on by / load it from Xresources
-bindsym $mod+d exec dmenu_run -b -i -nb '#fdf6e3' -nf '#657b83' -sb '#93a1a1' -sf '#fdf6e3'
+bindsym $mod+d exec dmenu_run -i -h 21
 
 # change focus
 bindsym $mod+h focus left

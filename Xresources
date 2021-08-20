@@ -11,9 +11,12 @@
 *foreground:            S_base00
 *fadeColor:             S_base3
 *cursorColor:           S_base01
+
 *pointerColorBackground:S_base1
 *pointerColorForeground:S_base01
-!! S_base00 in solarized dark => S_base0 in solarized ligth
+*selbackground: S_base1
+*selforeground: S_base0
+
 *secondaryForeground:   S_base0
 
 #define S_yellow        #b58900
@@ -68,15 +71,15 @@ URxvt*perl-ext-common: default,matcher,resize-font
 URxvt*cursorBlink: true
 
 URxvt*url-launcher: firefox
-! Ubuntu has an older version where it's camelCase or something like that
+! Ubuntu has an older version where it's camelCase or something like that'
 URxvt*urlLauncher: firefox
 
 URxvt*matcher.button: 1
 
-! Scrolling
+!! Scrolling
 URxvt*scrollBar: false
 
-! Do not scroll inside vim / less / ...
+!! Do not scroll inside vim / less / ...
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
@@ -102,3 +105,6 @@ URxvt*letterSpace: -1
 ! Disable weird stuff on Ctrl + Shift
 URxvt*iso14755: false
 URxvt*iso14755_52: false
+
+dmenu.font: xft:Source Code Pro:style=Medium:size=11:antialias=true:hinting=true
+dmenu.selforeground: S_base3
