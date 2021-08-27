@@ -57,7 +57,7 @@ bindsym $mod+Shift+Return exec $tmux
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec dmenu_run -i -h 21
+bindsym $mod+d exec dmenu_run -i -b -h 21
 
 # change focus
 bindsym $mod+h focus left
@@ -153,14 +153,24 @@ mode "resize" {
     bindsym Up resize shrink height 10 px or 10 ppt
     bindsym Right resize grow width 10 px or 10 ppt
 
+    bindsym Shift+l resize shrink width 20 px or 20 ppt
+    bindsym Shift+j resize grow height 20 px or 20 ppt
+    bindsym Shift+k resize shrink height 20 px or 20 ppt
+    bindsym Shift+h resize grow width 20 px or 20 ppt
+
+    bindsym Shift+Left resize shrink width 20 px or 20 ppt
+    bindsym Shift+Down resize grow height 20 px or 20 ppt
+    bindsym Shift+Up resize shrink height 20 px or 20 ppt
+    bindsym Shift+Right resize grow width 20 px or 20 ppt
+
     bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 
 
 bar {
-    position top
     status_command i3blocks
 
     font $font_kind 12px
