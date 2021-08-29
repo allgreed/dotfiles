@@ -15,9 +15,7 @@ fastlock_pid=$!
 # pre-lock
 physlock -lds & wait_pids+=($!)
 ssh-add -D & wait_pids+=($!)
-convert $screen_path -filter point -resize 10% -resize 1000% -statistic Mode 9 $lock_img_path & wait_pids+=($!)
-#convert $lock_img_path -statistic Mode 9 $lock_img_path & wait_pids+=($!)
-#convert $screen_path -filter point -resize 10% -resize 1000% -paint 3 $lock_img_path & wait_pids+=($!)
+convert $screen_path -filter point -resize 10% -resize 1000% -paint 3 $lock_img_path & wait_pids+=($!)
 
 # actual lock
 wait "${wait_pids[@]}" # ensure all pre-lock stuff is done
