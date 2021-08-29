@@ -2,15 +2,10 @@
 # Names
 #########################################
 
-# using Super as mod
+# Super
 set $mod Mod4
-
 set $font_kind pango:Source Code Pro Medium
-
 set $launch_terminal i3-sensible-terminal
-
-set $tmux i3-sensible-terminal -e "$HOME/Dotfiles/scripts/run-tmux.sh"
-set $tmux-tmp i3-sensible-terminal
 
 set $WS1 "1:1"
 set $WS2 "2:2"
@@ -23,6 +18,7 @@ set $WS8 "8:8 ♪"
 set $WS9 "9:9"
 set $WS10 "10:10: "
 
+# TODO: add fallbacks!
 set_from_resource $X_bg         background
 set_from_resource $X_fg         foreground
 set_from_resource $X_cur        cursorColor
@@ -51,7 +47,7 @@ font $font_kind 11px
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $tmux-tmp
+bindsym $mod+Return exec $launch_terminal
 bindsym $mod+Shift+Return exec $tmux
 
 # kill focused window
@@ -176,17 +172,13 @@ bar {
     font $font_kind 12px
 
     # disables this shitty behaviour when scrolling over the bar
-    bindsym button4 exec echo "" > /dev/null
-    bindsym button5 exec echo "" > /dev/null
+    bindsym button4 nop
+    bindsym button5 nop
 
     tray_output primary
     #tray_output none
 
     strip_workspace_numbers yes
-
-########################################
-# Colors
-#########################################
 
     colors {
         separator $X_C_11
@@ -202,6 +194,20 @@ bar {
     }
 }
 
+# TODO: do I want a top bar?
+#bar {
+    #position top
+    #font $font_kind 12px
+    #tray_output none
+    #workspace_buttons no
+
+    #colors {
+        #separator $X_C_11
+        #background $X_bg
+        #statusline $X_cur
+    #}
+#}
+
 # class                 border   backgr. text    indicator  child_border
 client.focused          $X_fgnd  $X_bg   $X_fg   $X_C_4     $X_fgnd
 client.focused_inactive $X_fgnd  $X_bg   $X_fg   $X_C_4     $X_fgnd
@@ -212,7 +218,7 @@ client.background       $X_bg
 
 
 # removes titlebar, and sets sane borders
-for_window [class="^.*"] border pixel 2 
+for_window [class="^.*"] border pixel 3 
 
 #locking through the fancy blue button 
 bindsym XF86Launch1 exec ~/.scripts/lock
@@ -302,6 +308,12 @@ for_window [title="Microsoft Teams Notification"] floating enable
 #######
 # Testing
 #######
-bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
+hide_edge_borders vertical
 
+# not so sure about this one...
+focus_follows_mouse no
+
+bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
 bindsym $mod+F1 exec $launch_terminal -e play ~/Music/sounds/fanfary.mp3
+
+#no_focus [window_role="pop-up"] TODO: have some fun with that
