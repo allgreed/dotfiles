@@ -23,13 +23,13 @@ function load
             return 
         fi 
 
-        if [[ "$1" == @eval ]]; then
+        if [[ "$1" == '@eval' ]]; then
             code=$(eval $2)
             eval "$code" && return
         fi
 
         # unconditionally stop processing and happily return
-        if [[ "$1" == @fin ]]; then
+        if [[ "$1" == '@fin' ]]; then
             return
         fi
 
@@ -127,15 +127,15 @@ shopt -s cdspell # resolve simple typos in `cd`
 # Extensions
 #########################
 load 'aliases' ~/.bash_aliases
-
+load 'git autocomplete' $(dirname $(readlink -f $(which git)))/../share/bash-completion/completions/git /usr/share/bash-completion/completions/git
+load 'git prompt' $(dirname $(readlink -f $(which git)))/../share/bash-completion/completions/git-prompt.sh @fin
+load 'prompt' ~/.bash_prompt
 load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
 load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
 load 'bash autocomplete' @nixos /usr/share/bash-completion/bash_completion
-load 'git autocomplete' $(dirname $(readlink -f $(which git)))/../share/bash-completion/completions/git /usr/share/bash-completion/completions/git
-load 'git prompt' $(dirname $(readlink -f $(which git)))/../share/bash-completion/completions/git-prompt.sh @fin
 load 'direnv integration' @eval "direnv hook bash"
 
-load 'prompt' ~/.bash_prompt
+
 
 # Autocompletes
 #########################
