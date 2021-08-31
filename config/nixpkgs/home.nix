@@ -3,7 +3,7 @@ let
   # TODO: pin it better
   nur = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    sha256 = "01k2i1wmwv800j0v533p9rclv3cgnjqm2pb18h61s0cjkc271yy6";
+    sha256 = "1kba5s06npq9a77kfmj726g5n1xi21bjjxhwfhifghxv0sk7dg32";
     }){
     inherit pkgs;
   };
