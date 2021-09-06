@@ -1,10 +1,12 @@
 { config, pkgs, ... }:
 let
-  # TODO: pin it better
-  nur = import (builtins.fetchTarball {
-    url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    sha256 = "1kba5s06npq9a77kfmj726g5n1xi21bjjxhwfhifghxv0sk7dg32";
-    }){
+  nur = import (builtins.fetchGit {
+    # 2021-09-6
+    url = "https://github.com/nix-community/NUR";
+    ref = "refs/heads/master";
+    rev = "764b53b4168e85cafe0b7e79915e9684a38761ee";
+    # obtain via `git ls-remote https://github.com/nix-community/NUR master`
+  }) {
     inherit pkgs;
   };
 in
