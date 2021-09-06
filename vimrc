@@ -171,3 +171,12 @@ set nospell " fixes interpreting the above, but possible messes with spellcheck 
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>v
 inoremap <silent> <C-S>         <C-O>:update<CR>
+
+" alt moves
+" TODO: how to make it work with alt-gr?
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
