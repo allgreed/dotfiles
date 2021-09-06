@@ -11,6 +11,8 @@ in
 {
   programs.firefox = {
     enable = true;
+    # TODO: a Null package? that accepts every action, but doesn't actually output anything...?
+    #package = pkgs.htop;
     extensions = with nur.repos.rycee.firefox-addons; [
       https-everywhere
       lastpass-password-manager
