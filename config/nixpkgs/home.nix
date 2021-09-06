@@ -39,12 +39,14 @@ in
   };
 
   programs.htop = {
-    enable = true;
-    cpuCountFromZero = true;
-    showCpuUsage = true;
-    colorScheme = 6;
-    highlightBaseName = true;
-    vimMode = true;
+    settings = {
+      enable = true;
+      cpuCountFromZero = true;
+      showCpuUsage = true;
+      colorScheme = 6;
+      highlightBaseName = true;
+      vimMode = true;
+    };
   };
 
   systemd.user.services = {
