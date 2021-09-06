@@ -16,6 +16,5 @@ xmodmap ~/.Xmodmap
 xmodmap -e "keycode 94 = Shift_L"
 
 numlockx on
-unclutter &
 
 PATH=/home/$(whoami)/.nix-profile/bin:$PATH TERMINAL='urxvt' exec i3

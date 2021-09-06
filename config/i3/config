@@ -231,16 +231,17 @@ bindsym $mod+t exec $launch_terminal
 ########################################
 # Autostart
 #########################################
-exec_always --no-startup-id ~/.fehbg # setting wallpaper
-exec conky
+exec_always --no-startup-id ~/.fehbg
+exec --no-startup-id conky
+exec --no-startup-id unclutter
+
+exec redshift-gtk -c ~/.redshift.conf
+exec workrave
 
 exec rambox
 exec firefox
 exec spotify
-exec ~/.autostart.local
-
-exec redshift-gtk -c ~/.redshift.conf
-exec workrave
+exec --no-startup-id ~/.autostart.local
 
 ########################################
 # Window assignments
