@@ -1,1 +1,1 @@
-tac ~/Documents/finance/2021.journal| grep -E '^D'  | head -1 | awk '{print $NF}'
+tac $LEDGER_FILE | grep -E '^D'  | head -1 | awk '{print $NF}'
