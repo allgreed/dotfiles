@@ -235,8 +235,10 @@ exec_always --no-startup-id ~/.fehbg
 exec --no-startup-id conky
 exec --no-startup-id unclutter
 
-exec redshift-gtk -c ~/.redshift.conf
-exec workrave
+exec --no-startup-id redshift-gtk -c ~/.redshift.conf
+exec --no-startup-id workrave
+exec --no-startup-id dunst
+exec --no-startup-id pasystray
 
 exec rambox
 exec firefox
@@ -316,5 +318,5 @@ focus_follows_mouse no
 
 bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
 bindsym $mod+F1 exec $launch_terminal -e play ~/Music/sounds/fanfary.mp3
-
 #no_focus [window_role="pop-up"] TODO: have some fun with that
+
