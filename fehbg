@@ -10,4 +10,7 @@ else
     cp $scenery $generated_wallpaper_path
 fi
 
+# TODO: generalize over Xresources, resolution and border width
+convert $generated_wallpaper_path -fill '#839496' -stroke '#839496' -strokewidth 3 -draw "rectangle 0,1056 1920,1059" $generated_wallpaper_path
+
 feh --no-fehbg --bg-center --image-bg 'black' $generated_wallpaper_path
