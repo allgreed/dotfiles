@@ -305,8 +305,9 @@ bindsym Shift+F9 exec ~/.screenlayout/singlemon.sh
 bindsym $mod+n exec networkmanager_dmenu
 bindsym $mod+p exec ~/.scripts/bin/screen-preset
 
-# unfuck Teams notifications
+# unfuck Teams/Zoom notifications
 for_window [title="Microsoft Teams Notification"] floating enable
+for_window [title="zoom"] floating enable
 
 #######
 # Testing
