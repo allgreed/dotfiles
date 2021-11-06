@@ -95,3 +95,7 @@
 [filter "kicad_sch"]
 	clean = "sed -E 's/#(PWR|FLG)[0-9]+/#\\1?/'"
 	smudge = cat
+
+[filter "workrave_main_window_xy_ignore"]
+	clean = perl -pe 's/main_window.(x|y)=(\\d+)/main_window.$1=255/'
+	smudge = cat
