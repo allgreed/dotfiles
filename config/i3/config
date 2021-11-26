@@ -239,6 +239,7 @@ exec --no-startup-id redshift-gtk -c ~/.redshift.conf
 exec --no-startup-id workrave
 exec --no-startup-id dunst
 exec --no-startup-id pasystray
+exec --no-startup-id parcellite
 
 exec rambox
 exec firefox
