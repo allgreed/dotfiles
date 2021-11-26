@@ -139,3 +139,4 @@ alias tf="terraform"
 
 alias vim="nvim"
 alias scratch="tmp"
+alias subs-hear="grep -E '\]$' -v"
