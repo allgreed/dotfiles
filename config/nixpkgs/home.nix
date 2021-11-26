@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 let
   nur = import (builtins.fetchGit {
-    # 2021-09-6
+    # 2021-11-27
     url = "https://github.com/nix-community/NUR";
     ref = "refs/heads/master";
-    rev = "764b53b4168e85cafe0b7e79915e9684a38761ee";
+    rev = "7a85388ffce94fabace9a7a0f9eef4d6ef49c993";
     # obtain via `git ls-remote https://github.com/nix-community/NUR master`
   }) {
     inherit pkgs;
@@ -23,6 +23,7 @@ in
       videospeed
       polish-dictionary
       news-feed-eradicator
+      solarized-light
     ];
     profiles = {
       myprofile = {
@@ -76,6 +77,7 @@ in
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
     "lastpass-password-manager"
+    "solarized-light"
   ];
 
   programs.home-manager.enable = true;
