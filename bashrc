@@ -146,7 +146,7 @@ complete -cf doas
 # Testing area
 #########################
 function cd {
-    builtin cd $@
+    builtin cd "$@"
     pwd > ~/.lastcd
 }
 alias lcd="cd $(cat ~/.lastcd)"
