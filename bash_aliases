@@ -125,6 +125,19 @@ alias mon="monthly-report"
 latest_shot() {
     find ~/Shots | sort | tail -n 1
 }
+
+function vim(){
+  OWNER=$(stat -c '%U' $1)
+  if [[ "$OWNER" == "root" ]]; then
+    RED='\033[0;31m'
+    NC='\033[0m' # No Color
+    printf "File in question ${RED}is owned by root${NC} checking privilage...\n"
+    sudo nvim $*;
+  else
+    nvim $*;
+  fi
+}
+
 ns() {
     kubectl config set-context --current --namespace=$1
 }
@@ -137,6 +150,5 @@ flash_ergdox() {
 # is this needed anymore?
 alias tf="terraform"
 
-alias vim="nvim"
 alias scratch="tmp"
 alias subs-hear="grep -E '\]$' -v"
