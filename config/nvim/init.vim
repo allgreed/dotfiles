@@ -10,6 +10,7 @@ Plugin 'lambdalisue/suda.vim'
 lua << EOF
 require'lspconfig'.pyls.setup{}
 require'lspconfig'.rnix.setup{}
+require'lspconfig'.zls.setup{}
 EOF
 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
