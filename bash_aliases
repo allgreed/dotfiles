@@ -119,7 +119,7 @@ jf() {
 
 alias update-timezone="systemctl start tzupdate.service; curl ipinfo.io"
 
-alias yearly-report="hledger is -M --effective -X `hledger-get-default-currency` --flat -2"
+alias yearly-report="hledger is -M --effective -X `hledger-get-default-currency` --flat -2 -p thisyear"
 alias monthly-report="yearly-report -p thismonth"
 alias mon="monthly-report"
 latest_shot() {
