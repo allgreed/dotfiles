@@ -127,7 +127,7 @@ latest_shot() {
 }
 
 function vim(){
-  OWNER=$(stat -c '%U' $1)
+  OWNER=$(stat -c '%U' $1 2> /dev/null || echo 'groot')
   if [[ "$OWNER" == "root" ]]; then
     RED='\033[0;31m'
     NC='\033[0m' # No Color
