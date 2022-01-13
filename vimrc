@@ -82,10 +82,11 @@ set undofile
 set undodir=$HOME/.vim/undo
 
 " prevent exploiting modeline vulnerability
-if has('patch-8.1.1366')
+if has('patch-8.1.1366') || has('nvim-0.3.6')
     set nomodelineexpr
     set modeline
 else
+    set modelines=0
     set nomodeline
 endif
 
