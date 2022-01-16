@@ -5,12 +5,12 @@ import subprocess
 def main():
     raw_context = acquite_task_context()
 
-    context = "none" if raw_context == "" else raw_context
-
-    main_color = py_xgetres(".color14")
-
-    # TODO: give context colors
-    color = main_color
+    if raw_context == "":
+        context = "none" 
+        color = py_xgetres(".color14")
+    else:
+        context = raw_context
+        color = py_xgetres(".cursorColor")
 
     print(f"<span color='{color}'>{context:4}</span>")
 
