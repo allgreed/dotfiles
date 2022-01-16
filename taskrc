@@ -4,14 +4,18 @@
 # 'man task-sync' or 'man taskrc'
 
 # Here is an example of entries that use the default, override and blank values
-#   variable=foo   -- By specifying a value, this overrides the default
 #   variable=      -- By specifying no value, this means no default
-#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
 
 # Use the command 'task show' to see all defaults and overrides
-
 data.location=~/.task
+
 dateformat=d.M
 weekstart=sunday
 
+urgency.user.tag.urgent.coefficient=9
+urgency.user.tag.important.coefficient=3
+
 include /nix/store/jzx3yx4zlygdnrwzma8nlzvh234zr6l1-taskwarrior-2.5.3/share/doc/task/rc/solarized-light-256.theme
+
+context.out=-home
+report.next.filter=+PENDING -BLOCKED
