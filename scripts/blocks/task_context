@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+import subprocess
+
+
+def main():
+    raw_context = acquite_task_context()
+
+    context = "none" if raw_context == "" else raw_context
+
+    main_color = py_xgetres(".color14")
+
+    # TODO: give context colors
+    color = main_color
+
+    print(f"<span color='{color}'>{context:4}</span>")
+
+
+def acquite_task_context():
+    p = subprocess.check_output(["task", "_get", "rc.context"])  # py35 compatibility
+    entry_tokens = p.decode("utf-8").split("\n")
+    return entry_tokens[0]
+
+
+def py_xgetres(res: str):
+    """A really shitty ad hoc implementation of xgetres, totally non-portable and probably will fail for your .Xresources
+    
+    Feel free to replce it with a legit exec once someone ports xgetres from aur(tm) to nix
+    """
+    p = subprocess.check_output(["xrdb", "-query"])  # py35 compatibility
+    entry_tokens = p.decode("utf-8").split("\n")
+    fuj_entries = map(lambda s: s.split(":"), entry_tokens)
+    entries = filter(lambda l: len(l) == 2, fuj_entries)
+    resource_map = { k.lstrip("*"): v.lstrip() for k, v in entries }
+    return resource_map[res.lstrip(".")]
+
+
+if __name__ == "__main__":
+    main()
