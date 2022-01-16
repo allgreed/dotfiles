@@ -43,6 +43,14 @@ function load
     echo "Loading failed for $name, cannot source any of the: $@"
 }
 
+function resolve_nix_completion
+{
+    executable="$1";
+    filename="$2";
+
+    echo "$(dirname $(readlink -f $(which $executable)))/../share/bash-completion/completions/$filename"
+}
+
 #################################################
 #################################################
 #################################################
@@ -127,8 +135,9 @@ shopt -s cdspell # resolve simple typos in `cd`
 # Extensions
 #########################
 load 'aliases' ~/.bash_aliases
-load 'git autocomplete' $(dirname $(readlink -f $(which git)))/../share/bash-completion/completions/git /usr/share/bash-completion/completions/git
-load 'git prompt' $(dirname $(readlink -f $(which git)))/../share/bash-completion/completions/git-prompt.sh @fin
+load 'git autocomplete' $(resolve_nix_completion git git) /usr/share/bash-completion/completions/git
+load 'task autocomplete' $(resolve_nix_completion task task.bash)
+load 'git prompt' $(resolve_nix_completion git git-prompt.sh) @fin
 load 'prompt' ~/.bash_prompt
 load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
 load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
@@ -142,6 +151,7 @@ load 'direnv integration' @eval "direnv hook bash"
 __git_complete g __git_main # apply full git completion to "g" alias
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" m #" 
 complete -cf doas
+complete -o nospace -F _task t
 
 # Testing area
 #########################
