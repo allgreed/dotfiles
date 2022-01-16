@@ -152,3 +152,4 @@ alias tf="terraform"
 
 alias scratch="tmp"
 alias subs-hear="grep -E '\]$' -v"
+alias t="task"
