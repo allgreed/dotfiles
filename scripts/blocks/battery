@@ -53,7 +53,10 @@ def main():
     else:
         icon = ""
 
-    full_text = "{} {}% {} ({})".format(icon, percentage, status_indicator, time)
+    # trying out to live without time
+    # full_text = "{} {}% {} ({})".format(icon, percentage, status_indicator, time)
+
+    full_text = "{} {}% {}".format(icon, percentage, status_indicator)
     short_text = full_text
 
     color = py_xgetres(".color14")
