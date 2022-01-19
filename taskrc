@@ -16,6 +16,8 @@ urgency.user.tag.urgent.coefficient=9
 urgency.user.tag.important.coefficient=3
 
 include /nix/store/jzx3yx4zlygdnrwzma8nlzvh234zr6l1-taskwarrior-2.5.3/share/doc/task/rc/solarized-light-256.theme
+# otherwise it's less visible which kindof misses the point
+color.tagged=
 
 context.out=-home
 report.next.filter=+PENDING -BLOCKED
