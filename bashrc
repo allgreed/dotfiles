@@ -7,7 +7,7 @@ esac
 
 # poor man's display manager xD
 if [[ "$(tty)" == '/dev/tty1' ]]; then
-    TERMINAL='urxvt' exec startx
+    exec startx
 fi
 
 # Bootstrap
