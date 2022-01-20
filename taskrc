@@ -20,4 +20,10 @@ include /nix/store/jzx3yx4zlygdnrwzma8nlzvh234zr6l1-taskwarrior-2.5.3/share/doc/
 color.tagged=
 
 context.out=-home
-report.next.filter=+PENDING -BLOCKED
+report.next.filter=+PENDING -BLOCKED limit:3
+
+report.pending.description=All actionable tasks
+report.pending.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
+report.pending.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Urg
+report.pending.sort=urgency-
+report.pending.filter=+PENDING -BLOCKED
