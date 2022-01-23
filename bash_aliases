@@ -26,6 +26,8 @@ alias volume="~/.scripts/volume --signal 10"
 alias python2="/usr/bin/env python"
 alias python="/usr/bin/env python3"
 
+alias t="task"
+
 # magnetic trace still can be recovered from hdd after ~7 rewrites
 alias shred-hdd='shred -uvzn9'
 
@@ -152,4 +154,4 @@ alias tf="terraform"
 
 alias scratch="tmp"
 alias subs-hear="grep -E '\]$' -v"
-alias t="task"
+alias today="date +%d-%m-%Y"
