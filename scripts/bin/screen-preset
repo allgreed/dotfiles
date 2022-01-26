@@ -4,5 +4,6 @@ $(
             ls ~/.screenlayout | dmenu
         )
 )
+# TODO: only if non0exit code
 ~/.fehbg # set the wallpaper
 pkill conky; conky & # restart conky

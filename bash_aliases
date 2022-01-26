@@ -58,21 +58,6 @@ alias mon="monthly-report"
 alias today="date +%d-%m-%Y"
 
 ### functions ###
-transfer()
-{
-    curl --upload-file $1 https://transfer.sh/$(basename $1); printf "\n"
-}
-
-tmp() {
-    pushd .
-    cur_dir="/tmp/scratch"
-    new_dir="/tmp/scratch-`date +'%s'`"
-    mkdir -p $new_dir
-    ln -nfs $new_dir $cur_dir
-    cd $cur_dir
-    echo "New scratch dir ready for grinding ;>"
-}
-
 countdown()
 {
     \et $1 $2 && kogut
@@ -95,15 +80,6 @@ function vim(){
   fi
 }
 
-set_kube_namespace() {
-    kubectl config set-context --current --namespace=$1
-}
-
-flash_ergdox() {
-    file=$(ls ~/Downloads/ergodox_ez_shine_allgreed_* | dmenu)
-    sudo wally-cli $file && rm $file
-}
-
 ### snowflake ###
 if which dircolors 2>&1 >/dev/null; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -118,4 +94,3 @@ fi
 ##############
 alias subs-hear="grep -E '\]$' -v"
 alias alert='dunstify --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
