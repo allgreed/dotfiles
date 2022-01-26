@@ -2,8 +2,7 @@
 
 ### black magic fuckery ###
 alias make="make-git-aware"
-# better Python names, but respecting virtualenvs
-alias python2="/usr/bin/env python"
+alias python2="/usr/bin/env python" # better Python names, but respecting virtualenvs
 alias python="/usr/bin/env python3"
 
 ### shortcuts ###
@@ -43,8 +42,7 @@ alias scratch="tmp"
 
 ### custom ###
 alias volume="~/.scripts/volume --signal 10"
-# magnetic trace still can be recovered from hdd after ~7 rewrites
-alias shred-hdd='shred -uvzn9'
+alias shred-hdd='shred -uvzn9' # magnetic trace still can be recovered from hdd after ~7 rewrites
 alias dhcprc="sudo dhclient -r; sudo dhclient -v; ping wp.pl -c 2"
 alias vtmp="vim ~/tmp"
 alias jozef="vlc ~/Music/Only_Lover_Left_Alive_Full_OST.opus"
