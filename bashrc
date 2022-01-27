@@ -51,44 +51,6 @@ function resolve_nix_completion
     echo "$(dirname $(readlink -f $(which $executable)))/../share/bash-completion/completions/$filename"
 }
 
-#################################################
-#################################################
-#################################################
-#################################################
-#################################################
-#################################################
-
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-# TODO: see some of those examples and remove this comment
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
-#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-#alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-#################################################
-#################################################
-#################################################
-#################################################
-#################################################
-#################################################
-# TODO: read the above carefully
-
 # Env
 #########################
 # TODO: since it's not needed on nixos -> move this to a helper utility and load
@@ -122,7 +84,7 @@ export DO_NOT_TRACK=1 # because why not :D
 export HISTFILESIZE=
 export HISTSIZE=
 export HISTTIMEFORMAT="[%F %T] "
-shopt -s histappend
+shopt -s histappend cdspell checkwinsize
 HISTCONTROL=ignoreboth # don't put duplicate lines or lines starting with space in the history.
 # Change the file location because certain bash sessions truncate .bash_history file upon close.
 export HISTFILE=~/.bash_eternal_history
@@ -130,7 +92,6 @@ export HISTFILE=~/.bash_eternal_history
 set -o vi; # vim in bash
 bind -r '\C-s'
 stty -ixon # disable ctrl+s - no more accidental weird freezes
-shopt -s cdspell # resolve simple typos in `cd`
 
 # Extensions
 #########################
@@ -161,4 +122,4 @@ function cd {
 }
 alias lcd="cd $(cat ~/.lastcd)"
 export CDPATH=.:~/Desktop
-
+shopt -s dotglob
