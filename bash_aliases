@@ -66,7 +66,7 @@ latest_shot() {
     find ~/Shots | sort | tail -n 1
 }
 
-function vim(){
+vim() {
   OWNER=$(stat -c '%U' $1 2> /dev/null || echo 'groot')
   if [[ "$OWNER" == "root" ]]; then
     RED='\033[0;31m'
