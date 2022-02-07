@@ -12,6 +12,8 @@ data.location=~/.task
 dateformat=d.M
 weekstart=sunday
 
+search.case.sensitive=no
+
 urgency.user.tag.urgent.coefficient=9
 urgency.user.tag.important.coefficient=3
 urgency.user.tag.nine5.coefficient=5
