@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 file=$(ls ~/Downloads/ergodox_ez_shine_allgreed_* | dmenu)
+cp $file ~/Backup/ergodox_ez_shine_allgreed_latest.hex
 sudo wally-cli $file && rm $file
