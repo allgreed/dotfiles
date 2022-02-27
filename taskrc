@@ -19,6 +19,10 @@ alias.@=context
 
 urgency.user.tag.urgent.coefficient=9
 urgency.user.tag.important.coefficient=3
+urgency.uda.urgent.T.coefficient=9
+urgency.uda.important.T.coefficient=3
+urgency.uda.urgent.F.coefficient=1
+urgency.uda.important.F.coefficient=1
 urgency.user.tag.nine5.coefficient=5
 
 include /nix/store/jzx3yx4zlygdnrwzma8nlzvh234zr6l1-taskwarrior-2.5.3/share/doc/task/rc/solarized-light-256.theme
@@ -29,7 +33,14 @@ context.out=-home
 report.next.filter=+PENDING -BLOCKED limit:3
 
 report.pending.description=All actionable tasks
-report.pending.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
-report.pending.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Urg
+report.pending.columns=id,start.age,entry.age,depends,priority,project,tags,urgent,important,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
+report.pending.labels=ID,Active,Age,Deps,P,Project,Tag,Urg,Imp,Recur,S,Due,Until,Description,Urg
 report.pending.sort=urgency-
 report.pending.filter=+PENDING -BLOCKED
+
+uda.urgent.type=string
+uda.urgent.label=Urgent
+uda.urgent.values=T,F
+uda.important.type=string
+uda.important.label=Important
+uda.important.values=T,F
