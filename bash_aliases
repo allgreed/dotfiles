@@ -27,6 +27,7 @@ alias less='less -q'
 alias which='which -a'
 alias hledger-iadd="\hledger-iadd --date-format='%d[.[%m[.[%Y]]]]'"
 alias ls='ls -Ah'
+alias cal="cal -s"
 
 ### typos ###
 alias cd..="cd .."
