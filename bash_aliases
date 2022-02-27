@@ -27,6 +27,7 @@ alias less='less -q'
 alias which='which -a'
 alias hledger-iadd="\hledger-iadd --date-format='%d[.[%m[.[%Y]]]]'"
 alias ls='ls -Ah'
+alias hledger="hledger --infer-market-price"
 alias cal="cal -s"
 
 ### typos ###
@@ -93,3 +94,4 @@ fi
 ##############
 alias subs-hear="grep -E '\]$' -v"
 alias alert='dunstify --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias hbs="hledger bs --no-elide"
