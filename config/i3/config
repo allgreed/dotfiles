@@ -89,7 +89,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -219,6 +219,7 @@ client.background       $X_bg
 
 # removes titlebar, and sets sane borders
 for_window [class="^.*"] border pixel 3 
+hide_edge_borders vertical
 
 #locking through the fancy blue button 
 bindsym XF86Launch1 exec ~/.scripts/lock
@@ -266,7 +267,7 @@ bindsym F1 exec echo "" > /dev/null # disable F1 ffs
 
 set $screenshot escrotum "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" --exec "mv \$f ~/Shots"
 
-bindsym Print exec $screenshot && echo -e "\a"
+bindsym Print exec $screenshot
 bindsym --release Shift+Print exec $screenshot --select
 
 ########################################
@@ -313,7 +314,8 @@ for_window [title="zoom"] floating enable
 #######
 # Testing
 #######
-hide_edge_borders vertical
+bindsym $mod+s exec $screenshot
+bindsym --release $mod+Shift+s exec $screenshot --select
 
 # not so sure about this one...
 focus_follows_mouse no
@@ -321,4 +323,3 @@ focus_follows_mouse no
 bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
 bindsym $mod+F1 exec $launch_terminal -e play ~/Music/sounds/fanfary.mp3
 #no_focus [window_role="pop-up"] TODO: have some fun with that
-
