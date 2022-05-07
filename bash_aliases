@@ -56,7 +56,9 @@ alias yearly-report="hledger is -M --effective -X `hledger-get-default-currency`
 alias monthly-report="yearly-report -p thismonth"
 alias mon="monthly-report"
 alias today="date +%d-%m-%Y"
-
+alias show="command bat"
+alias bat="echo 5" # TODO: until proper battery script
+ 
 ### functions ###
 countdown()
 {
