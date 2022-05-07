@@ -28,13 +28,13 @@ def main():
 
     def get_first_input_for(index: int, suffix="input", sensor_lines=sensor_lines):
         entry = "temp{}_{}".format(index, suffix)
-        return float(next(line.lstrip(entry + " :") for line in sensor_lines if entry in line))
+        return float(next(line.replace(entry + ":", "").strip() for line in sensor_lines if entry in line))
 
     temperature = math.ceil(get_first_input_for(1))
     temperature_critical = math.ceil(get_first_input_for(1, "crit"))
 
-    full_text = "{:.0f}°C".format(temperature)
-    short_text = "{:.0f}°C".format(temperature)
+    full_text = "{:3.0f}°C".format(temperature)
+    short_text = "{:3.0f}°C".format(temperature)
 
     color = py_xgetres(".color14")
 
