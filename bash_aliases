@@ -60,8 +60,18 @@ alias show="command bat"
 alias bat="echo 5" # TODO: until proper battery script
  
 ### functions ###
-countdown()
-{
+tmp() {
+    # doesn't work well as a seperate script
+    pushd .
+    cur_dir="/tmp/scratch"
+    new_dir="/tmp/scratch-`date +'%s'`"
+    mkdir -p $new_dir
+    ln -nfs $new_dir $cur_dir
+    cd $cur_dir
+    echo "New scratch dir ready for grinding ;>"
+}
+
+countdown() {
     \et $1 $2 && kogut
 }
 alias et="countdown"
