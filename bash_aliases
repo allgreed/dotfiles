@@ -19,6 +19,7 @@ alias l='ls -Ah'
 alias ka="kubectl apply -f ."
 alias k="kubectl"
 alias pr="hub pull-request"
+alias led="vim $LEDGER_FILE"
 
 ### defaults ###
 alias mv='mv -i'
