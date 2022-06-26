@@ -20,6 +20,7 @@ alias ka="kubectl apply -f ."
 alias k="kubectl"
 alias pr="hub pull-request"
 alias led="vim $LEDGER_FILE"
+alias ulock="ssh-add ~/.ssh/id_ed25519"
 
 ### defaults ###
 alias mv='mv -i'
@@ -108,3 +109,5 @@ fi
 alias subs-hear="grep -E '\]$' -v"
 alias alert='dunstify --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias hbs="hledger bs --no-elide"
+
+# space after alias does magic!
