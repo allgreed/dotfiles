@@ -67,6 +67,7 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'google/vim-jsonnet'
 Plugin 'allgreed/vim-java-bytecode'
 Plugin 'ziglang/zig.vim'
+Plugin 'torrancew/vim-openscad'
 
 call vundle#end()
 filetype plugin indent on 
