@@ -30,7 +30,7 @@ alias which='which -a'
 alias hledger-iadd="\hledger-iadd --date-format='%d[.[%m[.[%Y]]]]'"
 alias ls='ls -Ah'
 alias hledger="hledger --infer-market-price"
-alias cal="cal -s"
+alias cal="cal -s3"
 
 ### typos ###
 alias cd..="cd .."
