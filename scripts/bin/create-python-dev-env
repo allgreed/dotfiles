@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+for f in default.nix .envrc
+do
+    cp ~/Desktop/templates/$f .
+done
+
+cp ~/Desktop/templates/Makefile_template Makefile
+vim default.nix
+make init
