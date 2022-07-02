@@ -30,7 +30,6 @@ alias which='which -a'
 alias hledger-iadd="\hledger-iadd --date-format='%d[.[%m[.[%Y]]]]'"
 alias ls='ls -Ah'
 alias hledger="hledger --infer-market-price"
-alias cal="cal -s3"
 
 ### typos ###
 alias cd..="cd .."
@@ -43,6 +42,9 @@ alias sl='ls'
 alias kubect=kubectl
 alias kubeclt=kubectl
 alias scratch="tmp"
+
+### polyfills ###
+alias cal="~/Dotfiles/scripts/cal_compatibility_wrapper"
 
 ### custom ###
 alias volume="~/.scripts/volume --signal 10"

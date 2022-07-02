@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+import sys
+import contextlib
+import subprocess
+
+def main():
+    args = sys.argv[1:]
+    new_args = list(args)
+    if len(args) == 0:
+        new_args = ["-s"]
+
+    try:
+        args.index("-n")
+    except ValueError:
+        pass
+    else:
+        print("err: don't use the -n syntax, opt for -A instead",file=sys.stderr)
+        exit(1)
+
+    try:
+        idx = args.index("-A")
+    except ValueError:
+        pass
+    else:
+        new_args[idx] = "-n"
+        new_args[idx + 1] = str(int(args[idx + 1]) + 1)
+
+    cmd0 = "cal -s " + " ".join(new_args)
+    cmd1 = "cal -s " + " ".join(args)
+
+    try: 
+        p0 = subprocess.check_output(cmd0, shell=True, stderr=subprocess.PIPE)
+        p = p0
+    except subprocess.CalledProcessError:
+        try:
+            p1 = subprocess.check_output(cmd1, shell=True)
+        except subprocess.CalledProcessError:
+            p = ""
+        else:
+            p = p1
+
+    print(p.decode("ascii"), end="")
+
+
+if __name__ == "__main__":
+    main()
