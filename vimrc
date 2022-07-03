@@ -30,6 +30,7 @@ set tabstop=4       " The width of a TAB is set to 4
 set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Treat 4 spaces as single TAB
 set expandtab       " Expand TABs to spaces
+set shiftround      " Round identation to multiples
 
 set nrformats-=octal " I don't work with octal literals really
 
@@ -149,6 +150,13 @@ nnoremap <C-l> <C-w>l
 set pastetoggle=<f5>
 
 noh " don't show search highlights on vimrc reload
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Lessons learned
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" line swapping via single key combination is not nearly as usefull as it
+" apperas. Most of the time I've ended up triggering it indientally, wasting
+" time in the process
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Testin area
