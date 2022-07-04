@@ -33,6 +33,9 @@ include /nix/store/jzx3yx4zlygdnrwzma8nlzvh234zr6l1-taskwarrior-2.5.3/share/doc/
 color.tagged=
 
 context.out=-home
+# TODO: also use Maybe!
+context.plane=-home netz:F
+context.triage=-triaged
 report.next.filter=+PENDING -BLOCKED limit:3
 
 report.pending.description=All actionable tasks
@@ -47,3 +50,8 @@ uda.urgent.values=T,F
 uda.important.type=string
 uda.important.label=Important
 uda.important.values=T,F
+
+uda.netz.type=string
+uda.netz.label=Internet required
+# "Preapre" mean that the task can be prepared to not require internet access
+uda.netz.values=T,F,Prepare,Maybe
