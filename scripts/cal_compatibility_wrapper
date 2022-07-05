@@ -3,11 +3,13 @@ import sys
 import contextlib
 import subprocess
 
+DEFAULT = "-s --color=always"
+
 def main():
     args = sys.argv[1:]
     new_args = list(args)
     if len(args) == 0:
-        new_args = ["-s"]
+        new_args = DEFAULT
 
     try:
         args.index("-n")
@@ -25,8 +27,8 @@ def main():
         new_args[idx] = "-n"
         new_args[idx + 1] = str(int(args[idx + 1]) + 1)
 
-    cmd0 = "cal -s " + " ".join(new_args)
-    cmd1 = "cal -s " + " ".join(args)
+    cmd0 = "cal " + DEFAULT + " " + " ".join(new_args)
+    cmd1 = "cal " + DEFAULT + " " + " ".join(args)
 
     try: 
         p0 = subprocess.check_output(cmd0, shell=True, stderr=subprocess.PIPE)
