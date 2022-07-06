@@ -269,6 +269,8 @@ set $screenshot escrotum "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" --exec "mv \$f ~/Shots"
 
 bindsym Print exec $screenshot
 bindsym --release Shift+Print exec $screenshot --select
+# for keyboards without conviniently located Print
+bindsym --release $mod+Shift+s exec $screenshot --select
 
 ########################################
 # Placement
