@@ -104,6 +104,7 @@ load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
 load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
 load 'bash autocomplete' @nixos /usr/share/bash-completion/bash_completion
 load 'direnv integration' @eval "direnv hook bash"
+load 'local stuff' ~/.bash_local @fin
 
 
 
