@@ -75,6 +75,10 @@ tmp() {
     echo "New scratch dir ready for grinding ;>"
 }
 
+jdiff() {
+    diff <(jq -S . $1) <(jq -S . $2)
+}
+
 countdown() {
     \et $1 $2 && kogut
 }
