@@ -97,7 +97,7 @@ stty -ixon # disable ctrl+s - no more accidental weird freezes
 #########################
 load 'aliases' ~/.bash_aliases
 load 'git autocomplete' $(resolve_nix_completion git git) /usr/share/bash-completion/completions/git
-load 'task autocomplete' $(resolve_nix_completion task task.bash)
+load 'task autocomplete' $(resolve_nix_completion task task.bash) @fin
 load 'git prompt' $(resolve_nix_completion git git-prompt.sh) @fin
 load 'prompt' ~/.bash_prompt
 load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
