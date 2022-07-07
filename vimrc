@@ -82,6 +82,8 @@ set clipboard=unnamedplus " Use system clipboard as default buffer
 
 set undofile
 set undodir=$HOME/.vim/undo
+" that's swap
+set directory^=$HOME/.vim/swap// 
 
 " prevent exploiting modeline vulnerability
 if has('patch-8.1.1366') || has('nvim-0.3.6')
