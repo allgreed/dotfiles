@@ -97,8 +97,8 @@
 	smudge = cat
 
 [filter "workrave_config"]
-	clean = ~/.scripts/filter-workrave-git
-	smudge = cat
+	clean = "~/.scripts/filter-workrave-git clean"
+	smudge = "~/.scripts/filter-workrave-git smudge"
 
 [filter "taskwarrior_ignore_set_context"]
 	clean = grep -v 'context='
