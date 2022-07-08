@@ -8,7 +8,8 @@ Plugin 'nvim-treesitter/nvim-treesitter'
 Plugin 'lambdalisue/suda.vim'
 
 lua << EOF
-require'lspconfig'.pyls.setup{}
+-- this has some kind of problems on Ubuntu
+--require'lspconfig'.pyls.setup{}
 require'lspconfig'.rnix.setup{}
 require'lspconfig'.zls.setup{}
 EOF
