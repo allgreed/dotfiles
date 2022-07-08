@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+import re
+import fileinput
+
+def main():
+    for line in fileinput.input():
+        line = re.sub(r"main_window\.(x|y)=(\d+)",r"main_window.\1=255", line)
+        line = re.sub(r"operation-mode=\d",r"operation-mode=0", line)
+
+        print(line, end="")
+	
+
+if __name__ == "__main__":
+    main()

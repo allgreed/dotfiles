@@ -8,7 +8,7 @@
 	pager = less
 
 	excludesfile = ~/.gitignore_global
-	attributesfile = /home/allgreed/.gitattributes_global
+	attributesfile = ~/.gitattributes_global
 
 	autocrlf = input
 
@@ -96,8 +96,8 @@
 	clean = "sed -E 's/#(PWR|FLG)[0-9]+/#\\1?/'"
 	smudge = cat
 
-[filter "workrave_main_window_xy_ignore"]
-	clean = perl -pe 's/main_window.(x|y)=(\\d+)/main_window.$1=255/'
+[filter "workrave_config"]
+	clean = ~/.scripts/filter-workrave-git
 	smudge = cat
 
 [filter "taskwarrior_ignore_set_context"]

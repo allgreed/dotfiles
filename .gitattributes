@@ -1,2 +1,2 @@
-workrave/workrave.ini filter=workrave_main_window_xy_ignore
+workrave/workrave.ini filter=workrave_config
 taskrc filter=taskwarrior_ignore_set_context
