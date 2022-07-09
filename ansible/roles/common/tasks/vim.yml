@@ -8,6 +8,7 @@
     - ~/.vim/colors
     - ~/.vim/bundle
     - ~/.vim/undo
+    - ~/.vim/swap
     - ~/.vim/spell
 
 - name: install Vundle
