@@ -1,14 +1,12 @@
 .DEFAULT_GOAL := help
 
-INVENTORY ?= inventory
-
 # Porcelain
 # ###############
 .PHONY: just-dotfiles
 just-dotfiles:  ## install the dotfiles
-
-	ansible-playbook -l local --inventory=$(INVENTORY) just_dotfiles.yml --skip-tags='pkg,nix' --extra-vars "dotfiles_binary=`which dotfiles || echo ~/.local/bin/dotfiles` ansible_python_interpreter=`which python`"
-
+	ansible-playbook -l local --inventory=inventory just_dotfiles.yml --extra-vars "dotfiles_binary=`which dotfiles || echo ~/.local/bin/dotfiles` ansible_python_interpreter=`which python`"
+	@tput setaf 1; echo 'if ran for the first time on this machine I highly recommend running also `git checkout ..`'
+	
 # Utilities
 # ###############
 .PHONY: help todo init
