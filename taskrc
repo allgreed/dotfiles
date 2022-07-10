@@ -46,6 +46,7 @@ report.pending.filter=+PENDING -BLOCKED
 uda.urgent.type=string
 uda.urgent.label=Urgent
 uda.urgent.values=T,F
+
 uda.important.type=string
 uda.important.label=Important
 uda.important.values=T,F
@@ -54,3 +55,7 @@ uda.netz.type=string
 uda.netz.label=Internet required
 # "Preapre" mean that the task can be prepared to not require internet access
 uda.netz.values=T,F,Prepare,Maybe
+
+uda.triaged.type=string
+uda.triaged.label=Triaged
+uda.triaged.values=T
