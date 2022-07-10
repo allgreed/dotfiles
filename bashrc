@@ -96,20 +96,19 @@ stty -ixon # disable ctrl+s - no more accidental weird freezes
 # Extensions
 #########################
 load 'aliases' ~/.bash_aliases
-load 'git autocomplete' $(resolve_nix_completion git git) /usr/share/bash-completion/completions/git
-load 'task autocomplete' $(resolve_nix_completion task task.bash) @fin
 load 'git prompt' $(resolve_nix_completion git git-prompt.sh) @fin
 load 'prompt' ~/.bash_prompt
 load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
 load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-load 'bash autocomplete' @nixos /usr/share/bash-completion/bash_completion
 load 'direnv integration' @eval "direnv hook bash"
 load 'local stuff' ~/.bash_local @fin
 
 
-
 # Autocompletes
 #########################
+load 'bash autocomplete' @nixos /usr/share/bash-completion/bash_completion
+load 'git autocomplete' $(resolve_nix_completion git git) /usr/share/bash-completion/completions/git
+load 'task autocomplete' $(resolve_nix_completion task task.bash) @fin
 __git_complete g __git_main # apply full git completion to "g" alias
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" m #" 
 complete -cf doas
