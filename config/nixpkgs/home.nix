@@ -50,29 +50,6 @@ in
     };
   };
 
-  systemd.user.services = {
-    lmap-forever = {
-      Unit = {
-        Description = "lmap-forever";
-        Documentation = [
-          "https://github.com/allgreed/lmap-forever"
-          "https://github.com/allgreed/lmap"
-        ];
-      };
-
-      Install = {
-        WantedBy = [ "default.target" ];
-      };
-
-      Service = {
-        TimeoutStartSec = 0;
-        Restart = "always";
-        ExecStartPre="/bin/sh -c 'export PATH=/run/current-system/sw/bin/:/usr/bin/; docker stop lmap-forever && (docker rm lmap-forever || true) || true'";
-        ExecStart="/bin/sh -c 'export PATH=/run/current-system/sw/bin/:/usr/bin/; docker run -e STORAGE_PROVIDER_TYPE=file -e STORAGE_PROVIDER_FILE_PATH=/data -v /home/allgreed/lmap:/data --rm --name lmap-forever -p 12694:12694 allgreed/lmap-forever:preview0'";
-      };
-    };
-  };
-
   manual.html.enable = true;
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
