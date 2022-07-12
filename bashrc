@@ -100,6 +100,7 @@ load 'git prompt' $(resolve_nix_completion git git-prompt.sh) @fin
 load 'prompt' ~/.bash_prompt
 load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
 load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+# this has to happen after all prompts are loaded
 load 'direnv integration' @eval "direnv hook bash"
 load 'local stuff' ~/.bash_local @fin
 
