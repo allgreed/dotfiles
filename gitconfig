@@ -23,7 +23,6 @@
     default = simple
     followTags = false
 [pull]
-    # this is meant as a test, see if it works for me
     ff = only
 
 [commit]
