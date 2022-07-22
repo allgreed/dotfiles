@@ -59,7 +59,7 @@
     s = status --short
 
     aa = a --all
-    call = !git aa && git c
+    call = !git diff-index --quiet --cached HEAD -- && git aa && git c || echo 'Aborting! Index dirty or something went wrong'
     co = checkout
     dc = d --cached
 
