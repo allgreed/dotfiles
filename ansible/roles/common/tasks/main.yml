@@ -1,4 +1,0 @@
----
-- include_tasks: dotfiles.yml
-- include_tasks: vim.yml
-- include_tasks: home-manager.yml

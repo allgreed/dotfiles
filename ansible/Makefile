@@ -2,9 +2,9 @@
 
 # Porcelain
 # ###############
-.PHONY: just-dotfiles
-just-dotfiles:  ## install the dotfiles
-	ansible-playbook -l local --inventory=inventory just_dotfiles.yml --extra-vars "dotfiles_binary=`which dotfiles || echo ~/.local/bin/dotfiles` ansible_python_interpreter=`which python`"
+.PHONY: work
+work:  ## install the dotfiles and everything
+	ansible-playbook -l local --inventory=inventory main.yml --extra-vars "dotfiles_binary=`which dotfiles || echo ~/.local/bin/dotfiles` link_main_git_id=yes ansible_python_interpreter=`which python`"
 	@tput setaf 1; echo 'if ran for the first time on this machine I highly recommend running also `git checkout ..`'
 	
 # Utilities

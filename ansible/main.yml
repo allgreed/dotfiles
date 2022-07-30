@@ -1,0 +1,114 @@
+---
+- name: do the thing!
+  hosts: all
+  tasks:
+  - name: configure dotfiles
+    file:
+      src: ~/Dotfiles/dotfilesrc
+      dest: ~/.dotfilesrc
+      state: link
+
+  - name: gather dotfiles check information
+    command: "{{ dotfiles_binary }} -c"
+    changed_when: False
+    register: dotfiles_check_result
+
+  - name: sync my Dotfiles
+    command: "{{ dotfiles_binary }} --sync --force"
+    when: dotfiles_check_result.stdout
+
+  - name: link main git identity
+    file:
+      state: link
+      src: ~/Keys/git-main-id
+      dest: "{{ ansible_user_dir }}/.gitid"
+    when: link_main_git_id | bool
+    ignore_errors: yes # TODO: make this emmit warning but don't stop the whole playbook
+
+  - name: list avaible channels
+    shell: "nix-channel --list | cut -f 1 -d' '"
+    changed_when: False
+    register: nix_channels_raw
+
+  - name: check home-manager availbility
+    command: "which home-manager"
+    changed_when: False
+    failed_when: "which_home_manager_cmd.rc not in [0, 1]"
+    register: which_home_manager_cmd
+
+  - set_fact:
+      nix_channels: "{{ nix_channels_raw.stdout_lines }}"
+      home_manager_installed: "{{ True if which_home_manager_cmd.rc == 0 else False }}"
+
+  - debug:
+      var: home_manager_installed
+
+  - name: add home-manager channel
+    when: "'home-manager' not in nix_channels"
+    block:
+      - name: actually add the channel
+        command: nix-channel --add https://github.com/nix-community/home-manager/archive/release-20.09.tar.gz home-manager
+
+      - name: update home-manager channel
+        command: nix-channel --update
+
+  - name: install home-manager
+    when: not home_manager_installed
+    command: nix-shell '<home-manager>' -A install
+
+  - name: ensure .vim directories
+    file:
+      path: "{{ item }}"
+      state: directory
+      recurse: yes
+    with_items:
+      - ~/.vim/colors
+      - ~/.vim/bundle
+      - ~/.vim/undo
+      - ~/.vim/swap
+      - ~/.vim/spell
+
+  - name: install Vundle
+    git:
+      repo: https://github.com/VundleVim/Vundle.vim.git
+      dest: ~/.vim/bundle/Vundle.vim
+      version: master
+
+  - name: install solarized colorscheme
+    # since the last commit was in 2011 I've decided to vendor-in this one
+    copy:
+      dest: ~/.vim/colors/solarized.vim
+      src: vendor/vim/solarized.vim
+      mode: '600'
+
+  - name: gather installed plugins information
+    command: ls ~/.vim/bundle -1
+    changed_when: False
+    register: vim_installed_plugins_result
+
+  - name: gather desired plugins information
+    shell: cat ~/.vimrc | grep Plugin | grep -v -e ^\" | cut -d/ -f 2 | tr -d \'
+    changed_when: False
+    register: vim_desired_plugins_result
+
+  - set_fact:
+      vim_installed_plugins: "{{ vim_installed_plugins_result.stdout_lines | sort }}"
+      vim_desired_plugins: "{{ vim_desired_plugins_result.stdout_lines | sort }}"
+
+  #- debug:
+      #var: vim_installed_plugins
+
+  #- debug:
+      #var: vim_desired_plugins
+
+  - name: install plugins
+    command: vim -i NONE +PluginInstall +qall
+    when: vim_installed_plugins != vim_desired_plugins
+
+  - name: download non-English dictionaries
+    get_url:
+      url: "http://ftp.vim.org/pub/vim/runtime/spell/{{item}}.utf-8.spl"
+      dest: "~/.vim/spell/{{item}}.utf-8.spl"
+      mode: '600'
+    with_items:
+      - pl
