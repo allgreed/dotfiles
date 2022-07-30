@@ -40,9 +40,6 @@
       nix_channels: "{{ nix_channels_raw.stdout_lines }}"
       home_manager_installed: "{{ True if which_home_manager_cmd.rc == 0 else False }}"
 
-  - debug:
-      var: home_manager_installed
-
   - name: add home-manager channel
     when: "'home-manager' not in nix_channels"
     block:
