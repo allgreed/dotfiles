@@ -95,15 +95,15 @@
       vim_installed_plugins: "{{ vim_installed_plugins_result.stdout_lines | sort }}"
       vim_desired_plugins: "{{ vim_desired_plugins_result.stdout_lines | sort }}"
 
-  #- debug:
-      #var: vim_installed_plugins
+  - set_fact:
+      vim_missing_plugins: "{{ vim_desired_plugins | difference(vim_desired_plugins) }}"
 
-  #- debug:
-      #var: vim_desired_plugins
+  - debug:
+      var: vim_missing_plugins
 
   - name: install plugins
     command: vim -i NONE +PluginInstall +qall
-    when: vim_installed_plugins != vim_desired_plugins
+    when: vim_missing_plugins
 
   - name: download non-English dictionaries
     get_url:
