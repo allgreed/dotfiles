@@ -76,9 +76,9 @@
 
   - name: install solarized colorscheme
     # since the last commit was in 2011 I've decided to vendor-in this one
-    copy:
-      dest: ~/.vim/colors/solarized.vim
-      src: vendor/vim/solarized.vim
+    unarchive:
+      dest: ~/.vim/colors/
+      src: vendor/vim/solarized.vim.tar.gz
       mode: '600'
 
   - name: gather installed plugins information
