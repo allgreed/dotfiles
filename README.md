@@ -3,6 +3,15 @@
 My collection of preferences, configs, /etc.
 They work in tandem with [my Nixos configuration](https://github.com/allgreed/nixos-config), but for reasons™ I'm keeping them separate 
 
+## Usage
+
+```
+git clone https://github.com/allgreed/dotfiles.git ~/Dotfiles
+cd ~/Dotfiles/ansible
+make init
+make work
+```
+
 ## Note on portability
 
 This config is intended for NixOs, however should be fairly usable on Debian-based systems. For work purposes I'm targeting Ubuntu. Your milage may vary.
