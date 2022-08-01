@@ -22,6 +22,7 @@ set visualbell " disable emmiting bell
 set laststatus=2 " always show statusline
 set rulerformat=%19(%l,%c%V%7(<0x%B>%)%=%P%)
 
+set ttimeoutlen=10 " wait before sequence completes [ms], no idea why, but I've changed it
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editorial behaviours
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -35,6 +36,7 @@ set shiftround      " Round identation to multiples
 set nrformats-=octal " I don't work with octal literals really
 
 set nojoinspaces
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins 
@@ -152,7 +154,6 @@ nnoremap <C-l> <C-w>l
 set pastetoggle=<f5>
 
 noh " don't show search highlights on vimrc reload
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Lessons learned
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -163,11 +164,6 @@ noh " don't show search highlights on vimrc reload
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" this might be important - I've set it for a reason
-set ttimeoutlen=10 " but what does it do exactly? o.0
-
-" TODO: Also display 2 spaces as 4 spaces except for ansible .yml files ???
-
 " what the shit is this?
 set complete+=kspell
 
@@ -184,3 +180,4 @@ set nospell " fixes interpreting the above, but possible messes with spellcheck 
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>v
 inoremap <silent> <C-S>         <C-O>:update<CR>
+set scrolloff=3
