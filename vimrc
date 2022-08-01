@@ -53,6 +53,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'fidian/hexmode'
 
 " Testing
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " Syntax highlighters
@@ -181,3 +182,7 @@ noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>v
 inoremap <silent> <C-S>         <C-O>:update<CR>
 set scrolloff=3
+set smartindent
+
+" autopairs
+let g:AutoPairsShortcutJump = '<C-L>'
