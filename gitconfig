@@ -23,6 +23,7 @@
 [push]
     default = simple
     followTags = false
+    recurseSubmodules = check
 [pull]
     ff = only
 
