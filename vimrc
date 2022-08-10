@@ -56,6 +56,7 @@ Plugin 'fidian/hexmode'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ctrlpvim/ctrlp.vim'
 
+
 " Syntax highlighters
 Plugin 'leafgarland/typescript-vim'
 Plugin 'posva/vim-vue'
@@ -108,6 +109,7 @@ augroup vimrc
 
     autocmd FileType markdown let g:indentLine_enabled = 0 " Disable identLine for .md
     autocmd FileType json let g:indentLine_enabled = 0
+    autocmd FileType python setlocal autoindent textwidth=119
 
     autocmd FileType gitcommit let g:indentLine_enabled = 0
     autocmd FileType gitcommit setlocal spell colorcolumn=72
@@ -185,4 +187,8 @@ set scrolloff=3
 set smartindent
 
 " autopairs
-let g:AutoPairsShortcutJump = '<C-L>'
+" # how about only in insert mode?
+let g:AutoPairsShortcutJump = '<C-F>'
+
+" enable all the colors xD
+set t_Co=256
