@@ -117,3 +117,4 @@ alias alert='dunstify --urgency=low -i "$([ $? = 0 ] && echo terminal || echo er
 alias hbs="hledger bs --no-elide"
 
 # space after alias does magic!
+alias cp="rsync -ah"
