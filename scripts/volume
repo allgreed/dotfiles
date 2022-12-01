@@ -76,7 +76,7 @@ def set_volume(value):
 
 
 @click.command()
-@click.argument('step', type=int)
+@click.argument('step', type=int, default=5)
 def dec_volume(step):
     current_volume = get_volume()
     
@@ -91,7 +91,7 @@ def dec_volume(step):
 
 
 @click.command()
-@click.argument('step', type=int)
+@click.argument('step', type=int, default=5)
 def inc_volume(step):
     if is_muted():
         spawn(simple_commands["unmute"])
