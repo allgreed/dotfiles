@@ -19,8 +19,6 @@ nag=
 alias.rm=delete
 alias.@=context
 
-urgency.user.tag.urgent.coefficient=9
-urgency.user.tag.important.coefficient=3
 urgency.uda.urgent.T.coefficient=9
 urgency.uda.important.T.coefficient=3
 urgency.uda.urgent.F.coefficient=1
