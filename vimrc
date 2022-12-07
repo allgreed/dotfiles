@@ -106,12 +106,14 @@ set ff=unix
 
 augroup vimrc
     autocmd FileType make setlocal softtabstop=0 noexpandtab " Use actual tab chars in Makefiles
+    autocmd FileType make let b:EditorConfig_disable = 1
 
     autocmd FileType markdown let g:indentLine_enabled = 0 " Disable identLine for .md
     autocmd FileType json let g:indentLine_enabled = 0
     autocmd FileType python setlocal autoindent textwidth=119
 
     autocmd FileType gitcommit let g:indentLine_enabled = 0
+    autocmd FileType gitcommit let b:EditorConfig_disable = 1
     autocmd FileType gitcommit setlocal spell colorcolumn=72
 
     autocmd BufNewFile,BufRead .envrc setlocal syntax=sh
@@ -192,3 +194,5 @@ let g:AutoPairsShortcutJump = '<C-F>'
 
 " enable all the colors xD
 set t_Co=256
+
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
