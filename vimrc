@@ -146,8 +146,8 @@ let mapleader=" "
 :command! W w
 
 "NERDComment integration
-:nnoremap \ :call NERDComment('n', 'Toggle')<CR>
-:vnoremap \ :call NERDComment('x', 'Toggle')<CR>
+:nnoremap \ :call nerdcommenter#Comment('n', 'Toggle')<CR>
+:vnoremap \ :call nerdcommenter#Comment('x', 'Toggle')<CR>
 
 " faster window navigation
 nnoremap <C-j> <C-w>j
