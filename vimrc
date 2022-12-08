@@ -51,10 +51,10 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'fidian/hexmode'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Testing
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'ctrlpvim/ctrlp.vim'
 
 
 " Syntax highlighters
