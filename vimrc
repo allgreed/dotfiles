@@ -55,7 +55,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 
 " Testing
 Plugin 'jiangmiao/auto-pairs'
-
+Plugin 'anekos/hledger-vim'
 
 " Syntax highlighters
 Plugin 'leafgarland/typescript-vim'
