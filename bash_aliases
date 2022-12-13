@@ -119,3 +119,4 @@ alias alert='dunstify --urgency=low -i "$([ $? = 0 ] && echo terminal || echo er
 
 # space after alias does magic!
 alias cp="rsync -ah"
+alias r="ranger"
