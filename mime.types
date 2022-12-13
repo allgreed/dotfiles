@@ -1,0 +1,6 @@
+# erm... ranger has a problem recongnizing text files
+# ending with *.ts as text files and tries to open them
+# with a video player; this is nicer than keep the rifle
+# config around
+# see: https://github.com/ranger/ranger/issues/2698
+text/x-typescript ts
