@@ -11,14 +11,7 @@ Plugin 'nvim-lua/plenary.nvim'
 Plugin 'nvim-treesitter/nvim-treesitter'
 
 lua << EOF
-require'lspconfig'.pylsp.setup{
-    plugins = {
-        flake8 = {
-            enabled = true,
-            maxLineLength = 100,
-        }
-    }
-}
+require'lspconfig'.pyright.setup{}
 require'lspconfig'.rnix.setup{}
 require'lspconfig'.zls.setup{}
 require'lspconfig'.tsserver.setup{
@@ -28,7 +21,6 @@ require'lspconfig'.tsserver.setup{
 }
 
 EOF
-
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> <C-]> <cmd>lua vim.lsp.buf.definition()<CR>
@@ -38,12 +30,13 @@ nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <Leader>a <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> <Leader>r <cmd>lua vim.lsp.buf.rename()<CR>
 
-set completeopt=menuone,noselect
 
+set completeopt=menu,noselect
 lua << EOF
 -- Compe setup
 require'compe'.setup {
   enabled = true;
+  -- TODO: how much do I need of this? How much are the defaults?
   autocomplete = true;
   debug = false;
   min_length = 1;
@@ -59,40 +52,9 @@ require'compe'.setup {
   source = {
     path = true;
     buffer = true;
-    --spell = true; not sure if this one is fun or not ;d
     nvim_lsp = true;
-    --treesitter = true;
+    calc = true;
+    --spell = true; not sure if this one is fun or not ;d
   };
 }
-EOF
-
-" TESTING
-lua require('refactoring').setup({})
-" autocmd FileType typescriptreact set ft=typescript
-" it breaks the React langserver though
-" https://github.com/ThePrimeagen/refactoring.nvim/issues/233
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-
-    -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
-    disable = function(lang, buf)
-        local max_filesize = 100 * 1024 -- 100 KB
-        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-        if ok and stats and stats.size > max_filesize then
-            return true
-        end
-    end,
-
-    additional_vim_regex_highlighting = false,
-  },
-}
--- this keymap doesn't work
--- vim.api.nvim_set_keymap(
---     "v",
---     "<leader>rr",
---     ":lua require('refactoring').select_refactor()<CR>",
---     { noremap = true, silent = true, expr = false }
--- )
 EOF
