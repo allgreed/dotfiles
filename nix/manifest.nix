@@ -1,5 +1,14 @@
 [
   {
+    meta = {};
+    name = "bat-0.22.1";
+    out = { outPath = "/nix/store/vkbfya4qhmzykw6fqs409q5ajdrnhzlq-bat-0.22.1"; };
+    outPath = "/nix/store/vkbfya4qhmzykw6fqs409q5ajdrnhzlq-bat-0.22.1";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
     man = { outPath = "/nix/store/nv1nz46nglvdgnzvv0kyf2bfb82bjpq4-escrotum-2019-06-10-man"; };
     meta = {};
     name = "escrotum-2019-06-10";
@@ -20,9 +29,9 @@
   }
   {
     meta = {};
-    name = "google-chrome-86.0.4240.183";
-    out = { outPath = "/nix/store/xzzjksnhpxrc47gj5lnyzk8wp406xjlk-google-chrome-86.0.4240.183"; };
-    outPath = "/nix/store/xzzjksnhpxrc47gj5lnyzk8wp406xjlk-google-chrome-86.0.4240.183";
+    name = "google-chrome-105.0.5195.125";
+    out = { outPath = "/nix/store/q7w900mva34d66663z32l53693pq9zra-google-chrome-105.0.5195.125"; };
+    outPath = "/nix/store/q7w900mva34d66663z32l53693pq9zra-google-chrome-105.0.5195.125";
     outputs = [ "out" ];
     system = "x86_64-linux";
     type = "derivation";
@@ -57,8 +66,8 @@
   {
     meta = {};
     name = "i3lock-color-2.13.c.4";
-    out = { outPath = "/nix/store/23dmn1z3fwxzw83rdm2d6cbld9ym0abq-i3lock-color-2.13.c.4"; };
-    outPath = "/nix/store/23dmn1z3fwxzw83rdm2d6cbld9ym0abq-i3lock-color-2.13.c.4";
+    out = { outPath = "/nix/store/6n3f5g33hc27pb0jr4518a1fz9mr7kmr-i3lock-color-2.13.c.4"; };
+    outPath = "/nix/store/6n3f5g33hc27pb0jr4518a1fz9mr7kmr-i3lock-color-2.13.c.4";
     outputs = [ "out" ];
     system = "x86_64-linux";
     type = "derivation";
@@ -75,9 +84,9 @@
   }
   {
     meta = {};
-    name = "neovim-0.5.0";
-    out = { outPath = "/nix/store/4zr4447y7khgbxas8091xifv1jm7vvyv-neovim-0.5.0"; };
-    outPath = "/nix/store/4zr4447y7khgbxas8091xifv1jm7vvyv-neovim-0.5.0";
+    name = "neovim-0.8.1";
+    out = { outPath = "/nix/store/2gmqn3ngqa2hcxl1zwwwx32v5j7axzhk-neovim-0.8.1"; };
+    outPath = "/nix/store/2gmqn3ngqa2hcxl1zwwwx32v5j7axzhk-neovim-0.8.1";
     outputs = [ "out" ];
     system = "x86_64-linux";
     type = "derivation";
@@ -112,6 +121,15 @@
   }
   {
     meta = {};
+    name = "nix-prefetch-git";
+    out = { outPath = "/nix/store/lwbpw7ggzjkrjfsq9jgmkfz9qzzgj8p2-nix-prefetch-git"; };
+    outPath = "/nix/store/lwbpw7ggzjkrjfsq9jgmkfz9qzzgj8p2-nix-prefetch-git";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    meta = {};
     name = "nss-cacert-3.66";
     out = { outPath = "/nix/store/3zs6h756mi5ffq1ziqfzhbf20j3f9brr-nss-cacert-3.66"; };
     outPath = "/nix/store/3zs6h756mi5ffq1ziqfzhbf20j3f9brr-nss-cacert-3.66";
@@ -124,6 +142,15 @@
     name = "physlock-v13";
     out = { outPath = "/nix/store/423dyxdpdc7s90h3finhsdqfiwqz676w-physlock-v13"; };
     outPath = "/nix/store/423dyxdpdc7s90h3finhsdqfiwqz676w-physlock-v13";
+    outputs = [ "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
+    meta = {};
+    name = "rnix-lsp-0.2.5";
+    out = { outPath = "/nix/store/s1d81gdfrw1z6wxxz76fq6f47g8i77kh-rnix-lsp-0.2.5"; };
+    outPath = "/nix/store/s1d81gdfrw1z6wxxz76fq6f47g8i77kh-rnix-lsp-0.2.5";
     outputs = [ "out" ];
     system = "x86_64-linux";
     type = "derivation";
