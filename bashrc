@@ -65,8 +65,8 @@ if [ "$TERM" = 'rxvt-unicode-256color' ]; then
     export TERM='xterm-256color'
 fi
 
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=nvim
+export EDITOR=nvim
 export PAGER='less -q' # disable bell for less
 
 export PYTHONSTARTUP=~/.config/ptpython/config.py
