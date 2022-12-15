@@ -30,6 +30,9 @@
 [commit]
     verbose = true # -v
 
+[rerere]
+    enabled = true
+
 # yes, it's a statement
 [init]
 	defaultBranch = master
