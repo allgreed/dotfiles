@@ -56,8 +56,11 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Testing
 Plugin 'jiangmiao/auto-pairs'
 
-" Syntax highlighters
+" the upper one is tested
 Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+
+" Syntax highlighters
 Plugin 'posva/vim-vue'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'hashivim/vim-terraform'
