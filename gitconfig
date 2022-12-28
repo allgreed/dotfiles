@@ -24,6 +24,7 @@
     default = simple
     followTags = false
     recurseSubmodules = check
+    autoSetupRemote = true
 [pull]
     ff = only
 
