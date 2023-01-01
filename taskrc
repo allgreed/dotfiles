@@ -33,7 +33,7 @@ color.tagged=
 context.out=-home
 context.plane=-home (netz:F or netz:Maybe)
 context.triage=-triaged
-report.next.filter=+PENDING -BLOCKED limit:3
+report.next.filter=+PENDING -BLOCKED limit:5
 
 report.pending.description=All actionable tasks
 report.pending.columns=id,start.age,entry.age,depends,priority,project,tags,urgent,important,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
