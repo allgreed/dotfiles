@@ -28,6 +28,9 @@
 [pull]
     ff = only
 
+[rebase]
+    autosquash = true
+
 [commit]
     verbose = true # -v
 
