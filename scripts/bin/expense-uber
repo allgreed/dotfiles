@@ -1,0 +1,36 @@
+#!/usr/bin/env expect
+
+spawn hledger add
+expect "Date" {
+    send "\t\n"
+}
+expect "Description" {
+    send "Uber\n"
+}
+expect "Account 1" {
+    send "expenses:life:transportation\n"
+}
+
+expect "Amount" {
+    send "[lindex $argv 0] PLN\n"
+}
+
+expect "Account 2" {
+    send "assets:mbank:main\n"
+}
+
+expect "Amount" {
+    send "\t\n"
+}
+
+expect "Account 3" {
+    send "\n"
+}
+
+expect "Save" {
+    send "y\n"
+}
+
+expect "Saved." {
+
+}
