@@ -23,7 +23,10 @@ in
       videospeed
       polish-dictionary
       news-feed-eradicator
+      # wasn't this having some problems? o.0
       solarized-light
+      # also: cleanlinks
+      # I don't care about cookies
     ];
     profiles = {
       myprofile = {
