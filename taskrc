@@ -37,10 +37,17 @@ context.triage=-triaged
 report.next.filter=+PENDING -BLOCKED limit:5
 
 report.pending.description=All actionable tasks
-report.pending.columns=id,start.age,entry.age,depends,priority,project,tags,urgent,important,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
-report.pending.labels=ID,Active,Age,Deps,P,Project,Tag,Urg,Imp,Recur,S,Due,Until,Description,Urg
+report.pending.columns=id,start.age,entry.age,priority,project,tags,urgent,important,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
+report.pending.labels=ID,Active,Age,P,Project,Tag,Urg,Imp,Recur,S,Due,Until,Description,Urg
 report.pending.sort=urgency-
 report.pending.filter=+PENDING -BLOCKED limit:15
+
+# this is like pending, except instead of a hard limit it uses urgency
+report.aargh.description=Likely should be done now
+report.aargh.columns=id,start.age,entry.age,priority,project,tags,urgent,important,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
+report.aargh.labels=ID,Active,Age,P,Project,Tag,Urg,Imp,Recur,S,Due,Until,Description,Urg
+report.aargh.sort=urgency-
+report.aargh.filter=+PENDING -BLOCKED urgency > 10.9
 
 uda.urgent.type=string
 uda.urgent.label=Urgent
