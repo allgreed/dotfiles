@@ -23,6 +23,7 @@ set laststatus=2 " always show statusline
 set rulerformat=%19(%l,%c%V%7(<0x%B>%)%=%P%)
 
 set ttimeoutlen=10 " wait before sequence completes [ms], no idea why, but I've changed it
+set t_Co=256 " enable all the colors xD
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editorial behaviours
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -36,7 +37,6 @@ set shiftround      " Round identation to multiples
 set nrformats-=octal " I don't work with octal literals really
 
 set nojoinspaces
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins 
@@ -81,6 +81,9 @@ filetype plugin indent on
 
 let g:hexmode_patterns = '*.bin,*.exe,*.dat,*.o'
 "let g:hexmode_xxd_options = '-g 1'
+
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => OS integration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -88,8 +91,8 @@ set clipboard=unnamedplus " Use system clipboard as default buffer
 
 set undofile
 set undodir=$HOME/.vim/undo
-" that's swap
-set directory^=$HOME/.vim/swap// 
+
+set directory^=$HOME/.vim/swap// " that's swap
 
 " prevent exploiting modeline vulnerability
 if has('patch-8.1.1366') || has('nvim-0.3.6')
@@ -140,6 +143,9 @@ let mapleader=" "
 :map <Leader>v  i<!--v--><Esc>
 :map <Leader>/  /\<\><Left><Left>
 
+" double space => alternate file, instanely usefull
+nnoremap <Leader><Leader> <C-^>
+
 "usefull alisaes
 :command! Wsudo w ! doas tee %
 
@@ -161,6 +167,7 @@ nnoremap <C-l> <C-w>l
 set pastetoggle=<f5>
 
 noh " don't show search highlights on vimrc reload
+set nospell " nor activate spell check by default
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Lessons learned
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -171,30 +178,28 @@ noh " don't show search highlights on vimrc reload
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" what the shit is this?
-set complete+=kspell
-
-nnoremap <Leader><Leader> <C-^>
-
-:command! Pl :set spelllang=pl spell
-set nospell " fixes interpreting the above, but possible messes with spellcheck on gitcommit
-
-set history=100 "is this enough"
-
-:command! Plm :normal! ggO # vim: set spelllang=pl spell:<ESC>^x
-set nospell " fixes interpreting the above, but possible messes with spellcheck on gitcommit
-
-noremap <silent> <C-S>          :update<CR>
-vnoremap <silent> <C-S>         <C-C>:update<CR>v
-inoremap <silent> <C-S>         <C-O>:update<CR>
-set scrolloff=3
-set smartindent
+set ignorecase
+set smartcase
 
 " autopairs
 " # how about only in insert mode?
 let g:AutoPairsShortcutJump = '<C-F>'
 
-" enable all the colors xD
-set t_Co=256
+set history=100 "is this enough?
 
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>v
+inoremap <silent> <C-S>         <C-O>:update<CR>
+
+set scrolloff=3
+
+set smartindent
+
+" Do I need-want Polish search?
+" what the shit is this?
+"set complete+=kspell
+":command! Pl :set spelllang=pl spell
+"set nospell " fixes interpreting the above, but possible messes with spellcheck on gitcommit
+"
+":command! Plm :normal! ggO # vim: set spelllang=pl spell:<ESC>^x
+"set nospell " fixes interpreting the above, but possible messes with spellcheck on gitcommit
