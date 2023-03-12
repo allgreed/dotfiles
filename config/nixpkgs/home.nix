@@ -16,7 +16,7 @@ in
     # TODO: a Null package? that accepts every action, but doesn't actually output anything...?
     #package = pkgs.htop;
     extensions = with nur.repos.rycee.firefox-addons; [
-      https-everywhere
+      https-everywhere # likely redundant with the https-only mode in firefox...
       lastpass-password-manager
       vimium
       ublock-origin
@@ -25,8 +25,9 @@ in
       news-feed-eradicator
       # wasn't this having some problems? o.0
       solarized-light
-      # also: cleanlinks
+      # also: cleanlinks # supposedly redundant with certain ublock-origin settings, afaik removeparam
       # I don't care about cookies
+      # skip-redirect - 12.03.2023 -> trying it out
     ];
     profiles = {
       myprofile = {
@@ -37,6 +38,7 @@ in
           "browser.warnOnQuit" = true;
           "browser.sessionstore.restore_tabs_lazily" = false;
           "signon.rememberSignons" = false;
+          # HTTPS-Only Mode <- enable in all windows - how to?
         };
       };
     };
