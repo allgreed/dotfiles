@@ -19,6 +19,16 @@
     type = "derivation";
   }
   {
+    man = { outPath = "/nix/store/4k8dwbc4bw9azbyzb21w9lxzi52krydx-fzf-0.35.1-man"; };
+    meta = {};
+    name = "fzf-0.35.1";
+    out = { outPath = "/nix/store/31fg3d2z91nzjpsbpdqcxi520gkjcfpy-fzf-0.35.1"; };
+    outPath = "/nix/store/31fg3d2z91nzjpsbpdqcxi520gkjcfpy-fzf-0.35.1";
+    outputs = [ "man" "out" ];
+    system = "x86_64-linux";
+    type = "derivation";
+  }
+  {
     meta = {};
     name = "git-hub-1.1.0";
     out = { outPath = "/nix/store/91ksh0yslahyz1grxb4hmzlsk01v243b-git-hub-1.1.0"; };
@@ -29,9 +39,9 @@
   }
   {
     meta = {};
-    name = "google-chrome-105.0.5195.125";
-    out = { outPath = "/nix/store/q7w900mva34d66663z32l53693pq9zra-google-chrome-105.0.5195.125"; };
-    outPath = "/nix/store/q7w900mva34d66663z32l53693pq9zra-google-chrome-105.0.5195.125";
+    name = "google-chrome-110.0.5481.100";
+    out = { outPath = "/nix/store/mfcdk6vvhr3sb8pxz5nf587gqjsrh1d7-google-chrome-110.0.5481.100"; };
+    outPath = "/nix/store/mfcdk6vvhr3sb8pxz5nf587gqjsrh1d7-google-chrome-110.0.5481.100";
     outputs = [ "out" ];
     system = "x86_64-linux";
     type = "derivation";
@@ -59,15 +69,6 @@
     name = "i3blocks-1.5";
     out = { outPath = "/nix/store/q5chcd4jxj4ghhqcdaa84xfqrda977k0-i3blocks-1.5"; };
     outPath = "/nix/store/q5chcd4jxj4ghhqcdaa84xfqrda977k0-i3blocks-1.5";
-    outputs = [ "out" ];
-    system = "x86_64-linux";
-    type = "derivation";
-  }
-  {
-    meta = {};
-    name = "i3lock-color-2.13.c.4";
-    out = { outPath = "/nix/store/6n3f5g33hc27pb0jr4518a1fz9mr7kmr-i3lock-color-2.13.c.4"; };
-    outPath = "/nix/store/6n3f5g33hc27pb0jr4518a1fz9mr7kmr-i3lock-color-2.13.c.4";
     outputs = [ "out" ];
     system = "x86_64-linux";
     type = "derivation";
