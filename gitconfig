@@ -4,7 +4,6 @@
     path = ~/.gitid
 
 [core]
-	editor = vim
 	pager = less
 
 	excludesfile = ~/.gitignore_global

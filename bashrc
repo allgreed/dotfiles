@@ -67,6 +67,7 @@ fi
 
 export VISUAL=nvim
 export EDITOR=nvim
+export GIT_EDITOR=$EDITOR
 export PAGER='less -q' # disable bell for less
 
 export PYTHONSTARTUP=~/.config/ptpython/config.py
