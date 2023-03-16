@@ -55,6 +55,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 
 " Testing
 Plugin 'jiangmiao/auto-pairs'
+" ^ this is nice, but requires some tweaking, while I have a moment
+Plugin 'dense-analysis/ale'
 
 " the upper one is tested
 Plugin 'leafgarland/typescript-vim'
@@ -84,6 +86,8 @@ let g:hexmode_patterns = '*.bin,*.exe,*.dat,*.o'
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
+let g:ale_disable_lsp = 1
+let g:ale_use_neovim_diagnostics_api = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => OS integration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
