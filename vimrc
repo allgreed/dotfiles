@@ -88,6 +88,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 let g:ale_disable_lsp = 1
 let g:ale_use_neovim_diagnostics_api = 1
+let g:syntastic_javascript_eslint_args = "--cache"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => OS integration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
