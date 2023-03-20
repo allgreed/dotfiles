@@ -56,6 +56,12 @@
 [diff "bin"]
     textconv = hexdump -v -C
 
+[difftool]
+    prompt = false
+
+[difftool "nvimdiff"]
+    cmd = nvim -d $LOCAL $REMOTE
+
 # UI
 ############################
 [alias]
