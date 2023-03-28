@@ -28,6 +28,8 @@ set t_Co=256 " enable all the colors xD
 " => Editorial behaviours
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set magic " you're a wizzard, Harry!
+" but in all seriousness, this is the default, I'd just like to keep it
+" explicit
 
 " Smart tabs
 set tabstop=4       " The width of a TAB is set to 4
