@@ -27,6 +27,8 @@ set t_Co=256 " enable all the colors xD
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editorial behaviours
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set magic " you're a wizzard, Harry!
+
 " Smart tabs
 set tabstop=4       " The width of a TAB is set to 4
 set shiftwidth=4    " Indents will have a width of 4
