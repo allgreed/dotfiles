@@ -186,6 +186,12 @@ set nospell " nor activate spell check by default
 set ignorecase
 set smartcase
 
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'typescriptreact': ['eslint'],
+\}
+nmap <Leader>f <Plug>(ale_fix)
+
 " autopairs
 " # how about only in insert mode?
 let g:AutoPairsShortcutJump = '<C-F>'
