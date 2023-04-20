@@ -62,10 +62,6 @@ Plugin 'jiangmiao/auto-pairs'
 " ^ this is nice, but requires some tweaking, while I have a moment
 Plugin 'dense-analysis/ale'
 
-" the upper one is tested
-Plugin 'leafgarland/typescript-vim'
-Plugin 'peitalin/vim-jsx-typescript'
-
 " Syntax highlighters
 Plugin 'posva/vim-vue'
 Plugin 'pearofducks/ansible-vim'
@@ -81,6 +77,8 @@ Plugin 'google/vim-jsonnet'
 Plugin 'allgreed/vim-java-bytecode'
 Plugin 'ziglang/zig.vim'
 Plugin 'torrancew/vim-openscad'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 
 call vundle#end()
 filetype plugin indent on 
