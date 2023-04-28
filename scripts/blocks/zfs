@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+result_line_count=$(zpool status -x | wc -l)
+
+if [[ $result_line_count -eq 1 ]]; then
+    echo ""
+    echo ""
+else
+    echo 'ZFS error!'
+    echo 'ZFS error!'
+    echo `xrdb -query | grep "*color1:" | cut -f 2`;
+fi
