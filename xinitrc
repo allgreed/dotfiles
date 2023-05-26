@@ -10,7 +10,7 @@ xrdb ~/.Xresources
 xrdb -merge ~/.Xresources.local
 
 xcape -e 'Caps_Lock=Escape;Control_L=Escape;ISO_Level3_Shift=equal' -t 400
-xcape -e 'Shift_R=parenright;Shift_L=parenleft' -t 600
+xcape -e 'Shift_R=parenright;Shift_L=parenleft' -t 700
 xmodmap ~/.Xmodmap
 numlockx on
 
