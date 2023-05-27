@@ -123,3 +123,8 @@ alias cp="rsync -ah"
 alias r="ranger"
 
 alias v="vim"
+
+subsextract() {
+    COMMON=$(echo "$1" | sed 's/\.[^.]*$//')
+    ffmpeg -i $1 -map 0:s:0 $COMMON.en.srt
+}
