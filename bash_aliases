@@ -115,7 +115,6 @@ fi
 ##############
 # TESTING AREA
 ##############
-alias subs-hear="grep -E '\]$' -v"
 alias alert='dunstify --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # space after alias does magic!
