@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+COMMON=$(echo "$1" | sed 's/\.[^.]*$//')
+ffmpeg -i $1 -map 0:s:0 $COMMON.en.srt >&2
+echo $COMMON

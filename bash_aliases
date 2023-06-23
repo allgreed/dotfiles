@@ -123,7 +123,9 @@ alias r="ranger"
 
 alias v="vim"
 
-subsextract() {
-    COMMON=$(echo "$1" | sed 's/\.[^.]*$//')
-    ffmpeg -i $1 -map 0:s:0 $COMMON.en.srt
+sub-nocc() {
+    # TODO: maybe replace .* with the actual (\w+\s?)+" size="\d+" but I don't feel like it now
+    sed 's/<font face=".*">//' -i $1
+    sed 's/<\/font>//' -i $1
+    filter-subtitles.py -s $1
 }
