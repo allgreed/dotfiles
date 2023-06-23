@@ -385,7 +385,7 @@
 # TODO: add script
 
 [Rambox_Messanger_msg]
-    summary = 'Facebook'
+    summary = Facebook
 
     deskotpo_entry = ""
     format = ""
