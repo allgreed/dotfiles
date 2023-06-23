@@ -208,6 +208,8 @@ set scrolloff=3
 
 set smartindent
 
+set wildignore+=node_modules/**,dist/**
+
 " Do I need-want Polish search?
 " what the shit is this?
 "set complete+=kspell
