@@ -118,10 +118,15 @@ complete -o nospace -F _task t
 
 # Testing area
 #########################
+# TODO: need something better than this! <- this fails at paths that have spaces, doesn't record history for frequency/latest-based autocomplete, etc
 function cd {
     builtin cd "$@"
     pwd > ~/.lastcd
 }
 alias lcd="cd $(cat ~/.lastcd)"
+
+# erm... it is nice, but also... too much stuff on my desktop I guess
 export CDPATH=.:~/Desktop
+
+# what does this even do? o.0 6.07.23
 shopt -s dotglob

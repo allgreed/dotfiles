@@ -129,3 +129,6 @@ sub-nocc() {
     sed 's/<\/font>//' -i $1
     filter-subtitles.py -s $1
 }
+
+# TODO: what about the magic space in alias?
+alias e="$EDITOR"
