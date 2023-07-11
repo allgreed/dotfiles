@@ -65,3 +65,10 @@ uda.netz.values=T,F,Prepare,Maybe
 uda.triaged.type=string
 uda.triaged.label=Triaged
 uda.triaged.values=T
+
+uda.reviewed.type=date
+uda.reviewed.label=Reviewed
+report._reviewed.description=Tasksh review report.  Adjust the filter to your needs.
+report._reviewed.columns=uuid
+report._reviewed.sort=reviewed+,modified+
+report._reviewed.filter=( reviewed.none: or reviewed.before:now-14days ) and ( +PENDING or +WAITING )
