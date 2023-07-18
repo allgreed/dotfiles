@@ -40,6 +40,12 @@
 [init]
 	defaultBranch = master
 
+[safe]
+    # since I rarely use bare repos on my terminal machines
+    # this mitigates an obscure attack vector 
+    # https://github.com/jwilk/git-landmine
+    bareRepository = explicit
+
 # 3rd party
 ############################
 [hub]
