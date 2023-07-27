@@ -21,8 +21,8 @@ alias k="kubectl"
 alias pr="hub pull-request"
 alias led="vim $LEDGER_FILE"
 alias ulock="ssh-add ~/.ssh/id_ed25519"
-alias hbs="hledger bs --no-elide --no-total"
-alias total="hledger bs"
+alias hbs="hledger bs --no-total --infer-market-price"
+alias total="hledger bs --infer-market-price"
 
 ### defaults ###
 alias mv='mv -i'
@@ -31,7 +31,6 @@ alias less='less -q'
 alias which='which -a'
 alias hledger-iadd="\hledger-iadd --date-format='%d[.[%m[.[%Y]]]]'"
 alias ls='ls -Ah'
-alias hledger="hledger --infer-market-price"
 
 ### typos ###
 alias cd..="cd .."
