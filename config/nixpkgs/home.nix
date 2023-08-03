@@ -39,6 +39,7 @@ in
           "browser.sessionstore.restore_tabs_lazily" = false;
           "signon.rememberSignons" = false;
           # HTTPS-Only Mode <- enable in all windows - how to?
+          # add StartPage and make it the default search engine
         };
       };
     };
