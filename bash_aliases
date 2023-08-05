@@ -21,7 +21,7 @@ alias k="kubectl"
 alias pr="hub pull-request"
 alias led="vim $LEDGER_FILE"
 alias ulock="ssh-add ~/.ssh/id_ed25519"
-alias hbs="hledger bs --no-total --infer-market-price"
+alias hbs="hledger bs --no-total --infer-market-price -3"
 alias total="hledger bs --infer-market-price"
 
 ### defaults ###
@@ -50,7 +50,7 @@ alias cal="~/Dotfiles/scripts/cal_compatibility_wrapper"
 ### custom ###
 alias volume="~/.scripts/volume --signal 10"
 alias shred-hdd='shred -uvzn9' # magnetic trace still can be recovered from hdd after ~7 rewrites
-alias dhcprc="sudo dhclient -r; sudo dhclient -v; ping wp.pl -c 2"
+alias dhcprc="sudo bash -c 'dhclient -r; dhclient -v'; ping wp.pl -c 2"
 alias vtmp="vim ~/tmp"
 alias jozef="vlc ~/Music/Only_Lover_Left_Alive_Full_OST.opus"
 alias adtransaction="hledger-iadd"
