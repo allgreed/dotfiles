@@ -46,6 +46,10 @@
     # https://github.com/jwilk/git-landmine
     bareRepository = explicit
 
+# huh?
+[advice]
+	addIgnoredFile = false
+
 # 3rd party
 ############################
 [hub]
