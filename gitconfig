@@ -48,7 +48,8 @@
 
 # huh?
 [advice]
-	addIgnoredFile = false
+    addIgnoredFile = false
+    addEmptyPathspec = false
 
 # 3rd party
 ############################
