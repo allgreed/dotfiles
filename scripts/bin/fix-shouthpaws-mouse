@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# TODO: add device selection
 xinput set-button-map $(xinput list --id-only "DaKai 2.4G RX Mouse") 3 2 1
 xinput set-button-map $(xinput list --id-only "Kingsis Peripherals Evoluent VerticalMouse 4 Left") 3 2 1 4 5 6 7 0
 # the 2 and 4-7 don't matter, probably there's a nicer way to express this, but what I want is to swap 1 and 3 and disable 8
