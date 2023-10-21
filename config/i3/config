@@ -233,7 +233,6 @@ bindsym $mod+t exec $launch_terminal
 # Autostart
 #########################################
 exec_always --no-startup-id ~/.fehbg
-exec_always ~/.scripts/bin/fix-shouthpaws-mouse
 exec --no-startup-id conky
 exec --no-startup-id unclutter
 
