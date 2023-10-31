@@ -318,7 +318,8 @@ for_window [title="zoom"] floating enable
 # Testing
 #######
 # not so sure about this one...
-focus_follows_mouse no
+# it is annoying sometimes - 31.10.2023; trying without
+#focus_follows_mouse no
 
 bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
 bindsym $mod+F1 exec $launch_terminal -e play ~/Music/sounds/fanfary.mp3
