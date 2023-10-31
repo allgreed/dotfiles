@@ -270,7 +270,8 @@ set $screenshot escrotum "%Y-%m-%d-%H-%M-%S_\$wx\$h.png" --exec "mv \$f ~/Shots"
 bindsym Print exec $screenshot
 bindsym --release Shift+Print exec $screenshot --select
 # for keyboards without conviniently located Print
-bindsym --release $mod+Shift+p exec $screenshot --select
+bindsym $mod+s exec $screenshot
+bindsym --release $mod+Shift+s exec $screenshot --select
 
 ########################################
 # Placement
@@ -316,9 +317,6 @@ for_window [title="zoom"] floating enable
 #######
 # Testing
 #######
-bindsym $mod+s exec $screenshot
-bindsym --release $mod+Shift+s exec $screenshot --select
-
 # not so sure about this one...
 focus_follows_mouse no
 
