@@ -324,3 +324,6 @@ for_window [title="zoom"] floating enable
 bindsym $mod+g exec $launch_terminal -e ranger # this is nice, but neet to find a better binding
 bindsym $mod+F1 exec $launch_terminal -e play ~/Music/sounds/fanfary.mp3
 #no_focus [window_role="pop-up"] TODO: have some fun with that
+
+# TODO: bind find nearest free workspace script
+bindsym $mod+z workspace $WS1
