@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+import i3ipc
+import subprocess
+import argparse
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description = "Find the next non-opened workspace and go there.")
+    parser.add_argument('-m', '--move', action="store_true",
+        help="move a container there instead")
+    args = parser.parse_args()
+
+    i3 = i3ipc.Connection()
+    active_workspaces = i3.get_workspaces()
+# TODO: maybe 9?
+    active_workspace_numbers = {w.num for w in active_workspaces}.union({8,10})
+# TODO: get this dynamically? o.0
+    all_workspaces = set(range(1,10+1))
+
+    try:
+        next_workspace = sorted(all_workspaces.difference(active_workspace_numbers))[0]
+    except IndexError:
+        # TODO: figure out the markup
+        p = subprocess.run(["dunstify","nie mamy już <s>pocisków</s> workspace'ów", "-t", "3000"])
+    else:
+        target_workspace = "{0}:{0}".format(next_workspace)
+
+        if args.move:
+            i3.command("move container to workspace " + target_workspace)
+        else:
+            i3.command("workspace " + target_workspace)
+
+
+if __name__ == "__main__":
+    main()
