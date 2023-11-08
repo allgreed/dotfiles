@@ -24,6 +24,7 @@ urgency.uda.important.T.coefficient=3
 urgency.uda.urgent.F.coefficient=-1
 urgency.uda.important.F.coefficient=-10
 urgency.user.tag.nine5.coefficient=5
+urgency.user.tag.cron.coefficient=10
 urgency.age.coefficient=10
 urgency.blocking.coefficient=4
 
