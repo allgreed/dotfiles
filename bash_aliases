@@ -50,7 +50,6 @@ alias cal="~/Dotfiles/scripts/cal_compatibility_wrapper"
 ### custom ###
 alias volume="~/.scripts/volume --signal 10"
 alias shred-hdd='shred -uvzn9' # magnetic trace still can be recovered from hdd after ~7 rewrites
-alias dhcprc="sudo bash -c 'dhclient -r; dhclient -v'; ping wp.pl -c 2"
 alias vtmp="vim ~/tmp"
 alias jozef="vlc ~/Music/Only_Lover_Left_Alive_Full_OST.opus"
 alias adtransaction="hledger-iadd"
@@ -131,3 +130,10 @@ sub-nocc() {
 
 # TODO: what about the magic space in alias?
 alias e="$EDITOR"
+
+# TODO: better name?
+dhcprc() {
+    # TODO: use sudo wrapper once it's fixed
+    doas sh -c 'dhclient -r; dhclient -v'
+    ping wp.pl -c 2
+}
