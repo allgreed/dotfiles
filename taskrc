@@ -75,3 +75,9 @@ report._reviewed.sort=reviewed+,modified+
 # TODO: am I sure about that -BLOCKED? We'll see
 # it's a bit anoying having to review stuff that's blocked, on the other hand... maybe it's worth it? Dunno
 report._reviewed.filter=( reviewed.none: or reviewed.before:now-14days ) and ( +PENDING or +WAITING) -BLOCKED
+
+# testing area
+# it doesn't slow task calculation noticibly and this works more to my taste
+urgency.inherit=1
+urgency.blocking.coefficient=0
+urgency.blocked.coefficient=0
