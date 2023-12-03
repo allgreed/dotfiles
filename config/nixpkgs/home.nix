@@ -28,6 +28,7 @@ in
       # also: cleanlinks # supposedly redundant with certain ublock-origin settings, afaik removeparam
       # I don't care about cookies
       # skip-redirect - 12.03.2023 -> trying it out
+      # Multiple Tab Handler
     ];
     profiles = {
       myprofile = {
