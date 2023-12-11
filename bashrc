@@ -48,12 +48,20 @@ function load
     echo "Loading failed for $name, cannot source any of the: $@"
 }
 
-function resolve_nix_completion
+# TODO: this is a really bad name
+function _resolve_nix
+{
+    executable="$1";
+    echo "$(dirname $(readlink -f $(which $executable)))/../"
+    # TODO: maybe generate this via configuration.nix and have it in a #wellknown locaiton o.0?
+}
+
+# TODO: this is a really bad name
+function _resolve_nix_completion
 {
     executable="$1";
     filename="$2";
-
-    echo "$(dirname $(readlink -f $(which $executable)))/../share/bash-completion/completions/$filename"
+    echo "$(_resolve_nix $executable)/share/bash-completion/completions/$filename"
 }
 
 # Env
@@ -96,11 +104,13 @@ stty -ixon # disable ctrl+s - no more accidental weird freezes
 # Extensions
 #########################
 load 'aliases' ~/.bash_aliases
-load 'git prompt' $(resolve_nix_completion git git-prompt.sh) @fin
+load 'git prompt' $(_resolve_nix_completion git git-prompt.sh) @fin
 load 'prompt' ~/.bash_prompt
 load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
 load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
 load 'local stuff' ~/.bash_local @fin
+load 'autojump' $(_resolve_nix autojump)/share/autojump/autojump.bash
+
 # this has to happen after all prompts are loaded
 load 'direnv integration' @eval "direnv hook bash"
 
@@ -108,8 +118,8 @@ load 'direnv integration' @eval "direnv hook bash"
 # Autocompletes
 #########################
 load 'bash autocomplete' @nixos /usr/share/bash-completion/bash_completion
-load 'git autocomplete' $(resolve_nix_completion git git) /usr/share/bash-completion/completions/git
-load 'task autocomplete' $(resolve_nix_completion task task.bash) @fin
+load 'git autocomplete' $(_resolve_nix_completion git git) /usr/share/bash-completion/completions/git
+load 'task autocomplete' $(_resolve_nix_completion task task.bash) @fin
 __git_complete g __git_main # apply full git completion to "g" alias
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" m #" 
 complete -cf doas
