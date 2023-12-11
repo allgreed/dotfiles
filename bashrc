@@ -10,6 +10,11 @@ if [[ "$(tty)" == '/dev/tty1' ]]; then
     exec startx
 fi
 
+# fixes nix-shell and sometimes ssh
+if [ "$TERM" = 'rxvt-unicode-256color' ]; then
+    export TERM='xterm-256color'
+fi
+
 # Bootstrap
 #########################
 function load
@@ -60,22 +65,16 @@ PATH_SCRIPT_BINARIES=$HOME/.scripts/bin
 PATH=$PATH_LOCAL_BINARIES:$PATH_SCRIPT_BINARIES:$PATH:$PATH_ROOT_BINARIES
 export PATH
 
-# fixes nix-shell and sometimes ssh
-if [ "$TERM" = 'rxvt-unicode-256color' ]; then
-    export TERM='xterm-256color'
-fi
-
 export VISUAL=nvim
 export EDITOR=nvim
 export GIT_EDITOR=$EDITOR
-export PAGER='less -q' # disable bell for less
+export PAGER='less -q' # disable bell
 
 export PYTHONSTARTUP=~/.config/ptpython/config.py
 
 # cargo needs some special incentive in order to behave
 export CARGO_HOME=~/.cache/cargo
 
-# can symlink to ~/.hledger.journal instead
 export LEDGER_FILE="/home/allgreed/Documents/finance/2023.journal"
 export BAT_THEME='Solarized (light)'
 export DO_NOT_TRACK=1 # because why not :D
@@ -101,9 +100,9 @@ load 'git prompt' $(resolve_nix_completion git git-prompt.sh) @fin
 load 'prompt' ~/.bash_prompt
 load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
 load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+load 'local stuff' ~/.bash_local @fin
 # this has to happen after all prompts are loaded
 load 'direnv integration' @eval "direnv hook bash"
-load 'local stuff' ~/.bash_local @fin
 
 
 # Autocompletes
@@ -122,8 +121,10 @@ complete -o nospace -F _task t
 function cd {
     builtin cd "$@"
     pwd > ~/.lastcd
+    ls
 }
 alias lcd="cd $(cat ~/.lastcd)"
+# TODO: would autojump help here?
 
 # erm... it is nice, but also... too much stuff on my desktop I guess
 export CDPATH=.:~/Desktop
