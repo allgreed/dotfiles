@@ -23,9 +23,9 @@ conky.config = {
     minimum_height = 5,
 	minimum_width = 5,
     net_avg_samples = 2,
-    update_interval = 1.0,
+    update_interval = 60.0,
     use_spacer = 'none',
 }
 
 conky.text = [[${exec ls ~/Desktop | head -n 34}
-${exec c=$(ls ~/Desktop | wc -l); test $c -ge 35 && echo "… $(expr $c - 34) more"}]]
+${color red}${exec c=$(ls ~/Desktop | wc -l); test $c -ge 35 && echo "… $(expr $c - 34) more"}]]
