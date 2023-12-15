@@ -122,14 +122,16 @@ complete -o nospace -F _task t
 
 # Testing area
 #########################
-# TODO: need something better than this! <- this fails at paths that have spaces, doesn't record history for frequency/latest-based autocomplete, etc
 function cd {
     builtin cd "$@"
     pwd > ~/.lastcd
-    ls
 }
 alias lcd="cd $(cat ~/.lastcd)"
-# TODO: would autojump help here?
+# TODO: also bump autojump database
+# TODO: would autojump help here? I don't really think so
+# fun fact: I think this has a problem with the... well? no idea what, but it's not solved by commenting out this function o.0
+
+# TODO: open terminal at last cd
 
 # what does this even do? o.0 6.07.23
 shopt -s dotglob
