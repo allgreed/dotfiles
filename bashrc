@@ -105,6 +105,15 @@ load 'local stuff' ~/.bash_local @fin
 load 'autojump' $(_resolve_nix autojump share/autojump/autojump.bash)
 # this worked really well for ~2 years, I'm running it now alongside autojump, will see :D
 export CDPATH=.:~/Desktop
+function cd {
+    builtin cd "$@" 
+    pwd > "/tmp/.$USER-lastcd"
+}
+function lcd {
+    if [ -n "/tmp/.$USER-lastcd" ]; then
+        cd $(cat "/tmp/.$USER-lastcd")
+    fi 
+}
 
 # this has to happen after all prompts are loaded
 load 'direnv integration' @eval "direnv hook bash"
@@ -122,16 +131,7 @@ complete -o nospace -F _task t
 
 # Testing area
 #########################
-function cd {
-    builtin cd "$@"
-    pwd > ~/.lastcd
-}
-alias lcd="cd $(cat ~/.lastcd)"
-# TODO: also bump autojump database
-# TODO: would autojump help here? I don't really think so
-# fun fact: I think this has a problem with the... well? no idea what, but it's not solved by commenting out this function o.0
-
-# TODO: open terminal at last cd
+# TODO: i3 -> when openning a sensible terminal -> check if there are other terminals in the worksapce running bash, if yes: open with the same CWD as the terminal, if there're two, check ~/.lastcd
 
 # what does this even do? o.0 6.07.23
 shopt -s dotglob
