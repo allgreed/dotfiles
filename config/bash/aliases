@@ -9,8 +9,11 @@ alias python="/usr/bin/env python3"
 alias gs="git s"
 alias gp="git p"
 alias g="git"
+__git_complete g __git_main
 alias m="make"
+complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" m #" 
 alias t="task"
+complete -o nospace -F _task t
 alias py="ptpython" # better Python shell for quick experiments
 alias ..="cd .."
 alias ...="..; .."
@@ -63,6 +66,7 @@ alias today="date +%d-%m-%Y"
 alias show="command bat"
 alias bat="echo 5" # TODO: until proper battery script
 alias twatch="ls ~/.task/pending.data | entr -c task"
+complete -o nospace -F _task twatch
  
 ### functions ###
 tmp() {

@@ -1,0 +1,40 @@
+# vim: set filetype=sh :
+function load
+{
+    deps="$@"
+    name="$1"; shift
+
+    while [ -n "$1" ]; do
+        # @nixos means that the utility is already provided by Nixos and
+        # doesn't require additional loading
+        if [[ "$1" == '@nixos' && -n "$__NIXOS_SET_ENVIRONMENT_DONE" ]]; then
+            return 
+        fi 
+
+        if [[ "$1" == '@eval' ]]; then
+            code=$(eval $2)
+            eval "$code" && return
+        fi
+
+        # unconditionally stop processing and happily return
+        if [[ "$1" == '@fin' ]]; then
+            return
+        fi
+
+        if [ -n "$1" ]; then
+            2> /dev/null source "$1" && return 
+        fi 
+
+        shift
+    done
+
+    echo "Loading failed for $name, cannot source any of the: $deps"
+}
+
+# TODO: this is a really bad name
+# although not *super* bad - as it really on works with nix, lol
+function _resolve_nix
+{
+    executable="$1"; path="$2"
+    echo "$(dirname $(readlink -f $(which $executable)))/../$path"
+}
