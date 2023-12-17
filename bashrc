@@ -19,6 +19,7 @@ fi
 #########################
 function load
 {
+    deps="$@"
     name="$1"; shift
 
     while [ -n "$1" ]; do
@@ -45,7 +46,7 @@ function load
         shift
     done
 
-    echo "Loading failed for $name, cannot source any of the: $@"
+    echo "Loading failed for $name, cannot source any of the: $deps"
 }
 
 # TODO: this is a really bad name
@@ -95,9 +96,10 @@ stty -ixon # disable ctrl+s - no more accidental weird freezes
 
 # Extensions
 #########################
+# TODO: move to .config/bash
 load 'aliases' ~/.bash_aliases
 load 'git prompt' $(_resolve_nix git share/bash-completion/completions/git-prompt.sh) @fin
-load 'prompt' ~/.bash_prompt
+load 'prompt' ~/.config/bash/prompt
 load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
 load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
 load 'local stuff' ~/.bash_local @fin
@@ -105,13 +107,14 @@ load 'local stuff' ~/.bash_local @fin
 load 'autojump' $(_resolve_nix autojump share/autojump/autojump.bash)
 # this worked really well for ~2 years, I'm running it now alongside autojump, will see :D
 export CDPATH=.:~/Desktop
+lastcd="/tmp/.$USER-lastcd"
 function cd {
     builtin cd "$@" 
-    pwd > "/tmp/.$USER-lastcd"
+    pwd > $lastcd
 }
 function lcd {
-    if [ -n "/tmp/.$USER-lastcd" ]; then
-        cd $(cat "/tmp/.$USER-lastcd")
+    if [ -n $lastcd ]; then
+        cd $(cat $lastcd)
     fi 
 }
 
