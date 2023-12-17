@@ -1,3 +1,4 @@
+start=$(date +%s.%N)
 # Guards
 #########################
 case $- in
@@ -57,6 +58,7 @@ function lcd {
 }
 
 # this needs to happen after autocompletes
+# TODO: this adds ~50ms
 load 'aliases' ~/.config/bash/aliases
 
 # I want this to overwrite almost everything
@@ -97,3 +99,18 @@ export DO_NOT_TRACK=1 # because why not :D
 
 # what does this even do? o.0 6.07.23
 shopt -s dotglob
+
+end=$(date +%s.%N)
+read -r -d '' ARG0_PY << '--END'
+import sys
+from datetime import datetime
+
+_, *a = sys.argv
+b = map(float, a)
+start, end = map(datetime.fromtimestamp, b)
+
+diff = end - start
+
+print(f".bashrc took ~{diff.microseconds / 10 ** 3}ms")
+--END
+python3 -c "$ARG0_PY" $start $end
