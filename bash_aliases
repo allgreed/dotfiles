@@ -62,6 +62,7 @@ alias mon="monthly-report"
 alias today="date +%d-%m-%Y"
 alias show="command bat"
 alias bat="echo 5" # TODO: until proper battery script
+alias twatch="ls ~/.task/pending.data | entr -c task"
  
 ### functions ###
 tmp() {
@@ -116,7 +117,8 @@ fi
 alias alert='dunstify --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # space after alias does magic!
-alias cp="rsync -ah"
+#alias cp="rsync -ah"
+# TODO: o.0 wtf? - see commit that introduced it
 alias r="ranger"
 
 alias v="vim"

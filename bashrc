@@ -124,10 +124,13 @@ load 'direnv integration' @eval "direnv hook bash"
 load 'bash autocomplete' @nixos /usr/share/bash-completion/bash_completion
 load 'git autocomplete' $(_resolve_nix git share/bash-completion/completions/git) /usr/share/bash-completion/completions/git
 load 'task autocomplete' $(_resolve_nix task share/bash-completion/completions/task.bash) @fin
+# some of the autcompletes belong to aliases, so... do I need to impose an order on loading - everything, aliases, then direnv? o.0
+# TODO: try?
 __git_complete g __git_main # apply full git completion to "g" alias
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" m #" 
 complete -cf doas
 complete -o nospace -F _task t
+complete -o nospace -F _task twatch
 
 # Testing area
 #########################
