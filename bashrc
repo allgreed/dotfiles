@@ -33,40 +33,6 @@ set -o vi; # vim in bash
 bind -r '\C-s'
 stty -ixon # disable ctrl+s - no more accidental weird freezes
 
-# Extensions
-#########################
-load 'git prompt' $(_resolve_nix git share/bash-completion/completions/git-prompt.sh) @fin
-load 'prompt' ~/.config/bash/prompt
-load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
-load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-load 'bash autocomplete' @nixos /usr/share/bash-completion/bash_completion
-load 'git autocomplete' $(_resolve_nix git share/bash-completion/completions/git) /usr/share/bash-completion/completions/git
-load 'task autocomplete' $(_resolve_nix task share/bash-completion/completions/task.bash) @fin
-
-load 'autojump' $(_resolve_nix autojump share/autojump/autojump.bash)
-# this worked really well for ~2 years, I'm running it now alongside autojump, will see :D
-export CDPATH=.:~/Desktop
-lastcd="/tmp/.$USER-lastcd"
-function cd {
-    builtin cd "$@" 
-    pwd > $lastcd
-}
-function lcd {
-    if [ -n $lastcd ]; then
-        cd $(cat $lastcd)
-    fi 
-}
-
-# this needs to happen after autocompletes
-# TODO: this adds ~50ms
-load 'aliases' ~/.config/bash/aliases
-
-# I want this to overwrite almost everything
-load 'local stuff' ~/.bash_local @fin
-
-# this has to happen after all prompts are loaded
-load 'direnv integration' @eval "direnv hook bash"
-
 # Env
 #########################
 # TODO: since it's not needed on nixos -> move this to a helper utility and load
@@ -91,6 +57,41 @@ export CARGO_HOME=~/.cache/cargo
 export LEDGER_FILE="/home/allgreed/Documents/finance/2023.journal"
 export BAT_THEME='Solarized (light)'
 export DO_NOT_TRACK=1 # because why not :D
+
+# Extensions
+# are after env, since they may depends on env
+#########################
+load 'git prompt' $(_resolve_nix git share/bash-completion/completions/git-prompt.sh) @fin
+load 'prompt' ~/.config/bash/prompt
+load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
+load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+load 'bash autocomplete' @nixos /usr/share/bash-completion/bash_completion
+load 'git autocomplete' $(_resolve_nix git share/bash-completion/completions/git) /usr/share/bash-completion/completions/git
+load 'task autocomplete' $(_resolve_nix task share/bash-completion/completions/task.bash) @fin
+
+load 'autojump' $(_resolve_nix autojump share/autojump/autojump.bash)
+# this worked really well for ~2 years, I'm running it now alongside autojump, will see :D
+export CDPATH=.:~/Desktop
+lastcd="/tmp/.$USER-lastcd"
+function cd {
+    builtin cd "$@" 
+    pwd > $lastcd
+}
+function lcd {
+    if [ -n $lastcd ]; then
+        cd $(cat $lastcd)
+    fi 
+}
+
+# this needs to happen after autocompletes
+# TODO: this adds ~30-50ms -> which is waaay to much for an aliases!
+load 'aliases' ~/.config/bash/aliases
+
+# I want this to overwrite almost everything
+load 'local stuff' ~/.bash_local @fin
+
+# this has to happen after all prompts are loaded
+load 'direnv integration' @eval "direnv hook bash"
 
 
 # Testing area
