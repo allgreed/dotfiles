@@ -81,3 +81,4 @@ report._reviewed.filter=( reviewed.none: or reviewed.before:now-14days ) and ( +
 urgency.inherit=1
 urgency.blocking.coefficient=0
 urgency.blocked.coefficient=0
+json.array=on
