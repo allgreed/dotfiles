@@ -50,6 +50,7 @@ report.aargh.labels=ID,Active,Age,P,Project,Tag,Urg,Imp,Recur,S,Due,Until,Descri
 report.aargh.sort=urgency-
 report.aargh.filter=+PENDING -BLOCKED urgency > 10.9
 
+# urgent means: it's significantly better to do it now than later OR it's significantly worse to do it with every passing second
 uda.urgent.type=string
 uda.urgent.label=Urgent
 uda.urgent.values=T,F
@@ -82,3 +83,6 @@ urgency.inherit=1
 urgency.blocking.coefficient=0
 urgency.blocked.coefficient=0
 json.array=on
+# q stands for quick -> it should have high prio to not be starved by more demeanding tasks
+# TODO: lower this, but bump when combined with urgent
+urgency.user.tag.q.coefficient=7
