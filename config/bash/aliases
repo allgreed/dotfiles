@@ -24,8 +24,8 @@ alias k="kubectl"
 alias pr="hub pull-request"
 alias led="vim $LEDGER_FILE"
 alias ulock="ssh-add ~/.ssh/id_ed25519"
-alias hbs="hledger bs --no-total --infer-market-price -3"
-alias total="hledger bs --infer-market-price"
+alias hbs="hledger bs --no-total -3"
+alias total="hledger bs"
 
 ### defaults ###
 alias mv='mv -i'
