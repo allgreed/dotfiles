@@ -82,6 +82,7 @@
     a = add
     c = commit
     d = diff
+    dw = diff --word-diff
     p = push
     s = status --short
 
