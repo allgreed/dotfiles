@@ -143,3 +143,22 @@ dhcprc() {
     doas sh -c 'dhclient -r; dhclient -v'
     ping wp.pl -c 2
 }
+
+
+mk-repo() {
+    _from_template() {
+        cp ~/Desktop/templates/$1 .
+    }
+    
+    _from_template default.nix
+    _from_template .envrc
+    _from_template .gitignore
+    _from_template Makefile
+    # TODO: handle this better :c
+    _from_template README.md
+    git init
+    make init
+    # TODO: set repo name from folder
+    # TODO: prompt for description
+    # TODO: is python - yes no, template accordingly
+}
