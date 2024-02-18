@@ -5,7 +5,7 @@ BLOCK_NAME="$1"
 
 if [[ -n "$__NIXOS_SET_ENVIRONMENT_DONE" ]]; then
     # TODO: fix this, so that it survives garbage collect
-    target="/nix/store/mj5cizh56qwvny9np4778xzdk2xzb8al-i3blocks-contrib-1.4/libexec/i3blocks/$BLOCK_NAME"
+    target="/nix/store/g2hvk4n61gandw5g97wqp3qac6215p2l-i3blocks-contrib-1.4/libexec/i3blocks/$BLOCK_NAME"
 else
     target="/opt/i3blocks/$BLOCK_NAME/$BLOCK_NAME"
 fi 
