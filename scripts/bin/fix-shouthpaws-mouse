@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
+# I think I have this figured out! :D
+echo 'Evoluent is disabled!'
+
 xinput set-button-map $(xinput list --id-only "DaKai 2.4G RX Mouse") 3 2 1
-xinput set-button-map $(xinput list --id-only "Kingsis Peripherals Evoluent VerticalMouse 4 Left") 3 2 1 4 5 6 7 0
+#xinput set-button-map $(xinput list --id-only "Kingsis Peripherals Evoluent VerticalMouse 4 Left") 3 2 1 4 5 6 7 0
 # the 2 and 4-7 don't matter, probably there's a nicer way to express this, but what I want is to swap 1 and 3 and disable 8
 # 8 is really anoying with this mouse as Firefox interprets it as "history back" and that screws up long forms if pressed accidentally and then you have to fill that fucking form agaINIHATEFILLINGFORMS
+
