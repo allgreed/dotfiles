@@ -25,7 +25,6 @@ urgency.uda.urgent.F.coefficient=-1
 urgency.uda.important.F.coefficient=-10
 urgency.user.tag.nine5.coefficient=5
 urgency.user.tag.cron.coefficient=10
-urgency.age.coefficient=10
 urgency.blocking.coefficient=4
 
 include /nix/store/jzx3yx4zlygdnrwzma8nlzvh234zr6l1-taskwarrior-2.5.3/share/doc/task/rc/solarized-light-256.theme
@@ -86,3 +85,9 @@ json.array=on
 # q stands for quick -> it should have high prio to not be starved by more demeanding tasks
 # TODO: lower this, but bump when combined with urgent
 urgency.user.tag.q.coefficient=7
+
+# I mean... this is interesting, but I'll likely would love a custom function here
+# like... too old is like... meh - whatever, it waited such long, can wait more, but given same class of "old" would I really like to do the latest first?
+#urgency.age.coefficient=-5
+urgency.age.coefficient=10
+urgency.due.coefficient=15
