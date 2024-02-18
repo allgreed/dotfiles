@@ -185,6 +185,10 @@ set nospell " nor activate spell check by default
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" if this works well -> use the \ for the TODO comment mapping
+:nnoremap # :call nerdcommenter#Comment('n', 'Toggle')<CR>
+:vnoremap # :call nerdcommenter#Comment('x', 'Toggle')<CR>
+
 set ignorecase
 set smartcase
 
