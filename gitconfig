@@ -90,6 +90,8 @@
     call = "!f() { git diff-index --quiet --cached HEAD -- && git aa && git c $@ || echo 'Aborting! Index dirty or something went wrong'; }; f"
     co = checkout
     dc = d --cached
+    dcw = dw --cached
+    dwc = dcw
     cam = !git call -C HEAD --amend
 
     pforce = push --force-with-lease
