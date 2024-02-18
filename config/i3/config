@@ -315,7 +315,7 @@ for_window [title="Microsoft Teams Notification"] floating enable
 for_window [title="zoom"] floating enable
 
 bindsym $mod+z exec ~/.scripts/i3-next-available-worksapce
-bindsym $mod+Shift+z xec ~/.scripts/i3-next-available-worksapce --move
+bindsym $mod+Shift+z exec ~/.scripts/i3-next-available-worksapce --move
 bindsym $mod+g exec $launch_terminal -e bash -ci 'hledger-iadd'
 
 #######
