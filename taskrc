@@ -26,6 +26,9 @@ urgency.uda.important.F.coefficient=-10
 urgency.user.tag.nine5.coefficient=5
 urgency.user.tag.cron.coefficient=10
 urgency.blocking.coefficient=4
+# this actually doesn't matter because it *is* meant to trump over everything else
+# however diverging from default shows that urgency inflation xD
+urgency.user.tag.next.coefficient = 20
 
 include /nix/store/jzx3yx4zlygdnrwzma8nlzvh234zr6l1-taskwarrior-2.5.3/share/doc/task/rc/solarized-light-256.theme
 # otherwise it's less visible which kindof misses the point
