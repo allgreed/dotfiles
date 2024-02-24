@@ -62,8 +62,7 @@
 ############################
 [diff]
     renames = copies
-    algorithm = patience
-    # as per https://matklad.github.io/2023/12/31/git-things.html#Git-Things
+    algorithm = histogram
     colormoved = "default"
     colormovedws = "allow-indentation-change"
 
