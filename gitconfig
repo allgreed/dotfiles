@@ -4,18 +4,18 @@
     path = ~/.gitid
 
 [core]
-	pager = less
+    pager = less
 
-	excludesfile = ~/.gitignore_global
-	attributesfile = ~/.gitattributes_global
+    excludesfile = ~/.gitignore_global
+    attributesfile = ~/.gitattributes_global
 
-	autocrlf = input
-	safecrlf = true
+    autocrlf = input
+    safecrlf = true
 
     untrackedCache = true
 
 [fetch]
-	prune = true
+    prune = true
     # this is meant as a test, see if it works for me
     fsckobjects = true
 
@@ -38,7 +38,7 @@
 
 # yes, it's a statement
 [init]
-	defaultBranch = master
+    defaultBranch = master
 
 [safe]
     # since I rarely use bare repos on my terminal machines
@@ -54,15 +54,15 @@
 # 3rd party
 ############################
 [hub]
-	protocol = ssh
+    protocol = ssh
 [url "git@github.com:"]
-	pushInsteadOf = https://github.com/
+    pushInsteadOf = https://github.com/
 
 # Diffs
 ############################
 [diff]
     renames = copies
-	algorithm = patience
+    algorithm = patience
     # as per https://matklad.github.io/2023/12/31/git-things.html#Git-Things
     colormoved = "default"
     colormovedws = "allow-indentation-change"
@@ -95,7 +95,7 @@
     cam = !git call -C HEAD --amend
 
     pforce = push --force-with-lease
-	cof = !git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git co
+    cof = !git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git co
     purge-branches = !git-purge-branches
 
 
@@ -120,17 +120,17 @@
 # Filters
 ############################
 [filter "kicad_project"]
-	clean = sed -E 's/^update=.*$/update=Date/'
-	smudge = cat
+    clean = sed -E 's/^update=.*$/update=Date/'
+    smudge = cat
 
 [filter "kicad_sch"]
-	clean = "sed -E 's/#(PWR|FLG)[0-9]+/#\\1?/'"
-	smudge = cat
+    clean = "sed -E 's/#(PWR|FLG)[0-9]+/#\\1?/'"
+    smudge = cat
 
 [filter "workrave_config"]
-	clean = "~/.scripts/filter-workrave-git clean"
-	smudge = "~/.scripts/filter-workrave-git smudge"
+    clean = "~/.scripts/filter-workrave-git clean"
+    smudge = "~/.scripts/filter-workrave-git smudge"
 
 [filter "taskwarrior_ignore_set_context"]
-	clean = grep -v 'context='
-	smudge = cat
+    clean = grep -v 'context='
+    smudge = cat
