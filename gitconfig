@@ -22,6 +22,7 @@
 [receive]
     fsckObjects = true
 
+# TODO: if I have 2 same blocks, like if I split push into 2 -> will they be merged or would last win?
 [push]
     default = simple
     followTags = false
@@ -30,8 +31,12 @@
 [pull]
     ff = only
 
+[merge]
+    conflictstyle = zdiff3
+
 [rebase]
     autosquash = true
+    missingCommitsCheck = error
 
 [commit]
     verbose = true # -v
@@ -80,6 +85,15 @@
 
 # UI
 ############################
+[branch]
+    sort = -committerdate
+
+[sort]
+    sort = taggerdate
+
+[log]
+    date = human
+
 [alias]
     a = add
     c = commit
