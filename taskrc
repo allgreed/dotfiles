@@ -21,10 +21,11 @@ alias.@=context
 
 urgency.uda.urgent.T.coefficient=9
 urgency.uda.important.T.coefficient=3
-urgency.uda.urgent.F.coefficient=-1
-urgency.uda.important.F.coefficient=-10
+urgency.uda.urgent.F.coefficient=-2
+urgency.uda.important.F.coefficient=-7
 urgency.user.tag.nine5.coefficient=5
 urgency.user.tag.cron.coefficient=10
+urgency.user.tag.hack.coefficient=3
 urgency.blocking.coefficient=4
 # this actually doesn't matter because it *is* meant to trump over everything else
 # however diverging from default shows that urgency inflation xD
