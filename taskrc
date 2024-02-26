@@ -95,3 +95,8 @@ json.array=on
 #urgency.age.coefficient=-5
 urgency.age.coefficient=10
 urgency.due.coefficient=15
+
+# IMO this should be a default with --force to override
+# prevents unrecoverably (until atomic operations are implemented) seriously messing everything up
+# see also: https://github.com/GothenburgBitFactory/taskwarrior/discussions/3132
+allow.empty.filter=false
