@@ -89,9 +89,6 @@ urgency.inherit=1
 urgency.blocking.coefficient=0
 urgency.blocked.coefficient=0
 json.array=on
-# q stands for quick -> it should have high prio to not be starved by more demeanding tasks
-# TODO: lower this, but bump when combined with urgent
-urgency.user.tag.q.coefficient=7
 
 # I mean... this is interesting, but I'll likely would love a custom function here
 # like... too old is like... meh - whatever, it waited such long, can wait more, but given same class of "old" would I really like to do the latest first?
