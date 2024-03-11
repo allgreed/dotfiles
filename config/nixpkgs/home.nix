@@ -67,6 +67,10 @@ in
   programs.home-manager.enable = true;
   home.username = "allgreed";
   home.homeDirectory = "/home/allgreed";
+
+  home.packages = with pkgs; [
+    xournal # pdf manipulation and annotation
+  ];
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
