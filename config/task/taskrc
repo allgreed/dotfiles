@@ -1,4 +1,8 @@
 data.location=~/.task
+#data.location=$XDG_DATA_HOME/task/
+# TODO: move this from ~
+#hooks.location=$XDG_CONFIG_HOME/task/hooks/
+# remember about it when running hooks!
 
 dateformat=d.M
 weekstart=sunday
