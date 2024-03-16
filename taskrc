@@ -29,9 +29,10 @@ color.due=
 # otherwise it's less visible which kindof misses the point
 color.tagged=
 
-context.out=-home
-context.plane=-home (netz:F or netz:Maybe)
-context.triage=-triaged
+# I don't want to have it apply anything to the created tasks
+context.out.read=-home
+context.plane.read=-home (netz:F or netz:Maybe)
+
 report.next.filter=+PENDING -BLOCKED limit:5
 
 report.pending.description=All actionable tasks
@@ -91,3 +92,6 @@ urgency.due.coefficient=15
 # prevents unrecoverably (until atomic operations are implemented) seriously messing everything up
 # see also: https://github.com/GothenburgBitFactory/taskwarrior/discussions/3132
 allow.empty.filter=false
+
+# TODO: drop it?
+context.triage.read=-triaged
