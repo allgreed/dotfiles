@@ -11,7 +11,8 @@ from typing import Optional
 def main():
     data = get_interfaces_info()
 
-    wired_interfaces = [(t[0], "") for t in data if t[1] and not t[2]]
+    # for whatever reason the "fa-plug" doesn't render correctly
+    wired_interfaces = [(t[0], "") for t in data if t[1] and not t[2]]
     wireless_interfaces = [(t[0], "") for t in data if t[1] and t[2]]
 
     ifaces = wired_interfaces + wireless_interfaces
