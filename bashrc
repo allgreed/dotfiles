@@ -101,6 +101,10 @@ load 'direnv integration' @eval "direnv hook bash"
 # what does this even do? o.0 6.07.23
 shopt -s dotglob
 
+# TODO: fix the need for it and remove
+# this is a mitigation for the terminal oppening in halfway in after the nixos channel update to 23.something
+clear
+
 end=$(date +%s.%N)
 read -r -d '' ARG0_PY << '--END'
 import sys
