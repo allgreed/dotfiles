@@ -12,15 +12,15 @@ Plugin 'nvim-treesitter/nvim-treesitter'
 
 lua << EOF
 require'lspconfig'.pyright.setup{}
-require'lspconfig'.rnix.setup{}
 require'lspconfig'.zls.setup{}
 require'lspconfig'.tsserver.setup{
     cmd = {
         "npx", "typescript-language-server", "--stdio"
     }
 }
-
+require'lspconfig'.nil_ls.setup{}
 EOF
+
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> <C-]> <cmd>lua vim.lsp.buf.definition()<CR>
