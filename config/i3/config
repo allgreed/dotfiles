@@ -308,7 +308,8 @@ bindsym $mod+less move workspace to output left
 bindsym XF86Display exec ~/.screenlayout/singlemon.sh
 bindsym Shift+F9 exec ~/.screenlayout/singlemon.sh
 
-bindsym $mod+n exec networkmanager_dmenu
+bindsym $mod+n exec networkmanager_dmenu -l 10
+# TODO: fix the bug, because it's a bug apparently!
 bindsym $mod+p exec ~/.scripts/bin/screen-preset
 
 # unfuck Teams/Zoom notifications
