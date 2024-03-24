@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 $(
     ~/.screenlayout/$(
-            ls ~/.screenlayout | dmenu
+            ls ~/.screenlayout | dmenu -i
         )
 )
-# TODO: only if non0exit code
+# TODO: only if non 0 exit code
 ~/.fehbg # set the wallpaper
 pkill conky; conky & # restart conky
