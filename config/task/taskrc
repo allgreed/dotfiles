@@ -61,14 +61,15 @@ uda.important.type=string
 uda.important.label=Important
 uda.important.values=T,F
 
-uda.netz.type=string
-uda.netz.label=Internet required
+# I don't travel that often really...
+#uda.netz.type=string
+#uda.netz.label=Internet required
 # "Preapre" mean that the task can be prepared to not require internet access
-uda.netz.values=T,F,Prepare,Maybe
+#uda.netz.values=T,F,Prepare,Maybe
 
-uda.triaged.type=string
-uda.triaged.label=Triaged
-uda.triaged.values=T
+#uda.triaged.type=string
+#uda.triaged.label=Triaged
+#uda.triaged.values=T
 
 uda.reviewed.type=date
 uda.reviewed.label=Reviewed
@@ -98,6 +99,10 @@ urgency.due.coefficient=15
 # prevents unrecoverably (until atomic operations are implemented) seriously messing everything up
 # see also: https://github.com/GothenburgBitFactory/taskwarrior/discussions/3132
 allow.empty.filter=false
+
+# for setting the size of calendar events with `schedule` but also kindof sounds sensibly to have
+uda.estimate.type=duration
+uda.estimate.label=Est
 
 # TODO: drop it?
 context.triage.read=-triaged
