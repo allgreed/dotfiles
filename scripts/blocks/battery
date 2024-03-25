@@ -31,12 +31,14 @@ def main():
 
     status = enrich_status() if status == "Unknown" else status
 
+    # TODO: should threre be a 3rd status indicating plugin-in, but not charging?
     STATUS_TABLE = {
         "Full": "CHR",
         "Discharging": "DIS",
         "Charging": "CHR",
         "off-line": "DIS",
         "on-line": "CHR",
+        "Not charging": "DIS",
     }
 
     # TODO: handle unsupported status
