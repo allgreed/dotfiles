@@ -25,7 +25,7 @@ urgency.user.tag.hack.coefficient=3
 urgency.blocking.coefficient=4
 # this actually doesn't matter because it *is* meant to trump over everything else
 # however diverging from default shows that urgency inflation xD
-urgency.user.tag.next.coefficient = 20
+urgency.user.tag.next.coefficient = 25
 
 include /etc/taskwarrior_share/doc/task/rc/solarized-light-256.theme
 # TODO: this fails on a weird combination of task being due and being dependant
@@ -101,3 +101,4 @@ allow.empty.filter=false
 
 # TODO: drop it?
 context.triage.read=-triaged
+news.version=2.6.0
