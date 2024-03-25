@@ -5,33 +5,34 @@ data.location=~/.task
 #hooks.location=$XDG_CONFIG_HOME/task/hooks/
 # remember about it when running hooks!
 
+include /etc/taskwarrior_share/doc/task/rc/solarized-light-256.theme
+
+news.version=2.6.0
+
+# Should be defaults IMO
+# ############################
+# prevents unrecoverably (until atomic operations are implemented) seriously messing everything up
+# see also: https://github.com/GothenburgBitFactory/taskwarrior/discussions/3132
+allow.empty.filter=false
+
+# urgency of a blocking task is max(urgency of blcoked tasks)
+# actually makes a ton of sense -> task A blocking important task B is of importance at least B
+# it doesn't slow task calculation noticibly
+urgency.inherit=1
+# this prevents funny business with dependency chains
+urgency.blocking.coefficient=0
+urgency.blocked.coefficient=0
+json.array=on
+
+# UI
+# ############################
 dateformat=d.M
 weekstart=sunday
-
 search.case.sensitive=no
-
 nag=
 
 alias.rm=delete
 alias.@=context
-
-urgency.uda.urgent.T.coefficient=9
-urgency.uda.important.T.coefficient=3
-urgency.uda.urgent.F.coefficient=-2
-urgency.uda.important.F.coefficient=-7
-urgency.user.tag.nine5.coefficient=5
-urgency.user.tag.cron.coefficient=10
-urgency.user.tag.hack.coefficient=3
-urgency.blocking.coefficient=4
-# this actually doesn't matter because it *is* meant to trump over everything else
-# however diverging from default shows that urgency inflation xD
-urgency.user.tag.next.coefficient = 25
-
-include /etc/taskwarrior_share/doc/task/rc/solarized-light-256.theme
-# TODO: this fails on a weird combination of task being due and being dependant
-color.due=
-# otherwise it's less visible which kindof misses the point
-color.tagged=
 
 # I don't want to have it apply anything to the created tasks
 context.out.read=-home
@@ -52,6 +53,22 @@ report.aargh.labels=ID,Active,Age,P,Project,Tag,Urg,Imp,Recur,S,Due,Until,Descri
 report.aargh.sort=urgency-
 report.aargh.filter=+PENDING -BLOCKED urgency > 10.9
 
+# Urgency calculations
+# ############################
+urgency.uda.urgent.T.coefficient=9
+urgency.uda.important.T.coefficient=3
+urgency.uda.urgent.F.coefficient=-2
+urgency.uda.important.F.coefficient=-7
+urgency.user.tag.cron.coefficient=10
+urgency.user.tag.hack.coefficient=3
+urgency.blocking.coefficient=4
+# this actually doesn't matter because it *is* meant to trump over everything else
+# however diverging from default shows that urgency inflation xD
+urgency.user.tag.next.coefficient = 25
+
+# UDAs
+# ############################
+
 # urgent means: it's significantly better to do it now than later OR it's significantly worse to do it with every passing second
 uda.urgent.type=string
 uda.urgent.label=Urgent
@@ -61,16 +78,11 @@ uda.important.type=string
 uda.important.label=Important
 uda.important.values=T,F
 
-# I don't travel that often really...
-#uda.netz.type=string
-#uda.netz.label=Internet required
-# "Preapre" mean that the task can be prepared to not require internet access
-#uda.netz.values=T,F,Prepare,Maybe
+# for setting the size of calendar events with `schedule` but also kindof sounds sensibly to have
+uda.estimate.type=duration
+uda.estimate.label=Est
 
-#uda.triaged.type=string
-#uda.triaged.label=Triaged
-#uda.triaged.values=T
-
+# this is required for the vit and review functionality
 uda.reviewed.type=date
 uda.reviewed.label=Reviewed
 report._reviewed.description=Tasksh review report.  Adjust the filter to your needs.
@@ -80,30 +92,12 @@ report._reviewed.sort=reviewed+,modified+
 # it's a bit anoying having to review stuff that's blocked, on the other hand... maybe it's worth it? Dunno
 report._reviewed.filter=( reviewed.none: or reviewed.before:now-14days ) and ( +PENDING or +WAITING) -BLOCKED
 
+# Testing area
+# ############################
 # TODO: code here the filters required by tw-ical-thingy and ogar metric scraper, I guess it's easier to manage this way
-
-# testing area
-# it doesn't slow task calculation noticibly and this works more to my taste
-urgency.inherit=1
-urgency.blocking.coefficient=0
-urgency.blocked.coefficient=0
-json.array=on
 
 # I mean... this is interesting, but I'll likely would love a custom function here
 # like... too old is like... meh - whatever, it waited such long, can wait more, but given same class of "old" would I really like to do the latest first?
 #urgency.age.coefficient=-5
 urgency.age.coefficient=10
 urgency.due.coefficient=15
-
-# IMO this should be a default with --force to override
-# prevents unrecoverably (until atomic operations are implemented) seriously messing everything up
-# see also: https://github.com/GothenburgBitFactory/taskwarrior/discussions/3132
-allow.empty.filter=false
-
-# for setting the size of calendar events with `schedule` but also kindof sounds sensibly to have
-uda.estimate.type=duration
-uda.estimate.label=Est
-
-# TODO: drop it?
-context.triage.read=-triaged
-news.version=2.6.0
