@@ -1,3 +1,4 @@
+# vim: set filetype=conf : 
 data.location=~/.task
 #data.location=$XDG_DATA_HOME/task/
 # TODO: move this from ~
@@ -26,8 +27,7 @@ urgency.blocking.coefficient=4
 # however diverging from default shows that urgency inflation xD
 urgency.user.tag.next.coefficient = 20
 
-# TODO: how can I dehardcode this?
-include /nix/store/jzx3yx4zlygdnrwzma8nlzvh234zr6l1-taskwarrior-2.5.3/share/doc/task/rc/solarized-light-256.theme
+include /etc/taskwarrior_share/doc/task/rc/solarized-light-256.theme
 # TODO: this fails on a weird combination of task being due and being dependant
 color.due=
 # otherwise it's less visible which kindof misses the point
@@ -78,6 +78,8 @@ report._reviewed.sort=reviewed+,modified+
 # TODO: am I sure about that -BLOCKED? We'll see
 # it's a bit anoying having to review stuff that's blocked, on the other hand... maybe it's worth it? Dunno
 report._reviewed.filter=( reviewed.none: or reviewed.before:now-14days ) and ( +PENDING or +WAITING) -BLOCKED
+
+# TODO: code here the filters required by tw-ical-thingy and ogar metric scraper, I guess it's easier to manage this way
 
 # testing area
 # it doesn't slow task calculation noticibly and this works more to my taste
