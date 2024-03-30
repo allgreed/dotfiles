@@ -56,8 +56,9 @@ def main():
     cli.add_command(inc_volume, "inc");
     cli.add_command(dec_volume, "dec");
 
-    @cli.resultcallback()
+    @cli.result_callback()
     def _(_, signal=None, **kwargs):
+        # "signal" parameter gets overwritten by the option, go figure
         emmit_signal_to_i3blocks(signal)
 
     cli()
