@@ -1,36 +1,70 @@
-#!/usr/bin/env expect
+#!/usr/bin/env python
+import subprocess
+import pexpect
+import functools
+import typer
+from typing import List
+from decimal import Decimal
+from typing_extensions import Annotated
 
-spawn hledger add
-expect "Date" {
-    send "\t\n"
-}
-expect "Description" {
-    send "Uber\n"
-}
-expect "Account 1" {
-    send "expenses:life:transportation\n"
-}
 
-expect "Amount" {
-    send "[lindex $argv 0] PLN\n"
-}
+def main(
+        # TODO: insert issue number
+        # TODO: switch to Decimal once [issue number] is done
+        # TODO: https://github.com/tiangolo/typer/discussions/new?category=questions <- create issue
+        # TODO: use a custom parameter?
+        # https://github.com/tiangolo/typer/pull/583
+        args: List[str],
+        is_bolt: Annotated[bool, typer.Option("--bolt", "-b")] = False,
+    ):
+    # TODO: also read from stdin
+    # if no args passed
 
-expect "Account 2" {
-    send "assets:mbank:main\n"
-}
+    f = expense_bolt if is_bolt else expense_uber
+    for amount in args:
+        # TODO: move / remove this logic
+        _amount = amount
+        amount = Decimal(_amount)
+        def decimal_point(d: Decimal) -> int:
+            return -d.as_tuple().exponent
+        if decimal_point(amount) > 2:
+            raise ValueError("Too much precision, likely an input error")
+        f(amount)
 
-expect "Amount" {
-    send "\t\n"
-}
 
-expect "Account 3" {
-    send "\n"
-}
+def _run_expect(amount: str, title: str):
+    child = pexpect.spawn('hledger add')
 
-expect "Save" {
-    send "y\n"
-}
+    child.expect( "Date" )
+    child.sendline("\t")
 
-expect "Saved." {
+    child.expect( "Description" )
+    child.sendline(title)
 
-}
+    child.expect( "Account 1" )
+    child.sendline("expenses:life:transportation")
+
+    child.expect( "Amount" )
+    child.sendline(f"{amount} PLN")
+
+    child.expect( "Account 2" )
+    child.sendline("assets:mbank:main")
+
+    child.expect( "Amount" )
+    child.sendline("\t")
+
+    child.expect( "Account 3" )
+    child.sendline("")
+
+    child.expect( "Save" )
+    child.sendline("y")
+
+    child.expect( "Saved." )
+
+
+expense_uber = functools.partial(_run_expect, title="Uber")
+expense_bolt = functools.partial(_run_expect, title="Bolt")
+
+
+if __name__ == "__main__":
+    typer.run(main)
