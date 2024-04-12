@@ -13,7 +13,7 @@ def main():
 
 def clean():
     for line in sys.stdin:
-        line = re.sub(r"main_window\.(x|y)=(\d+)",r"main_window.\1=255", line)
+        line = re.sub(r"main_window\.(x|y)=(-?\d+)",r"main_window.\1=255", line)
         line = re.sub(r"operation-mode=\d",r"operation-mode=0", line)
         # line = re.sub(r"operation-mode=\d",r"operation-mode=0", line)
 
