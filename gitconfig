@@ -53,6 +53,8 @@
     # this mitigates an obscure attack vector 
     # https://github.com/jwilk/git-landmine
     bareRepository = explicit
+    # it's owned by root but I want the git indicator in the promt to work properly anyway
+	directory = /etc/nixos
 
 # huh?
 [advice]
