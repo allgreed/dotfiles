@@ -60,7 +60,6 @@ urgency.uda.important.T.coefficient=3
 urgency.uda.urgent.F.coefficient=-2
 urgency.uda.important.F.coefficient=-7
 urgency.user.tag.cron.coefficient=10
-urgency.user.tag.hack.coefficient=3
 urgency.blocking.coefficient=4
 # this actually doesn't matter because it *is* meant to trump over everything else
 # however diverging from default shows that urgency inflation xD
@@ -101,3 +100,7 @@ report._reviewed.filter=( reviewed.none: or reviewed.before:now-14days ) and ( +
 #urgency.age.coefficient=-5
 urgency.age.coefficient=10
 urgency.due.coefficient=15
+# it's slightly better to hack than not to hack
+urgency.user.tag.hack.coefficient=2
+# it's slightly better to do home stuff when available
+urgency.user.tag.home.coefficient=3
