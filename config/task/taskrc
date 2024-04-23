@@ -22,6 +22,7 @@ urgency.inherit=1
 # this prevents funny business with dependency chains
 urgency.blocking.coefficient=0
 urgency.blocked.coefficient=0
+# TODO: why json array though? o.0
 json.array=on
 
 # UI
@@ -75,7 +76,7 @@ uda.urgent.values=T,F
 
 uda.important.type=string
 uda.important.label=Important
-uda.important.values=T,F
+uda.important.values=T,F,M
 
 # for setting the size of calendar events with `schedule` but also kindof sounds sensibly to have
 uda.estimate.type=duration
@@ -104,3 +105,6 @@ urgency.due.coefficient=15
 urgency.user.tag.hack.coefficient=2
 # it's slightly better to do home stuff when available
 urgency.user.tag.home.coefficient=3
+# I want to apply the important attribute, but don't feel like deciding if something is important or not
+# Adam would likely say that if it's not important then it's unimportant, lol
+urgency.uda.important.M.coefficient=0
