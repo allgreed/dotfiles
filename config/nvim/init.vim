@@ -11,14 +11,44 @@ Plugin 'nvim-lua/plenary.nvim'
 Plugin 'nvim-treesitter/nvim-treesitter'
 
 lua << EOF
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.zls.setup{}
-require'lspconfig'.tsserver.setup{
+local lspconfig = require('lspconfig')
+
+lspconfig.pyright.setup{
+  settings = {
+    pyright = {
+      -- Using Ruff's import organizer
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        -- Ignore all files for analysis to exclusively use Ruff for linting
+        ignore = { '*' },
+      },
+    },
+  },
+}
+-- TODO: reformat this? o.0
+local on_attach = function(client, bufnr)
+    -- Disable hover in favor of Pyright
+    client.server_capabilities.hoverProvider = false
+end
+lspconfig.ruff_lsp.setup {
+    on_attach = on_attach,
+    init_options = {
+        settings = {
+            -- Any extra CLI arguments for `ruff` go here.
+            args = {},
+        }
+    }
+}
+
+lspconfig.zls.setup{}
+lspconfig.tsserver.setup{
     cmd = {
         "npx", "typescript-language-server", "--stdio"
     }
 }
-require'lspconfig'.nil_ls.setup{}
+lspconfig.nil_ls.setup{}
 EOF
 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
@@ -29,6 +59,7 @@ nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <Leader>a <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> <Leader>r <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> <Leader>f <cmd>lua vim.lsp.buf.format()<CR>
 
 
 set completeopt=menu,noselect
