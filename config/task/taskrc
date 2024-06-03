@@ -64,7 +64,7 @@ urgency.user.tag.cron.coefficient=10
 urgency.blocking.coefficient=4
 # this actually doesn't matter because it *is* meant to trump over everything else
 # however diverging from default shows that urgency inflation xD
-urgency.user.tag.next.coefficient = 25
+urgency.user.tag.next.coefficient = 30
 
 # UDAs
 # ############################
@@ -108,3 +108,5 @@ urgency.user.tag.home.coefficient=3
 # I want to apply the important attribute, but don't feel like deciding if something is important or not
 # Adam would likely say that if it's not important then it's unimportant, lol
 urgency.uda.important.M.coefficient=0
+
+# I looked a bit into bumping urgency on +SCHEDULED however it seems non trivial at this point, so I just use the calendar for it
