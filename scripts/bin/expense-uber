@@ -33,6 +33,9 @@ def main(
 
 
 def _run_expect(amount: str, title: str):
+    # https://github.com/rmcl/ledger_reader
+    # or write my own?
+
     child = pexpect.spawn('hledger add')
 
     child.expect( "Date" )
