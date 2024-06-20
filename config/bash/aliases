@@ -100,7 +100,7 @@ vim() {
     NC='\033[0m' # No Color
     printf "File in question ${RED}is owned by root${NC} checking privilage...\n"
     # TODO: this can be likely much more secure lol
-    sudo \vim $*;
+    sudo nvim $*;
   else
     nvim $*;
   fi
