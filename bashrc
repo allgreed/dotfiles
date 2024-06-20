@@ -61,10 +61,12 @@ export DO_NOT_TRACK=1 # because why not :D
 # Extensions
 # are after env, since they may depends on env
 #########################
+# ~10ms
 load 'git prompt' $(_resolve_nix git share/bash-completion/completions/git-prompt.sh) @fin
 load 'prompt' ~/.config/bash/prompt
 load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
 load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+# these add (including autojump) ~40-50ms, so half the time
 load 'bash autocomplete' @nixos /usr/share/bash-completion/bash_completion
 load 'git autocomplete' $(_resolve_nix git share/bash-completion/completions/git) /usr/share/bash-completion/completions/git
 load 'task autocomplete' $(_resolve_nix task share/bash-completion/completions/task.bash) @fin
@@ -84,7 +86,7 @@ function lcd {
 }
 
 # this needs to happen after autocompletes
-# TODO: this adds ~30-50ms -> which is waaay to much for an aliases!
+# TODO: this adds ~15ms
 load 'aliases' ~/.config/bash/aliases
 
 # I want this to overwrite almost everything
@@ -93,17 +95,12 @@ load 'local stuff' ~/.bash_local @fin
 # this has to happen after all prompts are loaded
 load 'direnv integration' @eval "direnv hook bash"
 
-
 # Testing area
 #########################
 # TODO: i3 -> when openning a sensible terminal -> check if there are other terminals in the worksapce running bash, if yes: open with the same CWD as the terminal, if there're two, check ~/.lastcd
 
 # what does this even do? o.0 6.07.23
 shopt -s dotglob
-
-# TODO: fix the need for it and remove
-# this is a mitigation for the terminal oppening in halfway in after the nixos channel update to 23.something
-clear
 
 end=$(date +%s.%N)
 read -r -d '' ARG0_PY << '--END'
