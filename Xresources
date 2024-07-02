@@ -106,5 +106,9 @@ URxvt*letterSpace: -1
 URxvt*iso14755: false
 URxvt*iso14755_52: false
 
+! Fixes prompt opening half-way across
+! https://bbs.archlinux.org/viewtopic.php?id=282791
+URxvt.geometry: 400x400
+
 dmenu.font: xft:Source Code Pro:style=Medium:size=11:antialias=true:hinting=true
 dmenu.selforeground: S_base3
