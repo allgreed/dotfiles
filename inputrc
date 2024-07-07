@@ -1,5 +1,13 @@
 set editing-mode vi
 
+# https://news.ycombinator.com/item?id=40802257
+set show-mode-in-prompt on
+set emacs-mode-string \1\e[1 q\2
+set vi-cmd-mode-string \1\e[3 q\2
+set vi-ins-mode-string \1\e[1 q\2
+#set vi-ins-mode-string \1\e[5 q\2
+# ^ this is a vertical line aka insert mode from vim, it's just... dunno, the block is familiar
+
 # disable bell on tab completion and when pressing backspace on an empty shell
 set bell-style none
 
