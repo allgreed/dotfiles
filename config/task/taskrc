@@ -47,12 +47,12 @@ report.pending.labels=ID,Active,Age,P,Project,Tag,Urg,Imp,Recur,S,Due,Until,Desc
 report.pending.sort=urgency-
 report.pending.filter=+PENDING -BLOCKED limit:15
 
-# this is like pending, except instead of a hard limit it uses urgency
-report.aargh.description=Likely should be done now
-report.aargh.columns=id,start.age,entry.age,priority,project,tags,urgent,important,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
-report.aargh.labels=ID,Active,Age,P,Project,Tag,Urg,Imp,Recur,S,Due,Until,Description,Urg
-report.aargh.sort=urgency-
-report.aargh.filter=+PENDING -BLOCKED urgency > 10.9
+# TODO: do something about the color
+report.a.description=Likely should be done now
+report.a.columns=id,start.age,entry.age,priority,project,tags,urgent,important,scheduled.countdown,due.relative,until.remaining,description,urgency
+report.a.labels=ID,Active,Age,P,Project,Tag,Urg,Imp,S,Due,Until,Description,Urg
+report.a.sort=urgency-
+report.a.filter=all -COMPLETED -DELETED
 
 # Urgency calculations
 # ############################
@@ -64,7 +64,7 @@ urgency.user.tag.cron.coefficient=10
 urgency.blocking.coefficient=4
 # this actually doesn't matter because it *is* meant to trump over everything else
 # however diverging from default shows that urgency inflation xD
-urgency.user.tag.next.coefficient = 30
+urgency.user.tag.next.coefficient = 25
 
 # UDAs
 # ############################
@@ -99,8 +99,9 @@ report._reviewed.filter=( reviewed.none: or reviewed.before:now-14days ) and ( +
 # I mean... this is interesting, but I'll likely would love a custom function here
 # like... too old is like... meh - whatever, it waited such long, can wait more, but given same class of "old" would I really like to do the latest first?
 #urgency.age.coefficient=-5
-urgency.age.coefficient=10
-urgency.due.coefficient=15
+urgency.age.coefficient=5
+
+urgency.due.coefficient=25
 # it's slightly better to hack than not to hack
 urgency.user.tag.hack.coefficient=2
 # it's slightly better to do home stuff when available
@@ -110,3 +111,5 @@ urgency.user.tag.home.coefficient=3
 urgency.uda.important.M.coefficient=0
 
 # I looked a bit into bumping urgency on +SCHEDULED however it seems non trivial at this point, so I just use the calendar for it
+#
+urgency.user.tag.meta.coefficient=15
