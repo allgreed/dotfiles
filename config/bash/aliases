@@ -134,6 +134,19 @@ sub-nocc() {
     filter-subtitles.py -s $1
 }
 
+sub-nocc-interactive() {
+    # TODO: maybe replace .* with the actual (\w+\s?)+" size="\d+" but I don't feel like it now
+    sed 's/<font face=".*">//' -i $1
+    sed 's/<\/font>//' -i $1
+    dos2unix $1
+    cp $1 $1.bak
+    filter-subtitles.py -s $1
+    vimdiff $1.bak $1
+    # TODO: get some way to sensibly display the diff
+    # TODO: approve facility = yes / no
+}
+
+
 # TODO: what about the magic space in alias?
 alias e="$EDITOR"
 
