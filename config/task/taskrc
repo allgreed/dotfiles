@@ -53,6 +53,7 @@ report.a.columns=id,start.age,entry.age,priority,project,tags,urgent,important,s
 report.a.labels=ID,Active,Age,P,Project,Tag,Urg,Imp,S,Due,Until,Description,Urg
 report.a.sort=urgency-
 report.a.filter=all -COMPLETED -DELETED
+# TODO: I did a chain of 4 tasks under 1 project and one of them wasn't showing
 
 # Urgency calculations
 # ############################
@@ -81,6 +82,8 @@ uda.important.values=T,F,M
 # for setting the size of calendar events with `schedule` but also kindof sounds sensibly to have
 uda.estimate.type=duration
 uda.estimate.label=Est
+uda.plan.type=date
+uda.plan.label=Planned
 
 # this is required for the vit and review functionality
 uda.reviewed.type=date
@@ -113,3 +116,6 @@ urgency.uda.important.M.coefficient=0
 # I looked a bit into bumping urgency on +SCHEDULED however it seems non trivial at this point, so I just use the calendar for it
 #
 urgency.user.tag.meta.coefficient=15
+
+# TODO: geo UDA, geolocation - to describe a task that has to happen somewhere
+# has geo = errand
