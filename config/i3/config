@@ -243,7 +243,6 @@ exec --no-startup-id pasystray
 exec --no-startup-id parcellite
 exec --no-startup-id nm-applet
 
-exec rambox
 exec firefox
 exec spotify
 exec --no-startup-id ~/.autostart.local
@@ -251,7 +250,6 @@ exec --no-startup-id ~/.autostart.local
 ########################################
 # Window assignments
 #########################################
-assign [class="Rambox"] $WS10
 assign [class="Slack"] $WS10
 
 ########################################
