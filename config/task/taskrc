@@ -65,7 +65,7 @@ urgency.user.tag.cron.coefficient=10
 urgency.blocking.coefficient=4
 # this actually doesn't matter because it *is* meant to trump over everything else
 # however diverging from default shows that urgency inflation xD
-urgency.user.tag.next.coefficient = 25
+urgency.user.tag.next.coefficient = 30
 
 # UDAs
 # ############################
@@ -106,7 +106,8 @@ report._reviewed.filter=( reviewed.none: or reviewed.before:now-1month ) and ( +
 #urgency.age.coefficient=-5
 urgency.age.coefficient=5
 
-urgency.due.coefficient=25
+# TODO: can I make it always the same as next coefficient?
+urgency.due.coefficient=30
 # it's slightly better to hack than not to hack
 urgency.user.tag.hack.coefficient=2
 # it's slightly better to do home stuff when available
