@@ -3,9 +3,9 @@
     # user configuration
     path = ~/.gitid
 
-[includeIf "gitdir:/home/allgreed/Work/"]
-    # work configuration
-    path = ~/.gitwork
+;[includeIf "gitdir:/home/allgreed/Work/"]
+    ;# work configuration
+    ;path = ~/.gitwork
 
 [core]
     pager = less
