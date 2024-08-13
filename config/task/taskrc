@@ -93,8 +93,10 @@ report._reviewed.columns=uuid
 report._reviewed.sort=reviewed+,modified+
 # TODO: am I sure about that -BLOCKED? We'll see
 # it's a bit anoying having to review stuff that's blocked, on the other hand... maybe it's worth it? Dunno
-report._reviewed.filter=( reviewed.none: or reviewed.before:now-1month ) and ( +PENDING or +WAITING) -BLOCKED -cron
+report._reviewed.filter=( reviewed.none: or reviewed.before:now-1month ) and ( +PENDING or +WAITING ) -cron entry.before:now-1m
+# TODO: ok, now that I have excluded tasks newer than 1 month, do I drop the `-cron`?
 # TODO: how to sort?
+# I'd like: random + blocked at the end
 #report._reviewed.sort=reviewed+,modified+
 
 # Testing area
