@@ -55,11 +55,14 @@ def main():
     else:
         icon = ""
 
-    # trying out to live without time
-    # full_text = "{} {}% {} ({})".format(icon, percentage, status_indicator, time)
+    
+    if status == "Discharging":
+        full_text = "{} {}% ~ {}".format(icon, percentage, time)
 
-    full_text = "{} {}% {}".format(icon, percentage, status_indicator)
-    short_text = full_text
+        short_text = "{} {}".format(icon, time)
+    else:
+        full_text = "{} {}% {}".format(icon, percentage, status_indicator)
+        short_text = full_text
 
     color = py_xgetres(".color14")
 
