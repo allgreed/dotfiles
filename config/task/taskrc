@@ -119,8 +119,19 @@ urgency.user.tag.home.coefficient=3
 urgency.uda.important.M.coefficient=0
 
 # I looked a bit into bumping urgency on +SCHEDULED however it seems non trivial at this point, so I just use the calendar for it
-#
+
+# meta = task to generate more tasks
 urgency.user.tag.meta.coefficient=15
 
-# TODO: geo UDA, geolocation - to describe a task that has to happen somewhere
+# TODO: how to actually name this tag
+# it's about self-reflection and writing and future-oriented
+urgency.user.tag.writing.coefficient=6.2
+
+uda.geo.type=string
+uda.geo.label=Geoinformation
 # has geo = errand
+# TODO: implement this tag
+# TODO: machine readable exact addres
+# TODO: or some kind of meta, like chain:Rossman
+# TODO: enforce it
+
