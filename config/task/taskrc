@@ -137,3 +137,9 @@ uda.geo.label=Geoinformation
 # TODO: or some kind of meta, like chain:Rossman
 # TODO: enforce it
 
+report.topreport.columns  = id
+report.topreport.filter   = +PENDING -BLOCKED limit:10 -cron
+report.topreport.sort     = urgency-
+# TODO: I'm not super sure of this <- do I want to ignore the context when marking things as reviewed?
+report.topreport.context  = 0
+
