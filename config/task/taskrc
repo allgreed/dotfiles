@@ -53,6 +53,7 @@ report.a.columns=id,start.age,entry.age,priority,project,tags,urgent,important,s
 report.a.labels=ID,Active,Age,P,Project,Tag,Urg,Imp,S,Due,Until,Description,Urg
 report.a.sort=urgency-
 report.a.filter=all -COMPLETED -DELETED
+report.a.context=0
 # TODO: I did a chain of 4 tasks under 1 project and one of them wasn't showing
 
 # Urgency calculations
@@ -102,6 +103,7 @@ report._reviewed.filter=( reviewed.none: or reviewed.before:now-1month ) and ( +
 # Testing area
 # ############################
 # TODO: code here the filters required by tw-ical-thingy and ogar metric scraper, I guess it's easier to manage this way
+# TODO: also make them report.<name>.context=0 because they shouldn't be affected by context
 
 # I mean... this is interesting, but I'll likely would love a custom function here
 # like... too old is like... meh - whatever, it waited such long, can wait more, but given same class of "old" would I really like to do the latest first?

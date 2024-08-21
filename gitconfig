@@ -154,5 +154,5 @@
     smudge = "~/.scripts/filter-workrave-git smudge"
 
 [filter "taskwarrior_ignore_set_context"]
-    clean = grep -v 'context='
+    clean = grep -v '^context='
     smudge = cat
