@@ -57,7 +57,8 @@ def main():
 
     
     if status == "Discharging":
-        full_text = "{} {}% ~ {}".format(icon, percentage, time)
+        # when discharging I care about how much time do I have left
+        full_text = "{} {}% ~{}".format(icon, percentage, time)
 
         short_text = "{} {}".format(icon, time)
     else:
