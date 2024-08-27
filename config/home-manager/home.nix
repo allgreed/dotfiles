@@ -24,6 +24,7 @@ in
           "browser.warnOnQuit" = true;
           "browser.sessionstore.restore_tabs_lazily" = false;
           "signon.rememberSignons" = false;
+          "dom.private-attribution.submission.enabled" = false;
           # HTTPS-Only Mode <- enable in all windows - how to?
         };
 
