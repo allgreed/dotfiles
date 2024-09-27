@@ -98,6 +98,7 @@ report._reviewed.filter=( reviewed.none: or reviewed.before:now-1month ) and ( +
 # TODO: ok, now that I have excluded tasks newer than 1 month, do I drop the `-cron`?
 # TODO: how to sort?
 # I'd like: random + blocked at the end
+# also: waiting after blocked
 #report._reviewed.sort=reviewed+,modified+
 
 # Testing area
@@ -143,3 +144,9 @@ report.topreport.sort     = urgency-
 # TODO: I'm not super sure of this <- do I want to ignore the context when marking things as reviewed?
 report.topreport.context  = 0
 
+# https://cs-syd.eu/posts/2015-07-12-gtd-with-taskwarrior-part-5-doing
+# TODO: maybe Willpower? But definitely interesting metadata to add
+uda.brainpower.type=string
+uda.brainpower.label=Brainpower
+uda.brainpower.values=H,M,L
+uda.brainpower.default=M
