@@ -1,4 +1,4 @@
-start=$(date +%s.%N)
+#start=$(date +%s.%N)
 # Guards
 #########################
 case $- in
@@ -103,17 +103,17 @@ load 'direnv integration' @eval "direnv hook bash"
 # what does this even do? o.0 6.07.23
 shopt -s dotglob
 
-end=$(date +%s.%N)
-read -r -d '' ARG0_PY << '--END'
-import sys
-from datetime import datetime
+#end=$(date +%s.%N)
+#read -r -d '' ARG0_PY << '--END'
+#import sys
+#from datetime import datetime
 
-_, *a = sys.argv
-b = map(float, a)
-start, end = map(datetime.fromtimestamp, b)
+#_, *a = sys.argv
+#b = map(float, a)
+#start, end = map(datetime.fromtimestamp, b)
 
-diff = end - start
+#diff = end - start
 
-print(f".bashrc took ~{diff.microseconds / 10 ** 3}ms")
---END
-python3 -c "$ARG0_PY" $start $end
+#print(f".bashrc took ~{diff.microseconds / 10 ** 3}ms")
+#--END
+#python3 -c "$ARG0_PY" $start $end
