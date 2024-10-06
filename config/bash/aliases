@@ -175,3 +175,6 @@ mk-repo() {
     # TODO: prompt for description
     # TODO: is python - yes no, template accordingly
 }
+
+# I sometimes forget ncdu and still go for baobab
+alias baobab="ncdu"
