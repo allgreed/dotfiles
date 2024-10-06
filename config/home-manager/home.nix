@@ -25,9 +25,10 @@ in
           "browser.sessionstore.restore_tabs_lazily" = false;
           "signon.rememberSignons" = false;
           "dom.private-attribution.submission.enabled" = false;
+          # also: https://news.ycombinator.com/item?id=40974735
+          # programs.firefox.policies.Preferences."dom.private-attribution.submission.enabled" = false;
           # HTTPS-Only Mode <- enable in all windows - how to?
         };
-
 
         # TODO: add StartPage and make it the default search engine
         # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.firefox.profiles._name_.search.engines
