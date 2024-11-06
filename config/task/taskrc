@@ -48,13 +48,14 @@ report.pending.sort=urgency-
 report.pending.filter=+PENDING -BLOCKED limit:15
 
 # TODO: do something about the color
-report.a.description=Likely should be done now
-report.a.columns=id,start.age,entry.age,priority,project,tags,urgent,important,scheduled.countdown,due.relative,until.remaining,description,urgency
-report.a.labels=ID,Active,Age,P,Project,Tag,Urg,Imp,S,Due,Until,Description,Urg
+report.a.description=Everything except completed and deleted
+report.a.columns=id,wait,priority,project,tags,urgent,important,scheduled.countdown,due.relative,until.remaining,description,urgency
+report.a.labels=ID,Wait,P,Project,Tag,Urg,Imp,S,Due,Until,Description,Urg
 report.a.sort=urgency-
 report.a.filter=all -COMPLETED -DELETED
 report.a.context=0
 # TODO: I did a chain of 4 tasks under 1 project and one of them wasn't showing
+# TODO: again "zmienić ręcznik" wasn't showing
 
 # Urgency calculations
 # ############################
