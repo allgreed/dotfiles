@@ -70,7 +70,7 @@ load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
 load 'bash autocomplete' @nixos /usr/share/bash-completion/bash_completion
 load 'git autocomplete' $(_resolve_nix git share/bash-completion/completions/git) /usr/share/bash-completion/completions/git
 load 'task autocomplete' $(_resolve_nix task share/bash-completion/completions/task.bash) @fin
-complete -cf doas
+complete -F _command doas
 
 load 'autojump' $(_resolve_nix autojump share/autojump/autojump.bash)
 # this worked really well for ~2 years, I'm running it now alongside autojump, will see :D
