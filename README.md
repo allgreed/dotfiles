@@ -3,13 +3,15 @@
 My collection of preferences, configs, /etc.
 They work in tandem with [my Nixos configuration](https://github.com/allgreed/nixos-config), but for reasons™ I'm keeping them separate 
 
+## Requirements
+- nix
+
 ## Usage
 
 ```
 git clone https://github.com/allgreed/dotfiles.git ~/Dotfiles
 cd ~/Dotfiles/ansible
-make init
-make work
+nix-shell --command "make work"
 ```
 
 ## Note on portability

@@ -25,34 +25,6 @@
     when: link_main_git_id | bool
     ignore_errors: yes # TODO: make this emmit warning but don't stop the whole playbook
 
-  - name: list avaible channels
-    shell: "nix-channel --list | cut -f 1 -d' '"
-    changed_when: False
-    register: nix_channels_raw
-
-  - name: check home-manager availbility
-    command: "which home-manager"
-    changed_when: False
-    failed_when: "which_home_manager_cmd.rc not in [0, 1]"
-    register: which_home_manager_cmd
-
-  - set_fact:
-      nix_channels: "{{ nix_channels_raw.stdout_lines }}"
-      home_manager_installed: "{{ True if which_home_manager_cmd.rc == 0 else False }}"
-
-  - name: add home-manager channel
-    when: "'home-manager' not in nix_channels"
-    block:
-      - name: actually add the channel
-        command: nix-channel --add https://github.com/nix-community/home-manager/archive/release-20.09.tar.gz home-manager
-
-      - name: update home-manager channel
-        command: nix-channel --update
-
-  - name: install home-manager
-    when: not home_manager_installed
-    command: nix-shell '<home-manager>' -A install
-
   - name: ensure .vim directories
     file:
       path: "{{ item }}"
@@ -109,3 +81,31 @@
       mode: '600'
     with_items:
       - pl
+
+  - name: list avaible channels
+    shell: "nix-channel --list | cut -f 1 -d' '"
+    changed_when: False
+    register: nix_channels_raw
+
+  - name: check home-manager availbility
+    command: "which home-manager"
+    changed_when: False
+    failed_when: "which_home_manager_cmd.rc not in [0, 1]"
+    register: which_home_manager_cmd
+
+  - set_fact:
+      nix_channels: "{{ nix_channels_raw.stdout_lines }}"
+      home_manager_installed: "{{ True if which_home_manager_cmd.rc == 0 else False }}"
+
+  - name: add home-manager channel
+    when: "'home-manager' not in nix_channels"
+    block:
+      - name: actually add the channel
+        command: nix-channel --add https://github.com/nix-community/home-manager/archive/release-20.09.tar.gz home-manager
+
+      - name: update home-manager channel
+        command: nix-channel --update
+
+  - name: install home-manager
+    when: not home_manager_installed
+    command: nix-shell '<home-manager>' -A install

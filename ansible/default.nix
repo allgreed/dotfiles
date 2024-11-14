@@ -1,6 +1,6 @@
 with import <nixpkgs> {};
 let
-  pythonCore = python38;
+  pythonCore = python3;
   pythonPkgs = python-packages: with python-packages; [
       setuptools
     ]; 
