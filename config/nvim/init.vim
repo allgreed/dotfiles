@@ -32,7 +32,7 @@ local on_attach = function(client, bufnr)
     -- Disable hover in favor of Pyright
     client.server_capabilities.hoverProvider = false
 end
-lspconfig.ruff_lsp.setup {
+lspconfig.ruff.setup {
     on_attach = on_attach,
     init_options = {
         settings = {
@@ -43,7 +43,7 @@ lspconfig.ruff_lsp.setup {
 }
 
 lspconfig.zls.setup{}
-lspconfig.tsserver.setup{
+lspconfig.ts_ls.setup{
     cmd = {
         "npx", "typescript-language-server", "--stdio"
     }
