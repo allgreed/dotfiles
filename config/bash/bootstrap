@@ -22,7 +22,7 @@ function load
         fi
 
         if [ -n "$1" ]; then
-            2> /dev/null source "$1" && return 
+            source "$1" && return 
         fi 
 
         shift
