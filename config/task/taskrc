@@ -151,3 +151,6 @@ uda.brainpower.type=string
 uda.brainpower.label=Brainpower
 uda.brainpower.values=H,M,L
 uda.brainpower.default=M
+
+# stuff that can be done quickly should be done faster, yet they don't warrant 'next'
+urgency.user.tag.quick.coefficient = 10
