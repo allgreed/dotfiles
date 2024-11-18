@@ -4,7 +4,7 @@
 # ###############
 .PHONY: work
 work:  ## install the dotfiles and everything
-	ansible-playbook -l local --inventory=inventory main.yml --extra-vars \"link_main_git_id=yes dotfiles_binary=`which dotfiles` ansible_python_interpreter=`which python`\""
+	ansible-playbook -l local --inventory=inventory main.yml --extra-vars "link_main_git_id=yes dotfiles_binary=`which dotfiles` ansible_python_interpreter=`which python`"
 	@tput setaf 1; echo 'if ran for the first time on this machine I highly recommend running also `git checkout ..`'
 	# TODO: is this relevant ^
 	
