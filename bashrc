@@ -41,8 +41,7 @@ PATH_ROOT_BINARIES=/sbin/:/usr/sbin
 
 PATH_SCRIPT_BINARIES=$HOME/.scripts/bin
 
-PATH=$PATH_LOCAL_BINARIES:$PATH_SCRIPT_BINARIES:$PATH:$PATH_ROOT_BINARIES
-export PATH
+export PATH=$PATH_LOCAL_BINARIES:$PATH_SCRIPT_BINARIES:$PATH:$PATH_ROOT_BINARIES
 
 export VISUAL=nvim
 export EDITOR=nvim
@@ -56,7 +55,9 @@ export CARGO_HOME=~/.cache/cargo
 
 export LEDGER_FILE="/home/allgreed/Documents/finance/2024.journal"
 export BAT_THEME='Solarized (light)'
+
 export DO_NOT_TRACK=1 # because why not :D
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Extensions
 # are after env, since they may depends on env
