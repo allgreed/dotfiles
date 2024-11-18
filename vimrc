@@ -6,8 +6,13 @@ set nocompatible " Welcome to the 21st
 
 syntax enable
 
-colorscheme solarized
 set background=light
+set termguicolors
+colorscheme selenized
+"https://github.com/jan-warchol/selenized/tree/master/editors/vim
+" TODO: how does it gel with my Linux setup?
+"set t_Co=256 " enable all the colors xD
+" ^ what? - this important?
 
 set relativenumber number " hybrid line numbering
 set numberwidth=5
@@ -23,7 +28,7 @@ set laststatus=2 " always show statusline
 set rulerformat=%19(%l,%c%V%7(<0x%B>%)%=%P%)
 
 set ttimeoutlen=10 " wait before sequence completes [ms], no idea why, but I've changed it
-set t_Co=256 " enable all the colors xD
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editorial behaviours
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

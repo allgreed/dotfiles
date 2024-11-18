@@ -43,11 +43,11 @@
       dest: ~/.vim/bundle/Vundle.vim
       version: master
 
-  - name: install solarized colorscheme
-    # since the last commit was in 2011 I've decided to vendor-in this one
+  - name: install colorscheme
+    # since the last commit was some time ago I've decided to vendor-in this one
     unarchive:
       dest: ~/.vim/colors/
-      src: vendor/vim/solarized.vim.tar.gz
+      src: vendor/vim/selenized.vim.tar
       mode: '600'
 
   - name: gather installed plugins information
