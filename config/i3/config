@@ -223,6 +223,8 @@ hide_edge_borders vertical
 
 #locking through the fancy blue button 
 bindsym XF86Launch1 exec ~/.scripts/lock
+# macos compatibility shim for moldable keyboards shared between systems
+bindsym $mod+Control+q exec ~/.scripts/lock
 # and alwayspresent alias
 bindsym $mod+Control+l exec ~/.scripts/lock
 
