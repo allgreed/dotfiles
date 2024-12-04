@@ -25,7 +25,7 @@ alias pr="hub pull-request"
 alias led="vim $LEDGER_FILE"
 alias ulock="ssh-add ~/.ssh/id_ed25519"
 alias hbs="hledger bs --no-total -3"
-alias total="hledger bs"
+alias total="hledger bs -X $(hledger-get-default-currency) | tail -n 1 | cut -d'|' -f 3 | cut -d' ' -f 2"
 
 ### defaults ###
 alias mv='mv -i'
