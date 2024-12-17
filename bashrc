@@ -63,13 +63,13 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # are after env, since they may depends on env
 #########################
 # ~10ms
-load 'git prompt' $(_resolve_nix git share/bash-completion/completions/git-prompt.sh) @fin
+load 'git prompt' $(_resolve_nix git share/bash-completion/completions/git-prompt.sh) /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh @fin
 load 'prompt' ~/.config/bash/prompt
 load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
 load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
 # these add (including autojump) ~40-50ms, so half the time
 load 'bash autocomplete' @nixos /usr/share/bash-completion/bash_completion
-load 'git autocomplete' $(_resolve_nix git share/bash-completion/completions/git) /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh /usr/share/bash-completion/completions/git
+load 'git autocomplete' $(_resolve_nix git share/bash-completion/completions/git) /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash /usr/share/bash-completion/completions/git
 load 'task autocomplete' $(_resolve_nix task share/bash-completion/completions/task.bash) @fin
 complete -F _command doas
 
