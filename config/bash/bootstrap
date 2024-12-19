@@ -1,8 +1,8 @@
 # vim: set filetype=sh :
 function load
 {
-    deps="$@"
     name="$1"; shift
+    deps="$@"
 
     while [ -n "$1" ]; do
         # @nixos means that the utility is already provided by Nixos and
