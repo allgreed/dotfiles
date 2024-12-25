@@ -60,8 +60,8 @@ report.a.context=0
 # Urgency calculations
 # ############################
 urgency.uda.urgent.T.coefficient=9
-urgency.uda.important.T.coefficient=3
-urgency.uda.urgent.F.coefficient=-2
+urgency.uda.important.T.coefficient=5
+urgency.uda.urgent.F.coefficient=-3
 urgency.uda.important.F.coefficient=-7
 urgency.user.tag.cron.coefficient=10
 urgency.blocking.coefficient=4
