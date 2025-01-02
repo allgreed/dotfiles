@@ -53,7 +53,7 @@ export PYTHONSTARTUP=~/.config/ptpython/config.py
 # cargo needs some special incentive in order to behave
 export CARGO_HOME=~/.cache/cargo
 
-export LEDGER_FILE="/home/allgreed/Documents/finance/2024.journal"
+export LEDGER_FILE="/home/allgreed/Documents/finance/2025.journal"
 export BAT_THEME='Solarized (light)'
 
 export DO_NOT_TRACK=1 # because why not :D
