@@ -57,7 +57,7 @@ def _run_expect(amount: str, title: str):
     child.sendline("\t")
 
     child.expect( "Account 3" )
-    child.sendline("")
+    child.sendline(".")
 
     child.expect( "Save" )
     child.sendline("y")
