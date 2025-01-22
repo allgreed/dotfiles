@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+cd ~/Desktop/taskgen
+nix-shell --command "make run"
+
+cd ~/Desktop/gmail-notes-scrapper
+nix-shell --command "make run"
+
+clear; task
