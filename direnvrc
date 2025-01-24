@@ -1,4 +1,9 @@
-source /run/current-system/sw/share/nix-direnv/direnvrc
+if [ -f /run/current-system/sw/share/nix-direnv/direnvrc ]; then
+    source /run/current-system/sw/share/nix-direnv/direnvrc
+else
+    source "$(nix-env -q nix-direnv --out-path --json | jq '."3".outputs.out' | tr -d '"')/share/nix-direnv/direnvrc"
+fi
+
 : ${XDG_CACHE_HOME:=$HOME/.cache}
 declare -A direnv_layout_dirs
 direnv_layout_dir() {
