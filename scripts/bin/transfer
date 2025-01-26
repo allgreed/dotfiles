@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-curl --upload-file $1 https://transfer.sh/$(basename $1); printf "\n"
+curl -F"file=@$1" -Fsecret= https://0x0.st
