@@ -23,9 +23,8 @@ alias ka="kubectl apply -f ."
 alias k="kubectl"
 alias pr="hub pull-request"
 alias led="vim $LEDGER_FILE"
-alias ulock="ssh-add ~/.ssh/id_ed25519"
-alias hbs="hledger bs --no-total -3"
-alias total="hledger bs -X $(hledger-get-default-currency) | tail -n 1 | cut -d'|' -f 3 | cut -d' ' -f 2"
+alias r="ranger"
+alias ,sus="systemctl suspend && exit"
 
 ### defaults ###
 alias mv='mv -i'
@@ -46,6 +45,7 @@ alias sl='ls'
 alias kubect=kubectl
 alias kubeclt=kubectl
 alias scratch="tmp"
+alias baobab="ncdu" # I sometimes forget ncdu and still go for baobab
 
 ### polyfills ###
 alias cal="~/Dotfiles/scripts/cal_compatibility_wrapper"
@@ -64,9 +64,11 @@ alias monthly-report="yearly-report -p thismonth"
 alias mon="monthly-report"
 alias today="date +%d-%m-%Y"
 alias show="command bat"
-alias bat="echo 5" # TODO: until proper battery script
 alias twatch="ls ~/.task/pending.data | entr -c task"
+alias batt="echo 5 [not really]" # TODO: until proper battery script
 complete -o nospace -F _task twatch
+alias hbs="hledger bs --no-total -3"
+alias total="hledger bs -X $(hledger-get-default-currency) | tail -n 1 | cut -d'|' -f 3 | tr -d ' ' | cut -d'.' -f 1"
  
 ### functions ###
 tmp() {
@@ -123,7 +125,6 @@ alias alert='dunstify --urgency=low -i "$([ $? = 0 ] && echo terminal || echo er
 # space after alias does magic!
 #alias cp="rsync -ah"
 # TODO: o.0 wtf? - see commit that introduced it
-alias r="ranger"
 
 alias v="vim"
 
@@ -176,5 +177,6 @@ mk-repo() {
     # TODO: is python - yes no, template accordingly
 }
 
-# I sometimes forget ncdu and still go for baobab
-alias baobab="ncdu"
+
+# Do I use this?
+alias ulock="ssh-add ~/.ssh/id_ed25519"
