@@ -21,9 +21,9 @@ alias ll='ls -lh'
 alias l='ls -Ah'
 alias ka="kubectl apply -f ."
 alias k="kubectl"
-alias pr="hub pull-request"
 alias led="vim $LEDGER_FILE"
 alias r="ranger"
+alias tf="terraform"
 alias ,sus="systemctl suspend && exit"
 
 ### defaults ###
