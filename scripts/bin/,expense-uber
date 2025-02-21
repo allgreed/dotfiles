@@ -4,7 +4,7 @@ import pexpect
 import functools
 import typer
 from typing import List
-from decimal import Decimal
+from decimal import Decimal, InvalidOperation
 from typing_extensions import Annotated
 
 
@@ -24,11 +24,19 @@ def main(
     for amount in args:
         # TODO: move / remove this logic
         _amount = amount
-        amount = Decimal(_amount)
+        try:
+            amount = Decimal(_amount)
+        except InvalidOperation:
+            if _amount.count(",") == 1:
+                amount = Decimal(_amount.replace(",", "."))
+            else:
+                raise
+
         def decimal_point(d: Decimal) -> int:
             return -d.as_tuple().exponent
         if decimal_point(amount) > 2:
             raise ValueError("Too much precision, likely an input error")
+
         f(amount)
 
 
