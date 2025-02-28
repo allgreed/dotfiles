@@ -63,10 +63,10 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # are after env, since they may depends on env
 #########################
 # ~10ms
-load 'git prompt' $(_resolve_nix git share/bash-completion/completions/git-prompt.sh) /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh @fin
+load 'git prompt' $(_resolve_nix git share/bash-completion/completions/git-prompt.sh) /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 load 'prompt' ~/.config/bash/prompt
-load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh
-load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh @eval "which nix"
+load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh @macos
 # these add (including autojump) ~40-50ms, so half the time
 load 'bash autocomplete' @nixos /usr/share/bash-completion/bash_completion
 load 'git autocomplete' $(_resolve_nix git share/bash-completion/completions/git) /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash /usr/share/bash-completion/completions/git
@@ -95,7 +95,7 @@ load 'aliases' ~/.config/bash/aliases
 load 'local stuff' ~/.bash_local @fin
 
 # this has to happen after all prompts are loaded
-load 'direnv integration' @eval "direnv hook bash"
+load 'direnv integration' @eval "$(eval "direnv hook bash")"
 
 # Testing area
 #########################

@@ -12,9 +12,12 @@ function load
         fi 
 
         if [[ "$1" == '@eval' ]]; then
-            code=$(eval $2)
-            eval "$code" && return
+            eval "$2" && return
         fi
+
+        if [[ "$1" == '@macos' && $(uname -s) == "Darwin" ]]; then
+            return 
+        fi 
 
         # unconditionally stop processing and happily return
         if [[ "$1" == '@fin' ]]; then
