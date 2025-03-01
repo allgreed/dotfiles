@@ -65,7 +65,7 @@ alias mon="monthly-report"
 alias today="date +%d-%m-%Y"
 alias show="command bat"
 alias twatch="ls ~/.task/pending.data | entr -c task"
-alias batt="echo 5 [not really]" # TODO: until proper battery script
+alias batt="acpi -b"
 complete -o nospace -F _task twatch
 alias hbs="hledger bs --no-total -3"
 alias total="hledger bs -X $(hledger-get-default-currency) | tail -n 1 | cut -d'|' -f 3 | tr -d ' ' | cut -d'.' -f 1"
