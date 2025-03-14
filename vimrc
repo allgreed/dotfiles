@@ -67,7 +67,7 @@ Plugin 'jiangmiao/auto-pairs'
 " ^ this is nice, but requires some tweaking, while I have a moment
 Plugin 'dense-analysis/ale'
 
-" Syntax highlighters
+" Language-specific
 Plugin 'posva/vim-vue'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'hashivim/vim-terraform'
@@ -147,7 +147,6 @@ autocmd! BufWritePost ~/.vimrc nested :source ~/.vimrc
 " preloaded macros
 let @r= 'y:%s/"/"/g€kl€kl€kl' " replace locally visually highlighted text
 let @g= 'y:%s/"//g€kl€kl' " replace globally visually highlighted text
-let @c= 'A,j' " add comma at the end of the line
 
 let mapleader=" "
 :map <Leader>h :noh<CR>
