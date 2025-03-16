@@ -5,6 +5,8 @@ let
     url = "https://github.com/nix-community/NUR";
     ref = "refs/heads/master";
     rev = "859d801541585ce1b5c41879d7e95adcaea023a1"; # 20-06-2024
+    # TODO: make it work?
+    #rev = "b30c245e2c44c7352a27485bfd5bc483df660f0e"; # 16-06-2025
     # obtain via `git ls-remote https://github.com/nix-community/NUR master`
   }) {
     inherit pkgs;
