@@ -68,7 +68,7 @@ alias twatch="ls ~/.task/pending.data | entr -c task"
 alias batt="acpi -b"
 complete -o nospace -F _task twatch
 alias hbs="hledger bs --no-total -3"
-alias total="hledger bs -X $(hledger-get-default-currency) | tail -n 1 | cut -d'|' -f 3 | tr -d ' ' | cut -d'.' -f 1"
+alias total="hledger bs -X PLN | tail -n 1 | cut -d'|' -f 3 | tr -d ' ' | cut -d'.' -f 1"
  
 ### functions ###
 tmp() {
