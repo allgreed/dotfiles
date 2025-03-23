@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+import sys
+
+old_name = "assets:physical"
+new_name = "physical"
+
+with open("/tmp/hajs") as f:
+    acc = []
+    for line in f.readlines():
+        acc.append(filter(bool, line.rstrip().split("  ")))
+
+for a in acc:
+    name, *com = a
+    com = com[0].split(",")
+    for c in com:
+        print(f"{name}  -{c}")
+        print(f"{name.replace(old_name, new_name)}  {c}")
