@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# TODO: improve
+qpdf --password=YOURPASSWORD-HERE --decrypt input.pdf output.pdf
