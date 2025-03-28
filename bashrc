@@ -62,7 +62,10 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # Extensions
 # are after env, since they may depends on env
 #########################
-# ~10ms
+if [ -n "${GHOSTTY_RESOURCES_DIR}" ]; then
+    builtin source "${GHOSTTY_RESOURCES_DIR}/shell-integration/bash/ghostty.bash"
+fi
+
 load 'git prompt' $(_resolve_nix git share/bash-completion/completions/git-prompt.sh) /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 load 'prompt' ~/.config/bash/prompt
 load 'nix integration' @nixos ~/.nix-profile/etc/profile.d/nix.sh @eval "which nix > /dev/null"
