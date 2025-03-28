@@ -1,0 +1,4 @@
+theme = dark:Builtin Solarized Dark,light:Builtin Solarized Light
+font-family = Source Code Pro for Powerline
+font-size = 15
+auto-update = download
