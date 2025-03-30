@@ -9,10 +9,6 @@ syntax enable
 set background=light
 set termguicolors
 colorscheme selenized
-"https://github.com/jan-warchol/selenized/tree/master/editors/vim
-" TODO: how does it gel with my Linux setup?
-"set t_Co=256 " enable all the colors xD
-" ^ what? - this important?
 
 set relativenumber number " hybrid line numbering
 set numberwidth=5
