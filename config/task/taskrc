@@ -36,8 +36,10 @@ alias.rm=delete
 alias.@=context
 
 # I don't want to have it apply anything to the created tasks
-context.out.read=-home
-context.plane.read=-home (netz:F or netz:Maybe)
+# intent: home hides a7, a7 hides home
+context.out.read=-home -a7
+context.home.read=-a7
+context.a7.read=-home
 
 report.next.filter=+PENDING -BLOCKED limit:5
 
@@ -118,6 +120,8 @@ urgency.due.coefficient=30
 urgency.user.tag.hack.coefficient=2
 # it's slightly better to do home stuff when available
 urgency.user.tag.home.coefficient=3
+# do A7 when A7
+urgency.user.tag.a7.coefficient=10
 # I want to apply the important attribute, but don't feel like deciding if something is important or not
 # Adam would likely say that if it's not important then it's unimportant, lol
 urgency.uda.important.M.coefficient=0
