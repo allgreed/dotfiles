@@ -202,7 +202,7 @@ nmap <Leader>f <Plug>(ale_fix)
 " # how about only in insert mode?
 let g:AutoPairsShortcutJump = '<C-F>'
 
-set history=100 "is this enough?
+set history=10000 "max
 
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>v
