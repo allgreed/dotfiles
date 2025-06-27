@@ -49,6 +49,7 @@ lspconfig.ts_ls.setup{
     }
 }
 lspconfig.nil_ls.setup{}
+lspconfig.gopls.setup{}
 EOF
 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
