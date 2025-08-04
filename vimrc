@@ -222,3 +222,5 @@ set wildignore+=node_modules/**,dist/**
 "
 ":command! Plm :normal! ggO # vim: set spelllang=pl spell:<ESC>^x
 "set nospell " fixes interpreting the above, but possible messes with spellcheck on gitcommit
+" clever way to not have to remember %:h
+cnoremap <expr> %% getcmdtype() == ":" ? expand('%:h').'/' : '%%'
