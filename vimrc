@@ -214,13 +214,5 @@ set smartindent
 
 set wildignore+=node_modules/**,dist/**
 
-" Do I need-want Polish search?
-" what the shit is this?
-"set complete+=kspell
-":command! Pl :set spelllang=pl spell
-"set nospell " fixes interpreting the above, but possible messes with spellcheck on gitcommit
-"
-":command! Plm :normal! ggO # vim: set spelllang=pl spell:<ESC>^x
-"set nospell " fixes interpreting the above, but possible messes with spellcheck on gitcommit
 " clever way to not have to remember %:h
 cnoremap <expr> %% getcmdtype() == ":" ? expand('%:h').'/' : '%%'
