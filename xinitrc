@@ -14,4 +14,4 @@ xcape -e 'Shift_R=parenright;Shift_L=parenleft' -t 800
 xmodmap ~/.Xmodmap
 numlockx on
 
-PATH=/home/$(whoami)/.nix-profile/bin:$PATH TERMINAL='urxvt' exec i3
+PATH=/home/$(whoami)/.nix-profile/bin:$PATH TERMINAL='ghostty' exec i3
