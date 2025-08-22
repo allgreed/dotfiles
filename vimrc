@@ -199,12 +199,13 @@ let g:ale_fixers = {
 nmap <Leader>f <Plug>(ale_fix)
 
 " autopairs
-" # how about only in insert mode?
+" TODO: how about only in insert mode?
 let g:AutoPairsShortcutJump = '<C-F>'
 
 set history=10000 "max
 
 noremap <silent> <C-S>          :update<CR>
+" TODO: this doesn't preserve the selection
 vnoremap <silent> <C-S>         <C-C>:update<CR>v
 inoremap <silent> <C-S>         <C-O>:update<CR>
 
