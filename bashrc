@@ -1,4 +1,4 @@
-#start=$(date +%s.%N)
+start=$(date +%s.%N)
 # Guards
 #########################
 case $- in
