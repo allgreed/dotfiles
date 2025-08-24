@@ -59,6 +59,7 @@ alias adtransaction="hledger-iadd"
 alias kogut="play ~/Music/sounds/kogut.mp3"
 alias success="play ~/Music/sounds/gta_miszyn_aczomplit.mp3"
 alias timezone-acquire="systemctl start tzupdate.service; curl ipinfo.io"
+alias tzacquire=timezone-acquire
 alias yearly-report="hledger is -M --effective -X $(hledger-get-default-currency) --flat -2 -p thisyear"
 alias monthly-report="yearly-report -p thismonth"
 alias mon="monthly-report"
