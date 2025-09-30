@@ -217,3 +217,5 @@ set wildignore+=node_modules/**,dist/**
 
 " clever way to not have to remember %:h
 cnoremap <expr> %% getcmdtype() == ":" ? expand('%:h').'/' : '%%'
+
+:command! CoppyPwd let @+ = expand('%:p')
