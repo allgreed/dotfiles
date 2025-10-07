@@ -219,6 +219,6 @@ cnoremap <expr> %% getcmdtype() == ":" ? expand('%:h').'/' : '%%'
 nnoremap <leader>d :put =strftime('%d-%m-%Y')<CR>
 
 nnoremap <leader>A :call nerdcommenter#Comment('n', 'Append')<CR>
-imap <leader>c <Plug>NERDCommenterInsert
-imap <leader>t <Plug>NERDCommenterInsertTODO:<space>
+imap \c <Plug>NERDCommenterInsert
+imap \t <Plug>NERDCommenterInsertTODO:<space>
 let g:NERDSpaceDelims = 1
