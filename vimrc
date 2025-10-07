@@ -161,8 +161,8 @@ nnoremap <Leader><Leader> <C-^>
 :command! W w
 
 "NERDComment integration
-:nnoremap \ :call nerdcommenter#Comment('n', 'Toggle')<CR>
-:vnoremap \ :call nerdcommenter#Comment('x', 'Toggle')<CR>
+nnoremap \ :call nerdcommenter#Comment('n', 'Toggle')<CR>
+vnoremap \ :call nerdcommenter#Comment('x', 'Toggle')<CR>
 
 " faster window navigation
 nnoremap <C-j> <C-w>j
@@ -185,10 +185,7 @@ set nospell " nor activate spell check by default
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" if this works well -> use the \ for the TODO comment mapping
-:nnoremap # :call nerdcommenter#Comment('n', 'Toggle')<CR>
-:vnoremap # :call nerdcommenter#Comment('x', 'Toggle')<CR>
-
+"TODO: I think those settings are cool, do they conflict?
 set ignorecase
 set smartcase
 
@@ -220,3 +217,8 @@ cnoremap <expr> %% getcmdtype() == ":" ? expand('%:h').'/' : '%%'
 :command! CoppyPwd let @+ = expand('%:p')
 
 nnoremap <leader>d :put =strftime('%d-%m-%Y')<CR>
+
+nnoremap <leader>A :call nerdcommenter#Comment('n', 'Append')<CR>
+imap <leader>c <Plug>NERDCommenterInsert
+imap <leader>t <Plug>NERDCommenterInsertTODO:<space>
+let g:NERDSpaceDelims = 1
