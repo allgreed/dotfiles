@@ -23,7 +23,7 @@ alias ka="kubectl apply -f ."
 alias k="kubectl"
 alias led="vim $LEDGER_FILE"
 alias r="ranger"
-alias tf="terraform"
+alias tf="tofu"
 alias ,sus="systemctl suspend && exit"
 
 ### defaults ###
