@@ -80,6 +80,7 @@ Plugin 'ziglang/zig.vim'
 Plugin 'torrancew/vim-openscad'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'NoahTheDuke/vim-just'
 
 call vundle#end()
 filetype plugin indent on 
