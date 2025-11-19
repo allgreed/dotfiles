@@ -3,7 +3,8 @@ if [ -f /run/current-system/sw/share/nix-direnv/direnvrc ]; then
     source /run/current-system/sw/share/nix-direnv/direnvrc
 else
     # source "$(nix profile list | grep 'Store paths' | grep nix-direnv | awk '{print $3}')/share/nix-direnv/direnvrc"
-    source "$(nix-env -q nix-direnv --out-path | cut -d' ' -f 3)/share/nix-direnv/direnvrc"
+    # source "$(nix-env -q nix-direnv --out-path | cut -d' ' -f 3)/share/nix-direnv/direnvrc"
+    :
 fi
 
 : "${XDG_CACHE_HOME:="${HOME}/.cache"}"
