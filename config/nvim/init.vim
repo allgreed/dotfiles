@@ -48,8 +48,16 @@ lspconfig.ts_ls.setup{
         "npx", "typescript-language-server", "--stdio"
     }
 }
-lspconfig.nil_ls.setup{}
 lspconfig.gopls.setup{}
+lspconfig.nixd.setup{
+   settings = {
+      nixd = {
+         formatting = {
+            command = { "nixfmt" },
+         },
+      },
+   },
+}
 EOF
 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
