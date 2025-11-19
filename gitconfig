@@ -109,6 +109,7 @@
     d = diff
     dw = diff --word-diff
     p = push
+    l = pull
     s = status --short
 
     aa = a --all

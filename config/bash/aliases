@@ -8,8 +8,11 @@ alias python="/usr/bin/env python3"
 ### shortcuts ###
 alias gs="git s"
 alias gp="git p"
+alias gl="git l"
 alias g="git"
 __git_complete g __git_main
+
+# TODO: make it also invoke just in case Makefile is not there
 alias m="make"
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" m #" 
 alias t="task"
