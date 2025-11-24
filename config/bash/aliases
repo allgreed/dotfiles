@@ -8,7 +8,7 @@ alias python="/usr/bin/env python3"
 ### shortcuts ###
 alias gs="git s"
 alias gp="git p"
-alias gl="git l"
+alias gcm="git cm"
 alias g="git"
 __git_complete g __git_main
 

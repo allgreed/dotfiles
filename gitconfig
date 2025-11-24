@@ -115,6 +115,7 @@
     aa = a --all
     call = "!f() { git diff-index --quiet --cached HEAD -- && git aa && git c $@ || echo 'Aborting! Index dirty or something went wrong'; }; f"
     co = checkout
+    cm = co main
     dc = d --cached
     dcw = dw --cached
     dwc = dcw
