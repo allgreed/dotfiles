@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-file=$(ls ~/Downloads/zsa_ergodox_ez_m32u4_shine_allgreed_* | dmenu)
+file=$(ls ~/Downloads/zsa_ergodox_ez_m32u4_shine_* | dmenu)
 cp $file ~/Backup/zsa_ergodox_ez_m32u4_shine_allgreed_latest.hex
 wally-cli $file && rm $file
