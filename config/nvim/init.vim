@@ -11,53 +11,27 @@ Plugin 'nvim-lua/plenary.nvim'
 Plugin 'nvim-treesitter/nvim-treesitter'
 
 lua << EOF
-local lspconfig = require('lspconfig')
-
-lspconfig.pyright.setup{
-  settings = {
-    pyright = {
-      -- Using Ruff's import organizer
-      disableOrganizeImports = true,
-    },
-    python = {
-      analysis = {
-        -- Ignore all files for analysis to exclusively use Ruff for linting
-        --ignore = { '*' },
-      },
-    },
-  },
-}
--- TODO: reformat this? o.0
-local on_attach = function(client, bufnr)
-    -- Disable hover in favor of Pyright
-    client.server_capabilities.hoverProvider = false
-end
-lspconfig.ruff.setup {
-    on_attach = on_attach,
-    init_options = {
-        settings = {
-            -- Any extra CLI arguments for `ruff` go here.
-            args = {},
-        }
-    }
-}
-
-lspconfig.zls.setup{}
-lspconfig.ts_ls.setup{
+vim.lsp.config("ts_ls", {
     cmd = {
         "npx", "typescript-language-server", "--stdio"
     }
-}
-lspconfig.gopls.setup{}
-lspconfig.nixd.setup{
+})
+vim.lsp.config("nixd", {
    settings = {
       nixd = {
          formatting = {
             command = { "nixfmt" },
-         },
+        },
       },
    },
-}
+})
+
+vim.lsp.enable('pyright')
+vim.lsp.enable("ruff")
+vim.lsp.enable("zls")
+vim.lsp.enable("ts_ls")
+vim.lsp.enable("nixd")
+vim.lsp.enable("gopls")
 EOF
 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>

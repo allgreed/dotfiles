@@ -171,9 +171,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" that's just nicer than typing :set paste ;)
-set pastetoggle=<f5>
-
 noh " don't show search highlights on vimrc reload
 set nospell " nor activate spell check by default
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
