@@ -73,11 +73,14 @@ def main():
         elif percentage < 80:
             color = py_xgetres(".color13")
 
+    _h, _m = map(int, time.split(":"))
+    minutes_remaining = _h * 60 + _m
+
     print(full_text)
     print(short_text)
     print(color)
 
-    if percentage < 10:
+    if percentage < 10 or minutes_remaining < 15:
         exit(33)  # sets urgent flag on i3blocks
 
 

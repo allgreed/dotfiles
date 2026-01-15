@@ -19,16 +19,16 @@ def py_xgetres(res: str):
 def main():
     now = datetime.now()
 
-    next_day_hours = 24 if now.hour >= 9 else 0
+    next_day_hours = 24 if now.hour >= 8 else 0
     now_date = now.date()
 
-    refernce = datetime(now_date.year, now_date.month, now_date.day, 9) + timedelta(hours=next_day_hours)
+    refernce = datetime(now_date.year, now_date.month, now_date.day, 8) + timedelta(hours=next_day_hours)
 
-    diff = refernce - now
+    diff = refernce - now - timedelta(hours=8)
 
-    if diff > timedelta(hours=10):
+    if diff > timedelta(hours=2):
         color = py_xgetres(".color14")
-    elif diff > timedelta(hours=9):
+    elif diff > timedelta(hours=1):
         color = py_xgetres(".color13")
     else:
         color = py_xgetres(".color1")
@@ -37,7 +37,7 @@ def main():
 
     print("{0}\n{0}\n{1}".format(formatted_diff, color))
 
-    if diff < timedelta(hours=8):
+    if diff < timedelta(hours=0):
         exit(33)  # sets urgent flag on i3blocks
 
 
