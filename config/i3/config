@@ -231,6 +231,8 @@ bindsym $mod+Control+l exec ~/.scripts/lock
 # one-hand terminal
 bindsym $mod+t exec $launch_terminal
 
+focus_follows_mouse no
+
 ########################################
 # Autostart
 #########################################
@@ -322,9 +324,6 @@ bindsym $mod+g exec $launch_terminal -e bash -ci 'hledger-iadd'
 #######
 # Testing
 #######
-# not so sure about this one...
-# it is annoying sometimes - 31.10.2023; trying without
-#focus_follows_mouse no
 
 bindsym $mod+F1 exec $launch_terminal -e play ~/Music/sounds/fanfary.mp3
 #no_focus [window_role="pop-up"] TODO: have some fun with that
