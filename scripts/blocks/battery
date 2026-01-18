@@ -73,8 +73,11 @@ def main():
         elif percentage < 80:
             color = py_xgetres(".color13")
 
-    _h, _m = map(int, time.split(":"))
-    minutes_remaining = _h * 60 + _m
+    try:
+        _h, _m = map(int, time.split(":"))
+        minutes_remaining = _h * 60 + _m
+    except ValueError:
+        minutes_remaining = 1000 # technically inf
 
     print(full_text)
     print(short_text)
