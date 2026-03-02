@@ -32,6 +32,7 @@ vim.lsp.enable("zls")
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("nixd")
 vim.lsp.enable("gopls")
+vim.lsp.enable("jsonnet_ls")
 EOF
 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
