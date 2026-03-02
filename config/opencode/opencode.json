@@ -1,0 +1,79 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "system",
+  "instructions": [
+    "Because calling Python is high cost, high friction, AVOID using it during tool calls unless absolutely necessary"
+  ],
+  "permission": {
+    "read": {
+      "*": "allow",
+      "secrets/**": "ask",
+      "~/.ssh/**": "deny",
+      "~/.aws/**": "deny"
+    },
+    "edit": {
+      "*": "ask",
+      "secrets/**": "deny",
+      "~/.ssh/**": "deny",
+      "~/.aws/**": "deny"
+    },
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "bash": {
+      "*": "ask",
+
+      "ls *": "allow",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "git log *": "allow",
+
+      "head *": "allow",
+      "tail *": "allow",
+      "echo *": "allow",
+      "jq *": "allow",
+      "python3 -m json.tool *": "deny",
+      "grep *": "allow",
+      "rg *": "allow",
+      "sleep *": "allow",
+
+      "kubectl config *": "allow",
+      "kubectl cluster-info *": "allow",
+      "kubectl api-resources *": "allow",
+      "kubectl get *": "allow",
+      "kubectl describe *": "allow",
+      "kubectl logs *": "allow",
+      "kubectl top *": "allow",
+
+      "docker ps *": "allow",
+      "docker images *": "allow",
+      "docker logs *": "allow",
+      "docker inspect *": "allow",
+      "docker compose ps *": "allow",
+      "docker compose config *": "allow",
+      "docker context ls *": "allow",
+
+      "tofu init": "allow",
+      "tofu validate *": "allow",
+      "tofu plan *": "allow",
+      "tofu show *": "allow",
+      "tofu state show *": "allow",
+      "tofu state list *": "allow",
+      "tofu output *": "allow",
+      "tofu providers *": "allow",
+      "tofu fmt -check *": "allow",
+
+      "aws configure list *": "allow",
+      "aws sts get-caller-identity *": "allow",
+      "aws s3 ls *": "allow",
+      "aws * describe-* *": "allow",
+      "aws ec2 get-* *": "allow",
+      "aws eks list-* *": "allow",
+      "aws iam list-* *": "allow",
+      "aws iam get-* *": "allow",
+      "aws logs get-* *": "allow",
+
+      "jsonnet *": "allow"
+    }
+  }
+}
