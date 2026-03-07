@@ -327,3 +327,4 @@ bindsym $mod+g exec $launch_terminal -e bash -ci 'hledger-iadd'
 
 bindsym $mod+F1 exec $launch_terminal -e play ~/Music/sounds/fanfary.mp3
 #no_focus [window_role="pop-up"] TODO: have some fun with that
+bindsym XF86AudioPlay exec playerctl play-pause
