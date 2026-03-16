@@ -2,8 +2,8 @@
 # Names
 #########################################
 
-# Super
 set $mod Mod4
+
 set $font_kind pango:Source Code Pro Medium
 set $launch_terminal i3-sensible-terminal
 
@@ -48,7 +48,8 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec $launch_terminal
-bindsym $mod+Shift+Return exec $tmux
+# lockout prevention
+bindsym Ctrl+Shift+1 exec $launch_terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -317,9 +318,6 @@ bindsym $mod+p exec ~/.scripts/bin/screen-preset
 for_window [title="Microsoft Teams Notification"] floating enable
 for_window [title="zoom"] floating enable
 
-bindsym $mod+z exec ~/.scripts/i3-next-available-worksapce
-bindsym $mod+Shift+z exec ~/.scripts/i3-next-available-worksapce --move
-bindsym $mod+g exec $launch_terminal -e bash -ci 'hledger-iadd'
 
 #######
 # Testing
@@ -328,3 +326,7 @@ bindsym $mod+g exec $launch_terminal -e bash -ci 'hledger-iadd'
 bindsym $mod+F1 exec $launch_terminal -e play ~/Music/sounds/fanfary.mp3
 #no_focus [window_role="pop-up"] TODO: have some fun with that
 bindsym XF86AudioPlay exec playerctl play-pause
+
+bindsym $mod+z exec ~/.scripts/i3-next-available-worksapce
+bindsym $mod+Shift+z exec ~/.scripts/i3-next-available-worksapce --move
+bindsym $mod+g exec $launch_terminal -e bash -ci 'hledger-iadd'
