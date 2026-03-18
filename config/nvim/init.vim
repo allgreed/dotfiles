@@ -26,7 +26,36 @@ vim.lsp.config("nixd", {
    },
 })
 
-vim.lsp.enable('pyright')
+-- TODO: will this compete with pyright?
+vim.lsp.config("pylsp", {
+   settings = {
+      pylsp = {
+         plugins = {
+            -- rope-powered features via pylsp-rope
+            -- TODO: are there any other?
+            pylsp_rope = {
+               enabled = true,
+            },
+            rope_autoimport = {
+               enabled = true,
+            },
+            rope_completion = {
+               enabled = true,
+            },
+            -- disable pycodestyle/pyflakes/mccabe since ruff handles linting
+            -- TODO: is this needed?
+            pycodestyle = { enabled = false },
+            pyflakes = { enabled = false },
+            mccabe = { enabled = false },
+            autopep8 = { enabled = false },
+            yapf = { enabled = false },
+         },
+      },
+   },
+})
+vim.lsp.enable("pylsp")
+
+vim.lsp.enable("pyright")
 vim.lsp.enable("ruff")
 vim.lsp.enable("zls")
 vim.lsp.enable("ts_ls")
