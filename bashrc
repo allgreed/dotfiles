@@ -98,9 +98,13 @@ load 'aliases' ~/.config/bash/aliases
 load 'local stuff' ~/.bash_local @fin
 
 # this has to happen after all prompts are loaded
+export DIRENV_LOG_FORMAT="$(printf "\033[2mdirenv: %%s\033[0m")"
 load 'direnv integration' @eval "$(eval "direnv hook bash")"
+_direnv_hook() {
+  eval "$(direnv export bash 2> >(egrep -v -e '^....direnv: export' >&2))"
+};
 
-# Testing area
+## Testing area
 #########################
 # TODO: i3 -> when openning a sensible terminal -> check if there are other terminals in the worksapce running bash, if yes: open with the same CWD as the terminal, if there're two, check ~/.lastcd
 
