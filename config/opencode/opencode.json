@@ -1,15 +1,12 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "theme": "system",
-  "instructions": [
-    "Because calling Python is high cost, high friction, AVOID using it during tool calls unless absolutely necessary"
-  ],
   "permission": {
     "read": {
       "*": "allow",
       "secrets/**": "ask",
       "~/.ssh/**": "deny",
-      "~/.aws/**": "deny"
+      "~/.aws/**": "ask"
     },
     "edit": {
       "*": "ask",
@@ -22,20 +19,31 @@
     "list": "allow",
     "bash": {
       "*": "ask",
+      "python *": "deny",
+      "python3 *": "deny",
 
       "ls *": "allow",
       "git status *": "allow",
       "git diff *": "allow",
       "git log *": "allow",
+      "git show *": "allow",
+      "git commit *": "deny",
+      "git push *": "deny",
+
+      "gh pr view *": "allow",
 
       "head *": "allow",
       "tail *": "allow",
       "echo *": "allow",
+      "which *": "allow",
+      "wc *": "allow",
       "jq *": "allow",
-      "python3 -m json.tool *": "deny",
       "grep *": "allow",
       "rg *": "allow",
       "sleep *": "allow",
+      "sort *": "allow",
+      "true *": "allow",
+      "uniq *": "allow",
 
       "kubectl config *": "allow",
       "kubectl cluster-info *": "allow",
@@ -53,7 +61,7 @@
       "docker compose config *": "allow",
       "docker context ls *": "allow",
 
-      "tofu init": "allow",
+      "tofu init *": "allow",
       "tofu validate *": "allow",
       "tofu plan *": "allow",
       "tofu show *": "allow",
