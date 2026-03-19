@@ -114,7 +114,7 @@
     s = status --short
 
     aa = a --all
-    call = "!f() { git diff-index --quiet --cached HEAD -- && git aa && git c $@ || echo 'Aborting! Index dirty or something went wrong'; }; f"
+    call = "!f() { git aa && git c \"$@\"; }; f"
     co = checkout
     cm = co main
     dc = d --cached
