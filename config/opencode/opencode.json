@@ -21,10 +21,12 @@
       "*": "ask",
       "python *": "deny",
       "python3 *": "deny",
+      "find": "deny",
 
       "ls *": "allow",
       "git status *": "allow",
       "git diff *": "allow",
+      "diff *": "allow",
       "git log *": "allow",
       "git show *": "allow",
       "git commit *": "deny",
@@ -80,6 +82,7 @@
       "aws iam list-* *": "allow",
       "aws iam get-* *": "allow",
       "aws logs get-* *": "allow",
+      "aws cloudwatch get-metric-statistics *": "allow",
 
       "jsonnet *": "allow"
     }
