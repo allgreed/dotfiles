@@ -191,4 +191,4 @@
     external = difft
 
 [alias]
-    dd = --no-ext-diff diff
+    dd = diff --no-ext-diff
