@@ -186,3 +186,9 @@
     ignoreRevsFile = .git-blame-ignore-revs
 	markIgnoredLines = true
 	markUnblamableLines = true
+
+[diff]
+    external = difft
+
+[alias]
+    dd = --no-ext-diff diff
