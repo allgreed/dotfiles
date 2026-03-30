@@ -137,6 +137,12 @@ augroup vimrc
 augroup END
 
 autocmd! BufWritePost ~/.vimrc nested :source ~/.vimrc
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Misc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set smartcase
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -183,10 +189,6 @@ set nospell " nor activate spell check by default
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Testin area
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"TODO: I think those settings are cool, do they conflict?
-set ignorecase
-set smartcase
-
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'typescriptreact': ['eslint'],
