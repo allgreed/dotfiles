@@ -21,7 +21,7 @@
       "*": "ask",
       "python *": "deny",
       "python3 *": "deny",
-      "find": "deny",
+      "find *": "deny",
 
       "ls *": "allow",
       "git status *": "allow",
@@ -33,6 +33,7 @@
       "git push *": "deny",
 
       "gh pr view *": "allow",
+      "gh pr diff *": "allow",
 
       "head *": "allow",
       "tail *": "allow",
