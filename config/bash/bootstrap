@@ -1,8 +1,9 @@
-# vim: set filetype=sh :
+# vim: set filetype=bash :
+# shellcheck shell=bash
 function load
 {
     name="$1"; shift
-    deps="$@"
+    deps="$*"
 
     while [ -n "$1" ]; do
         # @nixos means that the utility is already provided by Nixos and
@@ -26,8 +27,10 @@ function load
 
         if [ -n "$1" ]; then
             if [[ -z "${ALLGREED_DEBUG}" ]]; then
+                # shellcheck source=/dev/null
                 source "$1" 2>/dev/null && return 
             else
+                # shellcheck source=/dev/null
                 source "$1" && return 
             fi
         fi 
@@ -43,5 +46,5 @@ function load
 function _resolve_nix
 {
     executable="$1"; path="$2"
-    echo "$(dirname $(readlink -f $(which $executable)))/../$path"
+    echo "$(dirname "$(readlink -f "$(which "$executable")")")/../$path"
 }
