@@ -5,35 +5,50 @@ function load
     name="$1"; shift
     deps="$*"
 
+    # look ma', I've made a forth :D
     while [ -n "$1" ]; do
-        # @nixos means that the utility is already provided by Nixos and
-        # doesn't require additional loading
-        if [[ "$1" == '@nixos' && -n "$__NIXOS_SET_ENVIRONMENT_DONE" ]]; then
-            return 
-        fi 
-
-        if [[ "$1" == '@eval' ]]; then
-            eval "$2" && return
-        fi
-
-        if [[ "$1" == '@macos' && $(uname -s) == "Darwin" ]]; then
-            return 
-        fi 
-
-        # unconditionally stop processing and happily return
-        if [[ "$1" == '@fin' ]]; then
-            return
-        fi
-
-        if [ -n "$1" ]; then
-            if [[ -z "${ALLGREED_DEBUG}" ]]; then
-                # shellcheck source=/dev/null
-                source "$1" 2>/dev/null && return 
-            else
-                # shellcheck source=/dev/null
-                source "$1" && return 
-            fi
-        fi 
+        case "$1" in
+            # unconditionally stop processing and happily return
+            '@fin')
+                return
+                ;;
+            # @eval EXPR
+            '@eval')
+                eval "$2" && return
+                shift 2
+                continue
+                ;;
+                # @eval2 CMD, double eval, so: eval $(eval CMD)
+            '@eval2')
+                local _out _rc
+                if [[ -z "${ALLGREED_DEBUG}" ]]; then
+                    _out="$(eval "$2" 2>/dev/null)"; _rc=$?
+                else
+                    _out="$(eval "$2")"; _rc=$?
+                fi
+                if [[ $_rc -eq 0 ]]; then
+                    eval "$_out" && return
+                fi
+                shift 2
+                continue
+                ;;
+            # utility already provided by NixOS; no loading needed
+            '@nixos')
+                [[ -n "$__NIXOS_SET_ENVIRONMENT_DONE" ]] && return
+                ;;
+            '@macos')
+                [[ "$(uname -s)" == "Darwin" ]] && return
+                ;;
+            *)
+                if [[ -z "${ALLGREED_DEBUG}" ]]; then
+                    # shellcheck source=/dev/null
+                    source "$1" 2>/dev/null && return
+                else
+                    # shellcheck source=/dev/null
+                    source "$1" && return
+                fi
+                ;;
+        esac
 
         shift
     done

@@ -99,7 +99,7 @@ load 'local stuff' ~/.bash_local @fin
 
 # this has to happen after all prompts are loaded
 export DIRENV_LOG_FORMAT="$(printf "\033[2mdirenv: %%s\033[0m")"
-load 'direnv integration' @eval "$(eval "direnv hook bash")"
+load 'direnv integration' @eval2 'direnv-instant hook bash' @eval2 'direnv hook bash'
 _direnv_hook() {
   eval "$(direnv export bash 2> >(egrep -v -e '^....direnv: export' >&2))"
 };
