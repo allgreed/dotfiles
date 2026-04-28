@@ -47,6 +47,10 @@
       "sort *": "allow",
       "true *": "allow",
       "uniq *": "allow",
+      "sed *": "allow",
+      "awk *": "allow",
+      "basename *": "allow",
+      "dirname *": "allow",
 
       "kubectl config *": "allow",
       "kubectl cluster-info *": "allow",
@@ -83,7 +87,12 @@
       "aws iam list-* *": "allow",
       "aws iam get-* *": "allow",
       "aws logs get-* *": "allow",
+      "aws logs get-* *": "allow",
+      "aws s3api list-* *": "allow",
+      "aws s3api get-* *": "allow",
+      "aws iam simulate-* *": "allow",
       "aws cloudwatch get-metric-statistics *": "allow",
+      "aws cloudtrail lookup-events *": "allow",
 
       "jsonnet *": "allow"
     }
