@@ -15,10 +15,9 @@ function load
             # @eval EXPR
             '@eval')
                 eval "$2" && return
-                shift 2
-                continue
+                shift 1
                 ;;
-                # @eval2 CMD, double eval, so: eval $(eval CMD)
+            # @eval2 CMD, double eval, so: eval $(eval CMD)
             '@eval2')
                 local _out _rc
                 if [[ -z "${ALLGREED_DEBUG}" ]]; then
@@ -29,8 +28,7 @@ function load
                 if [[ $_rc -eq 0 ]]; then
                     eval "$_out" && return
                 fi
-                shift 2
-                continue
+                shift 1
                 ;;
             # utility already provided by NixOS; no loading needed
             '@nixos')
