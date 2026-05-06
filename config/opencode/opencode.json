@@ -1,9 +1,9 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "system",
   "permission": {
     "read": {
       "*": "allow",
+      "/nix/store/**": "allow",
       "secrets/**": "ask",
       "~/.ssh/**": "deny",
       "~/.aws/**": "ask"
@@ -52,6 +52,8 @@
       "basename *": "allow",
       "dirname *": "allow",
 
+      "shellcheck *": "allow",
+
       "kubectl config *": "allow",
       "kubectl cluster-info *": "allow",
       "kubectl api-resources *": "allow",
@@ -95,6 +97,17 @@
       "aws cloudtrail lookup-events *": "allow",
 
       "jsonnet *": "allow"
+    }
+  },
+  "agent": {
+    "trust": {
+      "description": "Planning and analysis agent using GPT Codex",
+      "mode": "primary",
+      "model": "openai/gpt-5.3-codex",
+      "permission": {
+        "edit": "deny",
+        "bash": "ask"
+      }
     }
   }
 }
