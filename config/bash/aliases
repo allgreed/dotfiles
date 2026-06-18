@@ -185,3 +185,6 @@ mk-repo() {
 
 # Do I use this?
 alias ulock="ssh-add ~/.ssh/id_ed25519"
+
+alias oc="opencode"
+alias occ="opencode --continue"
