@@ -26,6 +26,11 @@ export const PermissionLogger = async () => {
         const { requestID, reply } = event.properties
         if (reply === "once" || reply === "always") {
           const request = pending.get(requestID)
+          // Skip logging edit permission events
+          if (request?.permission === "edit") {
+            if (requestID) pending.delete(requestID)
+            return
+          }
           const entry = {
             command: request?.patterns?.join(" ; ") ?? "unknown",
             tool: request?.permission ?? "unknown",
