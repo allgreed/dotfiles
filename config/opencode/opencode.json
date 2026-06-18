@@ -29,11 +29,16 @@
       "diff *": "allow",
       "git log *": "allow",
       "git show *": "allow",
+      "git branch --list *": "allow",
+      "git branch --show-current": "allow",
       "git commit *": "deny",
       "git push *": "deny",
 
       "gh pr view *": "allow",
       "gh pr diff *": "allow",
+      "gh api */pulls/*/comments *": "allow",
+      "gh api */pulls/*/reviews *": "allow",
+      "gt ls": "allow",
 
       "head *": "allow",
       "tail *": "allow",
@@ -53,6 +58,9 @@
       "dirname *": "allow",
 
       "shellcheck *": "allow",
+      "pre-commit *": "allow",
+      "pre-commit run --all-files *": "deny",
+
 
       "kubectl config *": "allow",
       "kubectl cluster-info *": "allow",
@@ -61,6 +69,10 @@
       "kubectl describe *": "allow",
       "kubectl logs *": "allow",
       "kubectl top *": "allow",
+      "kubectl -n * get *": "allow",
+      "kubectl -n * describe *": "allow",
+      "kubectl -n * logs *": "allow",
+      "kubectl -n * top *": "allow",
 
       "docker ps *": "allow",
       "docker images *": "allow",
@@ -103,7 +115,7 @@
     "trust": {
       "description": "Planning and analysis agent using GPT Codex",
       "mode": "primary",
-      "model": "openai/gpt-5.3-codex",
+      "model": "openai/gpt-5.5",
       "permission": {
         "edit": "deny",
         "bash": "ask"
