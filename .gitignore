@@ -13,3 +13,6 @@ testbook.yml
 run_test
 run_wip
 prepare_wip
+
+# data
+config/opencode/permission-log.jsonl
