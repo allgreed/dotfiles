@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # TODO: improve
-qpdf --password=YOURPASSWORD-HERE --decrypt input.pdf output.pdf
+set -euo pipefail
+qpdf --password=$(cat ~/Keys/pdfpass) --decrypt "$1" output.pdf
