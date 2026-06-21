@@ -141,6 +141,7 @@ autocmd! BufWritePost ~/.vimrc nested :source ~/.vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set ignorecase " needs to be set so that smartcase can take effect
 set smartcase
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
