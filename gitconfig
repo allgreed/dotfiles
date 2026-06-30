@@ -11,7 +11,7 @@
     ;path = ~/.gitwork
 
 [core]
-    pager = less
+    pager = delta
 
     excludesfile = ~/.gitignore_global
     attributesfile = ~/.gitattributes_global
@@ -93,6 +93,13 @@
 [difftool "nvimdiff"]
     cmd = nvim -d $LOCAL $REMOTE
 
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    side-by-side = true
+    navigate = true  # use n and N to move between diff sections
+
 # UI
 ############################
 [branch]
@@ -117,6 +124,7 @@
     call = "!f() { git aa && git c \"$@\"; }; f"
     co = checkout
     cm = co main
+    dd = diff --no-ext-diff
     dc = d --cached
     dcw = dw --cached
     dwc = dcw
@@ -162,23 +170,6 @@
     clean = grep -v '^context='
     smudge = cat
 
-
-# Testing delta
-############################
-# https://github.com/dandavison/delta
-[core]
-    pager = delta
-
-[interactive]
-    diffFilter = delta --color-only
-
-[delta]
-    side-by-side = true
-    navigate = true  # use n and N to move between diff sections
-
-[merge]
-    conflictstyle = zdiff3
-
 # Testing
 ############################
 # https://www.michaelheap.com/git-ignore-rev/
@@ -186,9 +177,3 @@
     ignoreRevsFile = .git-blame-ignore-revs
 	markIgnoredLines = true
 	markUnblamableLines = true
-
-[diff]
-    external = difft
-
-[alias]
-    dd = diff --no-ext-diff
