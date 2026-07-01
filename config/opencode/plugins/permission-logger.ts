@@ -11,14 +11,14 @@ export const PermissionLogger = async () => {
   }
 
   // Track pending permission requests so we can correlate replies
-  const pending = new Map<string, { permission: string; patterns: string[] }>()
+  const pending = new Map<string, { permission: string; patterns: string[]; askedAt: number }>()
 
   return {
     event: async ({ event }) => {
       if (event.type === "permission.asked") {
         const { id, permission, patterns } = event.properties
         if (id) {
-          pending.set(id, { permission, patterns })
+          pending.set(id, { permission, patterns, askedAt: Date.now() })
         }
       }
 
@@ -31,11 +31,15 @@ export const PermissionLogger = async () => {
             if (requestID) pending.delete(requestID)
             return
           }
+          const elapsedMs = request?.askedAt
+            ? Date.now() - request.askedAt
+            : null
           const entry = {
             command: request?.patterns?.join(" ; ") ?? "unknown",
             tool: request?.permission ?? "unknown",
             reply,
             timestamp: new Date().toISOString(),
+            elapsedMs,
           }
           try {
             appendFileSync(LOG_FILE, JSON.stringify(entry) + "\n")
