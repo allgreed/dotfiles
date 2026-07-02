@@ -223,3 +223,6 @@ nnoremap <leader>A :call nerdcommenter#Comment('n', 'Append')<CR>
 imap \c <Plug>NERDCommenterInsert
 imap \t <Plug>NERDCommenterInsertTODO:<space>
 let g:NERDSpaceDelims = 1
+
+nnoremap <leader>d "=strftime("%d-%m-%Y")<CR>p
+inoremap ;d <C-R>=strftime("%d-%m-%Y")<CR>
