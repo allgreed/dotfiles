@@ -226,3 +226,9 @@ let g:NERDSpaceDelims = 1
 
 nnoremap <leader>d "=strftime("%d-%m-%Y")<CR>p
 inoremap ;d <C-R>=strftime("%d-%m-%Y")<CR>
+
+highlight default link WeaselWords Statement
+augroup MarkdownWeaselWords
+  autocmd!
+  autocmd FileType markdown syntax match WeaselWords /\c\<\(just\|basically\|actually\|really\|very\)\>/ containedin=ALL
+augroup END
