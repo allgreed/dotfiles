@@ -41,6 +41,8 @@
       "gh pr diff *": "allow",
       "gh api */pulls/*/comments *": "allow",
       "gh api */pulls/*/reviews *": "allow",
+      "gh api graphql -f query=*repository(owner*pullRequest(number*reviewThreads*isResolved*": "allow",
+      "gh api graphql *mutation*": "deny",
       "gt ls": "allow",
 
       "head *": "allow",
