@@ -88,7 +88,7 @@ filetype plugin indent on
 let g:hexmode_patterns = '*.bin,*.exe,*.dat,*.o'
 "let g:hexmode_xxd_options = '-g 1'
 
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|\.pyc\|__pycache__'
 
 let g:ale_disable_lsp = 1
 let g:ale_use_neovim_diagnostics_api = 1
