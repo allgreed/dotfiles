@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+local track="${1:-1}"
+shift
+
+for file in "$@"; do
+    local out="${file%.*}.srt"
+
+    echo "Extracting subtitle stream $track from: $file"
+    ffmpeg -i "$file" -map "0:s:$track" -c:s srt "$out"
+done
