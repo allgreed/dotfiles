@@ -152,6 +152,11 @@ sub-nocc-interactive() {
     # TODO: approve facility = yes / no
 }
 
+sub-rehyphen() {
+    sed 's/-/‐/g' $1
+}
+
+
 
 # TODO: what about the magic space in alias?
 alias e="$EDITOR"
