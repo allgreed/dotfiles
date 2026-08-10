@@ -232,3 +232,4 @@ augroup MarkdownWeaselWords
   autocmd!
   autocmd FileType markdown syntax match WeaselWords /\c\<\(just\|basically\|actually\|really\|very\)\>/ containedin=ALL
 augroup END
+let g:jsonnet_fmt_on_save = 0
