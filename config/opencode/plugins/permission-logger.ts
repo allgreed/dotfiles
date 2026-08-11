@@ -24,7 +24,7 @@ export const PermissionLogger = async () => {
 
       if (event.type === "permission.replied") {
         const { requestID, reply } = event.properties
-        if (reply === "once" || reply === "always") {
+        if (reply === "once" || reply === "always" || reply === "reject") {
           const request = pending.get(requestID)
           // Skip logging edit permission events
           if (request?.permission === "edit") {
