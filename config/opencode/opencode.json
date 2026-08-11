@@ -34,14 +34,34 @@
       "git show *": "allow",
       "git branch --list *": "allow",
       "git branch --show-current": "allow",
+      "git branch --all *": "allow",
+      "git branch -a": "allow",
+      "git remote -v": "allow",
+      "git tag -l *": "allow",
+      "git tag --contains *": "allow",
+      "git merge-base *": "allow",
+      "git for-each-ref *": "allow",
+      "git blame *": "allow",
+      "git ls-remote *": "allow",
+      "git cat-file *": "allow",
+      "git grep *": "allow",
+      "git rev-parse *": "allow",
       "git commit *": "deny",
       "git push *": "deny",
 
       "gh pr view *": "allow",
       "gh pr diff *": "allow",
+      "gh pr list *": "allow",
+      "gh pr files *": "allow",
+      "gh search prs *": "allow",
+      "gh search issues *": "allow",
       "gh api */pulls/*/comments *": "allow",
       "gh api */pulls/*/reviews *": "allow",
+      "gh api *pulls/*/files *": "allow",
+      "gh api *search/issues*": "allow",
+      "gh api *repos/*/branches*": "allow",
       "gh api graphql -f query=*repository(owner*pullRequest(number*reviewThreads*isResolved*": "allow",
+      "gh api graphql *pullRequest*reviewThreads*": "allow",
       "gh api graphql *mutation*": "deny",
       "gt ls": "allow",
 
@@ -66,6 +86,15 @@
       "pre-commit *": "allow",
       "pre-commit run --all-files *": "deny",
 
+      "ruff *": "allow",
+      "uv run ruff *": "allow",
+      "pytest *": "allow",
+      "uv run pytest *": "allow",
+
+      "just --list*": "allow",
+      "just * --list*": "allow",
+      "just * --help": "allow",
+
 
       "kubectl config *": "allow",
       "kubectl cluster-info *": "allow",
@@ -78,11 +107,13 @@
       "kubectl -n * describe *": "allow",
       "kubectl -n * logs *": "allow",
       "kubectl -n * top *": "allow",
+      "kubectl cnpg psql *": "deny",
 
       "docker ps *": "allow",
       "docker images *": "allow",
       "docker logs *": "allow",
       "docker inspect *": "allow",
+      "docker stats *": "allow",
       "docker compose ps *": "allow",
       "docker compose config *": "allow",
       "docker context ls *": "allow",
@@ -99,6 +130,9 @@
 
       "aws configure list *": "allow",
       "aws sts get-caller-identity *": "allow",
+      "aws organizations list-* *": "allow",
+      "aws ecs list-* *": "allow",
+      "aws bedrock list-* *": "allow",
       "aws s3 ls *": "allow",
       "aws * describe-* *": "allow",
       "aws ec2 get-* *": "allow",
@@ -113,7 +147,8 @@
       "aws cloudwatch get-metric-statistics *": "allow",
       "aws cloudtrail lookup-events *": "allow",
 
-      "jsonnet *": "allow"
+      "jsonnet *": "allow",
+      "jsonnetfmt *": "allow"
     }
   },
   "agent": {
