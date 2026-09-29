@@ -15,7 +15,8 @@
       "~/.aws/**": "deny"
     },
     "external_directory": {
-      "~/.config/opencode/**": "allow"
+      "~/.config/opencode/**": "allow",
+      "~/Dotfiles/config/opencode/**": "allow"
     },
     "glob": "allow",
     "grep": "allow",
@@ -32,10 +33,13 @@
       "diff *": "allow",
       "git log *": "allow",
       "git show *": "allow",
+      "git reflog show": "allow",
+      "git reflog show *": "allow",
       "git branch --list *": "allow",
       "git branch --show-current": "allow",
       "git branch --all *": "allow",
       "git branch -a": "allow",
+      "git branch -avv": "allow",
       "git remote -v": "allow",
       "git tag -l *": "allow",
       "git tag --contains *": "allow",
@@ -46,6 +50,9 @@
       "git cat-file *": "allow",
       "git grep *": "allow",
       "git rev-parse *": "allow",
+      "git rev-list *": "allow",
+      "git ls-files *": "allow",
+      "git rebase --show-current-patch": "allow",
       "git commit *": "deny",
       "git push *": "deny",
 
