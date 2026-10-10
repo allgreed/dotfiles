@@ -134,10 +134,11 @@ alias alert='dunstify --urgency=low -i "$([ $? = 0 ] && echo terminal || echo er
 alias v="vim"
 
 sub-nocc() {
-    # TODO: maybe replace .* with the actual (\w+\s?)+" size="\d+" but I don't feel like it now
-    sed 's/<font face=".*">//' -i $1
-    sed 's/<\/font>//' -i $1
-    filter-subtitles.py -s $1
+    for file in "$@"; do
+        sed -i 's/<font face=".*">//' "$file"
+        sed -i 's/<\/font>//' "$file"
+        filter-subtitles.py -s "$file"
+    done
 }
 
 sub-nocc-interactive() {
@@ -153,7 +154,7 @@ sub-nocc-interactive() {
 }
 
 sub-rehyphen() {
-    sed 's/-/‐/g' $1
+    sed -i 's/\([a-zA-Z]\)-\([a-zA-Z]\)/\1=\2/g' "$1"
 }
 
 
