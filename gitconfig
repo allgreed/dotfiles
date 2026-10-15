@@ -123,7 +123,7 @@
     aa = a --all
     call = "!f() { git aa && git c \"$@\"; }; f"
     co = checkout
-    cm = co main
+    cm = !git-checkout-master
     dd = diff --no-ext-diff
     dc = d --cached
     dcw = dw --cached

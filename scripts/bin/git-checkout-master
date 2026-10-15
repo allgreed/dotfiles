@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+if git show-ref --verify --quiet refs/heads/master; then
+    GIT_MASTER=master
+else
+    GIT_MASTER=main
+fi
+
+git fetch origin "$GIT_MASTER"
+git checkout "$GIT_MASTER"
+git merge --ff-only "origin/$GIT_MASTER"
