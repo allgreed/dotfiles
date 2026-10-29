@@ -98,11 +98,14 @@ load 'aliases' ~/.config/bash/aliases
 load 'local stuff' ~/.bash_local @fin
 
 # this has to happen after all prompts are loaded
+# direnv-instant is preferred when available; plain direnv is the fallback.
+# "direnv: export ..." is suppressed via hide_env_diff in ~/.config/direnv/direnv.toml.
 export DIRENV_LOG_FORMAT="$(printf "\033[2mdirenv: %%s\033[0m")"
-load 'direnv integration' @eval2 'direnv-instant hook bash' @eval2 'direnv hook bash'
-_direnv_hook() {
-  eval "$(direnv export bash 2> >(egrep -v -e '^....direnv: export' >&2))"
-};
+if command -v direnv-instant >/dev/null; then
+  eval "$(direnv-instant hook bash)"
+elif command -v direnv >/dev/null; then
+  eval "$(direnv hook bash)"
+fi
 
 ## Testing area
 #########################
