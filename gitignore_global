@@ -10,11 +10,11 @@
 # Jet Brains IDE's metadata
 .idea
 
-# Vim sessions
 session.vim
-
-# direnvs
 .direnv
 
 # I've given in...
 settings.local.json
+
+# convinience
+.allgreed
