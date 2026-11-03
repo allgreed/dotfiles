@@ -62,6 +62,8 @@ vim.lsp.enable("ts_ls")
 vim.lsp.enable("nixd")
 vim.lsp.enable("gopls")
 vim.lsp.enable("jsonnet_ls")
+
+vim.keymap.set("n", "<leader>k", vim.diagnostic.open_float)
 EOF
 
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
