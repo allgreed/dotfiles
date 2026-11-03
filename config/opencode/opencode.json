@@ -27,7 +27,11 @@
       "python3 *": "deny",
       "find *": "deny",
 
+      "python -m pytest": "allow",
+      "python -m pytest *": "allow",
+
       "ls *": "allow",
+
       "git status *": "allow",
       "git diff *": "allow",
       "diff *": "allow",
@@ -70,7 +74,6 @@
       "gh api graphql -f query=*repository(owner*pullRequest(number*reviewThreads*isResolved*": "allow",
       "gh api graphql *pullRequest*reviewThreads*": "allow",
       "gh api graphql *mutation*": "deny",
-      "gt ls": "allow",
 
       "head *": "allow",
       "tail *": "allow",
@@ -155,7 +158,9 @@
       "aws cloudtrail lookup-events *": "allow",
 
       "jsonnet *": "allow",
-      "jsonnetfmt *": "allow"
+      "jsonnetfmt *": "allow",
+
+      "git worktree*": "ask"
     }
   },
   "agent": {
