@@ -16,7 +16,8 @@
     },
     "external_directory": {
       "~/.config/opencode/**": "allow",
-      "~/Dotfiles/config/opencode/**": "allow"
+      "~/Dotfiles/config/opencode/**": "allow",
+      "~/.config/cmux/**": "allow"
     },
     "glob": "allow",
     "grep": "allow",
@@ -31,6 +32,12 @@
       "python -m pytest *": "allow",
 
       "ls *": "allow",
+      "pwd": "allow",
+      "date *": "allow",
+      "stat *": "allow",
+      "lsof *": "allow",
+      "command -v *": "allow",
+      "bash -n *": "allow",
 
       "git status *": "allow",
       "git diff *": "allow",
@@ -57,6 +64,11 @@
       "git rev-list *": "allow",
       "git ls-files *": "allow",
       "git rebase --show-current-patch": "allow",
+      "git check-ignore *": "allow",
+      "git show-ref *": "allow",
+      "git worktree list *": "allow",
+      "git config --get *": "allow",
+      "git config --get-regexp *": "allow",
       "git commit *": "deny",
       "git push *": "deny",
 
@@ -101,6 +113,10 @@
       "pytest *": "allow",
       "uv run pytest *": "allow",
 
+      "opencode --help": "allow",
+      "opencode --version": "allow",
+      "opencode models *": "allow",
+
       "just --list*": "allow",
       "just * --list*": "allow",
       "just * --help": "allow",
@@ -143,6 +159,7 @@
       "aws organizations list-* *": "allow",
       "aws ecs list-* *": "allow",
       "aws bedrock list-* *": "allow",
+      "aws bedrock get-* *": "allow",
       "aws s3 ls *": "allow",
       "aws * describe-* *": "allow",
       "aws ec2 get-* *": "allow",
