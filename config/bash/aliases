@@ -25,6 +25,7 @@ alias ll='ls -lh'
 alias l='ls -Ah'
 alias ka="kubectl apply -f ."
 alias k="kubectl"
+complete -o default -F __start_kubectl k
 alias led="vim $LEDGER_FILE"
 alias r="ranger"
 alias tf="tofu"

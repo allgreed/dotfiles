@@ -74,6 +74,7 @@ load 'home-manager integration' ~/.nix-profile/etc/profile.d/hm-session-vars.sh 
 load 'bash autocomplete' @nixos @eval 'source $(nix profile list | grep "Store paths" | grep bash-completion | cut -w -f 3)/share/bash-completion/bash_completion' /usr/share/bash-completion/bash_completion
 load 'git autocomplete' $(_resolve_nix git share/bash-completion/completions/git) /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash /usr/share/bash-completion/completions/git
 load 'task autocomplete' $(_resolve_nix task share/bash-completion/completions/task.bash) @fin
+load 'kubectl autocomplete' @eval2 'command -v kubectl >/dev/null && kubectl completion bash' @fin
 complete -F _command doas
 
 load 'autojump' $(_resolve_nix autojump share/autojump/autojump.bash)
