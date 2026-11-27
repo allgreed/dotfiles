@@ -29,6 +29,8 @@ complete -o default -F __start_kubectl k
 alias led="vim $LEDGER_FILE"
 alias r="ranger"
 alias tf="tofu"
+alias oc="opencode"
+alias occ="opencode --continue"
 alias ,sus="systemctl suspend && exit"
 
 ### defaults ###
@@ -132,8 +134,6 @@ alias alert='dunstify --urgency=low -i "$([ $? = 0 ] && echo terminal || echo er
 #alias cp="rsync -ah"
 # TODO: o.0 wtf? - see commit that introduced it
 
-alias v="vim"
-
 sub-nocc() {
     for file in "$@"; do
         sed -i 's/<font face=".*">//' "$file"
@@ -159,18 +159,6 @@ sub-rehyphen() {
 }
 
 
-
-# TODO: what about the magic space in alias?
-alias e="$EDITOR"
-
-# TODO: better name?
-dhcprc() {
-    # TODO: use sudo wrapper once it's fixed
-    doas sh -c 'dhclient -r; dhclient -v'
-    ping wp.pl -c 2
-}
-
-
 mk-repo() {
     _from_template() {
         cp ~/Desktop/templates/$1 .
@@ -193,5 +181,4 @@ mk-repo() {
 # Do I use this?
 alias ulock="ssh-add ~/.ssh/id_ed25519"
 
-alias oc="opencode"
-alias occ="opencode --continue"
+alias ju="just"
