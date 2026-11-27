@@ -16,3 +16,12 @@ If it reports findings:
 3. For `fix`, implement and verify the fix.
 4. For `explain`, give a concise explanation of the risk and proposed mitigation.
 5. For `ignore`, acknowledge that it will not be changed.
+
+## Completion Gate
+
+When the reviewer reports findings, do not send a final response or consider the review complete until all of these conditions are true:
+
+1. The primary conversation has called the `question` tool once for every finding, offering `fix`, `explain`, and `ignore`.
+2. The user has selected a resolution for every finding.
+3. Each selected resolution has been completed: fixes are implemented and verified, explanations are provided, and ignored findings are acknowledged.
+4. The final response lists the resolution for every finding.
